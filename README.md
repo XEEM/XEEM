@@ -1,6 +1,7 @@
 # XEEM
 Bike/car repair service app
-Users will use XEEM to book bike/car repair service when their bike/car were broken on the street. The app will show the surrounding service shops in a map. Users can book by tapping the "book" button in each the service shop page.
+
+Users will use XEEM to book bike/car repair service when their bike/car were broken on the street. The app will show the surrounding service shops in a map. Users can book by tapping the "book" button in each the service shop page. After being serviced, users can leave reviews about their experiences.
 
 Requirements
 
@@ -8,7 +9,7 @@ Requirements
 
 [] Users can see bike/car repair service shown in a map
 
-[] Users can tap on the service to check and book that service
+[] Users can tap on the service to check service quotes and book that service.
 
 [] Users can leave review about the service after using 
 
