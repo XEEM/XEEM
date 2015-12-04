@@ -21,7 +21,7 @@ Requirements
 
 Optionals
 
-[] Users can check their service using history
+[] Users can track their maintainance history.
 
 [] Users can save the favorite list of the service shops
 
