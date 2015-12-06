@@ -21,7 +21,7 @@ Requirements
 
 Optionals
 
-[] Users can track their maintainance history.
+[] Users can track their maintainance history in a dashboard and get reminder for maintainance service
 
 [] Users can save the favorite list of the service shops
 
