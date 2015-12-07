@@ -36,4 +36,4 @@ Users will use XEEM to book bike/car repair service when their bike/car were bro
 
 [] Users can get direction to the service shop
 
-MOCKUP link: https://www.dropbox.com/home/XEEM%20MOCKUP
+MOCKUP link: https://www.dropbox.com/s/68tvpryvvjg5ulx/XEEM%20MOCKUP.zip?dl=0
