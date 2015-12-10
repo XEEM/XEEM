@@ -12,6 +12,10 @@
 		A629C3E51C16BF9000D77F69 /* User.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A629C3E41C16BF9000D77F69 /* User.storyboard */; };
 		A629C3E71C16BF9D00D77F69 /* Service.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A629C3E61C16BF9D00D77F69 /* Service.storyboard */; };
 		A629C3EB1C16C47900D77F69 /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A629C3EA1C16C47900D77F69 /* Setting.storyboard */; };
+		A69BDDDB1C181714005CA6C6 /* SwiftySideMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A69BDDD81C181714005CA6C6 /* SwiftySideMenuViewController.m */; };
+		A69BDDDC1C181714005CA6C6 /* UIViewController+SwiftySideMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = A69BDDDA1C181714005CA6C6 /* UIViewController+SwiftySideMenu.m */; };
+		A69BDDE11C181D0B005CA6C6 /* TimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69BDDE01C181D0B005CA6C6 /* TimelineViewController.swift */; };
+		A69BDDE51C182802005CA6C6 /* OptionsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69BDDE41C182802005CA6C6 /* OptionsTableViewController.swift */; };
 		CE13954A1C1087D100A67657 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1395491C1087D100A67657 /* AppDelegate.swift */; };
 		CE13954C1C1087D100A67657 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE13954B1C1087D100A67657 /* ViewController.swift */; };
 		CE13954F1C1087D100A67657 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE13954D1C1087D100A67657 /* Main.storyboard */; };
@@ -26,6 +30,13 @@
 		A629C3E41C16BF9000D77F69 /* User.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = User.storyboard; sourceTree = "<group>"; };
 		A629C3E61C16BF9D00D77F69 /* Service.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Service.storyboard; sourceTree = "<group>"; };
 		A629C3EA1C16C47900D77F69 /* Setting.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
+		A69BDDD71C181714005CA6C6 /* SwiftySideMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwiftySideMenuViewController.h; sourceTree = "<group>"; };
+		A69BDDD81C181714005CA6C6 /* SwiftySideMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwiftySideMenuViewController.m; sourceTree = "<group>"; };
+		A69BDDD91C181714005CA6C6 /* UIViewController+SwiftySideMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+SwiftySideMenu.h"; sourceTree = "<group>"; };
+		A69BDDDA1C181714005CA6C6 /* UIViewController+SwiftySideMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+SwiftySideMenu.m"; sourceTree = "<group>"; };
+		A69BDDDD1C18172C005CA6C6 /* XEEM-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "XEEM-Bridging-Header.h"; sourceTree = "<group>"; };
+		A69BDDE01C181D0B005CA6C6 /* TimelineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineViewController.swift; sourceTree = "<group>"; };
+		A69BDDE41C182802005CA6C6 /* OptionsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionsTableViewController.swift; sourceTree = "<group>"; };
 		CE1395461C1087D100A67657 /* XEEM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XEEM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE1395491C1087D100A67657 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE13954B1C1087D100A67657 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -52,6 +63,8 @@
 			isa = PBXGroup;
 			children = (
 				CE13954B1C1087D100A67657 /* ViewController.swift */,
+				A69BDDE01C181D0B005CA6C6 /* TimelineViewController.swift */,
+				A69BDDE41C182802005CA6C6 /* OptionsTableViewController.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -113,6 +126,25 @@
 			name = Storyboard;
 			sourceTree = "<group>";
 		};
+		A69BDDC81C1816A6005CA6C6 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				A69BDDD61C181702005CA6C6 /* SwiftySideMenu */,
+			);
+			name = Library;
+			sourceTree = "<group>";
+		};
+		A69BDDD61C181702005CA6C6 /* SwiftySideMenu */ = {
+			isa = PBXGroup;
+			children = (
+				A69BDDD71C181714005CA6C6 /* SwiftySideMenuViewController.h */,
+				A69BDDD81C181714005CA6C6 /* SwiftySideMenuViewController.m */,
+				A69BDDD91C181714005CA6C6 /* UIViewController+SwiftySideMenu.h */,
+				A69BDDDA1C181714005CA6C6 /* UIViewController+SwiftySideMenu.m */,
+			);
+			name = SwiftySideMenu;
+			sourceTree = "<group>";
+		};
 		C8FB37CCAB7E05808E7EF442 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -143,6 +175,7 @@
 		CE1395481C1087D100A67657 /* XEEM */ = {
 			isa = PBXGroup;
 			children = (
+				A69BDDDD1C18172C005CA6C6 /* XEEM-Bridging-Header.h */,
 				A629C3E31C16BD2700D77F69 /* Storyboard */,
 				A627252F1C14A10E0005A204 /* AppDelegate */,
 				A627252B1C14A0D30005A204 /* ViewController */,
@@ -150,6 +183,7 @@
 				A62725301C14A1290005A204 /* Common */,
 				A627252D1C14A0E10005A204 /* Model */,
 				A627252E1C14A0E60005A204 /* Service */,
+				A69BDDC81C1816A6005CA6C6 /* Library */,
 				A62725311C14A14E0005A204 /* Supporting Files */,
 				CE1395501C1087D100A67657 /* Assets.xcassets */,
 			);
@@ -291,8 +325,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A69BDDDC1C181714005CA6C6 /* UIViewController+SwiftySideMenu.m in Sources */,
+				A69BDDDB1C181714005CA6C6 /* SwiftySideMenuViewController.m in Sources */,
+				A69BDDE51C182802005CA6C6 /* OptionsTableViewController.swift in Sources */,
 				CE13954C1C1087D100A67657 /* ViewController.swift in Sources */,
 				CE13954A1C1087D100A67657 /* AppDelegate.swift in Sources */,
+				A69BDDE11C181D0B005CA6C6 /* TimelineViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -404,10 +442,14 @@
 			baseConfigurationReference = DF46DDB94906979469AB52C5 /* Pods-XEEM.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = XEEM/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.JadeLe.XEEM;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "XEEM/XEEM-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -416,10 +458,13 @@
 			baseConfigurationReference = 999146997734BAF01AF7905C /* Pods-XEEM.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = XEEM/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.JadeLe.XEEM;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "XEEM/XEEM-Bridging-Header.h";
 			};
 			name = Release;
 		};

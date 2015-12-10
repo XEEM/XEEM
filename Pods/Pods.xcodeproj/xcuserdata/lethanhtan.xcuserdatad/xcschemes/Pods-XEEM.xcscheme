@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '531A2B780A24506F3A283977'
+               BlueprintIdentifier = '972DCE96C1194D3AB13E5546'
                BlueprintName = 'Pods-XEEM'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'Pods_XEEM.framework'>

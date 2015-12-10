@@ -5,6 +5,7 @@
 
 target 'XEEM' do
 	pod 'Alamofire', '~> 3.1'
+    pod 'pop', '~> 1.0'
 
 use_frameworks!
 end

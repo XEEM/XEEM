@@ -16,6 +16,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        let storyboard = UIStoryboard(name: "User", bundle: nil)
+        let rootVC =  storyboard.instantiateViewControllerWithIdentifier("SwiftySideMenuViewController") as! SwiftySideMenuViewController
+        
+        let centerVC = storyboard.instantiateViewControllerWithIdentifier("CenterUser");
+        
+        let leftVC = storyboard.instantiateViewControllerWithIdentifier("LeftUser");
+        rootVC.enableLeftSwipeGesture = false
+        rootVC.enableRightSwipeGesture = false
+
+        rootVC.centerViewController = centerVC
+        rootVC.leftViewController = leftVC
+        rootVC.centerEndScale = 0.8
+        rootVC.leftSpringAnimationSpeed = 20
+        
+        self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        self.window?.rootViewController = rootVC
+        self.window?.makeKeyAndVisible()
+        
         return true
     }
 
