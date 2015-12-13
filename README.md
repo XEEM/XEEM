@@ -33,5 +33,5 @@ MOCKUP link: https://www.dropbox.com/s/pmmfrpy6o3a00e4/XEEM%20User%20App%20Mocku
 Schema link: https://www.dropbox.com/s/e4mm9nimlv7y42d/XEEM-schema-1.1.jpg?dl=0
 
 Walkthrough as follow:
-![Video Walkthrough](XEEM 1.gif)
+![Video Walkthrough](XEEM1.gif)
 
