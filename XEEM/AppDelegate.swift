@@ -34,6 +34,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window?.rootViewController = rootVC
         self.window?.makeKeyAndVisible()
         
+        
+//         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
+//        let storyboard = UIStoryboard(name: "Profile", bundle: nil)
+//        let rootVC = storyboard.instantiateViewControllerWithIdentifier("ProfileNavigationController") as! UINavigationController
+//        self.window?.rootViewController = rootVC
+//        self.window?.makeKeyAndVisible()
         return true
     }
 
