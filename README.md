@@ -17,6 +17,7 @@ Users will use XEEM to book bike/car repair service when their bike/car were bro
 
 
 * Optionals
+
 [] Users can see a map of repair service shop, gas stations and spare parts shops.
 
 [] Users can save the favorite list of the service shops
@@ -34,5 +35,6 @@ MOCKUP link: https://www.dropbox.com/s/pmmfrpy6o3a00e4/XEEM%20User%20App%20Mocku
 Schema link: https://www.dropbox.com/s/e4mm9nimlv7y42d/XEEM-schema-1.1.jpg?dl=0
 
 Walkthrough as follow:
-![Video Walkthrough](XEEM1.gif)
+(![xeem1](https://cloud.githubusercontent.com/assets/14104944/11768083/aa6a3236-a1f4-11e5-9af4-5f7393d1189d.gif)
+)
 
