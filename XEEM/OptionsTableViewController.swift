@@ -34,12 +34,21 @@ class OptionsTableViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 3
+        return 4
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        switch indexPath.row {
+        case 1:
+            let storyboard = UIStoryboard(name: "Profile", bundle: nil)
+            let rootVC = storyboard.instantiateViewControllerWithIdentifier("ProfileNavigationController") as! UINavigationController
+            self.presentViewController(rootVC, animated: true , completion: nil)
+            self.swiftySideMenu?.toggleSideMenu()
+            break
+        default:
+            break
+        }
         
-//        self.swiftySideMenu?.toggleSideMenu()
     }
 
     /*
