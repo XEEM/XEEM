@@ -84,10 +84,12 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework "Pods-XEEM/AFNetworking.framework"
   install_framework "Pods-XEEM/Alamofire.framework"
   install_framework "Pods-XEEM/pop.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework "Pods-XEEM/AFNetworking.framework"
   install_framework "Pods-XEEM/Alamofire.framework"
   install_framework "Pods-XEEM/pop.framework"
 fi
