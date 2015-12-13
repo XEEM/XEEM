@@ -11,5 +11,6 @@
 
 #import "SwiftySideMenuViewController.h"
 #import "UIViewController+SwiftySideMenu.h"
+#import "RateView.h"
 
 #endif /* XEEM_Bridging_Header_h */

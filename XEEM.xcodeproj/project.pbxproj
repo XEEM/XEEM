@@ -16,6 +16,19 @@
 		A69BDDDC1C181714005CA6C6 /* UIViewController+SwiftySideMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = A69BDDDA1C181714005CA6C6 /* UIViewController+SwiftySideMenu.m */; };
 		A69BDDE11C181D0B005CA6C6 /* TimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69BDDE01C181D0B005CA6C6 /* TimelineViewController.swift */; };
 		A69BDDE51C182802005CA6C6 /* OptionsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69BDDE41C182802005CA6C6 /* OptionsTableViewController.swift */; };
+		A6C5DD931C1D2B2F00A7DB9D /* FilterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C5DD911C1D2B2F00A7DB9D /* FilterCell.swift */; };
+		A6C5DD941C1D2B2F00A7DB9D /* FilterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6C5DD921C1D2B2F00A7DB9D /* FilterCell.xib */; };
+		A6C5DD961C1D2D4F00A7DB9D /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C5DD951C1D2D4F00A7DB9D /* FilterViewController.swift */; };
+		A6C5DD9A1C1D378200A7DB9D /* RateView.m in Sources */ = {isa = PBXBuildFile; fileRef = A6C5DD991C1D378200A7DB9D /* RateView.m */; };
+		A6C5DD9C1C1D420A00A7DB9D /* RepairServiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C5DD9B1C1D420A00A7DB9D /* RepairServiceViewController.swift */; };
+		A6C5DD9F1C1D44B400A7DB9D /* ServiceDetailNameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C5DD9D1C1D44B400A7DB9D /* ServiceDetailNameCell.swift */; };
+		A6C5DDA01C1D44B400A7DB9D /* ServiceDetailNameCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6C5DD9E1C1D44B400A7DB9D /* ServiceDetailNameCell.xib */; };
+		A6C5DDA31C1DA4DC00A7DB9D /* QuotesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C5DDA11C1DA4DC00A7DB9D /* QuotesTableViewCell.swift */; };
+		A6C5DDA41C1DA4DC00A7DB9D /* QuotesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6C5DDA21C1DA4DC00A7DB9D /* QuotesTableViewCell.xib */; };
+		A6C5DDA71C1DAA0F00A7DB9D /* ShowmoreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C5DDA51C1DAA0F00A7DB9D /* ShowmoreCell.swift */; };
+		A6C5DDA81C1DAA0F00A7DB9D /* ShowmoreCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6C5DDA61C1DAA0F00A7DB9D /* ShowmoreCell.xib */; };
+		A6C5DDAB1C1DAE5200A7DB9D /* ReviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C5DDA91C1DAE5200A7DB9D /* ReviewCell.swift */; };
+		A6C5DDAC1C1DAE5200A7DB9D /* ReviewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6C5DDAA1C1DAE5200A7DB9D /* ReviewCell.xib */; };
 		CE13954A1C1087D100A67657 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1395491C1087D100A67657 /* AppDelegate.swift */; };
 		CE13954C1C1087D100A67657 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE13954B1C1087D100A67657 /* ViewController.swift */; };
 		CE13954F1C1087D100A67657 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE13954D1C1087D100A67657 /* Main.storyboard */; };
@@ -37,6 +50,20 @@
 		A69BDDDD1C18172C005CA6C6 /* XEEM-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "XEEM-Bridging-Header.h"; sourceTree = "<group>"; };
 		A69BDDE01C181D0B005CA6C6 /* TimelineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineViewController.swift; sourceTree = "<group>"; };
 		A69BDDE41C182802005CA6C6 /* OptionsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionsTableViewController.swift; sourceTree = "<group>"; };
+		A6C5DD911C1D2B2F00A7DB9D /* FilterCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FilterCell.swift; path = View/TableView/FilterCell.swift; sourceTree = "<group>"; };
+		A6C5DD921C1D2B2F00A7DB9D /* FilterCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FilterCell.xib; path = View/TableView/FilterCell.xib; sourceTree = "<group>"; };
+		A6C5DD951C1D2D4F00A7DB9D /* FilterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
+		A6C5DD981C1D378200A7DB9D /* RateView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RateView.h; sourceTree = "<group>"; };
+		A6C5DD991C1D378200A7DB9D /* RateView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RateView.m; sourceTree = "<group>"; };
+		A6C5DD9B1C1D420A00A7DB9D /* RepairServiceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepairServiceViewController.swift; sourceTree = "<group>"; };
+		A6C5DD9D1C1D44B400A7DB9D /* ServiceDetailNameCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ServiceDetailNameCell.swift; path = View/TableView/ServiceDetailNameCell.swift; sourceTree = "<group>"; };
+		A6C5DD9E1C1D44B400A7DB9D /* ServiceDetailNameCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ServiceDetailNameCell.xib; path = View/TableView/ServiceDetailNameCell.xib; sourceTree = "<group>"; };
+		A6C5DDA11C1DA4DC00A7DB9D /* QuotesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuotesTableViewCell.swift; sourceTree = "<group>"; };
+		A6C5DDA21C1DA4DC00A7DB9D /* QuotesTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QuotesTableViewCell.xib; sourceTree = "<group>"; };
+		A6C5DDA51C1DAA0F00A7DB9D /* ShowmoreCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowmoreCell.swift; sourceTree = "<group>"; };
+		A6C5DDA61C1DAA0F00A7DB9D /* ShowmoreCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShowmoreCell.xib; sourceTree = "<group>"; };
+		A6C5DDA91C1DAE5200A7DB9D /* ReviewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReviewCell.swift; path = View/TableView/ReviewCell.swift; sourceTree = "<group>"; };
+		A6C5DDAA1C1DAE5200A7DB9D /* ReviewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ReviewCell.xib; path = View/TableView/ReviewCell.xib; sourceTree = "<group>"; };
 		CE1395461C1087D100A67657 /* XEEM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XEEM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE1395491C1087D100A67657 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE13954B1C1087D100A67657 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -65,6 +92,8 @@
 				CE13954B1C1087D100A67657 /* ViewController.swift */,
 				A69BDDE01C181D0B005CA6C6 /* TimelineViewController.swift */,
 				A69BDDE41C182802005CA6C6 /* OptionsTableViewController.swift */,
+				A6C5DD951C1D2D4F00A7DB9D /* FilterViewController.swift */,
+				A6C5DD9B1C1D420A00A7DB9D /* RepairServiceViewController.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -72,6 +101,7 @@
 		A627252C1C14A0DD0005A204 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				A6C5DD901C1D2AD100A7DB9D /* TableView */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -129,6 +159,7 @@
 		A69BDDC81C1816A6005CA6C6 /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				A6C5DD971C1D377600A7DB9D /* RateView */,
 				A69BDDD61C181702005CA6C6 /* SwiftySideMenu */,
 			);
 			name = Library;
@@ -143,6 +174,32 @@
 				A69BDDDA1C181714005CA6C6 /* UIViewController+SwiftySideMenu.m */,
 			);
 			name = SwiftySideMenu;
+			sourceTree = "<group>";
+		};
+		A6C5DD901C1D2AD100A7DB9D /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				A6C5DD911C1D2B2F00A7DB9D /* FilterCell.swift */,
+				A6C5DD921C1D2B2F00A7DB9D /* FilterCell.xib */,
+				A6C5DD9D1C1D44B400A7DB9D /* ServiceDetailNameCell.swift */,
+				A6C5DD9E1C1D44B400A7DB9D /* ServiceDetailNameCell.xib */,
+				A6C5DDA11C1DA4DC00A7DB9D /* QuotesTableViewCell.swift */,
+				A6C5DDA21C1DA4DC00A7DB9D /* QuotesTableViewCell.xib */,
+				A6C5DDA51C1DAA0F00A7DB9D /* ShowmoreCell.swift */,
+				A6C5DDA61C1DAA0F00A7DB9D /* ShowmoreCell.xib */,
+				A6C5DDA91C1DAE5200A7DB9D /* ReviewCell.swift */,
+				A6C5DDAA1C1DAE5200A7DB9D /* ReviewCell.xib */,
+			);
+			name = TableView;
+			sourceTree = "<group>";
+		};
+		A6C5DD971C1D377600A7DB9D /* RateView */ = {
+			isa = PBXGroup;
+			children = (
+				A6C5DD981C1D378200A7DB9D /* RateView.h */,
+				A6C5DD991C1D378200A7DB9D /* RateView.m */,
+			);
+			name = RateView;
 			sourceTree = "<group>";
 		};
 		C8FB37CCAB7E05808E7EF442 /* Pods */ = {
@@ -260,12 +317,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A6C5DDA81C1DAA0F00A7DB9D /* ShowmoreCell.xib in Resources */,
 				A629C3E71C16BF9D00D77F69 /* Service.storyboard in Resources */,
 				A629C3E01C169C9700D77F69 /* Login.storyboard in Resources */,
 				A629C3EB1C16C47900D77F69 /* Setting.storyboard in Resources */,
 				A629C3E51C16BF9000D77F69 /* User.storyboard in Resources */,
+				A6C5DDAC1C1DAE5200A7DB9D /* ReviewCell.xib in Resources */,
+				A6C5DDA01C1D44B400A7DB9D /* ServiceDetailNameCell.xib in Resources */,
 				CE1395541C1087D100A67657 /* LaunchScreen.storyboard in Resources */,
+				A6C5DD941C1D2B2F00A7DB9D /* FilterCell.xib in Resources */,
 				CE1395511C1087D100A67657 /* Assets.xcassets in Resources */,
+				A6C5DDA41C1DA4DC00A7DB9D /* QuotesTableViewCell.xib in Resources */,
 				CE13954F1C1087D100A67657 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -325,12 +387,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A6C5DD931C1D2B2F00A7DB9D /* FilterCell.swift in Sources */,
 				A69BDDDC1C181714005CA6C6 /* UIViewController+SwiftySideMenu.m in Sources */,
+				A6C5DD9A1C1D378200A7DB9D /* RateView.m in Sources */,
+				A6C5DDA71C1DAA0F00A7DB9D /* ShowmoreCell.swift in Sources */,
+				A6C5DD961C1D2D4F00A7DB9D /* FilterViewController.swift in Sources */,
+				A6C5DD9F1C1D44B400A7DB9D /* ServiceDetailNameCell.swift in Sources */,
 				A69BDDDB1C181714005CA6C6 /* SwiftySideMenuViewController.m in Sources */,
+				A6C5DD9C1C1D420A00A7DB9D /* RepairServiceViewController.swift in Sources */,
 				A69BDDE51C182802005CA6C6 /* OptionsTableViewController.swift in Sources */,
+				A6C5DDA31C1DA4DC00A7DB9D /* QuotesTableViewCell.swift in Sources */,
 				CE13954C1C1087D100A67657 /* ViewController.swift in Sources */,
 				CE13954A1C1087D100A67657 /* AppDelegate.swift in Sources */,
 				A69BDDE11C181D0B005CA6C6 /* TimelineViewController.swift in Sources */,
+				A6C5DDAB1C1DAE5200A7DB9D /* ReviewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
