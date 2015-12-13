@@ -13,27 +13,25 @@ Users will use XEEM to book bike/car repair service when their bike/car were bro
 
 [] Users can leave review about the service after using 
 
-[] Service owners can log in and upload service quotes
+[] Users can track their maintainance history in a dashboard and get reminder for maintainance service
 
-[] Service owners can receive the request from the users
-
-[] Service owners can show promotions signs on the map 
 
 * Optionals
-
-[] Users can track their maintainance history in a dashboard and get reminder for maintainance service
+[] Users can see a map of repair service shop, gas stations and spare parts shops.
 
 [] Users can save the favorite list of the service shops
 
 [] Users can share their service experiences on social network (Facebook, Twitter, Instagram,..)
 
 [] Users can hashtag/tag the owners in their reviews
-
-[] Service owners can search reviews of users about their service and 
- reply on those reviews
  
 [] Users can pay by credit card
 
-[] Users can get direction to the service shop
 
-MOCKUP link: https://www.dropbox.com/s/68tvpryvvjg5ulx/XEEM%20MOCKUP.zip?dl=0
+
+MOCKUP link: https://www.dropbox.com/s/pmmfrpy6o3a00e4/XEEM%20User%20App%20Mockup.png?dl=0
+Schema link: https://www.dropbox.com/s/e4mm9nimlv7y42d/XEEM-schema-1.1.jpg?dl=0
+
+Walkthrough as follow:
+![Video Walkthrough](XEEM 1.gif)
+
