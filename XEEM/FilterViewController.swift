@@ -39,7 +39,22 @@ class FilterViewController: UIViewController, UITableViewDelegate, UITableViewDa
     // MARK - TableViewDelegate
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let filterCell : FilterCell = tableView.dequeueReusableCellWithIdentifier(cellFilterIndenfiter, forIndexPath: indexPath) as! FilterCell
+        let filterCell : FilterCell = tableView.dequeueReusableCellWithIdentifier(cellFilterIndenfiter,
+            forIndexPath: indexPath) as! FilterCell
+        
+        if indexPath.section == 1 {
+            if indexPath.row == 0 {
+                filterCell.titleLabel.text = "Repair Service"
+            } else if indexPath.row == 1 {
+                filterCell.titleLabel.text = "Gas station"
+            } else if indexPath.row == 2 {
+                filterCell.titleLabel.text = "Spare Parts shops"
+            }
+            
+            filterCell.imageFilter.image = UIImage(named: "bicycle")
+            
+            return filterCell
+        }
         filterCell.imageFilter.image = UIImage(named: "bicycle")
         filterCell.titleLabel.text = "Bike"
         return filterCell

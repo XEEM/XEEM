@@ -48,6 +48,9 @@
 		CE13954F1C1087D100A67657 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE13954D1C1087D100A67657 /* Main.storyboard */; };
 		CE1395511C1087D100A67657 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE1395501C1087D100A67657 /* Assets.xcassets */; };
 		CE1395541C1087D100A67657 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE1395521C1087D100A67657 /* LaunchScreen.storyboard */; };
+		CE8C133C1C1DC15C00D1AA09 /* XEEMViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8C13391C1DC15C00D1AA09 /* XEEMViewController.swift */; };
+		CE8C133D1C1DC15C00D1AA09 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8C133A1C1DC15C00D1AA09 /* RegisterViewController.swift */; };
+		CE8C133E1C1DC15C00D1AA09 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8C133B1C1DC15C00D1AA09 /* ForgotPasswordViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -99,6 +102,9 @@
 		CE1395501C1087D100A67657 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE1395531C1087D100A67657 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE1395551C1087D100A67657 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CE8C13391C1DC15C00D1AA09 /* XEEMViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XEEMViewController.swift; sourceTree = "<group>"; };
+		CE8C133A1C1DC15C00D1AA09 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		CE8C133B1C1DC15C00D1AA09 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		DF46DDB94906979469AB52C5 /* Pods-XEEM.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XEEM.debug.xcconfig"; path = "Pods/Target Support Files/Pods-XEEM/Pods-XEEM.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -143,6 +149,7 @@
 		A627252B1C14A0D30005A204 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				CE8C13381C1DC15500D1AA09 /* Login */,
 				CE13954B1C1087D100A67657 /* ViewController.swift */,
 				A69BDDE01C181D0B005CA6C6 /* TimelineViewController.swift */,
 				A69BDDE41C182802005CA6C6 /* OptionsTableViewController.swift */,
@@ -313,6 +320,16 @@
 			path = XEEM;
 			sourceTree = "<group>";
 		};
+		CE8C13381C1DC15500D1AA09 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				CE8C13391C1DC15C00D1AA09 /* XEEMViewController.swift */,
+				CE8C133A1C1DC15C00D1AA09 /* RegisterViewController.swift */,
+				CE8C133B1C1DC15C00D1AA09 /* ForgotPasswordViewController.swift */,
+			);
+			name = Login;
+			sourceTree = "<group>";
+		};
 		DB7FF4F532CAE535573F899B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -458,6 +475,7 @@
 				A6C5DD931C1D2B2F00A7DB9D /* FilterCell.swift in Sources */,
 				71F4A2F11C1BFBF7008BF810 /* TransportationCell.swift in Sources */,
 				71F4A3021C1C959C008BF810 /* MKLayer.swift in Sources */,
+				CE8C133C1C1DC15C00D1AA09 /* XEEMViewController.swift in Sources */,
 				A69BDDDC1C181714005CA6C6 /* UIViewController+SwiftySideMenu.m in Sources */,
 				A6C5DD9A1C1D378200A7DB9D /* RateView.m in Sources */,
 				A6C5DDA71C1DAA0F00A7DB9D /* ShowmoreCell.swift in Sources */,
@@ -468,10 +486,12 @@
 				71F4A2F31C1C18B8008BF810 /* TransportationDetailControllerViewController.swift in Sources */,
 				710262821C1D4B4C0009724D /* NewTransportationViewController.swift in Sources */,
 				71F4A2FA1C1C3947008BF810 /* HistoryDetailControler.swift in Sources */,
+				CE8C133E1C1DC15C00D1AA09 /* ForgotPasswordViewController.swift in Sources */,
 				A69BDDE51C182802005CA6C6 /* OptionsTableViewController.swift in Sources */,
 				A6C5DDA31C1DA4DC00A7DB9D /* QuotesTableViewCell.swift in Sources */,
 				CE13954C1C1087D100A67657 /* ViewController.swift in Sources */,
 				7111A5201C1BC55100FA17A5 /* ProfileViewController.swift in Sources */,
+				CE8C133D1C1DC15C00D1AA09 /* RegisterViewController.swift in Sources */,
 				CE13954A1C1087D100A67657 /* AppDelegate.swift in Sources */,
 				71F4A3061C1C9B96008BF810 /* EditProfileViewController.swift in Sources */,
 				71F4A3001C1C9552008BF810 /* MKTextField.swift in Sources */,
