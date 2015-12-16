@@ -96,7 +96,7 @@ class RepairServiceViewController: UIViewController, UITableViewDelegate, UITabl
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         if indexPath.section == 0 {
-            return 70
+            return 90
         } else if indexPath.section == 1 {
             return 50
         }

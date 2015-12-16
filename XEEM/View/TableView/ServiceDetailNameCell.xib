@@ -39,11 +39,15 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CRj-IR-JEe" customClass="RateView">
-                        <rect key="frame" x="91" y="48" width="131" height="21"/>
+                        <rect key="frame" x="91" y="49.5" width="100" height="19.5"/>
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="19.5" id="V8E-Xi-p18"/>
+                            <constraint firstAttribute="width" constant="100" id="uWz-B8-jbv"/>
+                        </constraints>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1047 Reviews" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b9s-Gk-vNM">
-                        <rect key="frame" x="234.5" y="54.5" width="77.5" height="14.5"/>
+                        <rect key="frame" x="203.5" y="54.5" width="108.5" height="14.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
@@ -58,9 +62,9 @@
                     <constraint firstItem="UZe-vt-DFx" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="RPq-wa-PqM"/>
                     <constraint firstItem="J3O-5Z-krm" firstAttribute="top" secondItem="bWV-bN-Uu3" secondAttribute="bottom" constant="-2.5" id="SlL-ra-Nyc"/>
                     <constraint firstItem="UZe-vt-DFx" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="4" id="T9m-zK-q3s"/>
-                    <constraint firstItem="CRj-IR-JEe" firstAttribute="top" secondItem="J3O-5Z-krm" secondAttribute="bottom" constant="7.5" id="UAX-l0-nDe"/>
+                    <constraint firstItem="CRj-IR-JEe" firstAttribute="top" secondItem="J3O-5Z-krm" secondAttribute="bottom" constant="9" id="UAX-l0-nDe"/>
                     <constraint firstItem="bWV-bN-Uu3" firstAttribute="leading" secondItem="UZe-vt-DFx" secondAttribute="trailing" constant="15.5" id="UeQ-Hg-z75"/>
-                    <constraint firstAttribute="bottom" secondItem="CRj-IR-JEe" secondAttribute="bottom" constant="6.5" id="ZCE-Sf-MJc"/>
+                    <constraint firstAttribute="bottom" secondItem="CRj-IR-JEe" secondAttribute="bottom" constant="7" id="ZCE-Sf-MJc"/>
                     <constraint firstItem="J3O-5Z-krm" firstAttribute="leading" secondItem="UZe-vt-DFx" secondAttribute="trailing" constant="15.5" id="b8R-qK-hAh"/>
                     <constraint firstItem="oYB-Jb-dAn" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="4" id="flk-iQ-vMZ"/>
                     <constraint firstItem="b9s-Gk-vNM" firstAttribute="leading" secondItem="CRj-IR-JEe" secondAttribute="trailing" constant="12.5" id="oPO-Zy-WGt"/>
