@@ -10,6 +10,7 @@
 		710262821C1D4B4C0009724D /* NewTransportationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 710262811C1D4B4C0009724D /* NewTransportationViewController.swift */; };
 		7111A51E1C1BC33600FA17A5 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7111A51D1C1BC33600FA17A5 /* Profile.storyboard */; };
 		7111A5201C1BC55100FA17A5 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7111A51F1C1BC55100FA17A5 /* ProfileViewController.swift */; };
+		7173FB571C215CE700C1DD3A /* ColorUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7173FB561C215CE600C1DD3A /* ColorUtils.swift */; };
 		71F4A2EF1C1BF8F0008BF810 /* Transportation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F4A2EE1C1BF8F0008BF810 /* Transportation.swift */; };
 		71F4A2F11C1BFBF7008BF810 /* TransportationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F4A2F01C1BFBF7008BF810 /* TransportationCell.swift */; };
 		71F4A2F31C1C18B8008BF810 /* TransportationDetailControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F4A2F21C1C18B8008BF810 /* TransportationDetailControllerViewController.swift */; };
@@ -57,6 +58,7 @@
 		710262811C1D4B4C0009724D /* NewTransportationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewTransportationViewController.swift; sourceTree = "<group>"; };
 		7111A51D1C1BC33600FA17A5 /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		7111A51F1C1BC55100FA17A5 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		7173FB561C215CE600C1DD3A /* ColorUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorUtils.swift; sourceTree = "<group>"; };
 		71F4A2EE1C1BF8F0008BF810 /* Transportation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Transportation.swift; sourceTree = "<group>"; };
 		71F4A2F01C1BFBF7008BF810 /* TransportationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransportationCell.swift; sourceTree = "<group>"; };
 		71F4A2F21C1C18B8008BF810 /* TransportationDetailControllerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransportationDetailControllerViewController.swift; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				71F4A2FC1C1C3D64008BF810 /* UIVViewController-SLPopup.swift */,
+				7173FB561C215CE600C1DD3A /* ColorUtils.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -373,7 +376,7 @@
 				TargetAttributes = {
 					CE1395451C1087D100A67657 = {
 						CreatedOnToolsVersion = 7.1.1;
-						DevelopmentTeam = TRANX68JZQ;
+						DevelopmentTeam = 9898326J2T;
 					};
 				};
 			};
@@ -493,6 +496,7 @@
 				7111A5201C1BC55100FA17A5 /* ProfileViewController.swift in Sources */,
 				CE8C133D1C1DC15C00D1AA09 /* RegisterViewController.swift in Sources */,
 				CE13954A1C1087D100A67657 /* AppDelegate.swift in Sources */,
+				7173FB571C215CE700C1DD3A /* ColorUtils.swift in Sources */,
 				71F4A3061C1C9B96008BF810 /* EditProfileViewController.swift in Sources */,
 				71F4A3001C1C9552008BF810 /* MKTextField.swift in Sources */,
 				71F4A2FD1C1C3D65008BF810 /* UIVViewController-SLPopup.swift in Sources */,
@@ -613,10 +617,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = XEEM/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.JadeLe.XEEM;
+				PRODUCT_BUNDLE_IDENTIFIER = com.xeem;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "XEEM/XEEM-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -629,10 +634,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = XEEM/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.JadeLe.XEEM;
+				PRODUCT_BUNDLE_IDENTIFIER = com.xeem;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "XEEM/XEEM-Bridging-Header.h";
 			};
