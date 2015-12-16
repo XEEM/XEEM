@@ -17,6 +17,10 @@ class EditProfileViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.automaticallyAdjustsScrollViewInsets = false
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        navigationController?.navigationBar.barTintColor = ColorUtils.UIColorFromRGB("ffffff");
         avatarImageView.setImageWithURL(NSURL(string: "http://a5.files.biography.com/image/upload/c_fit,cs_srgb,dpr_1.0,h_1200,q_80,w_1200/MTE5NDg0MDU0NTIzODQwMDE1.jpg")!);
         avatarImageView.layer.cornerRadius = avatarImageView.frame.size.width / 2;
         avatarImageView.clipsToBounds = true;
@@ -28,7 +32,7 @@ class EditProfileViewController: UIViewController {
     func setupTextField() -> () {
         addressTextField.layer.borderColor = UIColor.clearColor().CGColor
         addressTextField.floatingPlaceholderEnabled = true
-        addressTextField.tintColor = UIColor.MKColor.Blue
+        addressTextField.tintColor = UIColor.MKColor.AppMainColor
         addressTextField.rippleLocation = .Right
         addressTextField.cornerRadius = 0
         addressTextField.bottomBorderEnabled = true
@@ -36,7 +40,7 @@ class EditProfileViewController: UIViewController {
 
         phoneTextField.layer.borderColor = UIColor.clearColor().CGColor
         phoneTextField.floatingPlaceholderEnabled = true
-        phoneTextField.tintColor = UIColor.MKColor.Blue
+        phoneTextField.tintColor = UIColor.MKColor.AppMainColor
         phoneTextField.rippleLocation = .Right
         phoneTextField.cornerRadius = 0
         phoneTextField.bottomBorderEnabled = true
@@ -44,7 +48,7 @@ class EditProfileViewController: UIViewController {
         
         nameTextField.layer.borderColor = UIColor.clearColor().CGColor
         nameTextField.floatingPlaceholderEnabled = true
-        nameTextField.tintColor = UIColor.MKColor.Blue
+        nameTextField.tintColor = UIColor.MKColor.AppMainColor
         nameTextField.rippleLocation = .Right
         nameTextField.cornerRadius = 0
         nameTextField.bottomBorderEnabled = true

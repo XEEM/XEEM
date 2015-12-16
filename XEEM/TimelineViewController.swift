@@ -8,9 +8,10 @@
 
 import UIKit
 import MapKit
+import CoreLocation
 
-class TimelineViewController: UIViewController, MKMapViewDelegate {
-
+class TimelineViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
+    let locationManager = CLLocationManager()
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var viewRequestService: UIView!
     @IBOutlet weak var imageService: UIImageView!
