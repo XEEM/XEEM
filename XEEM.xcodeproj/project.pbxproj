@@ -10,14 +10,17 @@
 		710262821C1D4B4C0009724D /* NewTransportationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 710262811C1D4B4C0009724D /* NewTransportationViewController.swift */; };
 		7111A51E1C1BC33600FA17A5 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7111A51D1C1BC33600FA17A5 /* Profile.storyboard */; };
 		7111A5201C1BC55100FA17A5 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7111A51F1C1BC55100FA17A5 /* ProfileViewController.swift */; };
+		7115C4191C21A0CA0029ACB6 /* UIVViewController-SLPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7115C4181C21A0CA0029ACB6 /* UIVViewController-SLPopup.swift */; };
+		71437D311C225333003B3AE1 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71437D301C225333003B3AE1 /* User.swift */; };
+		71437D331C225BB1003B3AE1 /* XEEMService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71437D321C225BB1003B3AE1 /* XEEMService.swift */; };
 		7173FB571C215CE700C1DD3A /* ColorUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7173FB561C215CE600C1DD3A /* ColorUtils.swift */; };
+		7173FB591C2180BC00C1DD3A /* UIUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7173FB581C2180BC00C1DD3A /* UIUtils.swift */; };
 		71F4A2EF1C1BF8F0008BF810 /* Transportation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F4A2EE1C1BF8F0008BF810 /* Transportation.swift */; };
 		71F4A2F11C1BFBF7008BF810 /* TransportationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F4A2F01C1BFBF7008BF810 /* TransportationCell.swift */; };
 		71F4A2F31C1C18B8008BF810 /* TransportationDetailControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F4A2F21C1C18B8008BF810 /* TransportationDetailControllerViewController.swift */; };
 		71F4A2F51C1C197F008BF810 /* HistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F4A2F41C1C197F008BF810 /* HistoryCell.swift */; };
 		71F4A2F81C1C2E4F008BF810 /* HistoryDetailPopup.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71F4A2F71C1C2E4F008BF810 /* HistoryDetailPopup.xib */; };
 		71F4A2FA1C1C3947008BF810 /* HistoryDetailControler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F4A2F91C1C3947008BF810 /* HistoryDetailControler.swift */; };
-		71F4A2FD1C1C3D65008BF810 /* UIVViewController-SLPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F4A2FC1C1C3D64008BF810 /* UIVViewController-SLPopup.swift */; };
 		71F4A3001C1C9552008BF810 /* MKTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F4A2FF1C1C9552008BF810 /* MKTextField.swift */; };
 		71F4A3021C1C959C008BF810 /* MKLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F4A3011C1C959C008BF810 /* MKLayer.swift */; };
 		71F4A3041C1C95BB008BF810 /* MKColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F4A3031C1C95BB008BF810 /* MKColor.swift */; };
@@ -58,14 +61,17 @@
 		710262811C1D4B4C0009724D /* NewTransportationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewTransportationViewController.swift; sourceTree = "<group>"; };
 		7111A51D1C1BC33600FA17A5 /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		7111A51F1C1BC55100FA17A5 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		7115C4181C21A0CA0029ACB6 /* UIVViewController-SLPopup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIVViewController-SLPopup.swift"; sourceTree = "<group>"; };
+		71437D301C225333003B3AE1 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		71437D321C225BB1003B3AE1 /* XEEMService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XEEMService.swift; sourceTree = "<group>"; };
 		7173FB561C215CE600C1DD3A /* ColorUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorUtils.swift; sourceTree = "<group>"; };
+		7173FB581C2180BC00C1DD3A /* UIUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIUtils.swift; sourceTree = "<group>"; };
 		71F4A2EE1C1BF8F0008BF810 /* Transportation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Transportation.swift; sourceTree = "<group>"; };
 		71F4A2F01C1BFBF7008BF810 /* TransportationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransportationCell.swift; sourceTree = "<group>"; };
 		71F4A2F21C1C18B8008BF810 /* TransportationDetailControllerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransportationDetailControllerViewController.swift; sourceTree = "<group>"; };
 		71F4A2F41C1C197F008BF810 /* HistoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryCell.swift; sourceTree = "<group>"; };
 		71F4A2F71C1C2E4F008BF810 /* HistoryDetailPopup.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HistoryDetailPopup.xib; sourceTree = "<group>"; };
 		71F4A2F91C1C3947008BF810 /* HistoryDetailControler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryDetailControler.swift; sourceTree = "<group>"; };
-		71F4A2FC1C1C3D64008BF810 /* UIVViewController-SLPopup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIVViewController-SLPopup.swift"; sourceTree = "<group>"; };
 		71F4A2FF1C1C9552008BF810 /* MKTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKTextField.swift; sourceTree = "<group>"; };
 		71F4A3011C1C959C008BF810 /* MKLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKLayer.swift; sourceTree = "<group>"; };
 		71F4A3031C1C95BB008BF810 /* MKColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKColor.swift; sourceTree = "<group>"; };
@@ -133,8 +139,9 @@
 		71F4A2FB1C1C3D53008BF810 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				71F4A2FC1C1C3D64008BF810 /* UIVViewController-SLPopup.swift */,
+				7115C4181C21A0CA0029ACB6 /* UIVViewController-SLPopup.swift */,
 				7173FB561C215CE600C1DD3A /* ColorUtils.swift */,
+				7173FB581C2180BC00C1DD3A /* UIUtils.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -181,6 +188,7 @@
 			isa = PBXGroup;
 			children = (
 				71F4A2EE1C1BF8F0008BF810 /* Transportation.swift */,
+				71437D301C225333003B3AE1 /* User.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -188,6 +196,7 @@
 		A627252E1C14A0E60005A204 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				71437D321C225BB1003B3AE1 /* XEEMService.swift */,
 			);
 			name = Service;
 			sourceTree = "<group>";
@@ -479,6 +488,7 @@
 				71F4A2F11C1BFBF7008BF810 /* TransportationCell.swift in Sources */,
 				71F4A3021C1C959C008BF810 /* MKLayer.swift in Sources */,
 				CE8C133C1C1DC15C00D1AA09 /* XEEMViewController.swift in Sources */,
+				71437D311C225333003B3AE1 /* User.swift in Sources */,
 				A69BDDDC1C181714005CA6C6 /* UIViewController+SwiftySideMenu.m in Sources */,
 				A6C5DD9A1C1D378200A7DB9D /* RateView.m in Sources */,
 				A6C5DDA71C1DAA0F00A7DB9D /* ShowmoreCell.swift in Sources */,
@@ -499,8 +509,10 @@
 				7173FB571C215CE700C1DD3A /* ColorUtils.swift in Sources */,
 				71F4A3061C1C9B96008BF810 /* EditProfileViewController.swift in Sources */,
 				71F4A3001C1C9552008BF810 /* MKTextField.swift in Sources */,
-				71F4A2FD1C1C3D65008BF810 /* UIVViewController-SLPopup.swift in Sources */,
+				7173FB591C2180BC00C1DD3A /* UIUtils.swift in Sources */,
 				A69BDDE11C181D0B005CA6C6 /* TimelineViewController.swift in Sources */,
+				7115C4191C21A0CA0029ACB6 /* UIVViewController-SLPopup.swift in Sources */,
+				71437D331C225BB1003B3AE1 /* XEEMService.swift in Sources */,
 				A6C5DDAB1C1DAE5200A7DB9D /* ReviewCell.swift in Sources */,
 				71F4A2EF1C1BF8F0008BF810 /* Transportation.swift in Sources */,
 				71F4A2F51C1C197F008BF810 /* HistoryCell.swift in Sources */,

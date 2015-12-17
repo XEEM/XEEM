@@ -17,20 +17,27 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var avatarImage: UIImageView!
     @IBOutlet weak var tableView: UITableView!
+    var currentUser: User!
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Profile"
-        transportationList.append(Transportation())
-        transportationList.append(Transportation())
+        currentUser = User.currentUser
+        setInfo()
+        //transportationList.append(Transportation())
+        //transportationList.append(Transportation())
         tableView.dataSource = self
         tableView.delegate = self
-        setInfo()
-        self.avatarImage.layer.cornerRadius = self.avatarImage.frame.size.width / 2;
-        self.avatarImage.clipsToBounds = true;
+        
     }
 
     func setInfo() -> () {
-        avatarImage.setImageWithURL(NSURL(string: "http://a5.files.biography.com/image/upload/c_fit,cs_srgb,dpr_1.0,h_1200,q_80,w_1200/MTE5NDg0MDU0NTIzODQwMDE1.jpg")!);
+        nameLabel.text = currentUser.fullName
+        addressLabel.text = currentUser.address
+        phoneLabel.text = currentUser.phone
+        avatarImage.setImageWithURL(currentUser.avatarURL!);
+        self.avatarImage.layer.cornerRadius = self.avatarImage.frame.size.width / 2;
+        self.avatarImage.clipsToBounds = true;
+        transportationList = currentUser.transList ?? [Transportation]()
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

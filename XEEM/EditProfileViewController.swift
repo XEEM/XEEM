@@ -8,7 +8,7 @@
 
 import UIKit
 
-class EditProfileViewController: UIViewController {
+class EditProfileViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     @IBOutlet weak var addressTextField: MKTextField!
     @IBOutlet weak var phoneTextField: MKTextField!
@@ -53,6 +53,21 @@ class EditProfileViewController: UIViewController {
         nameTextField.cornerRadius = 0
         nameTextField.bottomBorderEnabled = true
         nameTextField.text = "Denns"
+    }
+    
+    
+    @IBAction func onAvatarTapped(sender: UITapGestureRecognizer) {
+        print("Change avatar")
+        let photoPicker = UIImagePickerController()
+        photoPicker.delegate = self
+        photoPicker.sourceType = .PhotoLibrary
+        self.presentViewController(photoPicker, animated: true, completion: nil)
+    }
+    
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+        avatarImageView.image = info[UIImagePickerControllerOriginalImage] as? UIImage
+        UIUtils.setRoundImageView(avatarImageView)
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
     
     override func didReceiveMemoryWarning() {

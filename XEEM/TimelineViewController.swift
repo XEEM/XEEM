@@ -19,11 +19,11 @@ class TimelineViewController: UIViewController, MKMapViewDelegate, CLLocationMan
     @IBOutlet weak var rateView: RateView!
     @IBOutlet weak var fromLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
-    
+    var currentUser : User!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("Hello")
+        getProfile()
         self.swiftySideMenu?.enableRightSwipeGesture = false
         
         // dummy service view
@@ -76,6 +76,16 @@ class TimelineViewController: UIViewController, MKMapViewDelegate, CLLocationMan
     @IBAction func toggleSideMenu(sender: AnyObject) {
         self.swiftySideMenu?.toggleSideMenu()
         
+    }
+    
+    func getProfile() {
+        XEEMService.sharedInstance.getUserProfile(nil) { (user, error) -> () in
+            print(user)
+            if let user = user {
+                print("saved data")
+                User.currentUser = user
+            }
+        }
     }
     
     // MARK - ViewService Click
