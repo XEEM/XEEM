@@ -9,7 +9,7 @@
 import Foundation
 
 var _currentUser: User?
-let USER_KEY = "USER_KEY"
+let USER_KEY = "CURRENT_USER"
 
 class User: NSObject {
     var id: String?
