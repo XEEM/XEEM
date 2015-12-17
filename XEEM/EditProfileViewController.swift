@@ -14,6 +14,7 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
     @IBOutlet weak var phoneTextField: MKTextField!
     @IBOutlet weak var nameTextField: MKTextField!
     @IBOutlet weak var avatarImageView: UIImageView!
+    var currentUser: User!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,43 +22,22 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
         navigationController?.navigationBar.barTintColor = ColorUtils.UIColorFromRGB("ffffff");
-        avatarImageView.setImageWithURL(NSURL(string: "http://a5.files.biography.com/image/upload/c_fit,cs_srgb,dpr_1.0,h_1200,q_80,w_1200/MTE5NDg0MDU0NTIzODQwMDE1.jpg")!);
-        avatarImageView.layer.cornerRadius = avatarImageView.frame.size.width / 2;
-        avatarImageView.clipsToBounds = true;
-        setupTextField()
-        
-        // Do any additional setup after loading the view.
+        currentUser = User.currentUser
+        setInfo()
     }
 
-    func setupTextField() -> () {
-        addressTextField.layer.borderColor = UIColor.clearColor().CGColor
-        addressTextField.floatingPlaceholderEnabled = true
-        addressTextField.tintColor = UIColor.MKColor.AppMainColor
-        addressTextField.rippleLocation = .Right
-        addressTextField.cornerRadius = 0
-        addressTextField.bottomBorderEnabled = true
-        addressTextField.text = "Ho Chi Minh city - Vietnam"
-
-        phoneTextField.layer.borderColor = UIColor.clearColor().CGColor
-        phoneTextField.floatingPlaceholderEnabled = true
-        phoneTextField.tintColor = UIColor.MKColor.AppMainColor
-        phoneTextField.rippleLocation = .Right
-        phoneTextField.cornerRadius = 0
-        phoneTextField.bottomBorderEnabled = true
-        phoneTextField.text = "0909090900"
-        
-        nameTextField.layer.borderColor = UIColor.clearColor().CGColor
-        nameTextField.floatingPlaceholderEnabled = true
-        nameTextField.tintColor = UIColor.MKColor.AppMainColor
-        nameTextField.rippleLocation = .Right
-        nameTextField.cornerRadius = 0
-        nameTextField.bottomBorderEnabled = true
-        nameTextField.text = "Denns"
+    func setInfo() -> () {
+        addressTextField.text = currentUser.address
+        nameTextField.text = currentUser.fullName
+        phoneTextField.text = currentUser.phone
+        avatarImageView.setImageWithURL(currentUser.avatarURL!)
+        UIUtils.setRoundImageView(avatarImageView)
+        UIUtils.setupMaterialTextField(nameTextField)
+        UIUtils.setupMaterialTextField(phoneTextField)
+        UIUtils.setupMaterialTextField(addressTextField)
     }
-    
     
     @IBAction func onAvatarTapped(sender: UITapGestureRecognizer) {
-        print("Change avatar")
         let photoPicker = UIImagePickerController()
         photoPicker.delegate = self
         photoPicker.sourceType = .PhotoLibrary

@@ -37,6 +37,7 @@ class User: NSObject {
         transList = Transportation.TransWithArray(dictionary["Transporations"] as! [NSDictionary])
     }
     
+    // Save curent user
     class var currentUser: User? {
         get {
         if _currentUser == nil {

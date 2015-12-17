@@ -337,10 +337,14 @@
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_add_image" translatesAutoresizingMaskIntoConstraints="NO" id="mvh-VR-Oeo">
                                                 <rect key="frame" x="110" y="16" width="100" height="100"/>
+                                                <gestureRecognizers/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="100" id="GSF-wV-gpL"/>
                                                     <constraint firstAttribute="height" constant="100" id="z4s-WY-6Q8"/>
                                                 </constraints>
+                                                <connections>
+                                                    <outletCollection property="gestureRecognizers" destination="aDB-sq-0FJ" appends="YES" id="poZ-cd-N5K"/>
+                                                </connections>
                                             </imageView>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Transportation Type" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1a6-JS-pIO" customClass="MKTextField" customModule="XEEM">
                                                 <rect key="frame" x="16" y="132" width="288" height="40"/>
@@ -487,6 +491,11 @@
                         <action selector="onTapOutside:" destination="6dK-fL-bcu" id="rsM-cp-mpQ"/>
                     </connections>
                 </tapGestureRecognizer>
+                <tapGestureRecognizer id="aDB-sq-0FJ">
+                    <connections>
+                        <action selector="onChangeImageTapper:" destination="6dK-fL-bcu" id="oNG-LO-X6A"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="602" y="840"/>
         </scene>
@@ -527,7 +536,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
                                             </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Fullname" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HeU-6K-DNR" customClass="MKTextField" customModule="XEEM">
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Fullname" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="HeU-6K-DNR" customClass="MKTextField" customModule="XEEM">
                                                 <rect key="frame" x="16" y="132" width="288" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="e1V-IA-Xjj"/>
