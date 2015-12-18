@@ -41,7 +41,7 @@ class XEEMService {
                 print("LOGIN SUCCESSFULL",token)
                 completion(token: token as? String,error: nil)
             } else {
-                print("LOGIN ERROR")
+                print("LOGIN ERROR",error)
                 completion(token: nil,error: error)
             }
         }

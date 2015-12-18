@@ -21,6 +21,10 @@ class ProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Profile"
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
+        navigationController?.navigationBar.shadowImage = UIImage()
+        navigationController?.navigationBar.barTintColor = ColorUtils.UIColorFromRGB("ffffff");
+        self.automaticallyAdjustsScrollViewInsets = false
         currentUser = User.currentUser
         setInfo()
         //transportationList.append(Transportation())
@@ -65,5 +69,10 @@ extension ProfileViewController: UITableViewDataSource,UITableViewDelegate {
             cell.thumbnailImageView.setImageWithURL(NSURL(string: "http://www.toyotahungvuongsg.com/uploads/8/9/2/4/8924026/6117979_orig.jpeg")!)
             return cell
         }
+    }
+
+    @available(iOS 2.0, *)
+    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "TRANSPORTATION LIST"
     }
 }
