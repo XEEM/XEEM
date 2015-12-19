@@ -9,13 +9,23 @@
 import Foundation
 
 class Transportation: NSObject {
-    var type : Int!
-    var id : Int!
+    var type : String!
+    var id : String!
     var name : String!
+    var dictionary: NSDictionary
     
-    override init() {
-        type = 1;
-        id = 1;
-        name = "Toyota"
+    init(dictionary : NSDictionary) {
+        self.dictionary = dictionary
+        id = dictionary["Id"] as? String
+        name = dictionary["Name"] as? String
+        type = dictionary["Type"] as? String
+    }
+    
+    class func TransWithArray(array: [NSDictionary]) -> [Transportation] {
+        var trans = [Transportation]()
+        for dict in array {
+            trans.append(Transportation(dictionary: dict))
+        }
+        return trans
     }
 }

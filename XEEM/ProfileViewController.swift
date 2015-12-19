@@ -17,20 +17,31 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var avatarImage: UIImageView!
     @IBOutlet weak var tableView: UITableView!
+    var currentUser: User!
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Profile"
-        transportationList.append(Transportation())
-        transportationList.append(Transportation())
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
+        navigationController?.navigationBar.shadowImage = UIImage()
+        navigationController?.navigationBar.barTintColor = ColorUtils.UIColorFromRGB("ffffff");
+        self.automaticallyAdjustsScrollViewInsets = false
+        currentUser = User.currentUser
+        setInfo()
+        //transportationList.append(Transportation())
+        //transportationList.append(Transportation())
         tableView.dataSource = self
         tableView.delegate = self
-        setInfo()
-        self.avatarImage.layer.cornerRadius = self.avatarImage.frame.size.width / 2;
-        self.avatarImage.clipsToBounds = true;
+        
     }
 
     func setInfo() -> () {
-        avatarImage.setImageWithURL(NSURL(string: "http://a5.files.biography.com/image/upload/c_fit,cs_srgb,dpr_1.0,h_1200,q_80,w_1200/MTE5NDg0MDU0NTIzODQwMDE1.jpg")!);
+        nameLabel.text = currentUser.fullName
+        addressLabel.text = currentUser.address
+        phoneLabel.text = currentUser.phone
+        avatarImage.setImageWithURL(currentUser.avatarURL!);
+        self.avatarImage.layer.cornerRadius = self.avatarImage.frame.size.width / 2;
+        self.avatarImage.clipsToBounds = true;
+        transportationList = currentUser.transList ?? [Transportation]()
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -58,5 +69,10 @@ extension ProfileViewController: UITableViewDataSource,UITableViewDelegate {
             cell.thumbnailImageView.setImageWithURL(NSURL(string: "http://www.toyotahungvuongsg.com/uploads/8/9/2/4/8924026/6117979_orig.jpeg")!)
             return cell
         }
+    }
+
+    @available(iOS 2.0, *)
+    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "TRANSPORTATION LIST"
     }
 }

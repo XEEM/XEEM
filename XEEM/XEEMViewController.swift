@@ -28,31 +28,49 @@ class XEEMViewController: UIViewController {
     }
     
     @IBAction func signIn(sender: UIButton) {
-        
-        
-        // Dummy Login
-        let storyboard = UIStoryboard(name: "User", bundle: nil)
-        let rootVC =  storyboard.instantiateViewControllerWithIdentifier("SwiftySideMenuViewController") as! SwiftySideMenuViewController
-
-        let centerVC = storyboard.instantiateViewControllerWithIdentifier("CenterUser");
-
-        let leftVC = storyboard.instantiateViewControllerWithIdentifier("LeftUser");
-        rootVC.enableLeftSwipeGesture = false
-        rootVC.enableRightSwipeGesture = false
-
-        rootVC.centerViewController = centerVC
-        rootVC.leftViewController = leftVC
-        rootVC.centerEndScale = 0.8
-        rootVC.leftSpringAnimationSpeed = 20
-        
-        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        
-        appDelegate.window = UIWindow(frame: UIScreen.mainScreen().bounds)
-        appDelegate.window?.rootViewController = rootVC
-        appDelegate.window?.makeKeyAndVisible()
+        doLogin()
     }
     
     
+    func doLogin() -> () {
+        XEEMService.sharedInstance.login(nil, passwd:
+            nil) { (token, error) -> () in
+                if let token = token {
+                    XEEMService.sharedInstance.getUserProfile(token) { (user, error) -> () in
+                        print(user)
+                        if let user = user {
+                            User.currentUser = user
+                            
+                            // Dummy Login
+                            let storyboard = UIStoryboard(name: "User", bundle: nil)
+                            let rootVC =  storyboard.instantiateViewControllerWithIdentifier("SwiftySideMenuViewController") as! SwiftySideMenuViewController
+                            
+                            let centerVC = storyboard.instantiateViewControllerWithIdentifier("CenterUser");
+                            
+                            let leftVC = storyboard.instantiateViewControllerWithIdentifier("LeftUser");
+                            rootVC.enableLeftSwipeGesture = false
+                            rootVC.enableRightSwipeGesture = false
+                            
+                            rootVC.centerViewController = centerVC
+                            rootVC.leftViewController = leftVC
+                            rootVC.centerEndScale = 0.8
+                            rootVC.leftSpringAnimationSpeed = 20
+                            
+                            let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+                            
+                            appDelegate.window = UIWindow(frame: UIScreen.mainScreen().bounds)
+                            appDelegate.window?.rootViewController = rootVC
+                            appDelegate.window?.makeKeyAndVisible()
+                            
+                        } else {
+                            // Error from get user data
+                        }
+                    }
+                } else {
+                    // Error from login
+                }
+        }
+    }
    
 
     /*

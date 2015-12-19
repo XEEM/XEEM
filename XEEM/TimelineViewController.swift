@@ -19,11 +19,11 @@ class TimelineViewController: UIViewController, MKMapViewDelegate, CLLocationMan
     @IBOutlet weak var rateView: RateView!
     @IBOutlet weak var fromLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
-    
+    var currentUser : User!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("Hello")
+        //getProfile()
         self.swiftySideMenu?.enableRightSwipeGesture = false
         
         // dummy service view

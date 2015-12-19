@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NewTransportationViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDelegate, UITextFieldDelegate {
+class NewTransportationViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDelegate, UITextFieldDelegate , UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     @IBOutlet weak var thumbnailImage: UIImageView!
     @IBOutlet weak var typeLabel: MKTextField!
     @IBOutlet weak var nameTextField: MKTextField!
@@ -56,27 +56,23 @@ class NewTransportationViewController: UIViewController,UIPickerViewDataSource,U
         return pickerData[row]
     }
 
+    @IBAction func onChangeImageTapper(sender: UITapGestureRecognizer) {
+        let photoPicker = UIImagePickerController()
+        photoPicker.delegate = self
+        photoPicker.sourceType = .PhotoLibrary
+        self.presentViewController(photoPicker, animated: true, completion: nil)
+    }
+    
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+        thumbnailImage.image = info[UIImagePickerControllerOriginalImage] as? UIImage
+        UIUtils.setRoundImageView(thumbnailImage)
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
     func setupTextField() -> () {
-        typeLabel.layer.borderColor = UIColor.clearColor().CGColor
-        typeLabel.floatingPlaceholderEnabled = true
-        typeLabel.tintColor = UIColor.MKColor.AppMainColor
-        typeLabel.rippleLocation = .Right
-        typeLabel.cornerRadius = 0
-        typeLabel.bottomBorderEnabled = true
-        
-        nameTextField.layer.borderColor = UIColor.clearColor().CGColor
-        nameTextField.floatingPlaceholderEnabled = true
-        nameTextField.tintColor = UIColor.MKColor.AppMainColor
-        nameTextField.rippleLocation = .Right
-        nameTextField.cornerRadius = 0
-        nameTextField.bottomBorderEnabled = true
-        
-        plateNumTextField.layer.borderColor = UIColor.clearColor().CGColor
-        plateNumTextField.floatingPlaceholderEnabled = true
-        plateNumTextField.tintColor = UIColor.MKColor.AppMainColor
-        plateNumTextField.rippleLocation = .Right
-        plateNumTextField.cornerRadius = 0
-        plateNumTextField.bottomBorderEnabled = true
+        UIUtils.setupMaterialTextField(typeLabel)
+        UIUtils.setupMaterialTextField(nameTextField)
+        UIUtils.setupMaterialTextField(plateNumTextField)
     }
     @IBAction func onTapOutside(sender: UITapGestureRecognizer) {
         self.view.endEditing(true)

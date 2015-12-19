@@ -12,7 +12,10 @@ class OptionsTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        // Align top for first item
+        let inset = UIEdgeInsetsMake(30, 0, 0, 0);
+        self.tableView.contentInset = inset;
+        self.tableView.tableFooterView = UIView()
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -34,12 +37,12 @@ class OptionsTableViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 4
+        return 3
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         switch indexPath.row {
-        case 1:
+        case 0:
             let storyboard = UIStoryboard(name: "Profile", bundle: nil)
             let rootVC = storyboard.instantiateViewControllerWithIdentifier("ProfileNavigationController") as! UINavigationController
             self.presentViewController(rootVC, animated: true , completion: nil)
@@ -105,5 +108,4 @@ class OptionsTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
 }
