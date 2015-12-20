@@ -12,6 +12,8 @@ class ForgotPasswordViewController: UIViewController {
     
     @IBOutlet weak var emailReset: UITextField!
 
+    @IBOutlet weak var resetBtn: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -25,6 +27,7 @@ class ForgotPasswordViewController: UIViewController {
     
 
     @IBAction func reset(sender: UIButton) {
+        
     }
     /*
     // MARK: - Navigation

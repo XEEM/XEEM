@@ -28,11 +28,17 @@
                                 <rect key="frame" x="39" y="295" width="522" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="onEditingChanged:" destination="McA-s4-OuM" eventType="editingChanged" id="gbS-ZP-2dH"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eVv-D5-VFB">
                                 <rect key="frame" x="39" y="333" width="522" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="onEditingChanged:" destination="McA-s4-OuM" eventType="editingChanged" id="rJo-uf-mnm"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a6i-Io-4LA">
                                 <rect key="frame" x="117" y="446" width="0.0" height="0.0"/>
@@ -92,6 +98,7 @@
                     <connections>
                         <outlet property="emailLabel" destination="MsS-nl-b2V" id="2Hf-cc-8ZU"/>
                         <outlet property="password" destination="eVv-D5-VFB" id="clu-wf-zsr"/>
+                        <outlet property="signInBtn" destination="oR3-K1-Cm8" id="cio-Gj-rnH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Iic-rU-74Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -189,41 +196,48 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TFC-vT-Sn1">
-                                <rect key="frame" x="25" y="165" width="551" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TFC-vT-Sn1">
+                                <rect key="frame" x="20" y="169" width="551" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xzn-Y1-cF8">
-                                <rect key="frame" x="119" y="499" width="80" height="30"/>
-                                <state key="normal" title="Reset Email"/>
-                                <connections>
-                                    <action selector="reset:" destination="e8Z-BR-puP" eventType="touchUpInside" id="jj5-Yj-39s"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Enter you email address and we'll send you a link to reset your password" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WLm-jT-bS5">
-                                <rect key="frame" x="10" y="92" width="581" height="54"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter you email address and we'll send you a link to reset your password" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WLm-jT-bS5">
+                                <rect key="frame" x="10" y="88" width="570" height="64"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ayx-to-f0D">
+                                <rect key="frame" x="249" y="449" width="102" height="30"/>
+                                <state key="normal" title="Reset "/>
+                                <connections>
+                                    <action selector="reset:" destination="e8Z-BR-puP" eventType="touchUpInside" id="lp8-tn-7cD"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="TFC-vT-Sn1" firstAttribute="centerX" secondItem="j7Y-UC-YCG" secondAttribute="centerX" id="4gV-ZP-asn"/>
-                            <constraint firstItem="Xzn-Y1-cF8" firstAttribute="centerX" secondItem="j7Y-UC-YCG" secondAttribute="centerX" id="Ccj-XD-EfF"/>
-                            <constraint firstItem="WLm-jT-bS5" firstAttribute="top" secondItem="h4a-U0-58w" secondAttribute="bottom" constant="28" id="D0Q-ZZ-aN5"/>
-                            <constraint firstItem="Xzn-Y1-cF8" firstAttribute="leading" secondItem="j7Y-UC-YCG" secondAttribute="leadingMargin" constant="94" id="R5q-8S-L1F"/>
-                            <constraint firstItem="HI1-4t-a29" firstAttribute="top" secondItem="Xzn-Y1-cF8" secondAttribute="bottom" constant="71" id="RSQ-VY-Tb5"/>
-                            <constraint firstItem="TFC-vT-Sn1" firstAttribute="leading" secondItem="j7Y-UC-YCG" secondAttribute="leading" constant="25" id="bNc-Kp-jZe"/>
+                            <constraint firstItem="TFC-vT-Sn1" firstAttribute="centerX" secondItem="WLm-jT-bS5" secondAttribute="centerX" id="0Hn-1p-K32"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="TFC-vT-Sn1" secondAttribute="trailing" constant="9" id="IHw-p3-0lM"/>
+                            <constraint firstItem="TFC-vT-Sn1" firstAttribute="top" secondItem="WLm-jT-bS5" secondAttribute="bottom" constant="17" id="To0-7E-0Zs"/>
+                            <constraint firstItem="WLm-jT-bS5" firstAttribute="top" secondItem="h4a-U0-58w" secondAttribute="bottom" constant="24" id="aQS-Ss-CO7"/>
                             <constraint firstItem="WLm-jT-bS5" firstAttribute="leading" secondItem="j7Y-UC-YCG" secondAttribute="leading" constant="10" id="cLm-gl-LUF"/>
-                            <constraint firstItem="TFC-vT-Sn1" firstAttribute="top" secondItem="WLm-jT-bS5" secondAttribute="bottom" constant="39" id="f8F-UY-nGn"/>
-                            <constraint firstItem="WLm-jT-bS5" firstAttribute="centerX" secondItem="j7Y-UC-YCG" secondAttribute="centerX" id="ot1-nX-g39"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="Ayx-to-f0D" secondAttribute="bottom" constant="121" id="hHi-zm-Lvi"/>
+                            <constraint firstItem="Ayx-to-f0D" firstAttribute="centerX" secondItem="j7Y-UC-YCG" secondAttribute="centerX" id="pbB-ZQ-WAp"/>
+                            <constraint firstItem="TFC-vT-Sn1" firstAttribute="top" secondItem="j7Y-UC-YCG" secondAttribute="top" constant="169" id="saM-bF-W6s"/>
+                            <constraint firstItem="TFC-vT-Sn1" firstAttribute="leading" secondItem="j7Y-UC-YCG" secondAttribute="leading" constant="20" id="uZZ-BG-6dC"/>
+                            <constraint firstItem="Ayx-to-f0D" firstAttribute="leading" secondItem="j7Y-UC-YCG" secondAttribute="leading" constant="249" id="yQd-Nn-v7R"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="yQd-Nn-v7R"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Forgot Password" id="frJ-Uj-J2x"/>
                     <connections>
                         <outlet property="emailReset" destination="TFC-vT-Sn1" id="utx-we-bfO"/>
+                        <outlet property="resetBtn" destination="Ayx-to-f0D" id="qyF-r3-Hch"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bXW-lp-v3E" userLabel="First Responder" sceneMemberID="firstResponder"/>

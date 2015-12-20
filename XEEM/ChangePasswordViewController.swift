@@ -10,6 +10,14 @@ import UIKit
 
 class ChangePasswordViewController: UIViewController {
 
+    @IBOutlet weak var currentPassword: UITextField!
+    
+    @IBOutlet weak var newPassword: UITextField!
+    
+    @IBOutlet weak var confirmPassword: UITextField!
+    
+    @IBOutlet weak var resetBtn: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

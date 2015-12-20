@@ -10,6 +10,18 @@ import UIKit
 
 class PaymentMethodViewController: UIViewController {
 
+    @IBOutlet weak var fullname: UITextField!
+    
+    @IBOutlet weak var cardNumber: UITextField!
+    
+    @IBOutlet weak var securityCode: UITextField!
+    
+    @IBOutlet weak var expiryDate: UITextField!
+    
+    @IBOutlet weak var expiryYear: UITextField!
+    
+    @IBOutlet weak var submitBtn: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -22,6 +34,8 @@ class PaymentMethodViewController: UIViewController {
     }
     
 
+    @IBAction func paymentMethodSubmit(sender: UIButton) {
+    }
     /*
     // MARK: - Navigation
 
