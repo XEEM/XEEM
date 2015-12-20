@@ -13,7 +13,8 @@ class RepairServiceViewController: UIViewController, UITableViewDelegate, UITabl
     let quotesCell = "quotesCell"
     let showmoreCell = "showmoreCell"
     let reviewCell = "reviewCell"
-
+    var shopModel: ShopModel?
+    
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,8 +41,9 @@ class RepairServiceViewController: UIViewController, UITableViewDelegate, UITabl
         if indexPath.section == 0 {
             // service Name
             let cell : ServiceDetailNameCell = tableView.dequeueReusableCellWithIdentifier(serviceDetailCell, forIndexPath: indexPath) as! ServiceDetailNameCell
-            let data = NSDictionary()
-            cell.configCell(data)
+            if let shopModel = shopModel {
+                cell.configCell(shopModel)
+            }
             return cell
             
         } else if indexPath.section == 1 {

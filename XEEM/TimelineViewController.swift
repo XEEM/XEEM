@@ -24,6 +24,7 @@ class TimelineViewController: UIViewController, MKMapViewDelegate, CLLocationMan
     var regionRadius : CLLocationDistance = 0.0;
     var location: CLLocation?
     var listModelShop: [ShopModel] = []
+    var selectedShopModel: ShopModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,6 +58,7 @@ class TimelineViewController: UIViewController, MKMapViewDelegate, CLLocationMan
         // do other task
         let storyboard = UIStoryboard(name: "User", bundle: nil)
         let repairVC =  storyboard.instantiateViewControllerWithIdentifier("RepairServiceViewController") as! RepairServiceViewController
+        repairVC.shopModel = self.selectedShopModel
         self.navigationController?.pushViewController(repairVC, animated: true)
     }
 
@@ -82,6 +84,7 @@ class TimelineViewController: UIViewController, MKMapViewDelegate, CLLocationMan
                     print("Shop name: \(name)")
                     if String(title) == name {
                         shopModelCurrent = shopModel
+                        self.selectedShopModel = shopModel
                         break
                     }
                 }
@@ -96,8 +99,8 @@ class TimelineViewController: UIViewController, MKMapViewDelegate, CLLocationMan
             self.rateView.rating = round(Float(shopModelCurrent.rating!))
             self.rateView.editable = false;
             
-            self.fromLabel.text = "FROM"
-            self.priceLabel.text = "$5"
+            self.fromLabel.text = ""
+            self.priceLabel.text = "$"
             
             // add observer
             // 3. add action to myView

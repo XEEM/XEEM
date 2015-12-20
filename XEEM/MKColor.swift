@@ -17,7 +17,7 @@ extension UIColor {
     }
     
     public struct MKColor {
-        public static let Red = UIColor(hex: 0xF44336)
+        public static let Red = UIColor(hex: 0xe9232d)
         public static let Pink = UIColor(hex: 0xE91E63)
         public static let Purple = UIColor(hex: 0x9C27B0)
         public static let DeepPurple = UIColor(hex: 0x673AB7)
@@ -37,5 +37,10 @@ extension UIColor {
         public static let Grey = UIColor(hex: 0x9E9E9E)
         public static let BlueGrey = UIColor(hex: 0x607D8B)
         public static let AppMainColor = UIColor(hex: 0x8C001A)
+        public static let DarkGrayColor = UIColor(hex: 0x424243)
+        public static let GrayColor = UIColor(hex: 0xa0a09f)
+        public static let LightGrayColor = UIColor(hex: 0xefefef)
+        public static let WhiteColor = UIColor(hex: 0xFFFFFF)
+
     }
 }
