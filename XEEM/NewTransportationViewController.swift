@@ -8,15 +8,24 @@
 
 import UIKit
 
-class NewTransportationViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDelegate, UITextFieldDelegate {
+class NewTransportationViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDelegate, UITextFieldDelegate , UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     @IBOutlet weak var thumbnailImage: UIImageView!
     @IBOutlet weak var typeLabel: MKTextField!
     @IBOutlet weak var nameTextField: MKTextField!
     @IBOutlet weak var plateNumTextField: MKTextField!
-    let pickerData = ["Bike","Car", "Motobike"]
+    let pickerData = ["Bike","Car", "Motobike","Scooter"]
+    @IBOutlet weak var typePickerView: UIView!
     @IBOutlet weak var typePicker: UIPickerView!
+    @IBAction func doneTypeClicked(sender: UIBarButtonItem) {
+        typeLabel.text = pickerData[typePicker.selectedRowInComponent(0)]
+        typePickerView.hidden = true
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.automaticallyAdjustsScrollViewInsets = false
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        navigationController?.navigationBar.barTintColor = ColorUtils.UIColorFromRGB("ffffff");
         typePicker.delegate = self
         typePicker.dataSource = self
         typeLabel.delegate = self
@@ -28,16 +37,14 @@ class NewTransportationViewController: UIViewController,UIPickerViewDataSource,U
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    @IBAction func onTypeLabelClicked(sender: MKTextField) {
-        print("Touch1 textfield")
-        typePicker.hidden = false
-    }
 
     func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
+        typePickerView.hidden = false
+        self.view.endEditing(true)
         return false
     }// return NO to disallow editing.
 
+    // for pickerview
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
         return 1
     }
@@ -48,32 +55,24 @@ class NewTransportationViewController: UIViewController,UIPickerViewDataSource,U
     func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return pickerData[row]
     }
-    
-    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        typeLabel.text = pickerData[row]
-        typePicker.hidden = true
+
+    @IBAction func onChangeImageTapper(sender: UITapGestureRecognizer) {
+        let photoPicker = UIImagePickerController()
+        photoPicker.delegate = self
+        photoPicker.sourceType = .PhotoLibrary
+        self.presentViewController(photoPicker, animated: true, completion: nil)
     }
+    
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+        thumbnailImage.image = info[UIImagePickerControllerOriginalImage] as? UIImage
+        UIUtils.setRoundImageView(thumbnailImage)
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
     func setupTextField() -> () {
-        typeLabel.layer.borderColor = UIColor.clearColor().CGColor
-        typeLabel.floatingPlaceholderEnabled = true
-        typeLabel.tintColor = UIColor.MKColor.Blue
-        typeLabel.rippleLocation = .Right
-        typeLabel.cornerRadius = 0
-        typeLabel.bottomBorderEnabled = true
-        
-        nameTextField.layer.borderColor = UIColor.clearColor().CGColor
-        nameTextField.floatingPlaceholderEnabled = true
-        nameTextField.tintColor = UIColor.MKColor.Blue
-        nameTextField.rippleLocation = .Right
-        nameTextField.cornerRadius = 0
-        nameTextField.bottomBorderEnabled = true
-        
-        plateNumTextField.layer.borderColor = UIColor.clearColor().CGColor
-        plateNumTextField.floatingPlaceholderEnabled = true
-        plateNumTextField.tintColor = UIColor.MKColor.Blue
-        plateNumTextField.rippleLocation = .Right
-        plateNumTextField.cornerRadius = 0
-        plateNumTextField.bottomBorderEnabled = true
+        UIUtils.setupMaterialTextField(typeLabel)
+        UIUtils.setupMaterialTextField(nameTextField)
+        UIUtils.setupMaterialTextField(plateNumTextField)
     }
     @IBAction func onTapOutside(sender: UITapGestureRecognizer) {
         self.view.endEditing(true)

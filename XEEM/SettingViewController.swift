@@ -28,29 +28,29 @@ class SettingViewController: UIViewController, UITableViewDataSource, UITableVie
         // Dispose of any resources that can be recreated.
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        if indexPath.row == 0 {
-            // inital view controller
-            let vc = PaymentMethodViewController.initialize()
-            // push view controller by navigationController
-            self.navigationController?.pushViewController(vc, animated: true)
-            
-            let cell = tableView.dequeueReusableCellWithIdentifier("PaymentMethod") as! PaymentMethodTableViewCell
-                cell.label.text = "Payment Method"
-                return cell
-        } else if indexPath == 1 {
-            let vc1 = ChangePasswordViewController.initialize()
-            self.navigationController?.pushViewController(vc1, animated: true)
-            
-            let cell = tableView.dequeueReusableCellWithIdentifier("ChangePassword") as! PaymentMethodTableViewCell
-            cell.label.text = "Change Password"
-                return cell
-        } else if indexPath.row == 3 {
-            
-            
-        }
-        
-    }
+//    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+//        if indexPath.row == 0 {
+//            // inital view controller
+//            let vc = PaymentMethodViewController.initialize()
+//            // push view controller by navigationController
+//            self.navigationController?.pushViewController(vc, animated: true)
+//            
+//            let cell = tableView.dequeueReusableCellWithIdentifier("PaymentMethod") as! PaymentMethodTableViewCell
+//                cell.label.text = "Payment Method"
+//                return cell
+//        } else if indexPath == 1 {
+//            let vc1 = ChangePasswordViewController.initialize()
+//            self.navigationController?.pushViewController(vc1, animated: true)
+//            
+//            let cell = tableView.dequeueReusableCellWithIdentifier("ChangePassword") as! PaymentMethodTableViewCell
+//            cell.label.text = "Change Password"
+//                return cell
+//        } else if indexPath.row == 3 {
+//            
+//            
+//        }
+//        
+//    }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Currency") as! CurrencyTableViewCell
