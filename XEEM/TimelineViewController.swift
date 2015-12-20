@@ -23,12 +23,13 @@ class TimelineViewController: UIViewController, MKMapViewDelegate, CLLocationMan
     var currentUser : User!
     var regionRadius : CLLocationDistance = 0.0;
     var location: CLLocation?
+    var listModelShop: [ShopModel] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // init view
-        self.setInitView()
+        // init RequestServiceView
+        self.viewRequestService.hidden = true
         
         // mapView
         self.loadMapView()
@@ -36,11 +37,11 @@ class TimelineViewController: UIViewController, MKMapViewDelegate, CLLocationMan
         // call API current location
         XEEMService.sharedInstance.getServiceWithCurrentLocation(0, longitde: 0) { (dictionary: AnyObject?, error: NSError?) -> Void in
             let arrData = dictionary as! [NSDictionary]
-            let listModelShop: [ShopModel] = ShopModel.initShopModelWithArray(arrData)
-            print(listModelShop)
+            self.listModelShop = ShopModel.initShopModelWithArray(arrData)
+            print(self.listModelShop)
             
             dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                for shopModel in listModelShop {
+                for shopModel in self.listModelShop {
                     let shopLocation = CLLocationCoordinate2D(latitude: shopModel.latitude!, longitude: shopModel.longitde!)
                     let shopMarker = MKPointAnnotation()
                     shopMarker.coordinate = shopLocation
@@ -71,15 +72,28 @@ class TimelineViewController: UIViewController, MKMapViewDelegate, CLLocationMan
     }
 
     
-    func setInitView() {
+    func setInitViewWithTitle(title: String?) {
         dispatch_async(dispatch_get_main_queue()) { () -> Void in
+            // find current service with title
+            var shopModelCurrent : ShopModel = self.listModelShop[0]
+            for shopModel in self.listModelShop {
+                if let title = title, name = shopModel.name {
+                    print("Title: \(title)")
+                    print("Shop name: \(name)")
+                    if String(title) == name {
+                        shopModelCurrent = shopModel
+                        break
+                    }
+                }
+            }
+            
             // dummy service view
             self.imageService.image = UIImage(named: "bicycle")
-            self.titleServiceLabel.text = "Repair Services"
+            self.titleServiceLabel.text = shopModelCurrent.name
             self.rateView.notSelectedImage = UIImage(named: "ic_star_unrate_border")
             self.rateView.fullSelectedImage = UIImage(named: "ic_star")
             self.rateView.maxRating = 5;
-            self.rateView.rating = 3
+            self.rateView.rating = round(Float(shopModelCurrent.rating!))
             self.rateView.editable = false;
             
             self.fromLabel.text = "FROM"
@@ -89,7 +103,6 @@ class TimelineViewController: UIViewController, MKMapViewDelegate, CLLocationMan
             // 3. add action to myView
             let gesture = UITapGestureRecognizer(target: self, action: "onServiceTapView:")
             self.viewRequestService.addGestureRecognizer(gesture)
-            self.viewRequestService.hidden = true
         }
     }
     
@@ -130,7 +143,31 @@ class TimelineViewController: UIViewController, MKMapViewDelegate, CLLocationMan
     
     func mapView(mapView: MKMapView, didSelectAnnotationView view: MKAnnotationView) {
         mapView.deselectAnnotation(view.annotation, animated: true)
-        self.viewRequestService.hidden = false
+        if let annotation = view.annotation, title = annotation.title {
+            if title != self.mapView.userLocation.title {
+                self.viewRequestService.hidden = false
+                if let title = title {
+                    self.setInitViewWithTitle(title)
+                }
+
+            }
+        }
+    }
+    
+    func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
+        let kPinAnnotationIdentifier :String = "PinIdentifier"
+        if annotation.isEqual(self.mapView.userLocation) {
+            print("aaaa")
+            return nil
+        }
+        if self.listModelShop.count == 0 {
+            return nil
+        }
+        let myAnnotation = self.mapView.dequeueReusableAnnotationViewWithIdentifier(kPinAnnotationIdentifier)
+        myAnnotation?.image = UIImage(named: "ic_add_image")
+        myAnnotation?.annotation = annotation
+
+        return myAnnotation
     }
     
     
@@ -146,6 +183,7 @@ class TimelineViewController: UIViewController, MKMapViewDelegate, CLLocationMan
     
     @IBAction func onEmergencyTapped(sender: UIButton) {
         // TO-DO
+        
     }
     /*
     // MARK: - Navigation

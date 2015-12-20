@@ -12,6 +12,7 @@ class FilterViewController: UIViewController, UITableViewDelegate, UITableViewDa
     let cellFilterIndenfiter = "filterTableViewCell"
     @IBOutlet weak var tableView: UITableView!
     var arrFilterData = [NSDictionary]()
+    var arrSelecteData: NSMutableArray = [];
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,45 +42,51 @@ class FilterViewController: UIViewController, UITableViewDelegate, UITableViewDa
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let filterCell : FilterCell = tableView.dequeueReusableCellWithIdentifier(cellFilterIndenfiter,
             forIndexPath: indexPath) as! FilterCell
-        
-        if indexPath.section == 1 {
-            if indexPath.row == 0 {
-                filterCell.titleLabel.text = "Repair Service"
-            } else if indexPath.row == 1 {
-                filterCell.titleLabel.text = "Gas station"
-            } else if indexPath.row == 2 {
-                filterCell.titleLabel.text = "Spare Parts shops"
-            }
-            
-            filterCell.imageFilter.image = UIImage(named: "bicycle")
-            
-            return filterCell
+        switch indexPath.row {
+            case 0:
+                filterCell.configData("Car Shop")
+            case 1:
+                filterCell.configData("Scooter Shop")
+            case 2:
+                filterCell.configData("Bike Shop")
+            case 3:
+                filterCell.configData("Motorcycle Shop")
+            case 4:
+                filterCell.configData("Gas station")
+            default: break
         }
         filterCell.imageFilter.image = UIImage(named: "bicycle")
-        filterCell.titleLabel.text = "Bike"
         return filterCell
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if section == 0 {
-            return 4
-        } else if section == 1 {
-            return 3
-        }
-        return 0
+        return 5
     }
     
     func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        if section == 0 {
             return " "
-        } else if section == 1 {
-            return " "
-        }
-        return ""
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 2
+        return 1
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        self.tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        var lc : Int = 0
+        for number in arrSelecteData {
+            if (number as! NSNumber) == indexPath.row {
+                arrSelecteData.removeObject(number)
+                let cell: FilterCell = tableView.cellForRowAtIndexPath(indexPath) as! FilterCell
+                cell.setDefaultImage()
+                lc = 1
+            }
+        }
+        if lc == 0 {
+            arrSelecteData.addObject(indexPath.row)
+            let cell: FilterCell = tableView.cellForRowAtIndexPath(indexPath) as! FilterCell
+            cell.setSelectedImage()
+        }
     }
     
     /*

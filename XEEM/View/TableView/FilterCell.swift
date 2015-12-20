@@ -8,12 +8,18 @@
 
 import UIKit
 
+protocol FilterCellDelegate {
+    
+}
+
+
 class FilterCell: UITableViewCell {
 
     
     @IBOutlet weak var imageFilter: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var buttonCheck: UIButton!
+    @IBOutlet weak var selectedImageView: UIImageView!
+    
     
     
     override func awakeFromNib() {
@@ -27,5 +33,21 @@ class FilterCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    
+    // public function
+    func setSelectedImage() {
+        self.selectedImageView.image = UIImage(named: "bicycle")
+    }
+    
+    func setDefaultImage() {
+        self.selectedImageView.image = UIImage(named: "ic_add_image")
+    }
+    
+    func configData(title: NSString) {
+        self.titleLabel.text = "\(title)"
+        self.setDefaultImage()
+        
+        
+    }
     
 }

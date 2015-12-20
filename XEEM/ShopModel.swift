@@ -25,7 +25,6 @@ class ShopModel: NSObject {
     var quotes: [Quotes]?
     var rating: Double?
     
-    
     init(dictionary: NSDictionary) {
         self.id = dictionary.objectForKey("Id") as? String
         self.name = dictionary.objectForKey("Name") as? String
