@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:XEEM/DinhDocLap.gpx">
+   </FileRef>
+   <FileRef
       location = "group:XEEM.xcodeproj">
    </FileRef>
    <FileRef
