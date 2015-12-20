@@ -15,10 +15,11 @@ class XEEMViewController: UIViewController {
     
     @IBOutlet weak var password: UITextField!
     
+    @IBOutlet weak var signInBtn: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.signInBtn.enabled = false
         // Do any additional setup after loading the view.
     }
 
@@ -31,6 +32,31 @@ class XEEMViewController: UIViewController {
         doLogin()
     }
     
+    @IBAction func onEditingChanged(sender: UITextField) {
+        if sender == self.emailLabel {
+            // validate email format
+            if self.emailLabel.text?.characters.count > 3 {
+                self.emailLabel.textColor = UIColor.blueColor()
+            } else {
+                self.emailLabel.textColor = UIColor.redColor()
+            }
+
+        } else {
+            if self.password.text?.characters.count > 6 {
+                self.password.textColor = UIColor.blueColor()
+            } else {
+                self.password.textColor = UIColor.redColor()
+            }
+
+        }
+        
+        if (self.emailLabel.text?.characters.count > 3 &&
+            self.password.text?.characters.count > 6) {
+            self.signInBtn.enabled = true
+        } else {
+            self.signInBtn.enabled = false
+        }
+    }
     
     func doLogin() -> () {
         XEEMService.sharedInstance.login(nil, passwd:

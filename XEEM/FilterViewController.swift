@@ -71,9 +71,9 @@ class FilterViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         if section == 0 {
-            return "TRANSPORTATION TYPE"
+            return " "
         } else if section == 1 {
-            return "SERVICE TYPE"
+            return " "
         }
         return ""
     }

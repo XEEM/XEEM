@@ -22,19 +22,21 @@ class User: NSObject {
     var phone: String?
     var transList: [Transportation]?
     var avatarURL: NSURL?
-    var dictionary : NSDictionary
+    var dictionary : NSDictionary?
     
-    init(dictionary : NSDictionary) {
-        self.dictionary = dictionary
-        fullName = dictionary["name"] as? String
-        id = dictionary["Id"] as? String
-        fullName = dictionary["Name"] as? String
-        email = dictionary["Email"] as? String
-        password = dictionary["Password"] as? String
-        address = dictionary["Address"] as? String
-        phone = dictionary["Phone"] as? String
-        avatarURL = NSURL(string: (dictionary["AvatarUrl"] as? String ?? "")!)
-        transList = Transportation.TransWithArray(dictionary["Transporations"] as! [NSDictionary])
+    init(dictionary : NSDictionary?) {
+        if let dictionary = dictionary {
+            self.dictionary = dictionary
+            fullName = dictionary["name"] as? String
+            id = dictionary["Id"] as? String
+            fullName = dictionary["Name"] as? String
+            email = dictionary["Email"] as? String
+            password = dictionary["Password"] as? String
+            address = dictionary["Address"] as? String
+            phone = dictionary["Phone"] as? String
+            avatarURL = NSURL(string: (dictionary["AvatarUrl"] as? String ?? "")!)
+            transList = Transportation.TransWithArray(dictionary["Transporations"] as! [NSDictionary])
+        }
     }
     
     // Save curent user
@@ -60,7 +62,7 @@ class User: NSObject {
             if _currentUser != nil {
                 // save to NSDefault
                 do {
-                    let data = try NSJSONSerialization.dataWithJSONObject(user!.dictionary, options: [])
+                    let data = try NSJSONSerialization.dataWithJSONObject(user!.dictionary!, options: [])
                     NSUserDefaults.standardUserDefaults().setObject(data, forKey: USER_KEY)
                 } catch let error as NSError {
                     print(error)

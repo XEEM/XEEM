@@ -25,19 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             self.window?.makeKeyAndVisible()
         } else {
             let storyboard = UIStoryboard(name: "User", bundle: nil)
-            let rootVC =  storyboard.instantiateViewControllerWithIdentifier("SwiftySideMenuViewController") as! SwiftySideMenuViewController
-            
-            let centerVC = storyboard.instantiateViewControllerWithIdentifier("CenterUser");
-            
-            let leftVC = storyboard.instantiateViewControllerWithIdentifier("LeftUser");
-            rootVC.enableLeftSwipeGesture = false
-            rootVC.enableRightSwipeGesture = false
-            
-            rootVC.centerViewController = centerVC
-            rootVC.leftViewController = leftVC
-            rootVC.centerEndScale = 0.8
-            rootVC.leftSpringAnimationSpeed = 20
-            
+            let rootVC =  storyboard.instantiateViewControllerWithIdentifier("CenterUser") as! UINavigationController
             self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
             self.window?.rootViewController = rootVC
             self.window?.makeKeyAndVisible()

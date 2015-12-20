@@ -1,17 +1,21 @@
 //
-//  ForgotPasswordViewController.swift
+//  ChangePasswordViewController.swift
 //  XEEM
 //
-//  Created by USER on 12/13/15.
+//  Created by USER on 12/19/15.
 //  Copyright © 2015 JadeLe. All rights reserved.
 //
 
 import UIKit
 
-class ForgotPasswordViewController: UIViewController {
-    
-    @IBOutlet weak var emailReset: UITextField!
+class ChangePasswordViewController: UIViewController {
 
+    @IBOutlet weak var currentPassword: UITextField!
+    
+    @IBOutlet weak var newPassword: UITextField!
+    
+    @IBOutlet weak var confirmPassword: UITextField!
+    
     @IBOutlet weak var resetBtn: UIButton!
     
     override func viewDidLoad() {
@@ -26,9 +30,6 @@ class ForgotPasswordViewController: UIViewController {
     }
     
 
-    @IBAction func reset(sender: UIButton) {
-        
-    }
     /*
     // MARK: - Navigation
 
