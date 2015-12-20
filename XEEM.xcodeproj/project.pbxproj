@@ -56,9 +56,14 @@
 		CE13954F1C1087D100A67657 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE13954D1C1087D100A67657 /* Main.storyboard */; };
 		CE1395511C1087D100A67657 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE1395501C1087D100A67657 /* Assets.xcassets */; };
 		CE1395541C1087D100A67657 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE1395521C1087D100A67657 /* LaunchScreen.storyboard */; };
+		CE7762431C253D860074937F /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7762421C253D860074937F /* ChangePasswordViewController.swift */; };
+		CE7762451C254D1E0074937F /* CurrencyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7762441C254D1E0074937F /* CurrencyTableViewCell.swift */; };
 		CE8C133C1C1DC15C00D1AA09 /* XEEMViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8C13391C1DC15C00D1AA09 /* XEEMViewController.swift */; };
 		CE8C133D1C1DC15C00D1AA09 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8C133A1C1DC15C00D1AA09 /* RegisterViewController.swift */; };
 		CE8C133E1C1DC15C00D1AA09 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8C133B1C1DC15C00D1AA09 /* ForgotPasswordViewController.swift */; };
+		CECBE02E1C22EA24004F6C55 /* PaymentMethodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECBE02D1C22EA24004F6C55 /* PaymentMethodViewController.swift */; };
+		CECBE0301C22EA52004F6C55 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECBE02F1C22EA52004F6C55 /* SettingViewController.swift */; };
+		CECBE0341C23007B004F6C55 /* PaymentMethodTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECBE0331C23007B004F6C55 /* PaymentMethodTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -119,9 +124,14 @@
 		CE1395501C1087D100A67657 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE1395531C1087D100A67657 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE1395551C1087D100A67657 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CE7762421C253D860074937F /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
+		CE7762441C254D1E0074937F /* CurrencyTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyTableViewCell.swift; sourceTree = "<group>"; };
 		CE8C13391C1DC15C00D1AA09 /* XEEMViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XEEMViewController.swift; sourceTree = "<group>"; };
 		CE8C133A1C1DC15C00D1AA09 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		CE8C133B1C1DC15C00D1AA09 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
+		CECBE02D1C22EA24004F6C55 /* PaymentMethodViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentMethodViewController.swift; sourceTree = "<group>"; };
+		CECBE02F1C22EA52004F6C55 /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		CECBE0331C23007B004F6C55 /* PaymentMethodTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentMethodTableViewCell.swift; sourceTree = "<group>"; };
 		DF46DDB94906979469AB52C5 /* Pods-XEEM.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XEEM.debug.xcconfig"; path = "Pods/Target Support Files/Pods-XEEM/Pods-XEEM.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -177,6 +187,9 @@
 		A627252B1C14A0D30005A204 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				CECBE02C1C22EA0A004F6C55 /* Setting */,
+				CE8C13381C1DC15500D1AA09 /* Login */,
+				A69BDDE01C181D0B005CA6C6 /* TimelineViewController.swift */,
 				A6C646AA1C25335000B417C9 /* Home */,
 				CE8C13381C1DC15500D1AA09 /* Login */,
 				A69BDDE41C182802005CA6C6 /* OptionsTableViewController.swift */,
@@ -197,6 +210,8 @@
 				A6C5DD901C1D2AD100A7DB9D /* TableView */,
 				71F4A2F01C1BFBF7008BF810 /* TransportationCell.swift */,
 				71F4A2F41C1C197F008BF810 /* HistoryCell.swift */,
+				CECBE0331C23007B004F6C55 /* PaymentMethodTableViewCell.swift */,
+				CE7762441C254D1E0074937F /* CurrencyTableViewCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -372,6 +387,16 @@
 			name = Login;
 			sourceTree = "<group>";
 		};
+		CECBE02C1C22EA0A004F6C55 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				CECBE02F1C22EA52004F6C55 /* SettingViewController.swift */,
+				CECBE02D1C22EA24004F6C55 /* PaymentMethodViewController.swift */,
+				CE7762421C253D860074937F /* ChangePasswordViewController.swift */,
+			);
+			name = Setting;
+			sourceTree = "<group>";
+		};
 		DB7FF4F532CAE535573F899B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -528,7 +553,9 @@
 				A69BDDDB1C181714005CA6C6 /* SwiftySideMenuViewController.m in Sources */,
 				A6C5DD9C1C1D420A00A7DB9D /* RepairServiceViewController.swift in Sources */,
 				71F4A2F31C1C18B8008BF810 /* TransportationDetailControllerViewController.swift in Sources */,
+				CECBE02E1C22EA24004F6C55 /* PaymentMethodViewController.swift in Sources */,
 				710262821C1D4B4C0009724D /* NewTransportationViewController.swift in Sources */,
+				CE7762451C254D1E0074937F /* CurrencyTableViewCell.swift in Sources */,
 				71F4A2FA1C1C3947008BF810 /* HistoryDetailControler.swift in Sources */,
 				CE8C133E1C1DC15C00D1AA09 /* ForgotPasswordViewController.swift in Sources */,
 				A69BDDE51C182802005CA6C6 /* OptionsTableViewController.swift in Sources */,
@@ -539,7 +566,11 @@
 				CE13954A1C1087D100A67657 /* AppDelegate.swift in Sources */,
 				7173FB571C215CE700C1DD3A /* ColorUtils.swift in Sources */,
 				71F4A3061C1C9B96008BF810 /* EditProfileViewController.swift in Sources */,
+				CECBE0341C23007B004F6C55 /* PaymentMethodTableViewCell.swift in Sources */,
 				71F4A3001C1C9552008BF810 /* MKTextField.swift in Sources */,
+				71F4A2FD1C1C3D65008BF810 /* UIVViewController-SLPopup.swift in Sources */,
+				CE7762431C253D860074937F /* ChangePasswordViewController.swift in Sources */,
+				CECBE0301C22EA52004F6C55 /* SettingViewController.swift in Sources */,
 				7173FB591C2180BC00C1DD3A /* UIUtils.swift in Sources */,
 				A62206141C269DFF00B7C864 /* SideMenuController.swift in Sources */,
 				A69BDDE11C181D0B005CA6C6 /* TimelineViewController.swift in Sources */,

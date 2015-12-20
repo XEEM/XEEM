@@ -15,13 +15,21 @@ class XEEMViewController: UIViewController {
     
     @IBOutlet weak var password: UITextField!
     
+    @IBOutlet weak var signInBtn: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.signInBtn.enabled = false
         // Do any additional setup after loading the view.
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+        view.addGestureRecognizer(tap)
     }
 
+    func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -31,6 +39,31 @@ class XEEMViewController: UIViewController {
         doLogin()
     }
     
+    @IBAction func onEditingChanged(sender: UITextField) {
+        if sender == self.emailLabel {
+            // validate email format
+            if self.emailLabel.text?.characters.count > 3 {
+                self.emailLabel.textColor = UIColor.blueColor()
+            } else {
+                self.emailLabel.textColor = UIColor.redColor()
+            }
+
+        } else {
+            if self.password.text?.characters.count > 6 {
+                self.password.textColor = UIColor.blueColor()
+            } else {
+                self.password.textColor = UIColor.redColor()
+            }
+
+        }
+        
+        if (self.emailLabel.text?.characters.count > 3 &&
+            self.password.text?.characters.count > 6) {
+            self.signInBtn.enabled = true
+        } else {
+            self.signInBtn.enabled = false
+        }
+    }
     
     func doLogin() -> () {
         XEEMService.sharedInstance.login(nil, passwd:
@@ -43,19 +76,14 @@ class XEEMViewController: UIViewController {
                             
                             // Dummy Login
                             let storyboard = UIStoryboard(name: "User", bundle: nil)
-                            let rootVC =  storyboard.instantiateViewControllerWithIdentifier("SwiftySideMenuViewController") as! SwiftySideMenuViewController
+                            SideMenuController.menuButtonImage = UIImage(named: "menuButton")
+                            SideMenuController.presentationStyle = .UnderCenterPanelLeft
+                            SideMenuController.animationStyle = .CircleMaskAnimation
                             
-                            let centerVC = storyboard.instantiateViewControllerWithIdentifier("CenterUser");
+                            UINavigationBar.appearance().translucent = false
+                            UINavigationBar.appearance().barTintColor = UIColor(hue:0.56, saturation:0.88, brightness:0.95, alpha:1)
                             
-                            let leftVC = storyboard.instantiateViewControllerWithIdentifier("LeftUser");
-                            rootVC.enableLeftSwipeGesture = false
-                            rootVC.enableRightSwipeGesture = false
-                            
-                            rootVC.centerViewController = centerVC
-                            rootVC.leftViewController = leftVC
-                            rootVC.centerEndScale = 0.8
-                            rootVC.leftSpringAnimationSpeed = 20
-                            
+                            let rootVC =  storyboard.instantiateViewControllerWithIdentifier("SideMenuController") as! SideMenuController
                             let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
                             
                             appDelegate.window = UIWindow(frame: UIScreen.mainScreen().bounds)

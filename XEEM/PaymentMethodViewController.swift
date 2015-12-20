@@ -1,18 +1,26 @@
 //
-//  ForgotPasswordViewController.swift
+//  PaymentMethodViewController.swift
 //  XEEM
 //
-//  Created by USER on 12/13/15.
+//  Created by USER on 12/17/15.
 //  Copyright © 2015 JadeLe. All rights reserved.
 //
 
 import UIKit
 
-class ForgotPasswordViewController: UIViewController {
-    
-    @IBOutlet weak var emailReset: UITextField!
+class PaymentMethodViewController: UIViewController {
 
-    @IBOutlet weak var resetBtn: UIButton!
+    @IBOutlet weak var fullname: UITextField!
+    
+    @IBOutlet weak var cardNumber: UITextField!
+    
+    @IBOutlet weak var securityCode: UITextField!
+    
+    @IBOutlet weak var expiryDate: UITextField!
+    
+    @IBOutlet weak var expiryYear: UITextField!
+    
+    @IBOutlet weak var submitBtn: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,8 +34,7 @@ class ForgotPasswordViewController: UIViewController {
     }
     
 
-    @IBAction func reset(sender: UIButton) {
-        
+    @IBAction func paymentMethodSubmit(sender: UIButton) {
     }
     /*
     // MARK: - Navigation
