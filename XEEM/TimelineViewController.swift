@@ -10,8 +10,7 @@ import UIKit
 import MapKit
 import CoreLocation
 
-class TimelineViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, NVSliderMenuDelegate {
-    var mySliderMenu: NVSliderMenu! = nil
+class TimelineViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     
     let locationManager = CLLocationManager()
     @IBOutlet weak var mapView: MKMapView!
@@ -28,10 +27,6 @@ class TimelineViewController: UIViewController, MKMapViewDelegate, CLLocationMan
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // init slider 
-        mySliderMenu = NVSliderMenu.init(viewController: self);
-        self.view.addSubview(mySliderMenu)
-
         // init view
         self.setInitView()
         
@@ -72,11 +67,6 @@ class TimelineViewController: UIViewController, MKMapViewDelegate, CLLocationMan
     
 
     @IBAction func toggleSideMenu(sender: AnyObject) {
-        if (mySliderMenu.isShow){
-            mySliderMenu.hideSliderMenu()
-        } else {
-            mySliderMenu.showSliderMenu()
-        }
         
     }
 
