@@ -8,19 +8,30 @@
 
 import UIKit
 
+protocol ShowmoreCellDelegate {
+    func onTapShowmoreBtn(showmoreCell: ShowmoreCell)
+}
+
 class ShowmoreCell: UITableViewCell {
 
     @IBOutlet weak var btnShowMore: UIButton!
     
+    var delegate: ShowmoreCellDelegate?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        self.btnShowMore.titleLabel?.textColor = UIColor.MKColor.Red
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    @IBAction func onBtnShowMoreTapped(sender: UIButton) {
+        self.delegate?.onTapShowmoreBtn(self)
     }
     
 }

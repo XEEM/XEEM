@@ -10,5 +10,13 @@
             </PersistentString>
          </PersistentStrings>
       </ContextState>
+      <ContextState
+         contextName = "TimelineViewController.onServiceTapView(UITapGestureRecognizer) -&gt; ():TimelineViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.selectedShopModel">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
    </ContextStates>
 </VariablesViewState>

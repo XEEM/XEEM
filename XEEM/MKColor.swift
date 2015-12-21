@@ -37,6 +37,7 @@ extension UIColor {
         public static let Grey = UIColor(hex: 0x9E9E9E)
         public static let BlueGrey = UIColor(hex: 0x607D8B)
         public static let AppMainColor = UIColor(hex: 0x8C001A)
+        
         public static let DarkGrayColor = UIColor(hex: 0x424243)
         public static let GrayColor = UIColor(hex: 0xa0a09f)
         public static let LightGrayColor = UIColor(hex: 0xefefef)
