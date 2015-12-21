@@ -284,17 +284,31 @@
                                 <rect key="frame" x="0.0" y="20" width="600" height="580"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DNg-KD-7Es">
+                                <rect key="frame" x="0.0" y="540" width="600" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="iJ9-tZ-ZjL"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="XEEM ME">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="DNg-KD-7Es" firstAttribute="leading" secondItem="Z2H-GK-3G1" secondAttribute="leading" id="9EA-P3-YSo"/>
+                            <constraint firstAttribute="trailing" secondItem="DNg-KD-7Es" secondAttribute="trailing" id="Ne4-92-wP1"/>
                             <constraint firstItem="HzN-BO-0UZ" firstAttribute="top" secondItem="CU0-Ao-kAl" secondAttribute="bottom" constant="-44" id="QQo-wO-bAh"/>
                             <constraint firstAttribute="trailing" secondItem="HzN-BO-0UZ" secondAttribute="trailing" id="Ucm-Hm-uO8"/>
+                            <constraint firstItem="CHH-sJ-mDV" firstAttribute="top" secondItem="DNg-KD-7Es" secondAttribute="bottom" id="pt8-Sk-Krc"/>
                             <constraint firstItem="HzN-BO-0UZ" firstAttribute="leading" secondItem="Z2H-GK-3G1" secondAttribute="leading" id="qXa-lS-WTh"/>
                             <constraint firstItem="CHH-sJ-mDV" firstAttribute="top" secondItem="HzN-BO-0UZ" secondAttribute="bottom" id="vKV-Ih-f6G"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="RDU-Pa-ZLD"/>
                     <connections>
+                        <outlet property="btnXeemMe" destination="DNg-KD-7Es" id="Z2A-Ok-pXW"/>
                         <outlet property="tableView" destination="HzN-BO-0UZ" id="j7v-vb-5i6"/>
                     </connections>
                 </viewController>

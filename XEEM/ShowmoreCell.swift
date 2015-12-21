@@ -21,7 +21,7 @@ class ShowmoreCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        self.btnShowMore.titleLabel?.textColor = UIColor.MKColor.Red
+        self.btnShowMore.setTitleColor(UIColor.MKColor.Red, forState: UIControlState.Normal)
     }
 
     override func setSelected(selected: Bool, animated: Bool) {

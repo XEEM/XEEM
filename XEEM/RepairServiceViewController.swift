@@ -21,12 +21,14 @@ class RepairServiceViewController: UIViewController, UITableViewDelegate, UITabl
     var reviewerAll: [ReviewModel] = []
     var reviewerSome: [ReviewModel] = []
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var btnXeemMe: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     
         self.initTableView()        // init tableView
         self.initData()             // init Data
-        
+        self.initView()             // init View
 
     }
 
@@ -67,6 +69,11 @@ class RepairServiceViewController: UIViewController, UITableViewDelegate, UITabl
             }
         }
         
+    }
+    
+    private func initView() {
+        self.btnXeemMe.backgroundColor = UIColor.MKColor.Red
+        self.btnXeemMe.titleLabel?.textColor = UIColor.whiteColor()
     }
     
     
