@@ -46,7 +46,7 @@ class RightViewController: UIViewController {
 }
 extension RightViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return filterList.count
+        return filterList.count + 1
         
     }
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -55,7 +55,7 @@ extension RightViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         if (indexPath.row == filterList.count) {
-            let cell = self.tableView.dequeueReusableCellWithIdentifier("NewTransCell") as UITableViewCell?
+            let cell = self.tableView.dequeueReusableCellWithIdentifier("ApplyFilterCell") as! ApplyFilterCell?
             return cell!
         } else {
             let cell = self.tableView.dequeueReusableCellWithIdentifier("filterServiceCell") as! FilterServiceCell?
