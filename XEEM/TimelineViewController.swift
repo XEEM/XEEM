@@ -186,6 +186,7 @@ class TimelineViewController: UIViewController, MKMapViewDelegate, CLLocationMan
 //            annotationView!.annotation = annotation
 //            annotationView!.canShowCallout = true
 //        }
+
         
         return annotationView
     }
@@ -203,8 +204,19 @@ class TimelineViewController: UIViewController, MKMapViewDelegate, CLLocationMan
     
     @IBAction func onEmergencyTapped(sender: UIButton) {
         // TO-DO
-        
+        let myPopupViewController:EmergencyViewController = EmergencyViewController(nibName:"EmergencyView", bundle: nil)
+        myPopupViewController.delegate = self
+        self.presentpopupViewController(myPopupViewController, animationType: .Fade, completion: { () -> Void in })
+
     }
+    
+    // MARK: - MyLocation
+    
+    @IBAction func onMyLocationUpdate(sender: UIButton) {
+        self.locationManager.startUpdatingLocation()
+    }
+    
+    
     /*
     // MARK: - Navigation
 
@@ -236,10 +248,21 @@ class TimelineViewController: UIViewController, MKMapViewDelegate, CLLocationMan
         }
     }
 }
-extension TimelineViewController: RightViewControllerDelegate {
+
+extension TimelineViewController: RightViewControllerDelegate,EmergencyDelegate {
     func rightViewController(rightViewController : RightViewController, filterChange listFilter: [Int]!) {
         print("FILTER DELEGATE on home")
         requestData(listFilter)
         // fetch data again
+    }
+    func emergency(emergencyView: EmergencyViewController, didCancelTap onCancelTap: UIButton) {
+        self.navigationController?.dismissPopupViewController(.Fade)
+    }
+    
+    func emergency(emergencyView: EmergencyViewController, didHelpTap onHelp: UIButton, whichSelection selection: Int) {
+        let storyboard = UIStoryboard(name: "User", bundle: nil)
+        let listReviewVC =  storyboard.instantiateViewControllerWithIdentifier("RequestLoadingViewController") as! RequestLoadingViewController
+        self.navigationController?.presentpopupViewController(listReviewVC, animationType: .RightLeft, completion: { () -> Void in })
+
     }
 }
