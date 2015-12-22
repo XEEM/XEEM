@@ -244,6 +244,9 @@ extension TimelineViewController: EmergencyDelegate {
     }
     
     func emergency(emergencyView: EmergencyViewController, didHelpTap onHelp: UIButton, whichSelection selection: Int) {
-        
+        let storyboard = UIStoryboard(name: "User", bundle: nil)
+        let listReviewVC =  storyboard.instantiateViewControllerWithIdentifier("RequestLoadingViewController") as! RequestLoadingViewController
+        self.navigationController?.presentpopupViewController(listReviewVC, animationType: .RightLeft, completion: { () -> Void in })
+
     }
 }
