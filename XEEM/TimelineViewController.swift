@@ -165,6 +165,7 @@ class TimelineViewController: UIViewController, MKMapViewDelegate, CLLocationMan
         if annotation.isEqual(self.mapView.userLocation) {
             return nil
         }
+        
         let cpa = annotation as! CustomPointAnnotation
         var annotationView = mapView.dequeueReusableAnnotationViewWithIdentifier("identifier") as? FloatingAnnotationView
         if annotationView == nil {
@@ -223,4 +224,6 @@ class TimelineViewController: UIViewController, MKMapViewDelegate, CLLocationMan
             self.imageView = imageView
             self.addSubview(imageView)
         }
-    }}
+    }
+
+}

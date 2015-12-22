@@ -12,7 +12,7 @@ let quotesCell = "quotesCell"
 let showmoreCell = "showmoreCell"
 let reviewCell = "reviewCell"
 
-class RepairServiceViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, ShowmoreCellDelegate {
+class RepairServiceViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, ShowmoreCellDelegate, ConfrimViewControllerDelegate {
     
     var shopModel: ShopModel?
     var quotesShopSome: [Quotes] = []
@@ -224,6 +224,33 @@ class RepairServiceViewController: UIViewController, UITableViewDelegate, UITabl
     @IBAction func onBackButtonTapped(sender: UIBarButtonItem) {
         self.navigationController?.popViewControllerAnimated(true)
     }
+    
+    
+    // MARK: - XEEM ME BUTTON
+    
+    @IBAction func onXEEMtapped(sender: UIButton) {
+        self.displayViewController(.Fade)
+    }
+    
+    func displayViewController(animationType: SLpopupViewAnimationType) {
+        let myPopupViewController:ConfrimViewController = ConfrimViewController(nibName:"ConfrimPopUp", bundle: nil)
+        myPopupViewController.delegate = self
+        self.presentpopupViewController(myPopupViewController, animationType: animationType, completion: { () -> Void in
+            
+        })
+    }
+
+    func onCancelTapped(confirmViewController: UIViewController) {
+        self.navigationController?.dismissPopupViewController(.Fade)
+    }
+    
+    func onConfrimTapped(confirmViewController: UIViewController) {
+        let storyboard = UIStoryboard(name: "User", bundle: nil)
+        let listReviewVC =  storyboard.instantiateViewControllerWithIdentifier("RequestLoadingViewController") as! RequestLoadingViewController
+        self.navigationController?.pushViewController(listReviewVC, animated: true)
+
+    }
+    
     
     /*
     // MARK: - Navigation

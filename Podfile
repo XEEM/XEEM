@@ -8,6 +8,7 @@ target 'XEEM' do
     pod 'pop', '~> 1.0'
     pod 'AFNetworking'
     pod 'SlideMenuControllerSwift'
+
 use_frameworks!
 end
 
