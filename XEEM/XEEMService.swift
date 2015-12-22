@@ -42,7 +42,7 @@ class XEEMService {
         }
     }
     func login(username: String!, passwd: String!, completion: (token: String?, error: NSError?) -> ()) {
-        Alamofire.request(.POST, "http://www.xeem.somee.com/api/auth/authenticate?email=hatu87@gmail.com&password=123").responseJSON { (response ) -> Void in
+        Alamofire.request(.POST, "http://www.xeem.somee.com/api/auth/authenticate?email=ken.hoang87:&password=123").responseJSON { (response ) -> Void in
             let token = response.result.value
             let error = response.result.error
             if let token = token {
@@ -78,7 +78,7 @@ class XEEMService {
                 }
                 
                 let dic = try! NSJSONSerialization.JSONObjectWithData(response.result.value!, options: .AllowFragments)
-                print(dic)
+              //  print(dic)
                 
                 let error = response.result.error
                 onCompletion(dic, error)
@@ -95,7 +95,7 @@ class XEEMService {
                 }
                 
                 let dic = try! NSJSONSerialization.JSONObjectWithData(response.result.value!, options: .AllowFragments)
-                print(dic)
+               // print(dic)
                 
                 let error = response.result.error
                 onCompletion(dic, error)

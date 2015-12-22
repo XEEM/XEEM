@@ -28,6 +28,9 @@ class TimelineViewController: UIViewController, MKMapViewDelegate, CLLocationMan
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
+        navigationController?.navigationBar.shadowImage = UIImage()
+        navigationController?.navigationBar.barTintColor = UIColor.MKColor.AppMainColor
         
         // init RequestServiceView
         self.viewRequestService.hidden = true
@@ -39,17 +42,18 @@ class TimelineViewController: UIViewController, MKMapViewDelegate, CLLocationMan
         XEEMService.sharedInstance.getServiceWithCurrentLocation(0, longitde: 0) { (dictionary: AnyObject?, error: NSError?) -> Void in
             let arrData = dictionary as! [NSDictionary]
             self.listModelShop = ShopModel.initShopModelWithArray(arrData)
-            print(self.listModelShop)
-            
+
+            // draw markers
             dispatch_async(dispatch_get_main_queue(), { () -> Void in
                 for shopModel in self.listModelShop {
                     let shopLocation = CLLocationCoordinate2D(latitude: shopModel.latitude!, longitude: shopModel.longitde!)
-                    let shopMarker = MKPointAnnotation()
+                    let shopMarker = CustomPointAnnotation()
                     shopMarker.coordinate = shopLocation
-                    shopMarker.title = shopModel.name!
+                    shopMarker.imageName = "avatar.png"
+                    shopMarker.shopModel = shopModel
+                    //shopMarker.title = shopModel.name!
                     self.mapView.addAnnotation(shopMarker)
-                }
-                
+                }       
             })
         }
     }
@@ -68,39 +72,33 @@ class TimelineViewController: UIViewController, MKMapViewDelegate, CLLocationMan
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func toogleRightButton(sender: UIBarButtonItem) {
+         self.slideMenuController()?.toggleRight()
+    }
 
     @IBAction func toggleSideMenu(sender: AnyObject) {
-        
+        self.slideMenuController()?.toggleLeft()
     }
 
     
-    func setInitViewWithTitle(title: String?) {
+    func setInitViewWithTitle(shopModel: ShopModel?) {
         dispatch_async(dispatch_get_main_queue()) { () -> Void in
             // find current service with title
-            var shopModelCurrent : ShopModel = self.listModelShop[0]
-            for shopModel in self.listModelShop {
-                if let title = title, name = shopModel.name {
-                    print("Title: \(title)")
-                    print("Shop name: \(name)")
-                    if String(title) == name {
-                        shopModelCurrent = shopModel
-                        self.selectedShopModel = shopModel
-                        break
-                    }
-                }
-            }
-            
+            self.viewRequestService.hidden = false
+            self.selectedShopModel = shopModel
             // dummy service view
             self.imageService.image = UIImage(named: "bicycle")
-            self.titleServiceLabel.text = shopModelCurrent.name
+            self.titleServiceLabel.text = shopModel!.name
             self.rateView.notSelectedImage = UIImage(named: "ic_star_unrate_border")
             self.rateView.fullSelectedImage = UIImage(named: "ic_star")
             self.rateView.maxRating = 5;
-            self.rateView.rating = round(Float(shopModelCurrent.rating!))
+            self.rateView.rating = round(Float(shopModel!.rating!))
             self.rateView.editable = false;
             
             self.fromLabel.text = ""
             self.priceLabel.text = "$"
+            
+            
             
             // add observer
             // 3. add action to myView
@@ -145,32 +143,34 @@ class TimelineViewController: UIViewController, MKMapViewDelegate, CLLocationMan
     }
     
     func mapView(mapView: MKMapView, didSelectAnnotationView view: MKAnnotationView) {
-        mapView.deselectAnnotation(view.annotation, animated: true)
-        if let annotation = view.annotation, title = annotation.title {
-            if title != self.mapView.userLocation.title {
-                self.viewRequestService.hidden = false
-                if let title = title {
-                    self.setInitViewWithTitle(title)
-                }
-
-            }
+        print("tapannontation")
+        if view.annotation!.isEqual(self.mapView.userLocation) {
+            return
         }
+        let cpa = view.annotation as! CustomPointAnnotation
+        print(cpa.shopModel)
+        print(cpa.imageName)
+        mapView.deselectAnnotation(view.annotation, animated: true)
+        self.setInitViewWithTitle(cpa.shopModel)
     }
     
+    // Custom annontationView
     func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
-        let kPinAnnotationIdentifier :String = "PinIdentifier"
         if annotation.isEqual(self.mapView.userLocation) {
-            print("aaaa")
             return nil
         }
-        if self.listModelShop.count == 0 {
-            return nil
+        let cpa = annotation as! CustomPointAnnotation
+        var annotationView = mapView.dequeueReusableAnnotationViewWithIdentifier("identifier") as? FloatingAnnotationView
+        if annotationView == nil {
+            let pin: UIImage = UIImage(named: cpa.imageName)!
+            annotationView = FloatingAnnotationView(annotation: annotation, reuseIdentifier: "identifier", image: pin)
+            annotationView!.canShowCallout = false
+        } else {
+            annotationView!.annotation = annotation
+            annotationView!.canShowCallout = true
         }
-        let myAnnotation = self.mapView.dequeueReusableAnnotationViewWithIdentifier(kPinAnnotationIdentifier)
-        myAnnotation?.image = UIImage(named: "ic_add_image")
-        myAnnotation?.annotation = annotation
-
-        return myAnnotation
+        
+        return annotationView
     }
     
     
@@ -197,4 +197,24 @@ class TimelineViewController: UIViewController, MKMapViewDelegate, CLLocationMan
         // Pass the selected object to the new view controller.
     }
     */
-}
+    
+    class CustomPointAnnotation: MKPointAnnotation {
+        var imageName: String!
+        var shopModel: ShopModel?
+    }
+    
+    class FloatingAnnotationView: MKAnnotationView {
+        var imageView: UIImageView!
+        
+        convenience init(annotation: MKAnnotation, reuseIdentifier: String, image: UIImage) {
+            self.init(annotation: annotation, reuseIdentifier: reuseIdentifier)
+            //self.backgroundColor = UIColor.redColor()
+            let frame: CGRect = CGRectMake(0, 0, 40, 40)
+            self.frame = frame
+            //self.centerOffset = CGPointMake(0, -CGRectGetHeight(frame) / 2)
+            let imageView: UIImageView = UIImageView(image: image)
+            imageView.frame = frame
+            self.imageView = imageView
+            self.addSubview(imageView)
+        }
+    }}

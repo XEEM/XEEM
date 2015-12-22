@@ -15,8 +15,11 @@
 		71437D331C225BB1003B3AE1 /* XEEMService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71437D321C225BB1003B3AE1 /* XEEMService.swift */; };
 		7173FB571C215CE700C1DD3A /* ColorUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7173FB561C215CE600C1DD3A /* ColorUtils.swift */; };
 		7173FB591C2180BC00C1DD3A /* UIUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7173FB581C2180BC00C1DD3A /* UIUtils.swift */; };
+		7179274F1C288DAC002C399F /* FilterServiceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7179274E1C288DAC002C399F /* FilterServiceCell.swift */; };
+		71F0A6A71C284FD200A1AAD3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F0A6A61C284FD200A1AAD3 /* ViewController.swift */; };
+		71F0A6A91C284FE900A1AAD3 /* LeftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F0A6A81C284FE900A1AAD3 /* LeftViewController.swift */; };
+		71F0A6AB1C284FF400A1AAD3 /* RightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F0A6AA1C284FF400A1AAD3 /* RightViewController.swift */; };
 		71F4A2EF1C1BF8F0008BF810 /* Transportation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F4A2EE1C1BF8F0008BF810 /* Transportation.swift */; };
-		71F4A2F11C1BFBF7008BF810 /* TransportationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F4A2F01C1BFBF7008BF810 /* TransportationCell.swift */; };
 		71F4A2F31C1C18B8008BF810 /* TransportationDetailControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F4A2F21C1C18B8008BF810 /* TransportationDetailControllerViewController.swift */; };
 		71F4A2F51C1C197F008BF810 /* HistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F4A2F41C1C197F008BF810 /* HistoryCell.swift */; };
 		71F4A2F81C1C2E4F008BF810 /* HistoryDetailPopup.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71F4A2F71C1C2E4F008BF810 /* HistoryDetailPopup.xib */; };
@@ -36,9 +39,6 @@
 		A69BDDDC1C181714005CA6C6 /* UIViewController+SwiftySideMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = A69BDDDA1C181714005CA6C6 /* UIViewController+SwiftySideMenu.m */; };
 		A69BDDE11C181D0B005CA6C6 /* TimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69BDDE01C181D0B005CA6C6 /* TimelineViewController.swift */; };
 		A69BDDE51C182802005CA6C6 /* OptionsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69BDDE41C182802005CA6C6 /* OptionsTableViewController.swift */; };
-		A6C5DD931C1D2B2F00A7DB9D /* FilterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C5DD911C1D2B2F00A7DB9D /* FilterCell.swift */; };
-		A6C5DD941C1D2B2F00A7DB9D /* FilterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6C5DD921C1D2B2F00A7DB9D /* FilterCell.xib */; };
-		A6C5DD961C1D2D4F00A7DB9D /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C5DD951C1D2D4F00A7DB9D /* FilterViewController.swift */; };
 		A6C5DD9A1C1D378200A7DB9D /* RateView.m in Sources */ = {isa = PBXBuildFile; fileRef = A6C5DD991C1D378200A7DB9D /* RateView.m */; };
 		A6C5DD9C1C1D420A00A7DB9D /* RepairServiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C5DD9B1C1D420A00A7DB9D /* RepairServiceViewController.swift */; };
 		A6C5DD9F1C1D44B400A7DB9D /* ServiceDetailNameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C5DD9D1C1D44B400A7DB9D /* ServiceDetailNameCell.swift */; };
@@ -75,8 +75,11 @@
 		71437D321C225BB1003B3AE1 /* XEEMService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XEEMService.swift; sourceTree = "<group>"; };
 		7173FB561C215CE600C1DD3A /* ColorUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorUtils.swift; sourceTree = "<group>"; };
 		7173FB581C2180BC00C1DD3A /* UIUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIUtils.swift; sourceTree = "<group>"; };
+		7179274E1C288DAC002C399F /* FilterServiceCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterServiceCell.swift; sourceTree = "<group>"; };
+		71F0A6A61C284FD200A1AAD3 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		71F0A6A81C284FE900A1AAD3 /* LeftViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftViewController.swift; sourceTree = "<group>"; };
+		71F0A6AA1C284FF400A1AAD3 /* RightViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RightViewController.swift; sourceTree = "<group>"; };
 		71F4A2EE1C1BF8F0008BF810 /* Transportation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Transportation.swift; sourceTree = "<group>"; };
-		71F4A2F01C1BFBF7008BF810 /* TransportationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransportationCell.swift; sourceTree = "<group>"; };
 		71F4A2F21C1C18B8008BF810 /* TransportationDetailControllerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransportationDetailControllerViewController.swift; sourceTree = "<group>"; };
 		71F4A2F41C1C197F008BF810 /* HistoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryCell.swift; sourceTree = "<group>"; };
 		71F4A2F71C1C2E4F008BF810 /* HistoryDetailPopup.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HistoryDetailPopup.xib; sourceTree = "<group>"; };
@@ -100,9 +103,6 @@
 		A69BDDDD1C18172C005CA6C6 /* XEEM-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "XEEM-Bridging-Header.h"; sourceTree = "<group>"; };
 		A69BDDE01C181D0B005CA6C6 /* TimelineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineViewController.swift; sourceTree = "<group>"; };
 		A69BDDE41C182802005CA6C6 /* OptionsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionsTableViewController.swift; sourceTree = "<group>"; };
-		A6C5DD911C1D2B2F00A7DB9D /* FilterCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FilterCell.swift; path = View/TableView/FilterCell.swift; sourceTree = "<group>"; };
-		A6C5DD921C1D2B2F00A7DB9D /* FilterCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FilterCell.xib; path = View/TableView/FilterCell.xib; sourceTree = "<group>"; };
-		A6C5DD951C1D2D4F00A7DB9D /* FilterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
 		A6C5DD981C1D378200A7DB9D /* RateView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RateView.h; sourceTree = "<group>"; };
 		A6C5DD991C1D378200A7DB9D /* RateView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RateView.m; sourceTree = "<group>"; };
 		A6C5DD9B1C1D420A00A7DB9D /* RepairServiceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepairServiceViewController.swift; sourceTree = "<group>"; };
@@ -147,6 +147,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		71F0A6A51C284FC400A1AAD3 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				71F0A6A61C284FD200A1AAD3 /* ViewController.swift */,
+				71F0A6A81C284FE900A1AAD3 /* LeftViewController.swift */,
+				71F0A6AA1C284FF400A1AAD3 /* RightViewController.swift */,
+			);
+			name = Home;
+			sourceTree = "<group>";
+		};
 		71F4A2F61C1C2E28008BF810 /* Xib */ = {
 			isa = PBXGroup;
 			children = (
@@ -187,13 +197,12 @@
 		A627252B1C14A0D30005A204 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				71F0A6A51C284FC400A1AAD3 /* Home */,
 				CECBE02C1C22EA0A004F6C55 /* Setting */,
-				CE8C13381C1DC15500D1AA09 /* Login */,
 				A69BDDE01C181D0B005CA6C6 /* TimelineViewController.swift */,
 				A6C646AA1C25335000B417C9 /* Home */,
 				CE8C13381C1DC15500D1AA09 /* Login */,
 				A69BDDE41C182802005CA6C6 /* OptionsTableViewController.swift */,
-				A6C5DD951C1D2D4F00A7DB9D /* FilterViewController.swift */,
 				A6C5DD9B1C1D420A00A7DB9D /* RepairServiceViewController.swift */,
 				7111A51F1C1BC55100FA17A5 /* ProfileViewController.swift */,
 				71F4A2F21C1C18B8008BF810 /* TransportationDetailControllerViewController.swift */,
@@ -208,10 +217,10 @@
 			isa = PBXGroup;
 			children = (
 				A6C5DD901C1D2AD100A7DB9D /* TableView */,
-				71F4A2F01C1BFBF7008BF810 /* TransportationCell.swift */,
 				71F4A2F41C1C197F008BF810 /* HistoryCell.swift */,
 				CECBE0331C23007B004F6C55 /* PaymentMethodTableViewCell.swift */,
 				CE7762441C254D1E0074937F /* CurrencyTableViewCell.swift */,
+				7179274E1C288DAC002C399F /* FilterServiceCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -299,8 +308,6 @@
 		A6C5DD901C1D2AD100A7DB9D /* TableView */ = {
 			isa = PBXGroup;
 			children = (
-				A6C5DD911C1D2B2F00A7DB9D /* FilterCell.swift */,
-				A6C5DD921C1D2B2F00A7DB9D /* FilterCell.xib */,
 				A6C5DD9D1C1D44B400A7DB9D /* ServiceDetailNameCell.swift */,
 				A6C5DD9E1C1D44B400A7DB9D /* ServiceDetailNameCell.xib */,
 				A6C5DDA11C1DA4DC00A7DB9D /* QuotesTableViewCell.swift */,
@@ -325,7 +332,6 @@
 		A6C646AA1C25335000B417C9 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				A69BDDE01C181D0B005CA6C6 /* TimelineViewController.swift */,
 			);
 			name = Home;
 			sourceTree = "<group>";
@@ -477,7 +483,6 @@
 				A6C5DDAC1C1DAE5200A7DB9D /* ReviewCell.xib in Resources */,
 				A6C5DDA01C1D44B400A7DB9D /* ServiceDetailNameCell.xib in Resources */,
 				CE1395541C1087D100A67657 /* LaunchScreen.storyboard in Resources */,
-				A6C5DD941C1D2B2F00A7DB9D /* FilterCell.xib in Resources */,
 				CE1395511C1087D100A67657 /* Assets.xcassets in Resources */,
 				A6C5DDA41C1DA4DC00A7DB9D /* QuotesTableViewCell.xib in Resources */,
 				CE13954F1C1087D100A67657 /* Main.storyboard in Resources */,
@@ -539,21 +544,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A6C5DD931C1D2B2F00A7DB9D /* FilterCell.swift in Sources */,
-				71F4A2F11C1BFBF7008BF810 /* TransportationCell.swift in Sources */,
+				71F0A6A71C284FD200A1AAD3 /* ViewController.swift in Sources */,
 				71F4A3021C1C959C008BF810 /* MKLayer.swift in Sources */,
 				CE8C133C1C1DC15C00D1AA09 /* XEEMViewController.swift in Sources */,
+				71F0A6A91C284FE900A1AAD3 /* LeftViewController.swift in Sources */,
 				71437D311C225333003B3AE1 /* User.swift in Sources */,
 				A69BDDDC1C181714005CA6C6 /* UIViewController+SwiftySideMenu.m in Sources */,
 				A6C5DD9A1C1D378200A7DB9D /* RateView.m in Sources */,
 				A6C5DDA71C1DAA0F00A7DB9D /* ShowmoreCell.swift in Sources */,
 				A6C646B31C25503500B417C9 /* Quotes.swift in Sources */,
-				A6C5DD961C1D2D4F00A7DB9D /* FilterViewController.swift in Sources */,
 				A6C5DD9F1C1D44B400A7DB9D /* ServiceDetailNameCell.swift in Sources */,
 				A69BDDDB1C181714005CA6C6 /* SwiftySideMenuViewController.m in Sources */,
 				A6C5DD9C1C1D420A00A7DB9D /* RepairServiceViewController.swift in Sources */,
 				71F4A2F31C1C18B8008BF810 /* TransportationDetailControllerViewController.swift in Sources */,
 				CECBE02E1C22EA24004F6C55 /* PaymentMethodViewController.swift in Sources */,
+				71F0A6AB1C284FF400A1AAD3 /* RightViewController.swift in Sources */,
 				710262821C1D4B4C0009724D /* NewTransportationViewController.swift in Sources */,
 				CE7762451C254D1E0074937F /* CurrencyTableViewCell.swift in Sources */,
 				71F4A2FA1C1C3947008BF810 /* HistoryDetailControler.swift in Sources */,
@@ -568,10 +573,10 @@
 				71F4A3061C1C9B96008BF810 /* EditProfileViewController.swift in Sources */,
 				CECBE0341C23007B004F6C55 /* PaymentMethodTableViewCell.swift in Sources */,
 				71F4A3001C1C9552008BF810 /* MKTextField.swift in Sources */,
-				71F4A2FD1C1C3D65008BF810 /* UIVViewController-SLPopup.swift in Sources */,
 				CE7762431C253D860074937F /* ChangePasswordViewController.swift in Sources */,
 				CECBE0301C22EA52004F6C55 /* SettingViewController.swift in Sources */,
 				7173FB591C2180BC00C1DD3A /* UIUtils.swift in Sources */,
+				7179274F1C288DAC002C399F /* FilterServiceCell.swift in Sources */,
 				A62206141C269DFF00B7C864 /* SideMenuController.swift in Sources */,
 				A69BDDE11C181D0B005CA6C6 /* TimelineViewController.swift in Sources */,
 				7115C4191C21A0CA0029ACB6 /* UIVViewController-SLPopup.swift in Sources */,
