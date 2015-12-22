@@ -14,8 +14,29 @@ class ForgotPasswordViewController: UIViewController {
 
     @IBOutlet weak var resetBtn: UIButton!
     
+    @IBOutlet weak var forgotPaswordLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.forgotPaswordLabel.textColor = UIColor.lightGrayColor()
+        
+        self.emailReset.layer.borderColor = UIColor.lightGrayColor().CGColor
+        self.emailReset.layer.borderWidth = CGFloat(Float(1.0))
+       
+        
+        self.resetBtn.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
+        self.resetBtn.layer.cornerRadius = CGFloat(Float(5.0))
+        self.resetBtn.backgroundColor = ColorUtils.UIColorFromRGB("0xF44336");
+        self.resetBtn.layer.borderWidth = CGFloat(Float(1.0))
+        self.resetBtn.layer.borderColor = ColorUtils.UIColorFromRGB("0xF44336").CGColor;
+        
+        self.navigationController?.navigationBar.barTintColor = UIColor.darkGrayColor()
+        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName : UIColor.whiteColor()]
+        
+        
+
+    
 
         // Do any additional setup after loading the view.
     }

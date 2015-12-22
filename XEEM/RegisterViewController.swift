@@ -10,18 +10,40 @@ import UIKit
 
 class RegisterViewController: UIViewController {
     
-    @IBOutlet weak var email: UITextField!
     
-    @IBOutlet weak var phoneNumber: UITextField!
-
-    
-    @IBOutlet weak var password: UITextField!
+    @IBOutlet weak var email: MKTextField!
+    @IBOutlet weak var phoneNumber: MKTextField!
+    @IBOutlet weak var registerPassword: MKTextField!
+    @IBOutlet weak var registerBtn: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
+        self.registerBtn.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
+        self.registerBtn.layer.cornerRadius = CGFloat(Float(5.0))
+        self.registerBtn.backgroundColor = ColorUtils.UIColorFromRGB("0xF44336");
+        
+        
+        self.navigationController?.navigationBar.barTintColor = UIColor.darkGrayColor()
+//        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
+//        self.navigationController?.navigationBar.shadowImage = UIImage()
+        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName : UIColor.whiteColor()]
+        
+        setRegister()
+        
         // Do any additional setup after loading the view.
     }
+    
+    func setRegister() -> () {
+        
+        UIUtils.setupMaterialTextField(email)
+        UIUtils.setupMaterialTextField(phoneNumber)
+        UIUtils.setupMaterialTextField(registerPassword)
+        
+    }
+    
+
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

@@ -55,6 +55,7 @@ class TimelineViewController: UIViewController, MKMapViewDelegate, CLLocationMan
                 
             })
         }
+        
     }
     
     func onServiceTapView(sender:UITapGestureRecognizer){
