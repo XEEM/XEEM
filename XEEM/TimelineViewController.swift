@@ -174,7 +174,7 @@ class TimelineViewController: UIViewController, MKMapViewDelegate, CLLocationMan
             annotationView!.canShowCallout = false
         } else {
             annotationView!.annotation = annotation
-            annotationView!.canShowCallout = true
+            annotationView!.canShowCallout = false
         }
         
         return annotationView
@@ -193,8 +193,19 @@ class TimelineViewController: UIViewController, MKMapViewDelegate, CLLocationMan
     
     @IBAction func onEmergencyTapped(sender: UIButton) {
         // TO-DO
-        
+        let myPopupViewController:EmergencyViewController = EmergencyViewController(nibName:"EmergencyView", bundle: nil)
+        myPopupViewController.delegate = self
+        self.presentpopupViewController(myPopupViewController, animationType: .Fade, completion: { () -> Void in })
+
     }
+    
+    // MARK: - MyLocation
+    
+    @IBAction func onMyLocationUpdate(sender: UIButton) {
+        self.locationManager.startUpdatingLocation()
+    }
+    
+    
     /*
     // MARK: - Navigation
 
@@ -225,5 +236,14 @@ class TimelineViewController: UIViewController, MKMapViewDelegate, CLLocationMan
             self.addSubview(imageView)
         }
     }
+}
 
+extension TimelineViewController: EmergencyDelegate {
+    func emergency(emergencyView: EmergencyViewController, didCancelTap onCancelTap: UIButton) {
+        self.navigationController?.dismissPopupViewController(.Fade)
+    }
+    
+    func emergency(emergencyView: EmergencyViewController, didHelpTap onHelp: UIButton, whichSelection selection: Int) {
+        
+    }
 }

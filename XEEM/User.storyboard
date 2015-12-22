@@ -89,6 +89,13 @@
                                     <action selector="onEmergencyTapped:" destination="SoN-gW-hiv" eventType="touchUpInside" id="MDJ-14-qb5"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1wQ-wF-NBa" userLabel="myLocation">
+                                <rect key="frame" x="260" y="80" width="40" height="40"/>
+                                <state key="normal" image="ic_mylocation"/>
+                                <connections>
+                                    <action selector="onMyLocationUpdate:" destination="SoN-gW-hiv" eventType="touchUpInside" id="ht7-YZ-w4v"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
@@ -102,6 +109,8 @@
                             <constraint firstAttribute="trailing" secondItem="3qC-P5-ePt" secondAttribute="trailing" id="R0f-ke-brh"/>
                             <constraint firstAttribute="trailing" secondItem="lZH-RZ-K1L" secondAttribute="trailing" id="Tzw-h5-ti0"/>
                             <constraint firstItem="3qC-P5-ePt" firstAttribute="leading" secondItem="piU-xM-JN7" secondAttribute="leading" id="VDv-1t-zqo"/>
+                            <constraint firstItem="1wQ-wF-NBa" firstAttribute="top" secondItem="3qC-P5-ePt" secondAttribute="bottom" constant="20" id="dYd-oW-7Ay"/>
+                            <constraint firstAttribute="trailing" secondItem="1wQ-wF-NBa" secondAttribute="trailing" constant="20" id="k21-U3-X87"/>
                             <constraint firstItem="3qC-P5-ePt" firstAttribute="top" secondItem="BVf-Kh-Qru" secondAttribute="bottom" id="r1q-Rs-Agx"/>
                         </constraints>
                     </view>
@@ -621,6 +630,7 @@
         <image name="ic_checked" width="35" height="35"/>
         <image name="ic_default_avatar" width="100" height="100"/>
         <image name="ic_filter" width="22" height="22"/>
+        <image name="ic_mylocation" width="40" height="40"/>
         <image name="ic_user" width="22" height="22"/>
     </resources>
 </document>
