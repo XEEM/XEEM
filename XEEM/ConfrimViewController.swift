@@ -9,8 +9,8 @@
 import UIKit
 
 protocol ConfrimViewControllerDelegate {
-    func onConfrimTapped(confirmViewController: UIViewController)
-    func onCancelTapped(confirmViewController: UIViewController)
+    func onConfrimTapped(confirmViewController: ConfrimViewController)
+    func onCancelTapped(confirmViewController: ConfrimViewController)
 }
 
 class ConfrimViewController: UIViewController {

@@ -235,20 +235,22 @@ class RepairServiceViewController: UIViewController, UITableViewDelegate, UITabl
     func displayViewController(animationType: SLpopupViewAnimationType) {
         let myPopupViewController:ConfrimViewController = ConfrimViewController(nibName:"ConfrimPopUp", bundle: nil)
         myPopupViewController.delegate = self
-        self.presentpopupViewController(myPopupViewController, animationType: animationType, completion: { () -> Void in
-            
-        })
+        self.presentpopupViewController(myPopupViewController, animationType: animationType, completion: { () -> Void in })
     }
 
-    func onCancelTapped(confirmViewController: UIViewController) {
+    func onCancelTapped(confirmViewController: ConfrimViewController) {
         self.navigationController?.dismissPopupViewController(.Fade)
     }
     
-    func onConfrimTapped(confirmViewController: UIViewController) {
-        let storyboard = UIStoryboard(name: "User", bundle: nil)
-        let listReviewVC =  storyboard.instantiateViewControllerWithIdentifier("RequestLoadingViewController") as! RequestLoadingViewController
-        self.navigationController?.pushViewController(listReviewVC, animated: true)
-
+    func onConfrimTapped(confirmViewController: ConfrimViewController) {
+        confirmViewController.titleLabel.resignFirstResponder()
+        self.navigationController?.dismissPopupViewController(.Fade)
+        let delayTime = dispatch_time(DISPATCH_TIME_NOW, Int64(0.5 * Double(NSEC_PER_SEC)))
+        dispatch_after(delayTime, dispatch_get_main_queue()) {
+            let storyboard = UIStoryboard(name: "User", bundle: nil)
+            let listReviewVC =  storyboard.instantiateViewControllerWithIdentifier("RequestLoadingViewController") as! RequestLoadingViewController
+            self.navigationController?.presentpopupViewController(listReviewVC, animationType: .RightLeft, completion: { () -> Void in })
+        }
     }
     
     

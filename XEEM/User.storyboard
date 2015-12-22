@@ -525,15 +525,20 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="Fhx-1U-e6l">
+                        <barButtonItem key="leftBarButtonItem" image="ic_back" id="Jpb-Bh-3IK">
+                            <color key="tintColor" red="1" green="0.0" blue="0.03079350443" alpha="1" colorSpace="calibratedRGB"/>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qfx-JN-2MQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="818" y="1629"/>
+            <point key="canvasLocation" x="1059" y="1610"/>
         </scene>
         <!--Review-->
         <scene sceneID="yRG-6J-lPd">
             <objects>
-                <viewController storyboardIdentifier="ListReviewViewController" id="gZC-gX-PKm" customClass="ListReviewViewController" customModule="XEEM" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ListReviewViewController" automaticallyAdjustsScrollViewInsets="NO" id="gZC-gX-PKm" customClass="ListReviewViewController" customModule="XEEM" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="cn5-XE-TIL"/>
                         <viewControllerLayoutGuide type="bottom" id="0k9-dM-7Gz"/>

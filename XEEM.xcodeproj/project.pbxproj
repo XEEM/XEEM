@@ -53,6 +53,14 @@
 		A6C646AF1C254D9500B417C9 /* ShopModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C646AE1C254D9500B417C9 /* ShopModel.swift */; };
 		A6C646B11C254F6D00B417C9 /* ReviewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C646B01C254F6D00B417C9 /* ReviewModel.swift */; };
 		A6C646B31C25503500B417C9 /* Quotes.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C646B21C25503500B417C9 /* Quotes.swift */; };
+		A6D2C5C51C2998E500321254 /* ConfrimViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D2C5C41C2998E500321254 /* ConfrimViewController.swift */; };
+		A6D2C5C71C29A2AC00321254 /* RequestLoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D2C5C61C29A2AC00321254 /* RequestLoadingViewController.swift */; };
+		A6D2C5D21C29A78400321254 /* XHAmazingLoadingMusicsAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = A6D2C5CD1C29A78400321254 /* XHAmazingLoadingMusicsAnimation.m */; };
+		A6D2C5D31C29A78400321254 /* XHAmazingLoadingSkypeAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = A6D2C5CF1C29A78400321254 /* XHAmazingLoadingSkypeAnimation.m */; };
+		A6D2C5D41C29A78400321254 /* XHAmazingLoadingStarAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = A6D2C5D11C29A78400321254 /* XHAmazingLoadingStarAnimation.m */; };
+		A6D2C5D81C29A79800321254 /* XHLayerHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = A6D2C5D71C29A79800321254 /* XHLayerHelper.m */; };
+		A6D2C5DE1C29A7B800321254 /* XHAmazingLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = A6D2C5DD1C29A7B800321254 /* XHAmazingLoadingView.m */; };
+		A6DEFCB01C298B89000DBCB4 /* ConfrimPopUp.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6DEFCAF1C298B89000DBCB4 /* ConfrimPopUp.xib */; };
 		CE13954A1C1087D100A67657 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1395491C1087D100A67657 /* AppDelegate.swift */; };
 		CE13954F1C1087D100A67657 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE13954D1C1087D100A67657 /* Main.storyboard */; };
 		CE1395511C1087D100A67657 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE1395501C1087D100A67657 /* Assets.xcassets */; };
@@ -120,6 +128,20 @@
 		A6C646AE1C254D9500B417C9 /* ShopModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopModel.swift; sourceTree = "<group>"; };
 		A6C646B01C254F6D00B417C9 /* ReviewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewModel.swift; sourceTree = "<group>"; };
 		A6C646B21C25503500B417C9 /* Quotes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Quotes.swift; sourceTree = "<group>"; };
+		A6D2C5C41C2998E500321254 /* ConfrimViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfrimViewController.swift; sourceTree = "<group>"; };
+		A6D2C5C61C29A2AC00321254 /* RequestLoadingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestLoadingViewController.swift; sourceTree = "<group>"; };
+		A6D2C5CC1C29A78400321254 /* XHAmazingLoadingMusicsAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHAmazingLoadingMusicsAnimation.h; sourceTree = "<group>"; };
+		A6D2C5CD1C29A78400321254 /* XHAmazingLoadingMusicsAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHAmazingLoadingMusicsAnimation.m; sourceTree = "<group>"; };
+		A6D2C5CE1C29A78400321254 /* XHAmazingLoadingSkypeAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHAmazingLoadingSkypeAnimation.h; sourceTree = "<group>"; };
+		A6D2C5CF1C29A78400321254 /* XHAmazingLoadingSkypeAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHAmazingLoadingSkypeAnimation.m; sourceTree = "<group>"; };
+		A6D2C5D01C29A78400321254 /* XHAmazingLoadingStarAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHAmazingLoadingStarAnimation.h; sourceTree = "<group>"; };
+		A6D2C5D11C29A78400321254 /* XHAmazingLoadingStarAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHAmazingLoadingStarAnimation.m; sourceTree = "<group>"; };
+		A6D2C5D61C29A79800321254 /* XHLayerHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHLayerHelper.h; sourceTree = "<group>"; };
+		A6D2C5D71C29A79800321254 /* XHLayerHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHLayerHelper.m; sourceTree = "<group>"; };
+		A6D2C5DA1C29A7A700321254 /* XHAmazingLoadingAnimationProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XHAmazingLoadingAnimationProtocol.h; sourceTree = "<group>"; };
+		A6D2C5DC1C29A7B800321254 /* XHAmazingLoadingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHAmazingLoadingView.h; sourceTree = "<group>"; };
+		A6D2C5DD1C29A7B800321254 /* XHAmazingLoadingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHAmazingLoadingView.m; sourceTree = "<group>"; };
+		A6DEFCAF1C298B89000DBCB4 /* ConfrimPopUp.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ConfrimPopUp.xib; sourceTree = "<group>"; };
 		CE1395461C1087D100A67657 /* XEEM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XEEM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE1395491C1087D100A67657 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE13954E1C1087D100A67657 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -163,6 +185,7 @@
 			isa = PBXGroup;
 			children = (
 				71F4A2F71C1C2E4F008BF810 /* HistoryDetailPopup.xib */,
+				A6DEFCAF1C298B89000DBCB4 /* ConfrimPopUp.xib */,
 			);
 			name = Xib;
 			sourceTree = "<group>";
@@ -199,12 +222,14 @@
 		A627252B1C14A0D30005A204 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				A6D2C5C11C2997BF00321254 /* Custom */,
 				71F0A6A51C284FC400A1AAD3 /* Home */,
 				CECBE02C1C22EA0A004F6C55 /* Setting */,
 				A69BDDE01C181D0B005CA6C6 /* TimelineViewController.swift */,
 				A6C646AA1C25335000B417C9 /* Home */,
 				CE8C13381C1DC15500D1AA09 /* Login */,
 				A6C5DD9B1C1D420A00A7DB9D /* RepairServiceViewController.swift */,
+				A6D2C5C61C29A2AC00321254 /* RequestLoadingViewController.swift */,
 				A621F6011C28770E00D19952 /* ListReviewViewController.swift */,
 				7111A51F1C1BC55100FA17A5 /* ProfileViewController.swift */,
 				71F4A2F21C1C18B8008BF810 /* TransportationDetailControllerViewController.swift */,
@@ -288,6 +313,7 @@
 		A69BDDC81C1816A6005CA6C6 /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				A6D2C5CA1C29A72500321254 /* XHAmazingLoading */,
 				A622060E1C26918600B7C864 /* SliderMenuSwift */,
 				A6C5DD971C1D377600A7DB9D /* RateView */,
 				71F4A2FE1C1C94D0008BF810 /* MaterialUI */,
@@ -337,6 +363,64 @@
 			children = (
 			);
 			name = Home;
+			sourceTree = "<group>";
+		};
+		A6D2C5C11C2997BF00321254 /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+				A6D2C5C41C2998E500321254 /* ConfrimViewController.swift */,
+			);
+			name = Custom;
+			sourceTree = "<group>";
+		};
+		A6D2C5CA1C29A72500321254 /* XHAmazingLoading */ = {
+			isa = PBXGroup;
+			children = (
+				A6D2C5DB1C29A7AC00321254 /* View */,
+				A6D2C5D91C29A7A000321254 /* Protocol */,
+				A6D2C5D51C29A79000321254 /* Helpers */,
+				A6D2C5CB1C29A77B00321254 /* Animation */,
+			);
+			name = XHAmazingLoading;
+			sourceTree = "<group>";
+		};
+		A6D2C5CB1C29A77B00321254 /* Animation */ = {
+			isa = PBXGroup;
+			children = (
+				A6D2C5CC1C29A78400321254 /* XHAmazingLoadingMusicsAnimation.h */,
+				A6D2C5CD1C29A78400321254 /* XHAmazingLoadingMusicsAnimation.m */,
+				A6D2C5CE1C29A78400321254 /* XHAmazingLoadingSkypeAnimation.h */,
+				A6D2C5CF1C29A78400321254 /* XHAmazingLoadingSkypeAnimation.m */,
+				A6D2C5D01C29A78400321254 /* XHAmazingLoadingStarAnimation.h */,
+				A6D2C5D11C29A78400321254 /* XHAmazingLoadingStarAnimation.m */,
+			);
+			name = Animation;
+			sourceTree = "<group>";
+		};
+		A6D2C5D51C29A79000321254 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				A6D2C5D61C29A79800321254 /* XHLayerHelper.h */,
+				A6D2C5D71C29A79800321254 /* XHLayerHelper.m */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
+		A6D2C5D91C29A7A000321254 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				A6D2C5DA1C29A7A700321254 /* XHAmazingLoadingAnimationProtocol.h */,
+			);
+			name = Protocol;
+			sourceTree = "<group>";
+		};
+		A6D2C5DB1C29A7AC00321254 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A6D2C5DC1C29A7B800321254 /* XHAmazingLoadingView.h */,
+				A6D2C5DD1C29A7B800321254 /* XHAmazingLoadingView.m */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 		C8FB37CCAB7E05808E7EF442 /* Pods */ = {
@@ -479,6 +563,7 @@
 				A6C5DDA81C1DAA0F00A7DB9D /* ShowmoreCell.xib in Resources */,
 				A629C3E71C16BF9D00D77F69 /* Service.storyboard in Resources */,
 				A629C3E01C169C9700D77F69 /* Login.storyboard in Resources */,
+				A6DEFCB01C298B89000DBCB4 /* ConfrimPopUp.xib in Resources */,
 				7111A51E1C1BC33600FA17A5 /* Profile.storyboard in Resources */,
 				A629C3EB1C16C47900D77F69 /* Setting.storyboard in Resources */,
 				71F4A2F81C1C2E4F008BF810 /* HistoryDetailPopup.xib in Resources */,
@@ -561,6 +646,7 @@
 				A6C5DD9C1C1D420A00A7DB9D /* RepairServiceViewController.swift in Sources */,
 				71F4A2F31C1C18B8008BF810 /* TransportationDetailControllerViewController.swift in Sources */,
 				CECBE02E1C22EA24004F6C55 /* PaymentMethodViewController.swift in Sources */,
+				A6D2C5C51C2998E500321254 /* ConfrimViewController.swift in Sources */,
 				71F0A6AB1C284FF400A1AAD3 /* RightViewController.swift in Sources */,
 				710262821C1D4B4C0009724D /* NewTransportationViewController.swift in Sources */,
 				CE7762451C254D1E0074937F /* CurrencyTableViewCell.swift in Sources */,
@@ -572,20 +658,26 @@
 				A621F6021C28770E00D19952 /* ListReviewViewController.swift in Sources */,
 				CE8C133D1C1DC15C00D1AA09 /* RegisterViewController.swift in Sources */,
 				CE13954A1C1087D100A67657 /* AppDelegate.swift in Sources */,
+				A6D2C5D21C29A78400321254 /* XHAmazingLoadingMusicsAnimation.m in Sources */,
 				7173FB571C215CE700C1DD3A /* ColorUtils.swift in Sources */,
 				71F4A3061C1C9B96008BF810 /* EditProfileViewController.swift in Sources */,
 				CECBE0341C23007B004F6C55 /* PaymentMethodTableViewCell.swift in Sources */,
 				71F4A3001C1C9552008BF810 /* MKTextField.swift in Sources */,
 				CE7762431C253D860074937F /* ChangePasswordViewController.swift in Sources */,
+				A6D2C5C71C29A2AC00321254 /* RequestLoadingViewController.swift in Sources */,
 				CECBE0301C22EA52004F6C55 /* SettingViewController.swift in Sources */,
 				7173FB591C2180BC00C1DD3A /* UIUtils.swift in Sources */,
 				7179274F1C288DAC002C399F /* FilterServiceCell.swift in Sources */,
 				A62206141C269DFF00B7C864 /* SideMenuController.swift in Sources */,
+				A6D2C5D81C29A79800321254 /* XHLayerHelper.m in Sources */,
 				A69BDDE11C181D0B005CA6C6 /* TimelineViewController.swift in Sources */,
 				7115C4191C21A0CA0029ACB6 /* UIVViewController-SLPopup.swift in Sources */,
 				71437D331C225BB1003B3AE1 /* XEEMService.swift in Sources */,
+				A6D2C5D31C29A78400321254 /* XHAmazingLoadingSkypeAnimation.m in Sources */,
 				A6C646AF1C254D9500B417C9 /* ShopModel.swift in Sources */,
 				A6C5DDAB1C1DAE5200A7DB9D /* ReviewCell.swift in Sources */,
+				A6D2C5DE1C29A7B800321254 /* XHAmazingLoadingView.m in Sources */,
+				A6D2C5D41C29A78400321254 /* XHAmazingLoadingStarAnimation.m in Sources */,
 				A62206161C26A66300B7C864 /* OptionsViewController.swift in Sources */,
 				71CD91E71C292BA800DDE36C /* ApplyFilterCell.swift in Sources */,
 				71F4A2EF1C1BF8F0008BF810 /* Transportation.swift in Sources */,
