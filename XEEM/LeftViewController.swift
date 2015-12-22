@@ -85,7 +85,7 @@ extension LeftViewController: UITableViewDataSource, UITableViewDelegate {
              self.slideMenuController()?.toggleLeft()
            // Go to history of a transportation
             let storyboard = UIStoryboard(name: "Profile", bundle: nil)
-            let rootVC = storyboard.instantiateViewControllerWithIdentifier("TransportationDetailControllerViewController") as! UINavigationController
+            let rootVC = storyboard.instantiateViewControllerWithIdentifier("TransportationDetailViewController") as! UINavigationController
             self.presentViewController(rootVC, animated: true , completion: nil)
         }
 

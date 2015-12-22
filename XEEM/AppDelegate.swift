@@ -18,13 +18,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
     
-//        if (User.currentUser == nil) {
-//            let storyBoard = UIStoryboard(name: "Login", bundle: nil)
-//            let rootVC = storyBoard.instantiateViewControllerWithIdentifier("LoginNavigationController") as! UINavigationController
-//            self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
-//            self.window!.rootViewController = rootVC
-//            self.window?.makeKeyAndVisible()
-//        } else {
+        if (User.currentUser == nil) {
+            let storyBoard = UIStoryboard(name: "Login", bundle: nil)
+            let rootVC = storyBoard.instantiateViewControllerWithIdentifier("LoginNavigationController") as! UINavigationController
+            self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
+            self.window!.rootViewController = rootVC
+            self.window?.makeKeyAndVisible()
+        } else {
+            // create viewController code...
+            let storyboard = UIStoryboard(name: "User", bundle: nil)
+            
+            let mainViewController = storyboard.instantiateViewControllerWithIdentifier("CenterUser") as! UINavigationController
+            let leftViewController = storyboard.instantiateViewControllerWithIdentifier("LeftViewController") as! LeftViewController
+            let rightViewController = storyboard.instantiateViewControllerWithIdentifier("RightViewController") as! RightViewController
+            //let nvc: UINavigationController = UINavigationController(rootViewController: mainViewController)
+            
+            let slideMenuController = SlideMenuController(mainViewController: mainViewController, leftMenuViewController: leftViewController, rightMenuViewController: rightViewController)
+            
+            
+            self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
+            self.window!.rootViewController = slideMenuController
+            self.window?.makeKeyAndVisible()
+
+        }
 //            let storyboard = UIStoryboard(name: "User", bundle: nil)
 //            SideMenuController.menuButtonImage = UIImage(named: "menuButton")
 //            SideMenuController.presentationStyle = .UnderCenterPanelLeft
@@ -40,22 +56,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        }
         
         
-        // create viewController code...
-        let storyboard = UIStoryboard(name: "User", bundle: nil)
         
-        let mainViewController = storyboard.instantiateViewControllerWithIdentifier("CenterUser") as! UINavigationController
-        let leftViewController = storyboard.instantiateViewControllerWithIdentifier("LeftViewController") as! LeftViewController
-        let rightViewController = storyboard.instantiateViewControllerWithIdentifier("RightViewController") as! RightViewController
-        
-        //let nvc: UINavigationController = UINavigationController(rootViewController: mainViewController)
-       
-        let slideMenuController = SlideMenuController(mainViewController: mainViewController, leftMenuViewController: leftViewController, rightMenuViewController: rightViewController)
-
-        
-        self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
-        self.window!.rootViewController = slideMenuController
-        self.window?.makeKeyAndVisible()
-    
         return true
     }
 

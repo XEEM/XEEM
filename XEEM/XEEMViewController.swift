@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SlideMenuControllerSwift
 
 
 class XEEMViewController: UIViewController {
@@ -73,21 +74,38 @@ class XEEMViewController: UIViewController {
                         if let user = user {
                             User.currentUser = user
                             
-                            // Dummy Login
+                            // create viewController code...
                             let storyboard = UIStoryboard(name: "User", bundle: nil)
-                            SideMenuController.menuButtonImage = UIImage(named: "menuButton")
-                            SideMenuController.presentationStyle = .UnderCenterPanelLeft
-                            SideMenuController.animationStyle = .CircleMaskAnimation
                             
-                            UINavigationBar.appearance().translucent = false
-                            UINavigationBar.appearance().barTintColor = UIColor(hue:0.56, saturation:0.88, brightness:0.95, alpha:1)
+                            let mainViewController = storyboard.instantiateViewControllerWithIdentifier("CenterUser") as! UINavigationController
+                            let leftViewController = storyboard.instantiateViewControllerWithIdentifier("LeftViewController") as! LeftViewController
+                            let rightViewController = storyboard.instantiateViewControllerWithIdentifier("RightViewController") as! RightViewController
+                            //let nvc: UINavigationController = UINavigationController(rootViewController: mainViewController)
                             
-                            let rootVC =  storyboard.instantiateViewControllerWithIdentifier("SideMenuController") as! SideMenuController
+                            let slideMenuController = SlideMenuController(mainViewController: mainViewController, leftMenuViewController: leftViewController, rightMenuViewController: rightViewController)
                             let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+
                             
                             appDelegate.window = UIWindow(frame: UIScreen.mainScreen().bounds)
-                            appDelegate.window?.rootViewController = rootVC
+                            appDelegate.window!.rootViewController = slideMenuController
                             appDelegate.window?.makeKeyAndVisible()
+
+                            
+//                            // Dummy Login
+//                            let storyboard = UIStoryboard(name: "User", bundle: nil)
+//                            SideMenuController.menuButtonImage = UIImage(named: "menuButton")
+//                            SideMenuController.presentationStyle = .UnderCenterPanelLeft
+//                            SideMenuController.animationStyle = .CircleMaskAnimation
+//                            
+//                            UINavigationBar.appearance().translucent = false
+//                            UINavigationBar.appearance().barTintColor = UIColor(hue:0.56, saturation:0.88, brightness:0.95, alpha:1)
+//                            
+//                            let rootVC =  storyboard.instantiateViewControllerWithIdentifier("SideMenuController") as! SideMenuController
+//                            let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+//                            
+//                            appDelegate.window = UIWindow(frame: UIScreen.mainScreen().bounds)
+//                            appDelegate.window?.rootViewController = rootVC
+//                            appDelegate.window?.makeKeyAndVisible()
                             
                         } else {
                             // Error from get user data

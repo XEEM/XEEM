@@ -17,7 +17,6 @@
 		7173FB591C2180BC00C1DD3A /* UIUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7173FB581C2180BC00C1DD3A /* UIUtils.swift */; };
 		7179274F1C288DAC002C399F /* FilterServiceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7179274E1C288DAC002C399F /* FilterServiceCell.swift */; };
 		71CD91E71C292BA800DDE36C /* ApplyFilterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71CD91E61C292BA800DDE36C /* ApplyFilterCell.swift */; };
-		71F0A6A71C284FD200A1AAD3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F0A6A61C284FD200A1AAD3 /* ViewController.swift */; };
 		71F0A6A91C284FE900A1AAD3 /* LeftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F0A6A81C284FE900A1AAD3 /* LeftViewController.swift */; };
 		71F0A6AB1C284FF400A1AAD3 /* RightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F0A6AA1C284FF400A1AAD3 /* RightViewController.swift */; };
 		71F4A2EF1C1BF8F0008BF810 /* Transportation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F4A2EE1C1BF8F0008BF810 /* Transportation.swift */; };
@@ -86,7 +85,6 @@
 		7173FB581C2180BC00C1DD3A /* UIUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIUtils.swift; sourceTree = "<group>"; };
 		7179274E1C288DAC002C399F /* FilterServiceCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterServiceCell.swift; sourceTree = "<group>"; };
 		71CD91E61C292BA800DDE36C /* ApplyFilterCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplyFilterCell.swift; sourceTree = "<group>"; };
-		71F0A6A61C284FD200A1AAD3 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		71F0A6A81C284FE900A1AAD3 /* LeftViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftViewController.swift; sourceTree = "<group>"; };
 		71F0A6AA1C284FF400A1AAD3 /* RightViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RightViewController.swift; sourceTree = "<group>"; };
 		71F4A2EE1C1BF8F0008BF810 /* Transportation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Transportation.swift; sourceTree = "<group>"; };
@@ -174,7 +172,6 @@
 		71F0A6A51C284FC400A1AAD3 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				71F0A6A61C284FD200A1AAD3 /* ViewController.swift */,
 				71F0A6A81C284FE900A1AAD3 /* LeftViewController.swift */,
 				71F0A6AA1C284FF400A1AAD3 /* RightViewController.swift */,
 			);
@@ -533,7 +530,7 @@
 				TargetAttributes = {
 					CE1395451C1087D100A67657 = {
 						CreatedOnToolsVersion = 7.1.1;
-						DevelopmentTeam = W5KA45T8VV;
+						DevelopmentTeam = 9898326J2T;
 					};
 				};
 			};
@@ -632,7 +629,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				71F0A6A71C284FD200A1AAD3 /* ViewController.swift in Sources */,
 				71F4A3021C1C959C008BF810 /* MKLayer.swift in Sources */,
 				CE8C133C1C1DC15C00D1AA09 /* XEEMViewController.swift in Sources */,
 				71F0A6A91C284FE900A1AAD3 /* LeftViewController.swift in Sources */,
@@ -800,7 +796,7 @@
 				INFOPLIST_FILE = XEEM/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.xeem.aa;
+				PRODUCT_BUNDLE_IDENTIFIER = com.xeem;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "XEEM/XEEM-Bridging-Header.h";
@@ -819,7 +815,7 @@
 				INFOPLIST_FILE = XEEM/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.xeem.aa;
+				PRODUCT_BUNDLE_IDENTIFIER = com.xeem;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "XEEM/XEEM-Bridging-Header.h";

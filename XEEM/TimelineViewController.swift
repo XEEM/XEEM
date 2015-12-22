@@ -25,6 +25,7 @@ class TimelineViewController: UIViewController, MKMapViewDelegate, CLLocationMan
     var location: CLLocation?
     var listModelShop: [ShopModel] = []
     var selectedShopModel: ShopModel?
+    var filterList : [Int]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,19 +33,27 @@ class TimelineViewController: UIViewController, MKMapViewDelegate, CLLocationMan
         navigationController?.navigationBar.shadowImage = UIImage()
         navigationController?.navigationBar.barTintColor = UIColor.MKColor.AppMainColor
         
+       (self.slideMenuController()?.rightViewController as! RightViewController).delegate = self
         // init RequestServiceView
         self.viewRequestService.hidden = true
-
-
+        
+        //
+        let defaults = NSUserDefaults.standardUserDefaults()
+        filterList = defaults.objectForKey("FILTER_KEY") as? [Int] ?? [0,1,2,3,4]
+        requestData(filterList)
         
         // mapView
         self.loadMapView()
         
         // call API current location
-        XEEMService.sharedInstance.getServiceWithCurrentLocation(0, longitde: 0) { (dictionary: AnyObject?, error: NSError?) -> Void in
+           }
+    
+    // Request service shops with filter input
+    func requestData(filter : [Int]!) -> () {
+        XEEMService.sharedInstance.getServiceWithCurrentLocation(0, longitde: 0, filter: filter) { (dictionary: AnyObject?, error: NSError?) -> Void in
             let arrData = dictionary as! [NSDictionary]
             self.listModelShop = ShopModel.initShopModelWithArray(arrData)
-
+            self.mapView.removeAnnotations(self.mapView.annotations)
             // draw markers
             dispatch_async(dispatch_get_main_queue(), { () -> Void in
                 for shopModel in self.listModelShop {
@@ -55,9 +64,10 @@ class TimelineViewController: UIViewController, MKMapViewDelegate, CLLocationMan
                     shopMarker.shopModel = shopModel
                     //shopMarker.title = shopModel.name!
                     self.mapView.addAnnotation(shopMarker)
-                }       
+                }
             })
         }
+
     }
     
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
@@ -168,14 +178,14 @@ class TimelineViewController: UIViewController, MKMapViewDelegate, CLLocationMan
         
         let cpa = annotation as! CustomPointAnnotation
         var annotationView = mapView.dequeueReusableAnnotationViewWithIdentifier("identifier") as? FloatingAnnotationView
-        if annotationView == nil {
+ //       if annotationView == nil {
             let pin: UIImage = UIImage(named: cpa.imageName)!
             annotationView = FloatingAnnotationView(annotation: annotation, reuseIdentifier: "identifier", image: pin)
             annotationView!.canShowCallout = false
-        } else {
-            annotationView!.annotation = annotation
-            annotationView!.canShowCallout = true
-        }
+//        } else {
+//            annotationView!.annotation = annotation
+//            annotationView!.canShowCallout = true
+//        }
         
         return annotationView
     }
@@ -225,5 +235,11 @@ class TimelineViewController: UIViewController, MKMapViewDelegate, CLLocationMan
             self.addSubview(imageView)
         }
     }
-
+}
+extension TimelineViewController: RightViewControllerDelegate {
+    func rightViewController(rightViewController : RightViewController, filterChange listFilter: [Int]!) {
+        print("FILTER DELEGATE on home")
+        requestData(listFilter)
+        // fetch data again
+    }
 }

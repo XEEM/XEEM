@@ -57,8 +57,36 @@ class XEEMService {
     }
     
     
-    func getServiceWithCurrentLocation (latitude: Double!, longitde: Double!, onCompletion: ServiceResponse) {
-        let url = "http://www.xeem.somee.com/api/shops?api_token=0"
+    func getServiceWithCurrentLocation (latitude: Double!, longitde: Double!, filter : [Int]!, onCompletion: ServiceResponse) {
+        var filterString = ""
+        for intValue in filter {
+            switch intValue {
+            case 0:
+                filterString.append("C" as Character)
+                break
+            case 1:
+                filterString.append("-" as Character)
+                filterString.append("B" as Character)
+                break
+            case 2:
+                filterString.append("-" as Character)
+                filterString.append("M" as Character)
+                break
+            case 3:
+                filterString.append("-" as Character)
+                filterString.append("S" as Character)
+                break
+            case 4:
+                filterString.append("-" as Character)
+                filterString.append("G" as Character)
+                break
+            default:
+                break
+                
+            }
+        }
+        let url = "http://xeem.apphb.com/api/shops?api_token=0&filters=" + filterString
+        print(url)
         self.callAPIWithURL(url, method: METHOD.GET, header: nil, params: nil, onCompletion: onCompletion)
     }
     
