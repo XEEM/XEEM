@@ -25,9 +25,14 @@ class QuotesTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func configCell(data: NSDictionary) {
-        self.titleLabel.text = "Quotes"
-        self.price.text = "$5"
+    func configCell(data: Quotes) {
+        self.titleLabel.text = data.name
+        if data.price != nil {
+            self.price.text = "\(data.price)"
+        } else {
+            self.price.text = "$"
+        }
+
     }
 
     

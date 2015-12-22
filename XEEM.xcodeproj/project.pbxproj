@@ -29,6 +29,7 @@
 		71F4A3041C1C95BB008BF810 /* MKColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F4A3031C1C95BB008BF810 /* MKColor.swift */; };
 		71F4A3061C1C9B96008BF810 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F4A3051C1C9B96008BF810 /* EditProfileViewController.swift */; };
 		75E1F9AB0664F82DD907FF7D /* Pods_XEEM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F7B23F394701BFA5CF812E5 /* Pods_XEEM.framework */; };
+		A621F6021C28770E00D19952 /* ListReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A621F6011C28770E00D19952 /* ListReviewViewController.swift */; };
 		A62206141C269DFF00B7C864 /* SideMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62206131C269DFF00B7C864 /* SideMenuController.swift */; };
 		A62206161C26A66300B7C864 /* OptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62206151C26A66300B7C864 /* OptionsViewController.swift */; };
 		A629C3E01C169C9700D77F69 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A629C3DF1C169C9700D77F69 /* Login.storyboard */; };
@@ -90,6 +91,7 @@
 		71F4A3051C1C9B96008BF810 /* EditProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		7F7B23F394701BFA5CF812E5 /* Pods_XEEM.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_XEEM.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		999146997734BAF01AF7905C /* Pods-XEEM.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XEEM.release.xcconfig"; path = "Pods/Target Support Files/Pods-XEEM/Pods-XEEM.release.xcconfig"; sourceTree = "<group>"; };
+		A621F6011C28770E00D19952 /* ListReviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListReviewViewController.swift; sourceTree = "<group>"; };
 		A62206131C269DFF00B7C864 /* SideMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuController.swift; sourceTree = "<group>"; };
 		A62206151C26A66300B7C864 /* OptionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionsViewController.swift; sourceTree = "<group>"; };
 		A629C3DF1C169C9700D77F69 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
@@ -209,6 +211,7 @@
 				71F4A2F91C1C3947008BF810 /* HistoryDetailControler.swift */,
 				71F4A3051C1C9B96008BF810 /* EditProfileViewController.swift */,
 				710262811C1D4B4C0009724D /* NewTransportationViewController.swift */,
+				A621F6011C28770E00D19952 /* ListReviewViewController.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -567,6 +570,7 @@
 				A6C5DDA31C1DA4DC00A7DB9D /* QuotesTableViewCell.swift in Sources */,
 				7111A5201C1BC55100FA17A5 /* ProfileViewController.swift in Sources */,
 				A6C646B11C254F6D00B417C9 /* ReviewModel.swift in Sources */,
+				A621F6021C28770E00D19952 /* ListReviewViewController.swift in Sources */,
 				CE8C133D1C1DC15C00D1AA09 /* RegisterViewController.swift in Sources */,
 				CE13954A1C1087D100A67657 /* AppDelegate.swift in Sources */,
 				7173FB571C215CE700C1DD3A /* ColorUtils.swift in Sources */,
