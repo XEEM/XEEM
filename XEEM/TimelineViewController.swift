@@ -34,6 +34,8 @@ class TimelineViewController: UIViewController, MKMapViewDelegate, CLLocationMan
         
         // init RequestServiceView
         self.viewRequestService.hidden = true
+
+
         
         // mapView
         self.loadMapView()
@@ -56,6 +58,10 @@ class TimelineViewController: UIViewController, MKMapViewDelegate, CLLocationMan
                 }       
             })
         }
+    }
+    
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return .LightContent
     }
     
     func onServiceTapView(sender:UITapGestureRecognizer){

@@ -25,17 +25,15 @@ class RepairServiceViewController: UIViewController, UITableViewDelegate, UITabl
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    
-        self.initTableView()        // init tableView
-        self.initData()             // init Data
         self.initView()             // init View
-
+        self.initData()             // init Data
+        self.initTableView()        // init tableView
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
+    
     
     // MARK: - PrivateMethod
     private func initTableView() {
@@ -44,14 +42,14 @@ class RepairServiceViewController: UIViewController, UITableViewDelegate, UITabl
         self.tableView.dataSource = self
         self.tableView.allowsMultipleSelection = false
         self.tableView.allowsSelection = false
-        self.tableView.estimatedRowHeight = 100
         
         self.tableView.registerNib(UINib(nibName: "ServiceDetailNameCell", bundle: nil), forCellReuseIdentifier: serviceDetailCell)
         self.tableView.registerNib(UINib(nibName: "QuotesTableViewCell", bundle: nil), forCellReuseIdentifier: quotesCell)
         self.tableView.registerNib(UINib(nibName: "ShowmoreCell", bundle: nil), forCellReuseIdentifier: showmoreCell)
         self.tableView.registerNib(UINib(nibName: "ReviewCell", bundle: nil), forCellReuseIdentifier: reviewCell)
-        
     }
+    
+
     
     private func initData() {
         if let quotesList = self.shopModel?.quotes {
@@ -73,7 +71,7 @@ class RepairServiceViewController: UIViewController, UITableViewDelegate, UITabl
     
     private func initView() {
         self.btnXeemMe.backgroundColor = UIColor.MKColor.Red
-        self.btnXeemMe.titleLabel?.textColor = UIColor.whiteColor()
+        self.btnXeemMe.setTitleColor(UIColor.MKColor.WhiteColor, forState: UIControlState.Normal)
     }
     
     
@@ -95,6 +93,7 @@ class RepairServiceViewController: UIViewController, UITableViewDelegate, UITabl
         } else if indexPath.section == 1 {
             // Quotes
             if (quotesShopSome.count != quotesShopAll.count && quotesShopSome.count == indexPath.row) {
+                // load more cell
                 let cell : ShowmoreCell = tableView.dequeueReusableCellWithIdentifier(showmoreCell, forIndexPath: indexPath) as! ShowmoreCell
                 cell.btnShowMore.setTitle("View More Services", forState: .Normal)
                 cell.delegate = self
@@ -127,9 +126,16 @@ class RepairServiceViewController: UIViewController, UITableViewDelegate, UITabl
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 1 {
+            if (quotesShopSome.count == 0) {
+                return 0
+            } else if (quotesShopSome.count == quotesShopAll.count && quotesShopSome.count != 0) {
+                return self.quotesShopSome.count
+            }
             return (self.quotesShopSome.count + 1)
         } else if section == 2 {
-            if (reviewerSome.count == reviewerAll.count) {
+            if (reviewerSome.count == 0) {
+                return 0
+            } else if (reviewerSome.count == reviewerAll.count && reviewerSome.count != 0) {
                 return self.reviewerSome.count
             }
             return (self.reviewerSome.count + 1)
@@ -140,31 +146,36 @@ class RepairServiceViewController: UIViewController, UITableViewDelegate, UITabl
     
     
     func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let tempView = UIView.init(frame: CGRectMake(0, 200, 300, 244))
-        tempView.backgroundColor = UIColor.clearColor()
-        
-        let tempLabel = UILabel.init(frame: CGRectMake(15, 0, 300, 44))
-        tempLabel.backgroundColor = UIColor.clearColor()
-        tempLabel.textColor = UIColor.MKColor.Red
-        tempLabel.font = UIFont.boldSystemFontOfSize(18)
-        
-        // set title
-        if section == 1 {
-            tempLabel.text = "Services"
-        } else if section == 2 {
-            tempLabel.text = "Reviews (\(reviewerAll.count))"
-        } else {
-            tempLabel.text = ""
+        if section != 0 {
+            let tempView = UIView.init(frame: CGRectMake(0, 200, 300, 244))
+            tempView.backgroundColor = UIColor.clearColor()
+            
+            let tempLabel = UILabel.init(frame: CGRectMake(15, 0, 300, 20))
+            tempLabel.backgroundColor = UIColor.clearColor()
+            tempLabel.textColor = UIColor.MKColor.Red
+            tempLabel.font = UIFont.boldSystemFontOfSize(18)
+            
+            // set title
+            if section == 1 {
+                tempLabel.text = "Services"
+            } else if section == 2 {
+                tempLabel.text = "Reviews (\(reviewerAll.count))"
+            } else {
+                tempLabel.text = ""
+            }
+            
+            tempView.addSubview(tempLabel)
+            return tempView
         }
-    
-        tempView.addSubview(tempLabel)
+        let tempView = UIView.init(frame: CGRectMake(0, 0, 0, 0))
+        tempView.backgroundColor = UIColor.clearColor()
         return tempView
     
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         if indexPath.section == 0 {
-            return 90
+            return 60 
         } else if indexPath.section == 1 {
             // view more
             // view detail
@@ -176,14 +187,28 @@ class RepairServiceViewController: UIViewController, UITableViewDelegate, UITabl
             }
             return 90
         }
-        return 90
+        return 0.1
     }
 
+    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        if section == 0 {
+            return 0.1
+        }
+        
+        return 20
+    }
     
     // MARK: - ShowMoreDelegate
     func onTapShowmoreBtn(showmoreCell: ShowmoreCell) {
         if showmoreCell.tag == 1 {
             // load more quotes
+            if (self.quotesShopSome.count != self.quotesShopAll.count) && self.quotesShopSome.count > 1 {
+                // append more data
+                for index in 2...self.quotesShopAll.count-1 {
+                    self.quotesShopSome.append(self.quotesShopAll[index])
+                }
+            } 
+            self.tableView.reloadSections(NSIndexSet(index: 1), withRowAnimation: UITableViewRowAnimation.Bottom)
             
         } else if showmoreCell.tag == 2 {
             // load more reviewer
@@ -194,6 +219,11 @@ class RepairServiceViewController: UIViewController, UITableViewDelegate, UITabl
         }
     }
     
+    // MARK: - BackButton
+    
+    @IBAction func onBackButtonTapped(sender: UIBarButtonItem) {
+        self.navigationController?.popViewControllerAnimated(true)
+    }
     
     /*
     // MARK: - Navigation

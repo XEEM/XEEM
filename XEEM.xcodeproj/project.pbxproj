@@ -206,12 +206,12 @@
 				CE8C13381C1DC15500D1AA09 /* Login */,
 				A69BDDE41C182802005CA6C6 /* OptionsTableViewController.swift */,
 				A6C5DD9B1C1D420A00A7DB9D /* RepairServiceViewController.swift */,
+				A621F6011C28770E00D19952 /* ListReviewViewController.swift */,
 				7111A51F1C1BC55100FA17A5 /* ProfileViewController.swift */,
 				71F4A2F21C1C18B8008BF810 /* TransportationDetailControllerViewController.swift */,
 				71F4A2F91C1C3947008BF810 /* HistoryDetailControler.swift */,
 				71F4A3051C1C9B96008BF810 /* EditProfileViewController.swift */,
 				710262811C1D4B4C0009724D /* NewTransportationViewController.swift */,
-				A621F6011C28770E00D19952 /* ListReviewViewController.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";

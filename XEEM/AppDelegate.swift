@@ -50,12 +50,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //let nvc: UINavigationController = UINavigationController(rootViewController: mainViewController)
        
         let slideMenuController = SlideMenuController(mainViewController: mainViewController, leftMenuViewController: leftViewController, rightMenuViewController: rightViewController)
-  
+
+        
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
         self.window!.rootViewController = slideMenuController
         self.window?.makeKeyAndVisible()
-
-
     
         return true
     }

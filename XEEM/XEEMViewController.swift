@@ -49,7 +49,7 @@ class XEEMViewController: UIViewController {
             }
 
         } else {
-            if self.password.text?.characters.count > 6 {
+            if self.password.text?.characters.count > 1 {
                 self.password.textColor = UIColor.blueColor()
             } else {
                 self.password.textColor = UIColor.redColor()
@@ -58,7 +58,7 @@ class XEEMViewController: UIViewController {
         }
         
         if (self.emailLabel.text?.characters.count > 3 &&
-            self.password.text?.characters.count > 6) {
+            self.password.text?.characters.count > 1) {
             self.signInBtn.enabled = true
         } else {
             self.signInBtn.enabled = false
@@ -66,8 +66,7 @@ class XEEMViewController: UIViewController {
     }
     
     func doLogin() -> () {
-        XEEMService.sharedInstance.login(nil, passwd:
-            nil) { (token, error) -> () in
+        XEEMService.sharedInstance.login(self.emailLabel.text, passwd: self.password.text) { (token, error) -> () in
                 if let token = token {
                     XEEMService.sharedInstance.getUserProfile(token) { (user, error) -> () in
                         print(user)

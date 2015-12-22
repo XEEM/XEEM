@@ -22,7 +22,7 @@ class ListReviewViewController: UIViewController, UITableViewDelegate, UITableVi
     func initTableView() {
         self.tableView.delegate = self
         self.tableView.dataSource = self
-        self.tableView.estimatedRowHeight = 100
+        self.tableView.estimatedRowHeight = 20
         self.tableView.registerNib(UINib(nibName: "ReviewCell", bundle: nil), forCellReuseIdentifier: reviewCell)
         self.tableView.allowsSelection = false        
     }
@@ -43,6 +43,16 @@ class ListReviewViewController: UIViewController, UITableViewDelegate, UITableVi
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return listReview.count
     }
+    
+    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 0.1
+    }
+    
+    @IBAction func onBackButtonTapped(sender: UIBarButtonItem) {
+        self.navigationController?.popViewControllerAnimated(true)
+        
+    }
+    
     
     /*
     // MARK: - Navigation
