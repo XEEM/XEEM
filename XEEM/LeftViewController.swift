@@ -54,16 +54,6 @@ extension LeftViewController: UITableViewDataSource, UITableViewDelegate {
         return listVehicles.count + 1;
       
     }
-    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        switch section {
-        case 0:
-            return "My Vehicles"
-        case 1:
-            return "About"
-        default:
-            return ""
-        }
-    }
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
@@ -84,4 +74,21 @@ extension LeftViewController: UITableViewDataSource, UITableViewDelegate {
         headerCell?.detailTextLabel?.text = "\(listVehicles.count)"
         return headerCell
     }
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        if (indexPath.row == listVehicles.count) {
+            self.slideMenuController()?.toggleLeft()
+           // Go to add new transportation
+            let storyboard = UIStoryboard(name: "Profile", bundle: nil)
+            let rootVC = storyboard.instantiateViewControllerWithIdentifier("NewTransportationNavigationController") as! UINavigationController
+            self.presentViewController(rootVC, animated: true , completion: nil)
+        } else {
+             self.slideMenuController()?.toggleLeft()
+           // Go to history of a transportation
+            let storyboard = UIStoryboard(name: "Profile", bundle: nil)
+            let rootVC = storyboard.instantiateViewControllerWithIdentifier("TransportationDetailControllerViewController") as! UINavigationController
+            self.presentViewController(rootVC, animated: true , completion: nil)
+        }
+
+    }
+    
 }

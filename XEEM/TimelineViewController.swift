@@ -49,7 +49,7 @@ class TimelineViewController: UIViewController, MKMapViewDelegate, CLLocationMan
                     let shopLocation = CLLocationCoordinate2D(latitude: shopModel.latitude!, longitude: shopModel.longitde!)
                     let shopMarker = CustomPointAnnotation()
                     shopMarker.coordinate = shopLocation
-                    shopMarker.imageName = "avatar.png"
+                    shopMarker.imageName = "ic_bike"
                     shopMarker.shopModel = shopModel
                     //shopMarker.title = shopModel.name!
                     self.mapView.addAnnotation(shopMarker)

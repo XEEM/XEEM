@@ -78,10 +78,10 @@ class NewTransportationViewController: UIViewController,UIPickerViewDataSource,U
         self.view.endEditing(true)
     }
     @IBAction func onCancelClicked(sender: UIBarButtonItem) {
-        navigationController?.popViewControllerAnimated(true)
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
     @IBAction func onSaveClicked(sender: UIBarButtonItem) {
-        navigationController?.popViewControllerAnimated(true)
+       self.dismissViewControllerAnimated(true, completion: nil)
     }
     /*
     // MARK: - Navigation
