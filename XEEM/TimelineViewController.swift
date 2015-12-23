@@ -20,6 +20,7 @@ class TimelineViewController: UIViewController, MKMapViewDelegate, CLLocationMan
     @IBOutlet weak var titleServiceLabel: UILabel!
     @IBOutlet weak var rateView: FloatRatingView!
     @IBOutlet weak var distanceLabel: UILabel!
+    @IBOutlet weak var minimumQuotation: UILabel!
     
     @IBOutlet weak var priceLabel: UILabel!
     var currentUser : User!
@@ -38,7 +39,7 @@ class TimelineViewController: UIViewController, MKMapViewDelegate, CLLocationMan
         (self.slideMenuController()?.rightViewController as! RightViewController).delegate = self
         // init RequestServiceView
         self.viewRequestService.hidden = true
-        //
+        UIUtils.drawCircle(minimumQuotation, view: viewRequestService)
         let defaults = NSUserDefaults.standardUserDefaults()
         filterList = defaults.objectForKey("FILTER_KEY") as? [Int] ?? [0,1,2,3,4]
         
@@ -81,6 +82,7 @@ class TimelineViewController: UIViewController, MKMapViewDelegate, CLLocationMan
                         default:
                             shopMarker.imageName = "ic_bike"
                             break
+                        
                     }
                     //shopMarker.title = shopModel.name!
                     self.mapView.addAnnotation(shopMarker)
@@ -124,8 +126,9 @@ class TimelineViewController: UIViewController, MKMapViewDelegate, CLLocationMan
             self.viewRequestService.hidden = false
             self.selectedShopModel = shopModel
             // dummy service view
-            self.imageService.image = UIImage(named: "bicycle")
+           
             self.titleServiceLabel.text = shopModel!.name
+            
             print(shopModel?.rating!)
             let distance = Double(round(1000*((shopModel?.distance)! / 1000))/1000)
             self.rateView.rating = (shopModel?.rating!)!
@@ -137,7 +140,7 @@ class TimelineViewController: UIViewController, MKMapViewDelegate, CLLocationMan
 //            self.rateView.editable = false;
             
             
-            self.priceLabel.text = "$"
+           
             
             
             

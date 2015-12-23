@@ -2,11 +2,17 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <customFonts key="customFonts">
+        <mutableArray key="SanFranciscoDisplay-Black.otf">
+            <string>SanFranciscoDisplay-Black</string>
+        </mutableArray>
         <mutableArray key="SanFranciscoDisplay-Bold.otf">
             <string>SanFranciscoDisplay-Bold</string>
+            <string>SanFranciscoDisplay-Bold</string>
+        </mutableArray>
+        <mutableArray key="SanFranciscoDisplay-Regular.otf">
+            <string>SanFranciscoDisplay-Regular</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -56,25 +62,19 @@
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_vespa" translatesAutoresizingMaskIntoConstraints="NO" id="NJ2-Ky-TDK">
                                         <rect key="frame" x="8" y="10" width="80" height="80"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="80" id="ffE-2w-hfo"/>
-                                            <constraint firstAttribute="width" secondItem="NJ2-Ky-TDK" secondAttribute="height" multiplier="1:1" id="q5y-JL-Pfm"/>
+                                            <constraint firstAttribute="width" constant="80" id="0av-hY-FzX"/>
+                                            <constraint firstAttribute="height" constant="80" id="OBg-e3-b1C"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j4J-No-czq" userLabel="Title">
-                                        <rect key="frame" x="96" y="10" width="216" height="24"/>
-                                        <fontDescription key="fontDescription" name="SanFranciscoDisplay-Bold" family="San Francisco Display" pointSize="20"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DWl-fz-To3" customClass="FloatRatingView" customModule="XEEM" customModuleProvider="target">
-                                        <rect key="frame" x="96" y="42" width="70" height="20"/>
+                                        <rect key="frame" x="96" y="38" width="100" height="20"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="20" id="Evh-Oc-hyw"/>
-                                            <constraint firstAttribute="width" constant="70" id="noX-Sw-09I"/>
+                                            <constraint firstAttribute="width" constant="100" id="noX-Sw-09I"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="image" keyPath="emptyImage" value="ic_star_unrate_border"/>
-                                            <userDefinedRuntimeAttribute type="image" keyPath="fullImage" value="ic_star"/>
+                                            <userDefinedRuntimeAttribute type="image" keyPath="emptyImage" value="ic_red_star"/>
+                                            <userDefinedRuntimeAttribute type="image" keyPath="fullImage" value="ic_red_full_star"/>
                                             <userDefinedRuntimeAttribute type="number" keyPath="minRating">
                                                 <integer key="value" value="1"/>
                                             </userDefinedRuntimeAttribute>
@@ -90,34 +90,48 @@
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="floatRatings" value="YES"/>
                                         </userDefinedRuntimeAttributes>
                                     </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="252" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" misplaced="YES" text="$5" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="36S-ac-OGj">
-                                        <rect key="frame" x="284" y="40" width="21" height="20"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5 Km" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fvc-7s-bmj">
+                                        <rect key="frame" x="96" y="62" width="31" height="17"/>
+                                        <fontDescription key="fontDescription" name="SanFranciscoDisplay-Regular" family="San Francisco Display" pointSize="14"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="5 Km" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fvc-7s-bmj">
-                                        <rect key="frame" x="96" y="66" width="79" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j4J-No-czq" userLabel="Title">
+                                        <rect key="frame" x="96" y="10" width="216" height="24"/>
+                                        <fontDescription key="fontDescription" name="SanFranciscoDisplay-Bold" family="San Francisco Display" pointSize="20"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="15$" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LsP-ve-jPd">
+                                        <rect key="frame" x="273" y="39" width="31" height="22"/>
+                                        <fontDescription key="fontDescription" name="SanFranciscoDisplay-Black" family="San Francisco Display" pointSize="18"/>
+                                        <color key="textColor" red="0.90588235289999997" green="0.29803921570000003" blue="0.23137254900000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="FROM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EeU-8I-ZVH">
+                                        <rect key="frame" x="267" y="69" width="45" height="21"/>
+                                        <fontDescription key="fontDescription" name="SanFranciscoDisplay-Bold" family="San Francisco Display" pointSize="17"/>
+                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="36S-ac-OGj" secondAttribute="trailing" constant="15" id="0I6-CQ-oCy"/>
-                                    <constraint firstAttribute="height" constant="100" id="6RS-rO-24q"/>
+                                    <constraint firstAttribute="trailing" secondItem="LsP-ve-jPd" secondAttribute="trailing" constant="16" id="1Ut-Nf-mB8"/>
                                     <constraint firstItem="Fvc-7s-bmj" firstAttribute="top" secondItem="DWl-fz-To3" secondAttribute="bottom" constant="4" id="6zM-tC-FeB"/>
-                                    <constraint firstItem="DWl-fz-To3" firstAttribute="top" secondItem="j4J-No-czq" secondAttribute="bottom" constant="8" id="XCP-OQ-H3M"/>
-                                    <constraint firstAttribute="trailing" secondItem="j4J-No-czq" secondAttribute="trailing" constant="8" id="fUK-pY-w68"/>
-                                    <constraint firstItem="NJ2-Ky-TDK" firstAttribute="leading" secondItem="hv4-Yg-xWd" secondAttribute="leading" constant="8" id="g6a-8I-EEH"/>
+                                    <constraint firstAttribute="trailing" secondItem="EeU-8I-ZVH" secondAttribute="trailing" constant="8" id="7gg-uK-Pax"/>
+                                    <constraint firstItem="NJ2-Ky-TDK" firstAttribute="centerY" secondItem="hv4-Yg-xWd" secondAttribute="centerY" id="8BV-JW-X8A"/>
+                                    <constraint firstItem="Fvc-7s-bmj" firstAttribute="leading" secondItem="NJ2-Ky-TDK" secondAttribute="trailing" constant="8" id="COU-4g-Or5"/>
+                                    <constraint firstItem="EeU-8I-ZVH" firstAttribute="bottom" secondItem="NJ2-Ky-TDK" secondAttribute="bottom" id="FXq-HW-Lpw"/>
+                                    <constraint firstItem="j4J-No-czq" firstAttribute="top" secondItem="hv4-Yg-xWd" secondAttribute="top" constant="10" id="Gw4-Ws-ohU"/>
+                                    <constraint firstAttribute="trailing" secondItem="j4J-No-czq" secondAttribute="trailing" constant="8" id="IFw-p9-q5P"/>
+                                    <constraint firstItem="DWl-fz-To3" firstAttribute="top" secondItem="j4J-No-czq" secondAttribute="bottom" constant="4" id="XCP-OQ-H3M"/>
+                                    <constraint firstItem="j4J-No-czq" firstAttribute="top" secondItem="NJ2-Ky-TDK" secondAttribute="top" id="b4I-pH-l1y"/>
+                                    <constraint firstItem="DWl-fz-To3" firstAttribute="leading" secondItem="NJ2-Ky-TDK" secondAttribute="trailing" constant="8" id="bG6-1I-xc3"/>
                                     <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="DWl-fz-To3" secondAttribute="bottom" constant="16" id="hXQ-Vk-Rfe"/>
-                                    <constraint firstAttribute="bottom" secondItem="36S-ac-OGj" secondAttribute="bottom" constant="15" id="ibw-Gt-YmV"/>
-                                    <constraint firstItem="NJ2-Ky-TDK" firstAttribute="centerY" secondItem="hv4-Yg-xWd" secondAttribute="centerY" id="loU-UD-6aK"/>
-                                    <constraint firstItem="j4J-No-czq" firstAttribute="leading" secondItem="NJ2-Ky-TDK" secondAttribute="trailing" constant="8" id="pmz-cj-N2J"/>
-                                    <constraint firstItem="DWl-fz-To3" firstAttribute="leading" secondItem="NJ2-Ky-TDK" secondAttribute="trailing" constant="8" id="r1W-qs-Rkn"/>
-                                    <constraint firstItem="Fvc-7s-bmj" firstAttribute="leading" secondItem="NJ2-Ky-TDK" secondAttribute="trailing" constant="8" id="sz2-Ub-asp"/>
-                                    <constraint firstItem="j4J-No-czq" firstAttribute="top" secondItem="hv4-Yg-xWd" secondAttribute="top" constant="10" id="uRw-GS-gFh"/>
+                                    <constraint firstItem="LsP-ve-jPd" firstAttribute="centerY" secondItem="hv4-Yg-xWd" secondAttribute="centerY" id="odl-Oi-BOf"/>
+                                    <constraint firstItem="NJ2-Ky-TDK" firstAttribute="leading" secondItem="hv4-Yg-xWd" secondAttribute="leading" constant="8" id="quP-KG-ggq"/>
+                                    <constraint firstItem="j4J-No-czq" firstAttribute="leading" secondItem="NJ2-Ky-TDK" secondAttribute="trailing" constant="8" id="tRM-Wd-zaM"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -158,8 +172,8 @@
                         <outlet property="distanceLabel" destination="Fvc-7s-bmj" id="Vtw-Bx-QEh"/>
                         <outlet property="imageService" destination="NJ2-Ky-TDK" id="6YO-Gb-4yr"/>
                         <outlet property="mapView" destination="lZH-RZ-K1L" id="HEZ-aP-4OY"/>
+                        <outlet property="minimumQuotation" destination="LsP-ve-jPd" id="kmY-hA-I9U"/>
                         <outlet property="onTapWKMapView" destination="9ig-9F-Ltv" id="ZSN-3r-j4r"/>
-                        <outlet property="priceLabel" destination="36S-ac-OGj" id="VVQ-G2-Qax"/>
                         <outlet property="rateView" destination="DWl-fz-To3" id="t5O-PF-6ac"/>
                         <outlet property="titleServiceLabel" destination="j4J-No-czq" id="oRd-4w-MVl"/>
                         <outlet property="viewRequestService" destination="hv4-Yg-xWd" id="25h-8v-CG8"/>
@@ -657,8 +671,8 @@
         <image name="ic_default_avatar" width="100" height="100"/>
         <image name="ic_filter" width="22" height="22"/>
         <image name="ic_mylocation" width="40" height="40"/>
-        <image name="ic_star" width="33" height="33"/>
-        <image name="ic_star_unrate_border" width="33" height="33"/>
+        <image name="ic_red_full_star" width="33" height="33"/>
+        <image name="ic_red_star" width="33" height="33"/>
         <image name="ic_user" width="22" height="22"/>
         <image name="ic_vespa" width="40" height="40"/>
     </resources>

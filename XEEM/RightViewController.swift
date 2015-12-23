@@ -13,7 +13,7 @@ class RightViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     let filterList = ["Car services","Bike Services","MotorBike services","Scooter services","Gas station"]
     var selectedList : [Int]!
-    var delegate : RightViewControllerDelegate?
+    weak var delegate : RightViewControllerDelegate?
     override func viewDidLoad() {
         super.viewDidLoad()
         let defaults = NSUserDefaults.standardUserDefaults()
@@ -123,6 +123,6 @@ extension RightViewController: UITableViewDataSource, UITableViewDelegate, Apply
 }
 
 
-protocol RightViewControllerDelegate {
+protocol RightViewControllerDelegate : class {
     func rightViewController(rightViewController : RightViewController, filterChange listFilter: [Int]!)
 }

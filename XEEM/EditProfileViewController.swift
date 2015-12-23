@@ -40,12 +40,17 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
     @IBAction func onAvatarTapped(sender: UITapGestureRecognizer) {
         let photoPicker = UIImagePickerController()
         photoPicker.delegate = self
-        photoPicker.sourceType = .PhotoLibrary
+        photoPicker.allowsEditing = true
+        if (UIImagePickerController.isSourceTypeAvailable(.Camera)) {
+            photoPicker.sourceType = .Camera
+        } else {
+             photoPicker.sourceType = .PhotoLibrary
+        }
         self.presentViewController(photoPicker, animated: true, completion: nil)
     }
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
-        avatarImageView.image = info[UIImagePickerControllerOriginalImage] as? UIImage
+        avatarImageView.image = info[UIImagePickerControllerEditedImage] as? UIImage
                 UIUtils.setRoundImageView(avatarImageView)
         self.dismissViewControllerAnimated(true, completion: nil)
     }
