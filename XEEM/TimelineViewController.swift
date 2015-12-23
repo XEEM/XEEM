@@ -9,6 +9,7 @@
 import UIKit
 import MapKit
 import CoreLocation
+import SlideMenuControllerSwift
 
 class TimelineViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     
@@ -17,8 +18,9 @@ class TimelineViewController: UIViewController, MKMapViewDelegate, CLLocationMan
     @IBOutlet weak var viewRequestService: UIView!
     @IBOutlet weak var imageService: UIImageView!
     @IBOutlet weak var titleServiceLabel: UILabel!
-    @IBOutlet weak var rateView: RateView!
-    @IBOutlet weak var fromLabel: UILabel!
+    @IBOutlet weak var rateView: FloatRatingView!
+    @IBOutlet weak var distanceLabel: UILabel!
+    
     @IBOutlet weak var priceLabel: UILabel!
     var currentUser : User!
     var regionRadius : CLLocationDistance = 0.0;
@@ -32,27 +34,25 @@ class TimelineViewController: UIViewController, MKMapViewDelegate, CLLocationMan
         navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
         navigationController?.navigationBar.shadowImage = UIImage()
         navigationController?.navigationBar.barTintColor = UIColor.MKColor.AppMainColor
-        
-       (self.slideMenuController()?.rightViewController as! RightViewController).delegate = self
+        SlideMenuOptions.panFromBezel = true
+        (self.slideMenuController()?.rightViewController as! RightViewController).delegate = self
         // init RequestServiceView
         self.viewRequestService.hidden = true
-        
         //
         let defaults = NSUserDefaults.standardUserDefaults()
         filterList = defaults.objectForKey("FILTER_KEY") as? [Int] ?? [0,1,2,3,4]
-        requestData(filterList)
+        
         
         // mapView
         self.loadMapView()
         
-        // call API current location
-           }
+    }
     
     // Request service shops with filter input
     func requestData(filter : [Int]!) -> () {
         XEEMService.sharedInstance.getServiceWithCurrentLocation(0, longitde: 0, filter: filter) { (dictionary: AnyObject?, error: NSError?) -> Void in
             let arrData = dictionary as! [NSDictionary]
-            self.listModelShop = ShopModel.initShopModelWithArray(arrData)
+            self.listModelShop = ShopModel.initShopModelWithArray(arrData,currentLocation: self.location)
             self.mapView.removeAnnotations(self.mapView.annotations)
             // draw markers
             dispatch_async(dispatch_get_main_queue(), { () -> Void in
@@ -60,8 +60,28 @@ class TimelineViewController: UIViewController, MKMapViewDelegate, CLLocationMan
                     let shopLocation = CLLocationCoordinate2D(latitude: shopModel.latitude!, longitude: shopModel.longitde!)
                     let shopMarker = CustomPointAnnotation()
                     shopMarker.coordinate = shopLocation
-                    shopMarker.imageName = "ic_bike"
+                    
                     shopMarker.shopModel = shopModel
+                    switch shopModel.type! {
+                        case "B":
+                            shopMarker.imageName = "ic_bike"
+                            break
+                        case "C":
+                            shopMarker.imageName = "ic_car"
+                            break
+                        case "S":
+                            shopMarker.imageName = "ic_vespa"
+                            break
+                        case "G":
+                            shopMarker.imageName = "ic_oil"
+                            break
+                        case "M":
+                            shopMarker.imageName = "ic_motorbike"
+                            break
+                        default:
+                            shopMarker.imageName = "ic_bike"
+                            break
+                    }
                     //shopMarker.title = shopModel.name!
                     self.mapView.addAnnotation(shopMarker)
                 }
@@ -100,18 +120,23 @@ class TimelineViewController: UIViewController, MKMapViewDelegate, CLLocationMan
     func setInitViewWithTitle(shopModel: ShopModel?) {
         dispatch_async(dispatch_get_main_queue()) { () -> Void in
             // find current service with title
+            //TODO
             self.viewRequestService.hidden = false
             self.selectedShopModel = shopModel
             // dummy service view
             self.imageService.image = UIImage(named: "bicycle")
             self.titleServiceLabel.text = shopModel!.name
-            self.rateView.notSelectedImage = UIImage(named: "ic_star_unrate_border")
-            self.rateView.fullSelectedImage = UIImage(named: "ic_star")
-            self.rateView.maxRating = 5;
-            self.rateView.rating = round(Float(shopModel!.rating!))
-            self.rateView.editable = false;
+            print(shopModel?.rating!)
+            let distance = Double(round(1000*((shopModel?.distance)! / 1000))/1000)
+            self.rateView.rating = (shopModel?.rating!)!
+            self.distanceLabel.text = "\(String(distance)) KM"
+//            self.rateView.notSelectedImage = UIImage(named: "ic_star_unrate_border")
+//            self.rateView.fullSelectedImage = UIImage(named: "ic_star")
+//            self.rateView.maxRating = 5;
+//            self.rateView.rating = round(Float(shopModel!.rating!))
+//            self.rateView.editable = false;
             
-            self.fromLabel.text = ""
+            
             self.priceLabel.text = "$"
             
             
@@ -140,6 +165,7 @@ class TimelineViewController: UIViewController, MKMapViewDelegate, CLLocationMan
         
     }
     
+    // On location updated
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation])
     {
         self.location = locations.last
@@ -151,6 +177,8 @@ class TimelineViewController: UIViewController, MKMapViewDelegate, CLLocationMan
         self.mapView.setRegion(region, animated: true)
         
         self.locationManager.stopUpdatingLocation()
+        
+        requestData(filterList)
     }
     
     func locationManager(manager: CLLocationManager, didFailWithError error: NSError)

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SlideMenuControllerSwift
 let serviceDetailCell = "serviceDetailNameCell"
 let quotesCell = "quotesCell"
 let showmoreCell = "showmoreCell"
@@ -25,6 +26,8 @@ class RepairServiceViewController: UIViewController, UITableViewDelegate, UITabl
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.slideMenuController()?.disablesAutomaticKeyboardDismissal()
         self.initView()             // init View
         self.initData()             // init Data
         self.initTableView()        // init tableView
@@ -70,6 +73,7 @@ class RepairServiceViewController: UIViewController, UITableViewDelegate, UITabl
     }
     
     private func initView() {
+        SlideMenuOptions.panFromBezel = false
         self.btnXeemMe.backgroundColor = UIColor.MKColor.Red
         self.btnXeemMe.setTitleColor(UIColor.MKColor.WhiteColor, forState: UIControlState.Normal)
     }
