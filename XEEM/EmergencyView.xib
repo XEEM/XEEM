@@ -10,7 +10,7 @@
                 <outlet property="btnCancel" destination="lv4-B9-ND3" id="P1E-Kn-mtr"/>
                 <outlet property="btnChoiceFrist" destination="v08-AA-8K1" id="jZm-Fm-zBF"/>
                 <outlet property="btnChoiceSecond" destination="iCU-2e-t3W" id="Rwv-qb-M89"/>
-                <outlet property="btnChoiceThrid" destination="THp-8u-fSV" id="M4N-Eq-fPz"/>
+                <outlet property="btnChoiceThird" destination="THp-8u-fSV" id="jjN-vh-8mn"/>
                 <outlet property="btnHelp" destination="X9j-NL-uWE" id="ZOo-KA-Q9G"/>
                 <outlet property="contentView" destination="iN0-l3-epB" id="C6a-so-Fyw"/>
                 <outlet property="fristChoiceLabel" destination="gyK-Ec-10y" id="NzI-jM-gz3"/>
@@ -28,13 +28,13 @@
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What is your status ?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yFw-gW-UtX">
                     <rect key="frame" x="10" y="20" width="211" height="24"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Not working" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gyK-Ec-10y">
                     <rect key="frame" x="65" y="64" width="93" height="20"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v08-AA-8K1" userLabel="ButtonNotWorking">
@@ -45,6 +45,9 @@
                     </constraints>
                     <size key="titleShadowOffset" width="1" height="0.0"/>
                     <state key="normal" title="Button" image="btn_uncheck_red"/>
+                    <connections>
+                        <action selector="onStatusChanged:" destination="-1" eventType="touchUpInside" id="q48-sD-ltW"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iCU-2e-t3W" userLabel="ButtonThungBanhXe">
                     <rect key="frame" x="25" y="97" width="30" height="30"/>
@@ -54,6 +57,9 @@
                     </constraints>
                     <size key="titleShadowOffset" width="1" height="0.0"/>
                     <state key="normal" title="Button" image="btn_uncheck_red"/>
+                    <connections>
+                        <action selector="onStatusChanged:" destination="-1" eventType="touchUpInside" id="FBK-Nn-LhQ"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="THp-8u-fSV" userLabel="ButtonIdon'tKnow">
                     <rect key="frame" x="25" y="135" width="30" height="30"/>
@@ -63,11 +69,14 @@
                     </constraints>
                     <size key="titleShadowOffset" width="1" height="0.0"/>
                     <state key="normal" title="Button" image="btn_uncheck_red"/>
+                    <connections>
+                        <action selector="onStatusChanged:" destination="-1" eventType="touchUpInside" id="vyk-cv-fFq"/>
+                    </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I don't know" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FPQ-YV-tyn">
                     <rect key="frame" x="65" y="140" width="93" height="20"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X9j-NL-uWE">
@@ -100,7 +109,7 @@
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thủng bánh xe" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XLe-g5-oFh">
                     <rect key="frame" x="65" y="102" width="114" height="20"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>

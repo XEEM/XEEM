@@ -44,9 +44,7 @@ class TimelineViewController: UIViewController, MKMapViewDelegate, CLLocationMan
         
         // mapView
         self.loadMapView()
-        
-        // call API current location
-           }
+    }
     
     // Request service shops with filter input
     func requestData(filter : [Int]!) -> () {
@@ -110,12 +108,9 @@ class TimelineViewController: UIViewController, MKMapViewDelegate, CLLocationMan
             self.rateView.maxRating = 5;
             self.rateView.rating = round(Float(shopModel!.rating!))
             self.rateView.editable = false;
-            
             self.fromLabel.text = ""
             self.priceLabel.text = "$"
-            
-            
-            
+
             // add observer
             // 3. add action to myView
             let gesture = UITapGestureRecognizer(target: self, action: "onServiceTapView:")
@@ -178,16 +173,9 @@ class TimelineViewController: UIViewController, MKMapViewDelegate, CLLocationMan
         
         let cpa = annotation as! CustomPointAnnotation
         var annotationView = mapView.dequeueReusableAnnotationViewWithIdentifier("identifier") as? FloatingAnnotationView
- //       if annotationView == nil {
-            let pin: UIImage = UIImage(named: cpa.imageName)!
-            annotationView = FloatingAnnotationView(annotation: annotation, reuseIdentifier: "identifier", image: pin)
-            annotationView!.canShowCallout = false
-//        } else {
-//            annotationView!.annotation = annotation
-//            annotationView!.canShowCallout = true
-//        }
-
-        
+        let pin: UIImage = UIImage(named: cpa.imageName)!
+        annotationView = FloatingAnnotationView(annotation: annotation, reuseIdentifier: "identifier", image: pin)
+        annotationView!.canShowCallout = false
         return annotationView
     }
     
@@ -211,7 +199,6 @@ class TimelineViewController: UIViewController, MKMapViewDelegate, CLLocationMan
     }
     
     // MARK: - MyLocation
-    
     @IBAction func onMyLocationUpdate(sender: UIButton) {
         self.locationManager.startUpdatingLocation()
     }

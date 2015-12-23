@@ -21,7 +21,7 @@ class EmergencyViewController: UIViewController {
     
     @IBOutlet weak var btnChoiceFrist: UIButton!
     @IBOutlet weak var btnChoiceSecond: UIButton!
-    @IBOutlet weak var btnChoiceThrid: UIButton!
+    @IBOutlet weak var btnChoiceThird: UIButton!
     
     @IBOutlet weak var fristChoiceLabel: UILabel!
     @IBOutlet weak var secondChoiceLabel: UILabel!
@@ -43,9 +43,36 @@ class EmergencyViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        // set init
+        self.btnChoiceFrist.setImage(UIImage(named: "btn_check_red"), forState: UIControlState.Selected)
+        self.btnChoiceSecond.setImage(UIImage(named: "btn_check_red"), forState: UIControlState.Selected)
+        self.btnChoiceThird.setImage(UIImage(named: "btn_check_red"), forState: UIControlState.Selected)
+        self.btnChoiceFrist.selected = true
     }
+    
+    @IBAction func onStatusChanged(sender: UIButton) {
+        if sender == self.btnChoiceFrist {
+            // frist
+            self.btnChoiceFrist.selected = true
+            self.btnChoiceThird.selected = false
+            self.btnChoiceSecond.selected = false
+            
+        } else if sender == self.btnChoiceSecond {
+            // second
+            self.btnChoiceFrist.selected = false
+            self.btnChoiceThird.selected = false
+            self.btnChoiceSecond.selected = true
+            
+        } else if sender == self.btnChoiceThird {
+            // third
+            self.btnChoiceFrist.selected = false
+            self.btnChoiceThird.selected = true
+            self.btnChoiceSecond.selected = false
+        }
+        
+    }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

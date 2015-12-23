@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol RightViewControllerDelegate {
+    func rightViewController(rightViewController : RightViewController, filterChange listFilter: [Int]!)
+}
+
 class RightViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
@@ -123,6 +127,4 @@ extension RightViewController: UITableViewDataSource, UITableViewDelegate, Apply
 }
 
 
-protocol RightViewControllerDelegate {
-    func rightViewController(rightViewController : RightViewController, filterChange listFilter: [Int]!)
-}
+
