@@ -68,6 +68,7 @@ class XEEMViewController: UIViewController, UITextFieldDelegate, UIViewControlle
         
         self.emailLabel.delegate = self;
         self.password.delegate = self;
+        self.password.secureTextEntry = true
 
     }
     
