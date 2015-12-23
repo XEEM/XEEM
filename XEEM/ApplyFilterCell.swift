@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol ApplyFilterCellDelegate {
+    func applyFilterCell(filterCell : ApplyFilterCell)
+}
+
 class ApplyFilterCell: UITableViewCell {
     var delegate : ApplyFilterCellDelegate?
     @IBAction func applyAction(sender: UIButton) {
@@ -32,6 +36,4 @@ class ApplyFilterCell: UITableViewCell {
     }
 
 }
-protocol ApplyFilterCellDelegate {
-    func applyFilterCell(filterCell : ApplyFilterCell)
-}
+

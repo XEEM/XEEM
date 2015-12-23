@@ -16,7 +16,7 @@
         </mutableArray>
     </customFonts>
     <scenes>
-        <!--XEEM-->
+        <!--Timeline View Controller-->
         <scene sceneID="6Kh-Za-24y">
             <objects>
                 <viewController id="SoN-gW-hiv" customClass="TimelineViewController" customModule="XEEM" customModuleProvider="target" sceneMemberID="viewController">
@@ -102,16 +102,17 @@
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="15$" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LsP-ve-jPd">
-                                        <rect key="frame" x="273" y="39" width="31" height="22"/>
-                                        <fontDescription key="fontDescription" name="SanFranciscoDisplay-Black" family="San Francisco Display" pointSize="18"/>
-                                        <color key="textColor" red="0.90588235289999997" green="0.29803921570000003" blue="0.23137254900000001" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="FROM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EeU-8I-ZVH">
                                         <rect key="frame" x="267" y="69" width="45" height="21"/>
                                         <fontDescription key="fontDescription" name="SanFranciscoDisplay-Bold" family="San Francisco Display" pointSize="17"/>
                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="15$" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LsP-ve-jPd">
+                                        <rect key="frame" x="274" y="39" width="31" height="22"/>
+                                        <color key="backgroundColor" red="0.21176470589999999" green="0.21176470589999999" blue="0.21176470589999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="SanFranciscoDisplay-Black" family="San Francisco Display" pointSize="18"/>
+                                        <color key="textColor" red="0.90588235289999997" green="0.29803921570000003" blue="0.23137254900000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -153,7 +154,7 @@
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
-                    <navigationItem key="navigationItem" title="XEEM" id="2B1-Xs-D1A">
+                    <navigationItem key="navigationItem" id="2B1-Xs-D1A">
                         <barButtonItem key="leftBarButtonItem" image="ic_user" id="iXE-44-7Bq">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
@@ -168,6 +169,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="bottomViewRequestServiceConstraint" destination="OpS-uk-Boo" id="h8m-Pn-R4a"/>
                         <outlet property="btnEmergency" destination="3qC-P5-ePt" id="N8w-rb-5Np"/>
                         <outlet property="distanceLabel" destination="Fvc-7s-bmj" id="Vtw-Bx-QEh"/>
                         <outlet property="imageService" destination="NJ2-Ky-TDK" id="6YO-Gb-4yr"/>

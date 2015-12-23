@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Request Loading View Controller-->
+        <scene sceneID="Vyd-l7-ZH6">
+            <objects>
+                <viewController id="cr1-ez-7qe" customClass="RequestLoadingViewController" customModule="XEEM" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="2OR-d1-8ex"/>
+                        <viewControllerLayoutGuide type="bottom" id="9Tp-DF-sCF"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="aVa-mY-0cA">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Request a help" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jb6-Tt-eMf">
+                                <rect key="frame" x="78" y="266" width="164" height="28"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Jb6-Tt-eMf" firstAttribute="centerX" secondItem="aVa-mY-0cA" secondAttribute="centerX" id="9e9-8u-0OI"/>
+                            <constraint firstItem="Jb6-Tt-eMf" firstAttribute="top" secondItem="aVa-mY-0cA" secondAttribute="topMargin" constant="266" id="JWg-zu-YFL"/>
+                            <constraint firstItem="Jb6-Tt-eMf" firstAttribute="leading" secondItem="aVa-mY-0cA" secondAttribute="leading" constant="78" id="f5I-nL-Abg"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oxj-KM-z1E" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="450" y="539"/>
+        </scene>
+        <!--Received Service View Controller-->
+        <scene sceneID="5vI-XN-Eoo">
+            <objects>
+                <viewController id="mpQ-SD-hJs" customClass="ReceivedServiceViewController" customModule="XEEM" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="yaR-Wd-MDN"/>
+                        <viewControllerLayoutGuide type="bottom" id="JXd-gt-sD9"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="P4i-g2-4fl">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Receive Service" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="koh-2c-R6I">
+                                <rect key="frame" x="20" y="28" width="280" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Repair service will come in few minutes. Press Received Service when they get there" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ii4-HF-3BU">
+                                <rect key="frame" x="20" y="367" width="280" height="88"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fy2-sB-Ic0">
+                                <rect key="frame" x="126" y="92" width="68" height="61"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="68" id="BOl-F9-dnF"/>
+                                    <constraint firstAttribute="height" constant="61" id="OFm-vn-ySw"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qnj-sA-C88">
+                                <rect key="frame" x="102" y="500" width="118" height="30"/>
+                                <state key="normal" title="Received Service"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Repair Service 1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zi7-PX-ZaX">
+                                <rect key="frame" x="99" y="168" width="122" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="35f-2I-0MO"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gnT-Zq-i8h">
+                                <rect key="frame" x="74" y="207" width="172" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="172" id="1Wg-w6-8GW"/>
+                                    <constraint firstAttribute="height" constant="30" id="7bf-mM-hUs"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="koh-2c-R6I" firstAttribute="centerX" secondItem="P4i-g2-4fl" secondAttribute="centerX" id="7gx-Hb-bIc"/>
+                            <constraint firstItem="fy2-sB-Ic0" firstAttribute="centerX" secondItem="P4i-g2-4fl" secondAttribute="centerX" id="Ffg-x3-HEc"/>
+                            <constraint firstItem="fy2-sB-Ic0" firstAttribute="top" secondItem="koh-2c-R6I" secondAttribute="bottom" constant="43" id="Hl5-uf-lgd"/>
+                            <constraint firstItem="gnT-Zq-i8h" firstAttribute="top" secondItem="zi7-PX-ZaX" secondAttribute="bottom" constant="18" id="NFt-Ou-ADU"/>
+                            <constraint firstAttribute="trailing" secondItem="koh-2c-R6I" secondAttribute="trailing" constant="20" id="NKy-CH-72U"/>
+                            <constraint firstItem="koh-2c-R6I" firstAttribute="leading" secondItem="P4i-g2-4fl" secondAttribute="leading" constant="20" id="Tgf-fL-Qde"/>
+                            <constraint firstItem="zi7-PX-ZaX" firstAttribute="top" secondItem="fy2-sB-Ic0" secondAttribute="bottom" constant="15" id="WL8-KQ-itb"/>
+                            <constraint firstItem="JXd-gt-sD9" firstAttribute="top" secondItem="qnj-sA-C88" secondAttribute="bottom" constant="38" id="bqD-Id-jcf"/>
+                            <constraint firstItem="gnT-Zq-i8h" firstAttribute="centerX" secondItem="P4i-g2-4fl" secondAttribute="centerX" id="dFD-eh-Inh"/>
+                            <constraint firstItem="qnj-sA-C88" firstAttribute="centerX" secondItem="P4i-g2-4fl" secondAttribute="centerX" id="kfF-pj-56I"/>
+                            <constraint firstItem="koh-2c-R6I" firstAttribute="top" secondItem="yaR-Wd-MDN" secondAttribute="bottom" constant="8" id="mNN-Rd-7pe"/>
+                            <constraint firstItem="zi7-PX-ZaX" firstAttribute="centerX" secondItem="P4i-g2-4fl" secondAttribute="centerX" id="mqy-Kc-3QQ"/>
+                            <constraint firstItem="ii4-HF-3BU" firstAttribute="centerX" secondItem="P4i-g2-4fl" secondAttribute="centerX" id="nXP-EC-WRp"/>
+                            <constraint firstItem="qnj-sA-C88" firstAttribute="leading" secondItem="P4i-g2-4fl" secondAttribute="leading" constant="102" id="qbl-nc-nyy"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RC5-Jx-cbm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="845" y="539"/>
+        </scene>
+        <!--Finish View Controller-->
+        <scene sceneID="hZR-r5-R9Y">
+            <objects>
+                <viewController id="GsS-Z1-oPj" customClass="FinishViewController" customModule="XEEM" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="xzG-jE-jSU"/>
+                        <viewControllerLayoutGuide type="bottom" id="ovt-Us-Cob"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="5hW-Mi-y1g">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ob5-7w-D8M">
+                                <rect key="frame" x="126" y="92" width="68" height="61"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="In Progress" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zwn-eH-vUo">
+                                <rect key="frame" x="20" y="28" width="280" height="31"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kwk-lx-t1l">
+                                <rect key="frame" x="135" y="504" width="45" height="30"/>
+                                <state key="normal" title="Finish "/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rMB-NE-Lhu">
+                                <rect key="frame" x="20" y="366" width="275" height="88"/>
+                                <string key="text">In progresss...
+Press finish when you are done!</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Repair Service 1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Ev-aM-BDC">
+                                <rect key="frame" x="15" y="166" width="280" height="31"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="m3u-yN-cn1">
+                                <rect key="frame" x="70" y="205" width="181" height="30"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="e97-Iu-8rj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1237" y="539"/>
+        </scene>
+        <!--Service Summary View Controller-->
+        <scene sceneID="GHF-Yl-ulz">
+            <objects>
+                <viewController id="PGy-ch-ovm" customClass="ServiceSummaryViewController" customModule="XEEM" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="0t5-NI-MeT"/>
+                        <viewControllerLayoutGuide type="bottom" id="NAa-aF-voU"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="HBh-pP-Tji">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="SERVICE SUMMARY" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VzM-x0-VMo">
+                                <rect key="frame" x="20" y="28" width="280" height="31"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HfE-oV-aVO">
+                                <rect key="frame" x="136" y="504" width="49" height="30"/>
+                                <state key="normal" title="Submit"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="17j-0v-tsd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1644" y="539"/>
+        </scene>
+    </scenes>
+</document>

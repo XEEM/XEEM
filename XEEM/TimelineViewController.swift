@@ -2,8 +2,8 @@
 //  TimelineViewController.swift
 //  Timeline
 //
-//  Created by Hossam Ghareeb on 8/14/15.
-//  Copyright © 2015 Hossam Ghareeb. All rights reserved.
+//  Created by Lê Thanh Tân on 8/14/15.
+//  Copyright © 2015 XEEM. All rights reserved.
 //
 
 import UIKit
@@ -22,7 +22,6 @@ class TimelineViewController: UIViewController, MKMapViewDelegate, CLLocationMan
     @IBOutlet weak var distanceLabel: UILabel!
     @IBOutlet weak var minimumQuotation: UILabel!
     
-    @IBOutlet weak var priceLabel: UILabel!
     var currentUser : User!
     var regionRadius : CLLocationDistance = 0.0;
     var location: CLLocation?
@@ -30,23 +29,32 @@ class TimelineViewController: UIViewController, MKMapViewDelegate, CLLocationMan
     var selectedShopModel: ShopModel?
     var filterList : [Int]!
     
+    // contraint
+    @IBOutlet weak var bottomViewRequestServiceConstraint: NSLayoutConstraint!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
-        navigationController?.navigationBar.shadowImage = UIImage()
-        navigationController?.navigationBar.barTintColor = UIColor.MKColor.AppMainColor
+        //navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
+        navigationController!.navigationBar.shadowImage = UIImage()
+        navigationController!.navigationBar.barTintColor = UIColor.MKColor.AppMainColor
+        navigationController!.navigationBar.tintColor = UIColor.MKColor.AppMainColor
         SlideMenuOptions.panFromBezel = true
         (self.slideMenuController()?.rightViewController as! RightViewController).delegate = self
         // init RequestServiceView
+
         self.viewRequestService.hidden = true
-        UIUtils.drawCircle(minimumQuotation, view: viewRequestService)
+        //UIUtils.drawCircle(minimumQuotation, view: viewRequestService)
+        self.minimumQuotation.layer.masksToBounds = true
+        self.minimumQuotation.layer.cornerRadius = 5.0
+
+        self.bottomViewRequestServiceConstraint.constant = -100
+ 
         let defaults = NSUserDefaults.standardUserDefaults()
         filterList = defaults.objectForKey("FILTER_KEY") as? [Int] ?? [0,1,2,3,4]
         
         
         // mapView
         self.loadMapView()
-        
     }
     
     // Request service shops with filter input
@@ -89,7 +97,6 @@ class TimelineViewController: UIViewController, MKMapViewDelegate, CLLocationMan
                 }
             })
         }
-
     }
     
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
@@ -101,6 +108,7 @@ class TimelineViewController: UIViewController, MKMapViewDelegate, CLLocationMan
         let storyboard = UIStoryboard(name: "User", bundle: nil)
         let repairVC =  storyboard.instantiateViewControllerWithIdentifier("RepairServiceViewController") as! RepairServiceViewController
         repairVC.shopModel = self.selectedShopModel
+        repairVC.imageService = self.imageService
         self.navigationController?.pushViewController(repairVC, animated: true)
     }
 
@@ -117,34 +125,50 @@ class TimelineViewController: UIViewController, MKMapViewDelegate, CLLocationMan
     @IBAction func toggleSideMenu(sender: AnyObject) {
         self.slideMenuController()?.toggleLeft()
     }
-
+    
     
     func setInitViewWithTitle(shopModel: ShopModel?) {
         dispatch_async(dispatch_get_main_queue()) { () -> Void in
             // find current service with title
             //TODO
-            self.viewRequestService.hidden = false
+            UIView.animateWithDuration(0.5, delay: 0.0, options: UIViewAnimationOptions.CurveEaseInOut, animations: { () -> Void in
+                self.bottomViewRequestServiceConstraint.constant = 0
+                self.viewRequestService.layoutIfNeeded()
+                self.viewRequestService.hidden = false
+                }, completion: nil)
+            
             self.selectedShopModel = shopModel
-            // dummy service view
-           
+
+            self.imageService.image = UIImage(named: "bicycle")
+            
+            switch shopModel!.type! {
+            case "B":
+                self.imageService.image = UIImage(named: "ic_bike")
+                break
+            case "C":
+                self.imageService.image = UIImage(named: "ic_car")
+                break
+            case "S":
+                self.imageService.image = UIImage(named: "ic_vespa")
+                break
+            case "G":
+                self.imageService.image = UIImage(named: "ic_oil")
+                break
+            case "M":
+                self.imageService.image = UIImage(named: "ic_motorbike")
+                break
+            default:
+                self.imageService.image = UIImage(named: "ic_bike")
+                break
+            }
+
             self.titleServiceLabel.text = shopModel!.name
             
             print(shopModel?.rating!)
             let distance = Double(round(1000*((shopModel?.distance)! / 1000))/1000)
             self.rateView.rating = (shopModel?.rating!)!
             self.distanceLabel.text = "\(String(distance)) KM"
-//            self.rateView.notSelectedImage = UIImage(named: "ic_star_unrate_border")
-//            self.rateView.fullSelectedImage = UIImage(named: "ic_star")
-//            self.rateView.maxRating = 5;
-//            self.rateView.rating = round(Float(shopModel!.rating!))
-//            self.rateView.editable = false;
-            
-            
-           
-            
-            
-            
-            // add observer
+
             // 3. add action to myView
             let gesture = UITapGestureRecognizer(target: self, action: "onServiceTapView:")
             self.viewRequestService.addGestureRecognizer(gesture)
@@ -209,16 +233,9 @@ class TimelineViewController: UIViewController, MKMapViewDelegate, CLLocationMan
         
         let cpa = annotation as! CustomPointAnnotation
         var annotationView = mapView.dequeueReusableAnnotationViewWithIdentifier("identifier") as? FloatingAnnotationView
- //       if annotationView == nil {
-            let pin: UIImage = UIImage(named: cpa.imageName)!
-            annotationView = FloatingAnnotationView(annotation: annotation, reuseIdentifier: "identifier", image: pin)
-            annotationView!.canShowCallout = false
-//        } else {
-//            annotationView!.annotation = annotation
-//            annotationView!.canShowCallout = true
-//        }
-
-        
+        let pin: UIImage = UIImage(named: cpa.imageName)!
+        annotationView = FloatingAnnotationView(annotation: annotation, reuseIdentifier: "identifier", image: pin)
+        annotationView!.canShowCallout = false
         return annotationView
     }
     
@@ -226,7 +243,11 @@ class TimelineViewController: UIViewController, MKMapViewDelegate, CLLocationMan
     @IBOutlet var onTapWKMapView: UITapGestureRecognizer!
     
     @IBAction func onTapWKMapView(sender: UITapGestureRecognizer) {
-        self.viewRequestService.hidden = true
+        UIView.animateWithDuration(0.5, delay: 0.0, options: UIViewAnimationOptions.CurveEaseInOut, animations: { () -> Void in
+            self.bottomViewRequestServiceConstraint.constant = -100
+            self.viewRequestService.layoutIfNeeded()
+            }, completion: nil)
+
     }
     
     // MARK: - Emergency
@@ -242,7 +263,6 @@ class TimelineViewController: UIViewController, MKMapViewDelegate, CLLocationMan
     }
     
     // MARK: - MyLocation
-    
     @IBAction func onMyLocationUpdate(sender: UIButton) {
         self.locationManager.startUpdatingLocation()
     }
@@ -285,6 +305,10 @@ extension TimelineViewController: RightViewControllerDelegate,EmergencyDelegate 
         print("FILTER DELEGATE on home")
         requestData(listFilter)
         // fetch data again
+        UIView.animateWithDuration(0.5, delay: 0.0, options: UIViewAnimationOptions.CurveEaseInOut, animations: { () -> Void in
+            self.bottomViewRequestServiceConstraint.constant = -100
+            self.viewRequestService.layoutIfNeeded()
+            }, completion: nil)
     }
     func emergency(emergencyView: EmergencyViewController, didCancelTap onCancelTap: UIButton) {
         self.navigationController?.dismissPopupViewController(.Fade)

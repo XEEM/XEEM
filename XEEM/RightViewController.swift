@@ -122,7 +122,7 @@ extension RightViewController: UITableViewDataSource, UITableViewDelegate, Apply
     }
 }
 
-
 protocol RightViewControllerDelegate : class {
     func rightViewController(rightViewController : RightViewController, filterChange listFilter: [Int]!)
 }
+

@@ -29,8 +29,8 @@ public class UIUtils {
     public static func drawCircle(countLabel: UILabel, view : UIView) {
         let padding : CGFloat = 8
         
-        let x = countLabel.layer.position.x - (countLabel.frame.width / 2)
-        let y = countLabel.layer.position.y  - (countLabel.frame.width / 2)
+        let x = countLabel.layer.position.x - (countLabel.frame.height / 2)
+        let y = countLabel.layer.position.y - (countLabel.frame.height / 2)
         let circlePath = UIBezierPath(roundedRect: CGRectMake(x - padding, y - padding, countLabel.frame.width + (2 * padding), countLabel.frame.width + (2 * padding)), cornerRadius: (countLabel.frame.width + (2 * padding)) / 2).CGPath
         
         let circleShape = CAShapeLayer()

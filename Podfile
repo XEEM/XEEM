@@ -4,11 +4,11 @@
 
 
 target 'XEEM' do
-	pod 'Alamofire', '~> 3.1'
-    pod 'pop', '~> 1.0'
-    pod 'AFNetworking'
-    pod 'SlideMenuControllerSwift'
-
-use_frameworks!
+  pod 'Alamofire', '~> 3.1'
+  pod 'pop', '~> 1.0'
+  pod 'AFNetworking'
+  pod 'TKSubmitTransition'
+  pod 'SlideMenuControllerSwift'
+  use_frameworks!
 end
 
