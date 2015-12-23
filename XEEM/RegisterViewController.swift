@@ -8,42 +8,72 @@
 
 import UIKit
 
-class RegisterViewController: UIViewController {
+class RegisterViewController: UIViewController, UITextFieldDelegate {
     
     
-    @IBOutlet weak var email: MKTextField!
-    @IBOutlet weak var phoneNumber: MKTextField!
-    @IBOutlet weak var registerPassword: MKTextField!
+    @IBOutlet weak var emailLabel: MKTextField!
+    @IBOutlet weak var phoneNumberLabel: MKTextField!
+    @IBOutlet weak var registerPasswordLabel: MKTextField!
     @IBOutlet weak var registerBtn: UIButton!
+    @IBOutlet weak var backToLoginBtn: UIButton!
+    @IBOutlet weak var XEEM: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        
-        self.registerBtn.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
-        self.registerBtn.layer.cornerRadius = CGFloat(Float(5.0))
-        self.registerBtn.backgroundColor = ColorUtils.UIColorFromRGB("0xF44336");
-        
-        
-        self.navigationController?.navigationBar.barTintColor = UIColor.darkGrayColor()
-//        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
-//        self.navigationController?.navigationBar.shadowImage = UIImage()
-        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName : UIColor.whiteColor()]
-        
-        setRegister()
+        setRegister()   // register MaterialLabel Desgin
         
         // Do any additional setup after loading the view.
     }
     
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(true)
+        self.initView() // initView
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+        view.addGestureRecognizer(tap)
+        self.navigationController?.navigationBarHidden = true
+        
+    }
+    // MARK: - PrivateMethod
     func setRegister() -> () {
         
-        UIUtils.setupMaterialTextField(email)
-        UIUtils.setupMaterialTextField(phoneNumber)
-        UIUtils.setupMaterialTextField(registerPassword)
+        UIUtils.setupMaterialTextField(emailLabel)
+        UIUtils.setupMaterialTextField(phoneNumberLabel)
+        UIUtils.setupMaterialTextField(registerPasswordLabel)
         
     }
     
-
+    func initView() {
+        self.XEEM.textColor = ColorUtils.UIColorFromRGB("0xF44336");
+        self.view.backgroundColor = ColorUtils.UIColorFromRGB("0xF0F0F0 ")
+        self.emailLabel.backgroundColor = UIColor.whiteColor()
+        self.phoneNumberLabel.backgroundColor = UIColor.whiteColor()
+        self.registerPasswordLabel.backgroundColor = UIColor.whiteColor()
+        self.registerBtn.enabled = false
+        self.backToLoginBtn.enabled = true
+        
+        self.registerBtn.backgroundColor = UIColor.clearColor()
+        self.registerBtn.layer.borderWidth = CGFloat(Float(1.0))
+        self.registerBtn.layer.borderColor = ColorUtils.UIColorFromRGB("0xF44336").CGColor;
+        self.registerBtn.layer.cornerRadius = CGFloat(Float(5.0))
+        
+        self.backToLoginBtn.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
+        self.backToLoginBtn.layer.cornerRadius = CGFloat(Float(5.0))
+        self.backToLoginBtn.backgroundColor = ColorUtils.UIColorFromRGB("0xF44336");
+        self.backToLoginBtn.layer.borderWidth = CGFloat(Float(1.0))
+        self.backToLoginBtn.layer.borderColor = ColorUtils.UIColorFromRGB("0xF44336").CGColor;
+     
+        // delegate
+        self.emailLabel.delegate = self;
+        self.phoneNumberLabel.delegate = self;
+        self.registerPasswordLabel.delegate = self;
+        self.registerPasswordLabel.secureTextEntry = true
+    }
+    
+    //Calls this function when the tap is recognized.
+    func dismissKeyboard(){
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -52,8 +82,12 @@ class RegisterViewController: UIViewController {
     
     
     @IBAction func register(sender: AnyObject) {
+        
     }
     
+    @IBAction func onBackToLoginTap(sender: UIButton) {
+        self.navigationController?.popViewControllerAnimated(true)
+    }
 
     /*
     // MARK: - Navigation
