@@ -16,18 +16,21 @@ PODS:
     - AFNetworking/NSURLSession
   - Alamofire (3.1.4)
   - pop (1.0.8)
+  - SlideMenuControllerSwift (2.0.5)
   - TKSubmitTransition (0.3)
 
 DEPENDENCIES:
   - AFNetworking
   - Alamofire (~> 3.1)
   - pop (~> 1.0)
+  - SlideMenuControllerSwift
   - TKSubmitTransition
 
 SPEC CHECKSUMS:
   AFNetworking: a0075feb321559dc78d9d85b55d11caa19eabb93
   Alamofire: fbc829692f351fa1d8a31dd75fd7f7f56fea31fb
   pop: bb773ae2c791ca2629de13b347e7a8b450fa6a57
+  SlideMenuControllerSwift: 9dcae36265e14c4f42e729f212463beb60d2cf96
   TKSubmitTransition: 6634e4fb07288db861b66d70fa4c4a7b96d0e6b2
 
 COCOAPODS: 0.39.0

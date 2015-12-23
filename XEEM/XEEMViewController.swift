@@ -8,6 +8,7 @@
 
 import UIKit
 import TKSubmitTransition
+import SlideMenuControllerSwift
 
 class XEEMViewController: UIViewController, UITextFieldDelegate, UIViewControllerTransitioningDelegate {
     
@@ -50,19 +51,17 @@ class XEEMViewController: UIViewController, UITextFieldDelegate, UIViewControlle
         
         // Do any additional setup after loading the view.
         
-        
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "DismissKeyboard")
-        view.addGestureRecognizer(tap)
-        
         self.emailLabel.delegate = self;
         self.password.delegate = self;
         
         setSignIn()
         
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+        view.addGestureRecognizer(tap)
     }
     
     //Calls this function when the tap is recognized.
-    func DismissKeyboard(){
+    func dismissKeyboard(){
         //Causes the view (or one of its embedded text fields) to resign the first responder status.
         view.endEditing(true)
     }
@@ -90,6 +89,11 @@ class XEEMViewController: UIViewController, UITextFieldDelegate, UIViewControlle
     }
 
 
+    func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -116,8 +120,8 @@ class XEEMViewController: UIViewController, UITextFieldDelegate, UIViewControlle
             }
 
         } else {
-            if self.password.text?.characters.count > 6 {
-                self.password.textColor = UIColor.lightGrayColor()
+            if self.password.text?.characters.count > 1 {
+                self.password.textColor = UIColor.blueColor()
             } else {
                 self.password.textColor = UIColor.redColor()
             }
@@ -125,7 +129,7 @@ class XEEMViewController: UIViewController, UITextFieldDelegate, UIViewControlle
         }
         
         if (self.emailLabel.text?.characters.count > 3 &&
-            self.password.text?.characters.count > 6) {
+            self.password.text?.characters.count > 1) {
             self.signInBtn.enabled = true
         } else {
             self.signInBtn.enabled = false
@@ -133,34 +137,45 @@ class XEEMViewController: UIViewController, UITextFieldDelegate, UIViewControlle
     }
     
     func doLogin() -> () {
-        XEEMService.sharedInstance.login(nil, passwd:
-            nil) { (token, error) -> () in
+        XEEMService.sharedInstance.login(self.emailLabel.text, passwd: self.password.text) { (token, error) -> () in
                 if let token = token {
                     XEEMService.sharedInstance.getUserProfile(token) { (user, error) -> () in
                         print(user)
                         if let user = user {
                             User.currentUser = user
                             
-                            // Dummy Login
+                            // create viewController code...
                             let storyboard = UIStoryboard(name: "User", bundle: nil)
-                            let rootVC =  storyboard.instantiateViewControllerWithIdentifier("SwiftySideMenuViewController") as! SwiftySideMenuViewController
                             
-                            let centerVC = storyboard.instantiateViewControllerWithIdentifier("CenterUser");
+                            let mainViewController = storyboard.instantiateViewControllerWithIdentifier("CenterUser") as! UINavigationController
+                            let leftViewController = storyboard.instantiateViewControllerWithIdentifier("LeftViewController") as! LeftViewController
+                            let rightViewController = storyboard.instantiateViewControllerWithIdentifier("RightViewController") as! RightViewController
+                            //let nvc: UINavigationController = UINavigationController(rootViewController: mainViewController)
                             
-                            let leftVC = storyboard.instantiateViewControllerWithIdentifier("LeftUser");
-                            rootVC.enableLeftSwipeGesture = false
-                            rootVC.enableRightSwipeGesture = false
-                            
-                            rootVC.centerViewController = centerVC
-                            rootVC.leftViewController = leftVC
-                            rootVC.centerEndScale = 0.8
-                            rootVC.leftSpringAnimationSpeed = 20
-                            
+                            let slideMenuController = SlideMenuController(mainViewController: mainViewController, leftMenuViewController: leftViewController, rightMenuViewController: rightViewController)
                             let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+
                             
                             appDelegate.window = UIWindow(frame: UIScreen.mainScreen().bounds)
-                            appDelegate.window?.rootViewController = rootVC
+                            appDelegate.window!.rootViewController = slideMenuController
                             appDelegate.window?.makeKeyAndVisible()
+
+                            
+//                            // Dummy Login
+//                            let storyboard = UIStoryboard(name: "User", bundle: nil)
+//                            SideMenuController.menuButtonImage = UIImage(named: "menuButton")
+//                            SideMenuController.presentationStyle = .UnderCenterPanelLeft
+//                            SideMenuController.animationStyle = .CircleMaskAnimation
+//                            
+//                            UINavigationBar.appearance().translucent = false
+//                            UINavigationBar.appearance().barTintColor = UIColor(hue:0.56, saturation:0.88, brightness:0.95, alpha:1)
+//                            
+//                            let rootVC =  storyboard.instantiateViewControllerWithIdentifier("SideMenuController") as! SideMenuController
+//                            let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+//                            
+//                            appDelegate.window = UIWindow(frame: UIScreen.mainScreen().bounds)
+//                            appDelegate.window?.rootViewController = rootVC
+//                            appDelegate.window?.makeKeyAndVisible()
                             
                         } else {
                             // Error from get user data

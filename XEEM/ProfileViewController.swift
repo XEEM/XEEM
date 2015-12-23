@@ -64,10 +64,8 @@ extension ProfileViewController: UITableViewDataSource,UITableViewDelegate {
             let cell = self.tableView.dequeueReusableCellWithIdentifier("NewTransCell") as UITableViewCell?
             return cell!
         } else {
-            let cell = self.tableView.dequeueReusableCellWithIdentifier("TransportationCell") as! TransportationCell
-            cell.nameLabel.text = transportationList[indexPath.row].name
-            cell.thumbnailImageView.setImageWithURL(NSURL(string: "http://www.toyotahungvuongsg.com/uploads/8/9/2/4/8924026/6117979_orig.jpeg")!)
-            return cell
+            let cell = self.tableView.dequeueReusableCellWithIdentifier("TransportationCell") as UITableViewCell?
+            return cell!
         }
     }
 

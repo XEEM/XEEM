@@ -46,7 +46,7 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         avatarImageView.image = info[UIImagePickerControllerOriginalImage] as? UIImage
-        UIUtils.setRoundImageView(avatarImageView)
+                UIUtils.setRoundImageView(avatarImageView)
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     

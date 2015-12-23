@@ -2,7 +2,7 @@
 //  RequestLoadingViewController.swift
 //  XEEM
 //
-//  Created by USER on 12/21/15.
+//  Created by Le Thanh Tan on 12/22/15.
 //  Copyright © 2015 JadeLe. All rights reserved.
 //
 
@@ -12,8 +12,23 @@ class RequestLoadingViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        let loading: XHAmazingLoadingView = XHAmazingLoadingView(type: XHAmazingLoadingAnimationType.Skype)
+        loading.loadingTintColor = UIColor.MKColor.Red
+        loading.frame = CGRectMake(0, self.view.bounds.size.width / 2, self.view.bounds.width, 200)
+        self.view.addSubview(loading)
+        
+        // create label
+        let label : UILabel = UILabel(frame: CGRectMake(0,
+                                                        self.view.bounds.size.width / 2 + loading.frame.size.height,
+                                                        self.view.bounds.width,
+                                                        100))
+        label.textAlignment = NSTextAlignment.Center
+        label.text = "Requesting help"
+        label.font = UIFont.boldSystemFontOfSize(20)
+        
+        label.textColor = UIColor.MKColor.Red
+        self.view.addSubview(label)
+        loading.startAnimating()
     }
 
     override func didReceiveMemoryWarning() {

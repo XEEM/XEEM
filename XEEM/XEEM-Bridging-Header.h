@@ -13,4 +13,10 @@
 #import "UIViewController+SwiftySideMenu.h"
 #import "RateView.h"
 
+#import "XHAmazingLoadingView.h"
+#import "XHAmazingLoadingAnimationProtocol.h"
+#import "XHAmazingLoadingMusicsAnimation.h"
+#import "XHAmazingLoadingSkypeAnimation.h"
+#import "XHLayerHelper.h"
+
 #endif /* XEEM_Bridging_Header_h */

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SlideMenuControllerSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -24,13 +25,38 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             self.window!.rootViewController = rootVC
             self.window?.makeKeyAndVisible()
         } else {
+            // create viewController code...
             let storyboard = UIStoryboard(name: "User", bundle: nil)
-            let rootVC =  storyboard.instantiateViewControllerWithIdentifier("CenterUser") as! UINavigationController
+            
+            let mainViewController = storyboard.instantiateViewControllerWithIdentifier("CenterUser") as! UINavigationController
+            let leftViewController = storyboard.instantiateViewControllerWithIdentifier("LeftViewController") as! LeftViewController
+            let rightViewController = storyboard.instantiateViewControllerWithIdentifier("RightViewController") as! RightViewController
+            //let nvc: UINavigationController = UINavigationController(rootViewController: mainViewController)
+            
+            let slideMenuController = SlideMenuController(mainViewController: mainViewController, leftMenuViewController: leftViewController, rightMenuViewController: rightViewController)
+            
+            
             self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
-            self.window?.rootViewController = rootVC
+            self.window!.rootViewController = slideMenuController
             self.window?.makeKeyAndVisible()
+
         }
-    
+//            let storyboard = UIStoryboard(name: "User", bundle: nil)
+//            SideMenuController.menuButtonImage = UIImage(named: "menuButton")
+//            SideMenuController.presentationStyle = .UnderCenterPanelLeft
+//            SideMenuController.animationStyle = .CircleMaskAnimation
+//            
+//            UINavigationBar.appearance().translucent = false
+//            UINavigationBar.appearance().barTintColor = UIColor(hue:0.56, saturation:0.88, brightness:0.95, alpha:1)
+//            
+//            let rootVC =  storyboard.instantiateViewControllerWithIdentifier("SideMenuController") as! SideMenuController
+//            self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
+//            self.window?.rootViewController = rootVC
+//            self.window?.makeKeyAndVisible()
+//        }
+        
+        
+        
         return true
     }
 
