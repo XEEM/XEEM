@@ -87,12 +87,6 @@ class XEEMViewController: UIViewController, UITextFieldDelegate, UIViewControlle
     func animationControllerForDismissedController(dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         return nil
     }
-
-
-    func dismissKeyboard() {
-        //Causes the view (or one of its embedded text fields) to resign the first responder status.
-        view.endEditing(true)
-    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
