@@ -35,12 +35,13 @@ class ServiceDetailNameCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func configCell(data: ShopModel) {
-        if let dataURL = data.avatarURL {
-            self.serviceNameImage.setImageWithURLRequest(NSURLRequest(URL: NSURL(string: dataURL)!), placeholderImage: UIImage(named: "avatar"), success: nil, failure: nil)
-        } else {
-            self.serviceNameImage.image = UIImage(named: "avatar")
-        }
+    func configCell(data: ShopModel, serviceImage imageViews: UIImageView!) {
+//        if let dataURL = data.avatarURL {
+//            self.serviceNameImage.setImageWithURLRequest(NSURLRequest(URL: NSURL(string: dataURL)!), placeholderImage: UIImage(named: "avatar"), success: nil, failure: nil)
+//        } else {
+//            self.serviceNameImage.image = UIImage(named: "avatar")
+//        }
+        self.serviceNameImage.image = imageViews.image
         self.nameLabel.text = data.name
         self.rateView.rating = round(Float(data.rating!))
         self.distanceLabel.text = "5km"

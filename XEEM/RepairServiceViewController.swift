@@ -7,33 +7,45 @@
 //
 
 import UIKit
+import SlideMenuControllerSwift
 let serviceDetailCell = "serviceDetailNameCell"
 let quotesCell = "quotesCell"
 let showmoreCell = "showmoreCell"
 let reviewCell = "reviewCell"
 
 class RepairServiceViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, ShowmoreCellDelegate, ConfrimViewControllerDelegate {
+
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var btnXeemMe: UIButton!
     
     var shopModel: ShopModel?
     var quotesShopSome: [Quotes] = []
     var quotesShopAll: [Quotes] = []
-    
     var reviewerAll: [ReviewModel] = []
     var reviewerSome: [ReviewModel] = []
-    @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var btnXeemMe: UIButton!
+    var imageService: UIImageView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.slideMenuController()?.disablesAutomaticKeyboardDismissal()        
         self.initView()             // init View
         self.initData()             // init Data
         self.initTableView()        // init tableView
     }
 
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(true)
+        self.navigationController?.navigationBar.barStyle = .Black
+        self.navigationController?.navigationBar.backgroundColor = UIColor.blackColor()
+
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return .LightContent
+    }
     
     // MARK: - PrivateMethod
     private func initTableView() {
@@ -70,6 +82,7 @@ class RepairServiceViewController: UIViewController, UITableViewDelegate, UITabl
     }
     
     private func initView() {
+        SlideMenuOptions.panFromBezel = false
         self.btnXeemMe.backgroundColor = UIColor.MKColor.Red
         self.btnXeemMe.setTitleColor(UIColor.MKColor.WhiteColor, forState: UIControlState.Normal)
     }
@@ -86,7 +99,7 @@ class RepairServiceViewController: UIViewController, UITableViewDelegate, UITabl
             // service Name
             let cell : ServiceDetailNameCell = tableView.dequeueReusableCellWithIdentifier(serviceDetailCell, forIndexPath: indexPath) as! ServiceDetailNameCell
             if let shopModel = shopModel {
-                cell.configCell(shopModel)
+                cell.configCell(shopModel, serviceImage: self.imageService)
             }
             return cell
             

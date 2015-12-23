@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreLocation
 
 class ShopModel: NSObject {
     
@@ -23,7 +24,9 @@ class ShopModel: NSObject {
     var owner: User?
     var reviews: [ReviewModel]?
     var quotes: [Quotes]?
-    var rating: Double?
+    var rating: Float?
+    var location : CLLocation?
+    var distance : CLLocationDistance?
     
     
     override init() {
@@ -32,7 +35,7 @@ class ShopModel: NSObject {
 
     }
     
-    init(dictionary: NSDictionary) {
+    init(dictionary: NSDictionary,currentLocation: CLLocation?) {
         self.id = dictionary.objectForKey("Id") as? String
         self.name = dictionary.objectForKey("Name") as? String
         self.address = dictionary.objectForKey("Address") as? String
@@ -40,19 +43,21 @@ class ShopModel: NSObject {
         self.isAvailable = (dictionary.objectForKey("IsAvailable") as? Bool)!
         self.latitude = Double((dictionary.objectForKey("Latitude") as? String)!)
         self.longitde = Double((dictionary.objectForKey("Longitude") as? String)!)
+        self.location = CLLocation(latitude: self.latitude!, longitude: self.longitde!)
+        self.distance = currentLocation?.distanceFromLocation(self.location!)
         self.avatarURL = dictionary.objectForKey("AvatarUrl") as? String
         self.createdDate = dictionary.objectForKey("CreatedDate") as? String
         self.type = dictionary.objectForKey("Type") as? String
         self.owner = User.init(dictionary: dictionary.objectForKey("Owner") as? NSDictionary)
         self.reviews = ReviewModel.initWithArray(dictionary.objectForKey("Reviews") as! [NSDictionary])
         self.quotes = Quotes.initWithArray(dictionary.objectForKey("Quotes") as! [NSDictionary])
-        self.rating = dictionary.objectForKey("Rating") as? Double
+        self.rating = dictionary.objectForKey("Rating") as? Float
     }
     
-    class func initShopModelWithArray(array: [NSDictionary]) -> [ShopModel] {
+    class func initShopModelWithArray(array: [NSDictionary], currentLocation: CLLocation?) -> [ShopModel] {
         var trans = [ShopModel]()
         for dict in array {
-            trans.append(ShopModel(dictionary: dict))
+            trans.append(ShopModel(dictionary: dict,currentLocation: currentLocation))
         }
         return trans
     }
