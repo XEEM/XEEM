@@ -21,7 +21,7 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
         self.automaticallyAdjustsScrollViewInsets = false
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
-        navigationController?.navigationBar.barTintColor = ColorUtils.UIColorFromRGB("ffffff");
+        navigationController?.navigationBar.barTintColor = UIColor.darkGrayColor();
         currentUser = User.currentUser
         setInfo()
     }

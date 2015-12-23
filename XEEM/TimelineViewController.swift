@@ -90,7 +90,6 @@ class TimelineViewController: UIViewController, MKMapViewDelegate, CLLocationMan
                 }
             })
         }
-
     }
     
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
