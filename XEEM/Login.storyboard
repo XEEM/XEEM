@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="SanFranciscoDisplay-Ultralight.otf">
+            <string>SanFranciscoDisplay-Ultralight</string>
+        </mutableArray>
+    </customFonts>
     <scenes>
         <!--XEEM-->
         <scene sceneID="cPO-ry-eRF">
@@ -18,9 +23,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eVv-D5-VFB" customClass="MKTextField" customModule="XEEM" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="279" width="600" height="40"/>
+                                <rect key="frame" x="0.0" y="268" width="600" height="50"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="P03-0D-14P"/>
+                                    <constraint firstAttribute="height" constant="50" id="P03-0D-14P"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -28,27 +33,14 @@
                                     <action selector="onEditingChanged:" destination="McA-s4-OuM" eventType="editingChanged" id="rJo-uf-mnm"/>
                                 </connections>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oR3-K1-Cm8" customClass="TKTransitionSubmitButton" customModule="TKSubmitTransition">
-                                <rect key="frame" x="20" y="446" width="560" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="dVM-x9-Tn3"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                <state key="normal" title="Sign in">
-                                    <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="signIn:" destination="McA-s4-OuM" eventType="touchUpInside" id="Twl-jI-nLk"/>
-                                </connections>
-                            </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MsS-nl-b2V" customClass="MKTextField" customModule="XEEM" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="239" width="600" height="40"/>
+                                <rect key="frame" x="0.0" y="218" width="600" height="50"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="OnD-d6-sOh"/>
+                                    <constraint firstAttribute="height" constant="50" id="OnD-d6-sOh"/>
                                     <constraint firstAttribute="height" constant="30" id="aTB-Hq-FNI"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="aTB-Hq-FNI"/>
@@ -58,16 +50,10 @@
                                     <action selector="onEditingChanged:" destination="McA-s4-OuM" eventType="editingChanged" id="gbS-ZP-2dH"/>
                                 </connections>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a6i-Io-4LA">
-                                <rect key="frame" x="117" y="446" width="0.0" height="0.0"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CeL-Pz-VNw">
-                                <rect key="frame" x="20" y="501" width="560" height="30"/>
+                                <rect key="frame" x="20" y="454" width="560" height="50"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="WXz-fm-qxd"/>
+                                    <constraint firstAttribute="height" constant="50" id="WXz-fm-qxd"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <state key="normal" title="Register">
@@ -79,24 +65,35 @@
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="XEEM" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rrW-5r-vAD">
                                 <rect key="frame" x="5" y="98" width="590" height="60"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="50"/>
+                                <fontDescription key="fontDescription" name="SanFranciscoDisplay-Ultralight" family="San Francisco Display" pointSize="50"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DXB-Xr-bc5">
-                                <rect key="frame" x="0.0" y="335" width="600" height="30"/>
+                                <rect key="frame" x="239" y="334" width="123" height="30"/>
                                 <state key="normal" title="Forgot Password?"/>
                                 <connections>
                                     <segue destination="e8Z-BR-puP" kind="push" id="9Ar-0z-Jaa"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vtr-wN-sLE" customClass="TKTransitionSubmitButton" customModule="TKSubmitTransition">
+                                <rect key="frame" x="20" y="394" width="560" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="0gc-3D-my8"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <state key="normal" title="SIGN IN">
+                                    <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="signIn:" destination="McA-s4-OuM" eventType="touchUpInside" id="PgL-4U-Bsl"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="oR3-K1-Cm8" secondAttribute="trailing" constant="20" id="21c-Vp-dzT"/>
-                            <constraint firstItem="oR3-K1-Cm8" firstAttribute="centerX" secondItem="YNe-EO-uEK" secondAttribute="centerX" id="2Ge-nS-lp9"/>
+                            <constraint firstItem="vtr-wN-sLE" firstAttribute="leading" secondItem="YNe-EO-uEK" secondAttribute="leading" constant="20" id="1DT-yg-dI7"/>
                             <constraint firstItem="CeL-Pz-VNw" firstAttribute="centerX" secondItem="YNe-EO-uEK" secondAttribute="centerX" id="2NX-kl-vUH"/>
-                            <constraint firstItem="oR3-K1-Cm8" firstAttribute="leading" secondItem="YNe-EO-uEK" secondAttribute="leading" constant="20" id="355-dX-6Wy"/>
                             <constraint firstAttribute="trailing" secondItem="MsS-nl-b2V" secondAttribute="trailing" id="5he-cQ-War"/>
                             <constraint firstItem="DXB-Xr-bc5" firstAttribute="trailing" secondItem="rrW-5r-vAD" secondAttribute="trailing" constant="39" id="DOV-vc-M59"/>
                             <constraint firstAttribute="trailing" secondItem="eVv-D5-VFB" secondAttribute="trailing" id="Fbk-5S-Ny2"/>
@@ -105,23 +102,27 @@
                             <constraint firstItem="CeL-Pz-VNw" firstAttribute="leading" secondItem="YNe-EO-uEK" secondAttribute="leading" constant="20" id="K57-eE-U1T"/>
                             <constraint firstItem="eVv-D5-VFB" firstAttribute="top" secondItem="MsS-nl-b2V" secondAttribute="bottom" id="Q7s-iN-gcQ"/>
                             <constraint firstItem="rrW-5r-vAD" firstAttribute="leading" secondItem="YNe-EO-uEK" secondAttribute="leading" constant="5" id="YSq-d3-Fjm"/>
+                            <constraint firstItem="vtr-wN-sLE" firstAttribute="top" secondItem="DXB-Xr-bc5" secondAttribute="bottom" constant="30" id="YXU-LN-pns"/>
                             <constraint firstItem="MsS-nl-b2V" firstAttribute="leading" secondItem="YNe-EO-uEK" secondAttribute="leading" id="Ye6-lp-9HS"/>
                             <constraint firstAttribute="trailing" secondItem="DXB-Xr-bc5" secondAttribute="trailing" id="bvN-3R-030"/>
                             <constraint firstItem="eVv-D5-VFB" firstAttribute="leading" secondItem="YNe-EO-uEK" secondAttribute="leading" id="cPA-gg-2th"/>
                             <constraint firstItem="8dj-6y-zyt" firstAttribute="top" secondItem="CeL-Pz-VNw" secondAttribute="bottom" constant="69" id="dwG-on-FXF"/>
                             <constraint firstItem="DXB-Xr-bc5" firstAttribute="centerX" secondItem="YNe-EO-uEK" secondAttribute="centerX" id="dyn-gw-Xfm"/>
-                            <constraint firstItem="a6i-Io-4LA" firstAttribute="leading" secondItem="YNe-EO-uEK" secondAttribute="leading" constant="117" id="hwL-dU-zgZ"/>
-                            <constraint firstItem="CeL-Pz-VNw" firstAttribute="top" secondItem="oR3-K1-Cm8" secondAttribute="bottom" constant="25" id="pWJ-Wf-fJ2"/>
+                            <constraint firstItem="CeL-Pz-VNw" firstAttribute="top" secondItem="vtr-wN-sLE" secondAttribute="bottom" constant="10" id="e8W-0A-eWs"/>
+                            <constraint firstAttribute="trailing" secondItem="vtr-wN-sLE" secondAttribute="trailing" constant="20" id="fGA-rP-lOQ"/>
                             <constraint firstItem="eVv-D5-VFB" firstAttribute="centerX" secondItem="YNe-EO-uEK" secondAttribute="centerX" id="pc1-qg-ZPv"/>
                             <constraint firstItem="MsS-nl-b2V" firstAttribute="centerX" secondItem="YNe-EO-uEK" secondAttribute="centerX" id="rJY-9y-mZb"/>
                             <constraint firstItem="rrW-5r-vAD" firstAttribute="top" secondItem="YNe-EO-uEK" secondAttribute="topMargin" constant="98" id="sSg-80-65b"/>
-                            <constraint firstItem="MsS-nl-b2V" firstAttribute="top" secondItem="rrW-5r-vAD" secondAttribute="bottom" constant="81" id="sZX-wP-j9j"/>
+                            <constraint firstItem="MsS-nl-b2V" firstAttribute="top" secondItem="rrW-5r-vAD" secondAttribute="bottom" constant="60" id="sZX-wP-j9j"/>
                             <constraint firstItem="rrW-5r-vAD" firstAttribute="centerX" secondItem="YNe-EO-uEK" secondAttribute="centerX" id="wH3-e4-CdE"/>
                             <constraint firstItem="DXB-Xr-bc5" firstAttribute="leading" secondItem="YNe-EO-uEK" secondAttribute="leading" id="xb0-1n-3EW"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="DOV-vc-M59"/>
+                                <exclude reference="bvN-3R-030"/>
+                                <exclude reference="xb0-1n-3EW"/>
+                                <exclude reference="dwG-on-FXF"/>
                             </mask>
                         </variation>
                     </view>
@@ -132,12 +133,12 @@
                         <outlet property="forgotPassword" destination="DXB-Xr-bc5" id="o0D-lU-86D"/>
                         <outlet property="password" destination="eVv-D5-VFB" id="KPj-NR-Cwr"/>
                         <outlet property="registerBtn" destination="CeL-Pz-VNw" id="bMN-FB-2DD"/>
-                        <outlet property="signInBtn" destination="oR3-K1-Cm8" id="P36-pY-NEb"/>
+                        <outlet property="signInBtn" destination="vtr-wN-sLE" id="lgq-4e-mCo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Iic-rU-74Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1102" y="472"/>
+            <point key="canvasLocation" x="1102" y="472.5"/>
         </scene>
         <!--Register-->
         <scene sceneID="Qln-NH-fZZ">

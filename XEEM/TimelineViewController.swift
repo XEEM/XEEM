@@ -2,8 +2,8 @@
 //  TimelineViewController.swift
 //  Timeline
 //
-//  Created by Hossam Ghareeb on 8/14/15.
-//  Copyright © 2015 Hossam Ghareeb. All rights reserved.
+//  Created by Lê Thanh Tân on 8/14/15.
+//  Copyright © 2015 XEEM. All rights reserved.
 //
 
 import UIKit

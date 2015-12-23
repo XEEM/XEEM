@@ -2,7 +2,7 @@
 //  XEEMViewController.swift
 //  XEEM
 //
-//  Created by USER on 12/13/15.
+//  Created by Lê Thanh Tân on 12/13/15.
 //  Copyright © 2015 JadeLe. All rights reserved.
 //
 
@@ -27,37 +27,48 @@ class XEEMViewController: UIViewController, UITextFieldDelegate, UIViewControlle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        setSignIn()     // set SignIn
+    }
+    
+    override func viewWillAppear(animated: Bool)
+    {
+        super.viewWillAppear(animated)
+        self.initView() // initView
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+        view.addGestureRecognizer(tap)
+        self.navigationController?.navigationBarHidden = true
+    }
+    
+    override func viewWillDisappear(animated: Bool)
+    {
+        super.viewWillDisappear(animated)
+        self.navigationController?.navigationBarHidden = false
+    }
+    
+    // MARK: - PrivateMethod
+    private func  initView() {
         self.view.backgroundColor = ColorUtils.UIColorFromRGB("0xF0F0F0 ")
         
         self.Xeem.textColor = ColorUtils.UIColorFromRGB("0xF44336");
-        
+        self.forgotPassword.setTitleColor(UIColor.MKColor.Red, forState: .Normal)
         self.emailLabel.backgroundColor = UIColor.whiteColor()
         self.password.backgroundColor = UIColor.whiteColor()
         
-        self.forgotPassword.setTitleColor(ColorUtils.UIColorFromRGB("0xF44336"), forState: UIControlState.Normal)
-        
         self.signInBtn.enabled = false
-        self.signInBtn.setTitleColor(ColorUtils.UIColorFromRGB("0xF44336"), forState: UIControlState.Normal)
+        self.signInBtn.backgroundColor = UIColor.clearColor()
         self.signInBtn.layer.borderWidth = CGFloat(Float(1.0))
         self.signInBtn.layer.borderColor = ColorUtils.UIColorFromRGB("0xF44336").CGColor;
         self.signInBtn.layer.cornerRadius = CGFloat(Float(5.0))
-    
+        
         self.registerBtn.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
         self.registerBtn.layer.cornerRadius = CGFloat(Float(5.0))
         self.registerBtn.backgroundColor = ColorUtils.UIColorFromRGB("0xF44336");
         self.registerBtn.layer.borderWidth = CGFloat(Float(1.0))
         self.registerBtn.layer.borderColor = ColorUtils.UIColorFromRGB("0xF44336").CGColor;
         
-        // Do any additional setup after loading the view.
-        
         self.emailLabel.delegate = self;
         self.password.delegate = self;
-        
-        setSignIn()
-        
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
-        view.addGestureRecognizer(tap)
+
     }
     
     //Calls this function when the tap is recognized.
@@ -94,14 +105,9 @@ class XEEMViewController: UIViewController, UITextFieldDelegate, UIViewControlle
     }
     
     @IBAction func signIn(sender: UIButton) {
-        doLogin()
-        
-        signInBtn.animate(1, completion: { () -> () in
-            let secondVC = TimelineViewController()
-            secondVC.transitioningDelegate = self
-            self.presentViewController(secondVC, animated: true, completion: nil)
-        })
-        
+        self.dismissKeyboard()
+        signInBtn.startLoadingAnimation()
+        self.doLogin()
     }
     
     @IBAction func onEditingChanged(sender: UITextField) {
@@ -144,7 +150,6 @@ class XEEMViewController: UIViewController, UITextFieldDelegate, UIViewControlle
                             let mainViewController = storyboard.instantiateViewControllerWithIdentifier("CenterUser") as! UINavigationController
                             let leftViewController = storyboard.instantiateViewControllerWithIdentifier("LeftViewController") as! LeftViewController
                             let rightViewController = storyboard.instantiateViewControllerWithIdentifier("RightViewController") as! RightViewController
-                            //let nvc: UINavigationController = UINavigationController(rootViewController: mainViewController)
                             
                             let slideMenuController = SlideMenuController(mainViewController: mainViewController, leftMenuViewController: leftViewController, rightMenuViewController: rightViewController)
                             let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
@@ -155,22 +160,6 @@ class XEEMViewController: UIViewController, UITextFieldDelegate, UIViewControlle
                             appDelegate.window?.makeKeyAndVisible()
 
                             
-//                            // Dummy Login
-//                            let storyboard = UIStoryboard(name: "User", bundle: nil)
-//                            SideMenuController.menuButtonImage = UIImage(named: "menuButton")
-//                            SideMenuController.presentationStyle = .UnderCenterPanelLeft
-//                            SideMenuController.animationStyle = .CircleMaskAnimation
-//                            
-//                            UINavigationBar.appearance().translucent = false
-//                            UINavigationBar.appearance().barTintColor = UIColor(hue:0.56, saturation:0.88, brightness:0.95, alpha:1)
-//                            
-//                            let rootVC =  storyboard.instantiateViewControllerWithIdentifier("SideMenuController") as! SideMenuController
-//                            let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-//                            
-//                            appDelegate.window = UIWindow(frame: UIScreen.mainScreen().bounds)
-//                            appDelegate.window?.rootViewController = rootVC
-//                            appDelegate.window?.makeKeyAndVisible()
-                            
                         } else {
                             // Error from get user data
                         }
@@ -180,27 +169,6 @@ class XEEMViewController: UIViewController, UITextFieldDelegate, UIViewControlle
                 }
         }
     }
-    
-    override func viewWillAppear(animated: Bool)
-    {
-        super.viewWillDisappear(animated)
-        self.navigationController?.navigationBarHidden = true
-    }
-    
-    
-    
-
-    
-    override func viewWillDisappear(animated: Bool)
-    {
-        super.viewWillDisappear(animated)
-        self.navigationController?.navigationBarHidden = false
-    }
-    
-    
-    
-
-   
 
     /*
     // MARK: - Navigation
