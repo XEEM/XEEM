@@ -18,7 +18,7 @@ class ShopModel: NSObject {
     var isAvailable: Bool
     var latitude: Double?
     var longitde: Double?
-    var avatarURL: String?
+    var avatarURL: String!
     var createdDate: String?
     var type: String?
     var owner: User?
@@ -45,7 +45,7 @@ class ShopModel: NSObject {
         self.longitde = Double((dictionary.objectForKey("Longitude") as? String)!)
         self.location = CLLocation(latitude: self.latitude!, longitude: self.longitde!)
         self.distance = currentLocation?.distanceFromLocation(self.location!)
-        self.avatarURL = dictionary.objectForKey("AvatarUrl") as? String
+        self.avatarURL = dictionary.objectForKey("AvatarUrl") as? String ?? ""
         self.createdDate = dictionary.objectForKey("CreatedDate") as? String
         self.type = dictionary.objectForKey("Type") as? String
         self.owner = User.init(dictionary: dictionary.objectForKey("Owner") as? NSDictionary)

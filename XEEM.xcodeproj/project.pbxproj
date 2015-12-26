@@ -14,6 +14,7 @@
 		7115C4191C21A0CA0029ACB6 /* UIVViewController-SLPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7115C4181C21A0CA0029ACB6 /* UIVViewController-SLPopup.swift */; };
 		711717E31C2A841A006B5E58 /* SanFranciscoDisplay-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 711717E11C2A841A006B5E58 /* SanFranciscoDisplay-Semibold.otf */; };
 		711717E41C2A841A006B5E58 /* SanFranciscoDisplay-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 711717E21C2A841A006B5E58 /* SanFranciscoDisplay-Thin.otf */; };
+		711E1AAF1C2E313D005D0C16 /* default_banner.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 711E1AAE1C2E313D005D0C16 /* default_banner.jpg */; };
 		712E9F071C2BBC03006BE6CA /* DetailServiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712E9F061C2BBC03006BE6CA /* DetailServiceViewController.swift */; };
 		712E9F0A1C2BC5A5006BE6CA /* image1.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 712E9F091C2BC5A5006BE6CA /* image1.jpeg */; };
 		71437D311C225333003B3AE1 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71437D301C225333003B3AE1 /* User.swift */; };
@@ -106,6 +107,7 @@
 		7115C4181C21A0CA0029ACB6 /* UIVViewController-SLPopup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIVViewController-SLPopup.swift"; sourceTree = "<group>"; };
 		711717E11C2A841A006B5E58 /* SanFranciscoDisplay-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SanFranciscoDisplay-Semibold.otf"; path = "Fonts/SanFranciscoDisplay-Semibold.otf"; sourceTree = "<group>"; };
 		711717E21C2A841A006B5E58 /* SanFranciscoDisplay-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SanFranciscoDisplay-Thin.otf"; path = "Fonts/SanFranciscoDisplay-Thin.otf"; sourceTree = "<group>"; };
+		711E1AAE1C2E313D005D0C16 /* default_banner.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = default_banner.jpg; sourceTree = "<group>"; };
 		712E9F061C2BBC03006BE6CA /* DetailServiceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailServiceViewController.swift; sourceTree = "<group>"; };
 		712E9F091C2BC5A5006BE6CA /* image1.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image1.jpeg; sourceTree = "<group>"; };
 		71437D301C225333003B3AE1 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -227,6 +229,7 @@
 		712E9F081C2BC598006BE6CA /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				711E1AAE1C2E313D005D0C16 /* default_banner.jpg */,
 				712E9F091C2BC5A5006BE6CA /* image1.jpeg */,
 			);
 			name = Images;
@@ -673,6 +676,7 @@
 				711717E41C2A841A006B5E58 /* SanFranciscoDisplay-Thin.otf in Resources */,
 				718FAF8F1C2A810D00AB5C57 /* SanFranciscoDisplay-Medium.otf in Resources */,
 				A6DEFCB01C298B89000DBCB4 /* ConfrimPopUp.xib in Resources */,
+				711E1AAF1C2E313D005D0C16 /* default_banner.jpg in Resources */,
 				718FAF8D1C2A810D00AB5C57 /* SanFranciscoDisplay-Heavy.otf in Resources */,
 				7111A51E1C1BC33600FA17A5 /* Profile.storyboard in Resources */,
 				A629C3EB1C16C47900D77F69 /* (null) in Resources */,

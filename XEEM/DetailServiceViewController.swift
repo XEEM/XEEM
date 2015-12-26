@@ -8,6 +8,7 @@
 
 import UIKit
 import JBKenBurnsView
+import Alamofire
 
 
 class DetailServiceViewController: UIViewController,ConfrimViewControllerDelegate {
@@ -38,10 +39,21 @@ class DetailServiceViewController: UIViewController,ConfrimViewControllerDelegat
         tableView.estimatedRowHeight = 150
         //self.tableView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0)
         
-        let image = UIImage(named: "image1.jpeg")
+        let image = UIImage(named: "default_banner.jpg")
         var images = [UIImage]()
         images.append(image!)
         bannerView.animateWithImages(images, transitionDuration: 6 , initialDelay: 0, loop: true, isLandscape: true)
+        
+        Alamofire.request(.GET, currentService.avatarURL!).response { (request, response, data, error) in
+            if let error = error {
+                return
+            } else {
+                let image = UIImage(data: data!, scale:1)
+                var images = [UIImage]()
+                images.append(image!)
+                self.bannerView.animateWithImages(images, transitionDuration: 6 , initialDelay: 0, loop: true, isLandscape: true)
+            }
+        }
 
         ///self.tableView.bounces = false
 //        self.navigationController!.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
