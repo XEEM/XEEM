@@ -1,14 +1,14 @@
 //
-//  FinishViewController.swift
+//  ReceivedViewController.swift
 //  XEEM
 //
-//  Created by USER on 12/21/15.
+//  Created by Le Thanh Tan on 12/27/15.
 //  Copyright © 2015 JadeLe. All rights reserved.
 //
 
 import UIKit
 
-class FinishViewController: UIViewController {
+class ReceivedViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

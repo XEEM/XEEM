@@ -13,7 +13,7 @@ import Alamofire
 
 class DetailServiceViewController: UIViewController,ConfrimViewControllerDelegate {
 
-    @IBOutlet weak var bannerView: JBKenBurnsView!
+//    @IBOutlet weak var bannerView: JBKenBurnsView!
     @IBOutlet weak var tableView: UITableView!
     var currentService : ShopModel!
     var NAVBAR_CHANGE_POINT : Int!
@@ -42,7 +42,7 @@ class DetailServiceViewController: UIViewController,ConfrimViewControllerDelegat
         let image = UIImage(named: "default_banner.jpg")
         var images = [UIImage]()
         images.append(image!)
-        bannerView.animateWithImages(images, transitionDuration: 6 , initialDelay: 0, loop: true, isLandscape: true)
+//        bannerView.animateWithImages(images, transitionDuration: 6 , initialDelay: 0, loop: true, isLandscape: true)
         
         Alamofire.request(.GET, currentService.avatarURL!).response { (request, response, data, error) in
             if let error = error {
@@ -51,7 +51,7 @@ class DetailServiceViewController: UIViewController,ConfrimViewControllerDelegat
                 let image = UIImage(data: data!, scale:1)
                 var images = [UIImage]()
                 images.append(image!)
-                self.bannerView.animateWithImages(images, transitionDuration: 6 , initialDelay: 0, loop: true, isLandscape: true)
+//                self.bannerView.animateWithImages(images, transitionDuration: 6 , initialDelay: 0, loop: true, isLandscape: true)
             }
         }
 
