@@ -47,6 +47,12 @@ class LeftViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    @IBAction func onTapUserProfile(sender: UITapGestureRecognizer) {
+        let storyboard = UIStoryboard(name: "Profile", bundle: nil)
+        
+        let vc = storyboard.instantiateViewControllerWithIdentifier("ProfileNavigationController")
+        self.presentViewController(vc, animated: true, completion: nil)
+    }
 }
 
 extension LeftViewController: UITableViewDataSource, UITableViewDelegate {
