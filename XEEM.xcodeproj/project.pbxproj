@@ -14,8 +14,16 @@
 		7115C4191C21A0CA0029ACB6 /* UIVViewController-SLPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7115C4181C21A0CA0029ACB6 /* UIVViewController-SLPopup.swift */; };
 		711717E31C2A841A006B5E58 /* SanFranciscoDisplay-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 711717E11C2A841A006B5E58 /* SanFranciscoDisplay-Semibold.otf */; };
 		711717E41C2A841A006B5E58 /* SanFranciscoDisplay-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 711717E21C2A841A006B5E58 /* SanFranciscoDisplay-Thin.otf */; };
+		711E1AAF1C2E313D005D0C16 /* default_banner.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 711E1AAE1C2E313D005D0C16 /* default_banner.jpg */; };
+		712E9F071C2BBC03006BE6CA /* DetailServiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712E9F061C2BBC03006BE6CA /* DetailServiceViewController.swift */; };
+		712E9F0A1C2BC5A5006BE6CA /* image1.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 712E9F091C2BC5A5006BE6CA /* image1.jpeg */; };
 		71437D311C225333003B3AE1 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71437D301C225333003B3AE1 /* User.swift */; };
 		71437D331C225BB1003B3AE1 /* XEEMService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71437D321C225BB1003B3AE1 /* XEEMService.swift */; };
+		71721BB41C2CDC62008E7E56 /* BannerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71721BB31C2CDC62008E7E56 /* BannerCell.swift */; };
+		71721BB61C2CE003008E7E56 /* InfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71721BB51C2CE003008E7E56 /* InfoCell.swift */; };
+		71721BB81C2CF5AB008E7E56 /* QuotationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71721BB71C2CF5AB008E7E56 /* QuotationCell.swift */; };
+		71721BBA1C2CFA32008E7E56 /* SeeMoresCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71721BB91C2CFA32008E7E56 /* SeeMoresCell.swift */; };
+		71721BBC1C2D00ED008E7E56 /* ReviewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71721BBB1C2D00ED008E7E56 /* ReviewsCell.swift */; };
 		7173FB571C215CE700C1DD3A /* ColorUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7173FB561C215CE600C1DD3A /* ColorUtils.swift */; };
 		7173FB591C2180BC00C1DD3A /* UIUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7173FB581C2180BC00C1DD3A /* UIUtils.swift */; };
 		7179274F1C288DAC002C399F /* FilterServiceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7179274E1C288DAC002C399F /* FilterServiceCell.swift */; };
@@ -26,6 +34,7 @@
 		718FAF8F1C2A810D00AB5C57 /* SanFranciscoDisplay-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 718FAF861C2A810D00AB5C57 /* SanFranciscoDisplay-Medium.otf */; };
 		718FAF901C2A810D00AB5C57 /* SanFranciscoDisplay-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 718FAF871C2A810D00AB5C57 /* SanFranciscoDisplay-Regular.otf */; };
 		718FAF931C2A810D00AB5C57 /* SanFranciscoDisplay-Ultralight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 718FAF8A1C2A810D00AB5C57 /* SanFranciscoDisplay-Ultralight.otf */; };
+		71BA05061C2D54B600FAC038 /* UINavigationBar+Awesome.m in Sources */ = {isa = PBXBuildFile; fileRef = 71BA05051C2D54B600FAC038 /* UINavigationBar+Awesome.m */; };
 		71CD91E71C292BA800DDE36C /* ApplyFilterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71CD91E61C292BA800DDE36C /* ApplyFilterCell.swift */; };
 		71F0A6A91C284FE900A1AAD3 /* LeftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F0A6A81C284FE900A1AAD3 /* LeftViewController.swift */; };
 		71F0A6AB1C284FF400A1AAD3 /* RightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F0A6AA1C284FF400A1AAD3 /* RightViewController.swift */; };
@@ -98,8 +107,16 @@
 		7115C4181C21A0CA0029ACB6 /* UIVViewController-SLPopup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIVViewController-SLPopup.swift"; sourceTree = "<group>"; };
 		711717E11C2A841A006B5E58 /* SanFranciscoDisplay-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SanFranciscoDisplay-Semibold.otf"; path = "Fonts/SanFranciscoDisplay-Semibold.otf"; sourceTree = "<group>"; };
 		711717E21C2A841A006B5E58 /* SanFranciscoDisplay-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SanFranciscoDisplay-Thin.otf"; path = "Fonts/SanFranciscoDisplay-Thin.otf"; sourceTree = "<group>"; };
+		711E1AAE1C2E313D005D0C16 /* default_banner.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = default_banner.jpg; sourceTree = "<group>"; };
+		712E9F061C2BBC03006BE6CA /* DetailServiceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailServiceViewController.swift; sourceTree = "<group>"; };
+		712E9F091C2BC5A5006BE6CA /* image1.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image1.jpeg; sourceTree = "<group>"; };
 		71437D301C225333003B3AE1 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		71437D321C225BB1003B3AE1 /* XEEMService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XEEMService.swift; sourceTree = "<group>"; };
+		71721BB31C2CDC62008E7E56 /* BannerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BannerCell.swift; sourceTree = "<group>"; };
+		71721BB51C2CE003008E7E56 /* InfoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoCell.swift; sourceTree = "<group>"; };
+		71721BB71C2CF5AB008E7E56 /* QuotationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuotationCell.swift; sourceTree = "<group>"; };
+		71721BB91C2CFA32008E7E56 /* SeeMoresCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeeMoresCell.swift; sourceTree = "<group>"; };
+		71721BBB1C2D00ED008E7E56 /* ReviewsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewsCell.swift; sourceTree = "<group>"; };
 		7173FB561C215CE600C1DD3A /* ColorUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorUtils.swift; sourceTree = "<group>"; };
 		7173FB581C2180BC00C1DD3A /* UIUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIUtils.swift; sourceTree = "<group>"; };
 		7179274E1C288DAC002C399F /* FilterServiceCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterServiceCell.swift; sourceTree = "<group>"; };
@@ -110,6 +127,8 @@
 		718FAF861C2A810D00AB5C57 /* SanFranciscoDisplay-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SanFranciscoDisplay-Medium.otf"; path = "Fonts/SanFranciscoDisplay-Medium.otf"; sourceTree = "<group>"; };
 		718FAF871C2A810D00AB5C57 /* SanFranciscoDisplay-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SanFranciscoDisplay-Regular.otf"; path = "Fonts/SanFranciscoDisplay-Regular.otf"; sourceTree = "<group>"; };
 		718FAF8A1C2A810D00AB5C57 /* SanFranciscoDisplay-Ultralight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SanFranciscoDisplay-Ultralight.otf"; path = "Fonts/SanFranciscoDisplay-Ultralight.otf"; sourceTree = "<group>"; };
+		71BA05041C2D54B600FAC038 /* UINavigationBar+Awesome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+Awesome.h"; sourceTree = "<group>"; };
+		71BA05051C2D54B600FAC038 /* UINavigationBar+Awesome.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+Awesome.m"; sourceTree = "<group>"; };
 		71CD91E61C292BA800DDE36C /* ApplyFilterCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplyFilterCell.swift; sourceTree = "<group>"; };
 		71F0A6A81C284FE900A1AAD3 /* LeftViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftViewController.swift; sourceTree = "<group>"; };
 		71F0A6AA1C284FF400A1AAD3 /* RightViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RightViewController.swift; sourceTree = "<group>"; };
@@ -207,6 +226,28 @@
 			name = RatingView;
 			sourceTree = "<group>";
 		};
+		712E9F081C2BC598006BE6CA /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				711E1AAE1C2E313D005D0C16 /* default_banner.jpg */,
+				712E9F091C2BC5A5006BE6CA /* image1.jpeg */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		71721BB21C2CDC22008E7E56 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				712E9F061C2BBC03006BE6CA /* DetailServiceViewController.swift */,
+				71721BB31C2CDC62008E7E56 /* BannerCell.swift */,
+				71721BB51C2CE003008E7E56 /* InfoCell.swift */,
+				71721BB71C2CF5AB008E7E56 /* QuotationCell.swift */,
+				71721BB91C2CFA32008E7E56 /* SeeMoresCell.swift */,
+				71721BBB1C2D00ED008E7E56 /* ReviewsCell.swift */,
+			);
+			name = Detail;
+			sourceTree = "<group>";
+		};
 		718FAF811C2A810000AB5C57 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -223,9 +264,19 @@
 			name = Fonts;
 			sourceTree = "<group>";
 		};
+		71BA05031C2D54A500FAC038 /* CustomNV */ = {
+			isa = PBXGroup;
+			children = (
+				71BA05041C2D54B600FAC038 /* UINavigationBar+Awesome.h */,
+				71BA05051C2D54B600FAC038 /* UINavigationBar+Awesome.m */,
+			);
+			name = CustomNV;
+			sourceTree = "<group>";
+		};
 		71F0A6A51C284FC400A1AAD3 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				A69BDDE01C181D0B005CA6C6 /* TimelineViewController.swift */,
 				71F0A6A81C284FE900A1AAD3 /* LeftViewController.swift */,
 				71F0A6AA1C284FF400A1AAD3 /* RightViewController.swift */,
 			);
@@ -273,9 +324,9 @@
 		A627252B1C14A0D30005A204 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				71721BB21C2CDC22008E7E56 /* Detail */,
 				CE5514AE1C2AEE90006DF3B5 /* EmergencyViewController.swift */,
 				CEDB2E9E1C27DFEC009730C9 /* Request */,
-				A69BDDE01C181D0B005CA6C6 /* TimelineViewController.swift */,
 				CE8C13381C1DC15500D1AA09 /* Login */,
 				A6D2C5C11C2997BF00321254 /* Custom */,
 				71F0A6A51C284FC400A1AAD3 /* Home */,
@@ -343,6 +394,7 @@
 		A62725311C14A14E0005A204 /* Supporting */ = {
 			isa = PBXGroup;
 			children = (
+				712E9F081C2BC598006BE6CA /* Images */,
 				718FAF811C2A810000AB5C57 /* Fonts */,
 				CE1395551C1087D100A67657 /* Info.plist */,
 				CE1395521C1087D100A67657 /* LaunchScreen.storyboard */,
@@ -365,6 +417,7 @@
 		A69BDDC81C1816A6005CA6C6 /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				71BA05031C2D54A500FAC038 /* CustomNV */,
 				7107F5761C29F397002817D6 /* RatingView */,
 				A6D2C5CA1C29A72500321254 /* XHAmazingLoading */,
 				A622060E1C26918600B7C864 /* SliderMenuSwift */,
@@ -590,7 +643,7 @@
 				TargetAttributes = {
 					CE1395451C1087D100A67657 = {
 						CreatedOnToolsVersion = 7.1.1;
-						DevelopmentTeam = W5KA45T8VV;
+						DevelopmentTeam = 9898326J2T;
 					};
 				};
 			};
@@ -623,6 +676,7 @@
 				711717E41C2A841A006B5E58 /* SanFranciscoDisplay-Thin.otf in Resources */,
 				718FAF8F1C2A810D00AB5C57 /* SanFranciscoDisplay-Medium.otf in Resources */,
 				A6DEFCB01C298B89000DBCB4 /* ConfrimPopUp.xib in Resources */,
+				711E1AAF1C2E313D005D0C16 /* default_banner.jpg in Resources */,
 				718FAF8D1C2A810D00AB5C57 /* SanFranciscoDisplay-Heavy.otf in Resources */,
 				7111A51E1C1BC33600FA17A5 /* Profile.storyboard in Resources */,
 				A629C3EB1C16C47900D77F69 /* (null) in Resources */,
@@ -632,6 +686,7 @@
 				A69B8E9D1C29CD51005D8BD6 /* (null) in Resources */,
 				71F4A2F81C1C2E4F008BF810 /* HistoryDetailPopup.xib in Resources */,
 				A629C3E51C16BF9000D77F69 /* User.storyboard in Resources */,
+				712E9F0A1C2BC5A5006BE6CA /* image1.jpeg in Resources */,
 				718FAF8E1C2A810D00AB5C57 /* SanFranciscoDisplay-Light.otf in Resources */,
 				A6C5DDAC1C1DAE5200A7DB9D /* ReviewCell.xib in Resources */,
 				A6C5DDA01C1D44B400A7DB9D /* ServiceDetailNameCell.xib in Resources */,
@@ -701,6 +756,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				71F4A3021C1C959C008BF810 /* MKLayer.swift in Sources */,
+				71721BBA1C2CFA32008E7E56 /* SeeMoresCell.swift in Sources */,
 				CE8C133C1C1DC15C00D1AA09 /* XEEMViewController.swift in Sources */,
 				71F0A6A91C284FE900A1AAD3 /* LeftViewController.swift in Sources */,
 				71437D311C225333003B3AE1 /* User.swift in Sources */,
@@ -709,11 +765,14 @@
 				CEDB2EA01C27E013009730C9 /* RequestLoadingViewController.swift in Sources */,
 				A6C5DDA71C1DAA0F00A7DB9D /* ShowmoreCell.swift in Sources */,
 				A6C646B31C25503500B417C9 /* Quotes.swift in Sources */,
+				712E9F071C2BBC03006BE6CA /* DetailServiceViewController.swift in Sources */,
 				A6C5DD9F1C1D44B400A7DB9D /* ServiceDetailNameCell.swift in Sources */,
 				A69BDDDB1C181714005CA6C6 /* SwiftySideMenuViewController.m in Sources */,
 				A6C5DD9C1C1D420A00A7DB9D /* RepairServiceViewController.swift in Sources */,
 				CEDB2EA61C27E05C009730C9 /* ServiceSummaryViewController.swift in Sources */,
+				71721BBC1C2D00ED008E7E56 /* ReviewsCell.swift in Sources */,
 				71F4A2F31C1C18B8008BF810 /* TransportationDetailControllerViewController.swift in Sources */,
+				71721BB61C2CE003008E7E56 /* InfoCell.swift in Sources */,
 				CECBE02E1C22EA24004F6C55 /* PaymentMethodViewController.swift in Sources */,
 				A6D2C5C51C2998E500321254 /* ConfrimViewController.swift in Sources */,
 				71F0A6AB1C284FF400A1AAD3 /* RightViewController.swift in Sources */,
@@ -724,8 +783,10 @@
 				CEDB2EA41C27E049009730C9 /* FinishViewController.swift in Sources */,
 				CE5514AF1C2AEE90006DF3B5 /* EmergencyViewController.swift in Sources */,
 				A6C5DDA31C1DA4DC00A7DB9D /* QuotesTableViewCell.swift in Sources */,
+				71721BB81C2CF5AB008E7E56 /* QuotationCell.swift in Sources */,
 				A69B8EA11C29D55D005D8BD6 /* (null) in Sources */,
 				7111A5201C1BC55100FA17A5 /* ProfileViewController.swift in Sources */,
+				71BA05061C2D54B600FAC038 /* UINavigationBar+Awesome.m in Sources */,
 				A6C646B11C254F6D00B417C9 /* ReviewModel.swift in Sources */,
 				CEDB2EA21C27E036009730C9 /* ReceivedServiceViewController.swift in Sources */,
 				A621F6021C28770E00D19952 /* ListReviewViewController.swift in Sources */,
@@ -754,6 +815,7 @@
 				71CD91E71C292BA800DDE36C /* ApplyFilterCell.swift in Sources */,
 				71F4A2EF1C1BF8F0008BF810 /* Transportation.swift in Sources */,
 				71F4A2F51C1C197F008BF810 /* HistoryCell.swift in Sources */,
+				71721BB41C2CDC62008E7E56 /* BannerCell.swift in Sources */,
 				7107F5781C29F3B3002817D6 /* FloatRatingView.swift in Sources */,
 				71F4A3041C1C95BB008BF810 /* MKColor.swift in Sources */,
 			);
@@ -873,7 +935,7 @@
 				INFOPLIST_FILE = XEEM/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.xeem.aa;
+				PRODUCT_BUNDLE_IDENTIFIER = com.xeem;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "XEEM/XEEM-Bridging-Header.h";
@@ -892,7 +954,7 @@
 				INFOPLIST_FILE = XEEM/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.xeem.aa;
+				PRODUCT_BUNDLE_IDENTIFIER = com.xeem;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "XEEM/XEEM-Bridging-Header.h";

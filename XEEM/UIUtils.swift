@@ -42,4 +42,9 @@ public class UIUtils {
         view.layer.addSublayer(circleShape)
     }
     
+    public static func convertDistance(distance : Double!) -> String {
+        let distance = Double(round(100*((distance)! / 1000))/100)
+        return "\(String(distance)) KM"
+    }
+    
 }
