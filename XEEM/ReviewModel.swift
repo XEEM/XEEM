@@ -10,12 +10,12 @@ import UIKit
 
 class ReviewModel: NSObject {
 
-    var rating: Int?
+    var rating: Float?
     var descriptions: String?
     var reviewer: User?
     
     init(dictionary: NSDictionary) {
-        self.rating = dictionary.objectForKey("Rating") as? Int
+        self.rating = dictionary.objectForKey("Rating") as? Float
         self.descriptions = dictionary.objectForKey("Description") as? String
         self.reviewer = User.init(dictionary: dictionary.objectForKey("Reviewer") as! NSDictionary)
     }

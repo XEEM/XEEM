@@ -19,4 +19,6 @@
 #import "XHAmazingLoadingSkypeAnimation.h"
 #import "XHLayerHelper.h"
 
+#import "UINavigationBar+Awesome.h"
+
 #endif /* XEEM_Bridging_Header_h */

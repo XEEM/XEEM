@@ -9,6 +9,7 @@ target 'XEEM' do
   pod 'AFNetworking'
   pod 'TKSubmitTransition'
   pod 'SlideMenuControllerSwift'
+  pod 'JBKenBurnsView'
   use_frameworks!
 end
 

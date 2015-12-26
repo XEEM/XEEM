@@ -105,11 +105,18 @@ class TimelineViewController: UIViewController, MKMapViewDelegate, CLLocationMan
     
     func onServiceTapView(sender:UITapGestureRecognizer){
         // do other task
-        let storyboard = UIStoryboard(name: "User", bundle: nil)
-        let repairVC =  storyboard.instantiateViewControllerWithIdentifier("RepairServiceViewController") as! RepairServiceViewController
-        repairVC.shopModel = self.selectedShopModel
-        repairVC.imageService = self.imageService
-        self.navigationController?.pushViewController(repairVC, animated: true)
+//        let storyboard = UIStoryboard(name: "User", bundle: nil)
+//        let repairVC =  storyboard.instantiateViewControllerWithIdentifier("RepairServiceViewController") as! RepairServiceViewController
+//        repairVC.shopModel = self.selectedShopModel
+//        repairVC.imageService = self.imageService
+//        self.navigationController?.pushViewController(repairVC, animated: true)
+        
+                let storyboard = UIStoryboard(name: "User", bundle: nil)
+                let repairVC =  storyboard.instantiateViewControllerWithIdentifier("DetailServiceViewController") as! DetailServiceViewController
+                repairVC.currentService = self.selectedShopModel
+               // repairVC.imageService = self.imageService
+                self.navigationController?.pushViewController(repairVC, animated: true)
+
     }
 
     
@@ -163,11 +170,8 @@ class TimelineViewController: UIViewController, MKMapViewDelegate, CLLocationMan
             }
 
             self.titleServiceLabel.text = shopModel!.name
-            
-            print(shopModel?.rating!)
-            let distance = Double(round(1000*((shopModel?.distance)! / 1000))/1000)
             self.rateView.rating = (shopModel?.rating!)!
-            self.distanceLabel.text = "\(String(distance)) KM"
+            self.distanceLabel.text = "\(String(UIUtils.convertDistance(shopModel?.distance)))"
 
             // 3. add action to myView
             let gesture = UITapGestureRecognizer(target: self, action: "onServiceTapView:")
@@ -256,9 +260,9 @@ class TimelineViewController: UIViewController, MKMapViewDelegate, CLLocationMan
     
     @IBAction func onEmergencyTapped(sender: UIButton) {
         // TO-DO
-        let myPopupViewController:EmergencyViewController = EmergencyViewController(nibName:"EmergencyView", bundle: nil)
-        myPopupViewController.delegate = self
-        self.presentpopupViewController(myPopupViewController, animationType: .Fade, completion: { () -> Void in })
+//        let myPopupViewController:EmergencyViewController = EmergencyViewController(nibName:"EmergencyView", bundle: nil)
+//        myPopupViewController.delegate = self
+//        self.presentpopupViewController(myPopupViewController, animationType: .Fade, completion: { () -> Void in })
 
     }
     
