@@ -29,8 +29,8 @@ class ProfileViewController: UIViewController {
         setInfo()
         //transportationList.append(Transportation())
         //transportationList.append(Transportation())
-        tableView.dataSource = self
-        tableView.delegate = self
+        tableView?.dataSource = self
+        tableView?.delegate = self
         
     }
 
