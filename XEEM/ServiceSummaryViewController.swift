@@ -56,6 +56,7 @@ class ServiceSummaryViewController: UIViewController {
         let mainWindow = appDelegate!.window
         mainWindow!!.rootViewController = slideMenuController
         mainWindow!!.makeKeyAndVisible()
+
     }
 
     /*

@@ -415,7 +415,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "141"
             endingLineNumber = "141"
-            landmarkName = "doLogin()"
+            landmarkName = "onEditingChanged(_:)"
             landmarkType = "5">
             <Locations>
                <Location
@@ -463,7 +463,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "142"
             endingLineNumber = "142"
-            landmarkName = "doLogin()"
+            landmarkName = "onEditingChanged(_:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -479,7 +479,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "109"
             endingLineNumber = "109"
-            landmarkName = "signIn(_:)"
+            landmarkName = "animationControllerForPresentedController(_:presentingController:sourceController:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -595,54 +595,6 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "XEEM/RegisterViewController.swift"
-            timestampString = "472893466.992824"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "85"
-            endingLineNumber = "85"
-            landmarkName = "register(_:)"
-            landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "XEEM.RegisterViewController.register (XEEM.RegisterViewController)(Swift.AnyObject) -&gt; ()"
-                  moduleName = "XEEM"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/lethanhtan/XEEM/XEEM/RegisterViewController.swift"
-                  timestampString = "472894810.883408"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "85"
-                  endingLineNumber = "85"
-                  offsetFromSymbolStart = "24">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "XEEM.RegisterViewController.(register (XEEM.RegisterViewController) -&gt; (Swift.AnyObject) -&gt; ()).(closure #1)"
-                  moduleName = "XEEM"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/lethanhtan/XEEM/XEEM/RegisterViewController.swift"
-                  timestampString = "472894810.883581"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "86"
-                  endingLineNumber = "86"
-                  offsetFromSymbolStart = "36">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SlideMenuControllerSwift
 
 class NewTransportationViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDelegate, UITextFieldDelegate , UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     @IBOutlet weak var thumbnailImage: UIImageView!
@@ -83,6 +84,28 @@ class NewTransportationViewController: UIViewController,UIPickerViewDataSource,U
     @IBAction func onSaveClicked(sender: UIBarButtonItem) {
        self.dismissViewControllerAnimated(true, completion: nil)
     }
+    
+    @IBAction func onFinishTap(sender: UIButton) {
+        // TO-DO 
+        // Call API add new transport 
+        
+        
+        let storyboard = UIStoryboard(name: "User", bundle: nil)
+        
+        let mainViewController = storyboard.instantiateViewControllerWithIdentifier("CenterUser") as! UINavigationController
+        let leftViewController = storyboard.instantiateViewControllerWithIdentifier("LeftViewController") as! LeftViewController
+        let rightViewController = storyboard.instantiateViewControllerWithIdentifier("RightViewController") as! RightViewController
+        
+        let slideMenuController = SlideMenuController(mainViewController: mainViewController, leftMenuViewController: leftViewController, rightMenuViewController: rightViewController)
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        
+        
+        appDelegate.window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        appDelegate.window!.rootViewController = slideMenuController
+        appDelegate.window?.makeKeyAndVisible()
+
+    }
+    
     /*
     // MARK: - Navigation
 

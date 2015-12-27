@@ -25,7 +25,7 @@ class RequestLoadingViewController: UIViewController {
                                                         100))
         label.textAlignment = NSTextAlignment.Center
         label.text = "Requesting help"
-        label.font = UIFont.boldSystemFontOfSize(20)
+        label.font = UIFont (name: "SanFranciscoDisplay-Bold", size: 20)
         label.textColor = UIColor.MKColor.Orange
         self.view.addSubview(label)
         loading.startAnimating()
