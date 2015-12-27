@@ -8,21 +8,31 @@
 
 import UIKit
 import AFNetworking
+import FontAwesome_swift
 
 class ProfileViewController: UIViewController {
     var transportationList = [Transportation]()
     
-    @IBOutlet weak var phoneLabel: UILabel!
+
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var navigationBar: UINavigationBar!
+
     @IBOutlet weak var addressLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var avatarImage: UIImageView!
-    @IBOutlet weak var tableView: UITableView!
     var currentUser: User!
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Profile"
-        navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
-        navigationController?.navigationBar.shadowImage = UIImage()
+        let attrs = [
+            NSForegroundColorAttributeName : UIColor.whiteColor(),
+            NSFontAttributeName : UIFont(name: "SanFranciscoDisplay-Medium", size: 18)!
+        ]
+        
+        let img = UIImage()
+        navigationBar.shadowImage = img
+        navigationBar.setBackgroundImage(img, forBarMetrics: UIBarMetrics.Default)
+
         navigationController?.navigationBar.barTintColor = ColorUtils.UIColorFromRGB("ffffff");
         self.automaticallyAdjustsScrollViewInsets = false
         currentUser = User.currentUser
@@ -36,8 +46,8 @@ class ProfileViewController: UIViewController {
 
     func setInfo() -> () {
         nameLabel.text = currentUser.fullName
-        addressLabel.text = currentUser.address
-        phoneLabel.text = currentUser.phone
+        addressLabel.text = currentUser.email
+
         avatarImage.setImageWithURL(currentUser.avatarURL!);
         self.avatarImage.layer.cornerRadius = self.avatarImage.frame.size.width / 2;
         self.avatarImage.clipsToBounds = true;
@@ -53,24 +63,99 @@ class ProfileViewController: UIViewController {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     
+    //var labels = ["My Account", "", "Payment", "Logout"]
+    static var iconColor = UIColor(hex: 0xE0342F)
+    static var iconSize = CGSize(width: 20, height: 20)
+    var sectionLabels = [["header": "My Account",
+        "data": [
+                    [
+                        "icon":UIImage.fontAwesomeIconWithName(FontAwesome.CreditCard, textColor: iconColor, size: iconSize),
+                        "label": "Payment"
+                    ],
+                    [
+                        "icon": UIImage.fontAwesomeIconWithName(FontAwesome.Motorcycle, textColor: iconColor, size: iconSize),
+                        "label": "Transportations"
+                    ]
+                ]
+        ],
+        ["header":"",
+        "data": [
+                    [
+                        "icon": UIImage.fontAwesomeIconWithName(FontAwesome.SignOut, textColor: iconColor, size: iconSize),
+                        "label": "Logout"
+                    ]
+                ]
+        ]
+    ]
 }
 extension ProfileViewController: UITableViewDataSource,UITableViewDelegate {
+    
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return transportationList.count+1;
+        let cellData = sectionLabels[section]
+        let labels = cellData["data"]
+        return labels!.count
     }
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        if (indexPath.row == transportationList.count) {
-            let cell = self.tableView.dequeueReusableCellWithIdentifier("NewTransCell") as UITableViewCell?
-            return cell!
-        } else {
-            let cell = self.tableView.dequeueReusableCellWithIdentifier("TransportationCell") as UITableViewCell?
-            return cell!
-        }
+        let cell = tableView.dequeueReusableCellWithIdentifier("basicCell") as UITableViewCell!
+        let cellData = sectionLabels[indexPath.section]
+        let labels = cellData["data"]
+        let object = labels![indexPath.row] as! [String: AnyObject]
+        cell!.imageView?.image = object["icon"] as? UIImage
+        let label = object["label"] as? String
+        cell!.textLabel?.text = label
+        
+        return cell!
     }
 
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let cellData = sectionLabels[indexPath.section]
+        let labels = cellData["data"]
+        let object = labels![indexPath.row] as! [String: AnyObject]
+        
+        let label = object["label"] as? String
+        
+        if label == "Logout" {
+            // logout code
+            logout()
+            return
+        }
+        
+        if label == "Payment" {
+            // swith to payment screen
+            
+            return
+        }
+        
+    }
+    
+    func logout(){
+        User.currentUser = nil
+        self.dismissViewControllerAnimated(true, completion: nil)
+        let storyboard = UIStoryboard(name: "Login", bundle: nil)
+        
+        let vc = storyboard.instantiateViewControllerWithIdentifier("LoginNavigationController") as! UINavigationController
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        
+        appDelegate.window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        appDelegate.window!.rootViewController = vc
+        appDelegate.window?.makeKeyAndVisible()
+        
+        self.presentViewController(vc, animated: true, completion: nil)
+
+    }
+    
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return sectionLabels.count
+    }
+    
+    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return tableView.sectionHeaderHeight
+    }
+    
     @available(iOS 2.0, *)
     func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "TRANSPORTATION LIST"
+        let cellData = sectionLabels[section]
+        return cellData["header"] as? String
     }
 }

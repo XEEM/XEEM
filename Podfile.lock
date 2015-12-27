@@ -15,6 +15,7 @@ PODS:
   - AFNetworking/UIKit (3.0.4):
     - AFNetworking/NSURLSession
   - Alamofire (3.1.4)
+  - FontAwesome.swift (0.7.0)
   - JBKenBurnsView (1.0)
   - pop (1.0.8)
   - SlideMenuControllerSwift (2.0.5)
@@ -23,6 +24,7 @@ PODS:
 DEPENDENCIES:
   - AFNetworking
   - Alamofire (~> 3.1)
+  - FontAwesome.swift
   - JBKenBurnsView
   - pop (~> 1.0)
   - SlideMenuControllerSwift
@@ -31,6 +33,7 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   AFNetworking: a0075feb321559dc78d9d85b55d11caa19eabb93
   Alamofire: fbc829692f351fa1d8a31dd75fd7f7f56fea31fb
+  FontAwesome.swift: c6e30a1a81716306ff9c81f2d38dda88ac5b8294
   JBKenBurnsView: e40d10fcd4fbeb652c29fa431d4748780a4672ff
   pop: bb773ae2c791ca2629de13b347e7a8b450fa6a57
   SlideMenuControllerSwift: 9dcae36265e14c4f42e729f212463beb60d2cf96
