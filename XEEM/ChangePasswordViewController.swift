@@ -22,6 +22,9 @@ class ChangePasswordViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+//        self.navigationController?.navigationBar.backItem?.backBarButtonItem?.tintColor = UIColor.whiteColor()
+        
+        var i = 1
     }
 
     override func didReceiveMemoryWarning() {

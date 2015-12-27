@@ -15,8 +15,6 @@ class ProfileViewController: UIViewController {
     
 
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var navigationBar: UINavigationBar!
-
     @IBOutlet weak var addressLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var avatarImage: UIImageView!
@@ -29,12 +27,11 @@ class ProfileViewController: UIViewController {
             NSFontAttributeName : UIFont(name: "SanFranciscoDisplay-Medium", size: 18)!
         ]
         
-        let img = UIImage()
-        navigationBar.shadowImage = img
-        navigationBar.setBackgroundImage(img, forBarMetrics: UIBarMetrics.Default)
-
-        navigationController?.navigationBar.barTintColor = ColorUtils.UIColorFromRGB("ffffff");
-        self.automaticallyAdjustsScrollViewInsets = false
+        //let img = UIImage()
+        //self.navigationController?.navigationBar.shadowImage = img
+        self.navigationController?.navigationBar.titleTextAttributes = attrs
+        self.navigationController?.navigationBar.barTintColor = UIColor.MKColor.AppPrimaryColor
+        //self.automaticallyAdjustsScrollViewInsets = false
         currentUser = User.currentUser
         setInfo()
         //transportationList.append(Transportation())
@@ -71,11 +68,12 @@ class ProfileViewController: UIViewController {
                     [
                         "icon":UIImage.fontAwesomeIconWithName(FontAwesome.CreditCard, textColor: iconColor, size: iconSize),
                         "label": "Payment"
+                    ],
+                    [
+                        "icon":UIImage.fontAwesomeIconWithName(FontAwesome.Key, textColor: iconColor, size: iconSize),
+                        "label": "Change password"
                     ]
                 ]
-        ],
-        ["header":"Transportations",
-            "data": []
         ],
         ["header":"",
         "data": [
@@ -84,7 +82,8 @@ class ProfileViewController: UIViewController {
                         "label": "Logout"
                     ]
                 ]
-        ]
+        ],
+        
     ]
 }
 extension ProfileViewController: UITableViewDataSource,UITableViewDelegate {
@@ -94,7 +93,6 @@ extension ProfileViewController: UITableViewDataSource,UITableViewDelegate {
         let header = sectionData["header"] as! String
 
         if(header == "Transportations") {
-            
             return transportationList.count
         }
         
@@ -125,8 +123,8 @@ extension ProfileViewController: UITableViewDataSource,UITableViewDelegate {
             cell.accessoryType = .DisclosureIndicator
         }
         
-        if indexPath.section == 1 {
-            
+        if label == "Change password" {
+            cell.accessoryType = .DisclosureIndicator
         }
         
         return cell!
@@ -147,7 +145,12 @@ extension ProfileViewController: UITableViewDataSource,UITableViewDelegate {
         
         if label == "Payment" {
             // swith to payment screen
-            
+            self.performSegueWithIdentifier("paymentSegue", sender: nil)
+            return
+        }
+        
+        if label == "Change password" {
+            self.performSegueWithIdentifier("changePasswordSegue", sender: nil)
             return
         }
         
@@ -155,7 +158,6 @@ extension ProfileViewController: UITableViewDataSource,UITableViewDelegate {
     
     func logout(){
         User.currentUser = nil
-        self.dismissViewControllerAnimated(true, completion: nil)
         let storyboard = UIStoryboard(name: "Login", bundle: nil)
         
         let vc = storyboard.instantiateViewControllerWithIdentifier("LoginNavigationController") as! UINavigationController
@@ -165,8 +167,6 @@ extension ProfileViewController: UITableViewDataSource,UITableViewDelegate {
         appDelegate.window!.rootViewController = vc
         appDelegate.window?.makeKeyAndVisible()
         
-        self.presentViewController(vc, animated: true, completion: nil)
-
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {

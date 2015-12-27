@@ -50,8 +50,7 @@ class LeftViewController: UIViewController {
     @IBAction func onTapUserProfile(sender: UITapGestureRecognizer) {
         let storyboard = UIStoryboard(name: "Profile", bundle: nil)
         
-        let vc = storyboard.instantiateViewControllerWithIdentifier("ProfileViewController") as! ProfileViewController
-        vc.transportationList = listVehicles
+        let vc = storyboard.instantiateViewControllerWithIdentifier("ProfileNavigationViewController") as! UINavigationController
         self.presentViewController(vc, animated: true, completion: nil)
     }
 }
