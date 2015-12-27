@@ -33,7 +33,7 @@ public class UIUtils {
         textfield.cornerRadius = 1
         textfield.textColor = UIColor.whiteColor()
         textfield.bottomBorderEnabled = true
-        textfield.rippleLayerColor = UIColor.MKColor.LightGreen
+        textfield.rippleLayerColor = UIColor.MKColor.WhiteColor
     }
     
     public static func drawCircle(countLabel: UILabel, view : UIView) {

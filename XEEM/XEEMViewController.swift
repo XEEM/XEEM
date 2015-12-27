@@ -32,12 +32,24 @@ class XEEMViewController: UIViewController, UITextFieldDelegate, UIViewControlle
         
         // init background and blur efect
        backgroundImageView.image = UIImage(named: "background.jpg")
-        let darkBlur = UIBlurEffect(style: UIBlurEffectStyle.Dark)
+        let darkBlur = UIBlurEffect(style: UIBlurEffectStyle.Light)
         let blurView = UIVisualEffectView(effect: darkBlur)
         blurView.alpha = 0.5
         blurView.frame = backgroundImageView.bounds
         backgroundImageView.addSubview(blurView)
         view.sendSubviewToBack(backgroundImageView)
+//        let horizontalMotionEffect = UIInterpolatingMotionEffect(keyPath: "center.x", type: .TiltAlongHorizontalAxis)
+//        horizontalMotionEffect.minimumRelativeValue = -50
+//        horizontalMotionEffect.maximumRelativeValue = 50
+//        
+//        let verticalMotionEffect = UIInterpolatingMotionEffect(keyPath: "center.y", type: .TiltAlongVerticalAxis)
+//        verticalMotionEffect.minimumRelativeValue = -50
+//        verticalMotionEffect.maximumRelativeValue = 50
+//        
+//        let motionEffectGroup = UIMotionEffectGroup()
+//        motionEffectGroup.motionEffects = [horizontalMotionEffect, verticalMotionEffect]
+//        
+//        backgroundImageView.addMotionEffect(motionEffectGroup)
         setSignIn()     // set SignIn
     }
     
@@ -66,16 +78,16 @@ class XEEMViewController: UIViewController, UITextFieldDelegate, UIViewControlle
        // self.password.backgroundColor = UIColor.whiteColor()
         
         self.signInBtn.enabled = false
-        self.signInBtn.backgroundColor = UIColor.clearColor()
-        self.signInBtn.layer.borderWidth = CGFloat(Float(1.0))
-        self.signInBtn.layer.borderColor = ColorUtils.UIColorFromRGB("0xF44336").CGColor;
-        self.signInBtn.layer.cornerRadius = CGFloat(Float(5.0))
-        
-        self.registerBtn.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
-        self.registerBtn.layer.cornerRadius = CGFloat(Float(5.0))
-        self.registerBtn.backgroundColor = ColorUtils.UIColorFromRGB("0xF44336");
+        self.registerBtn.backgroundColor = UIColor.clearColor()
         self.registerBtn.layer.borderWidth = CGFloat(Float(1.0))
         self.registerBtn.layer.borderColor = ColorUtils.UIColorFromRGB("0xF44336").CGColor;
+        self.registerBtn.layer.cornerRadius = CGFloat(Float(5.0))
+        
+        self.signInBtn.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
+        self.signInBtn.layer.cornerRadius = CGFloat(Float(5.0))
+        self.signInBtn.backgroundColor = ColorUtils.UIColorFromRGB("0xF44336");
+        self.signInBtn.layer.borderWidth = CGFloat(Float(1.0))
+        self.signInBtn.layer.borderColor = UIColor.clearColor().CGColor
         
         self.emailLabel.delegate = self;
         self.password.delegate = self;
@@ -128,14 +140,14 @@ class XEEMViewController: UIViewController, UITextFieldDelegate, UIViewControlle
         if sender == self.emailLabel {
             // validate email format
             if self.emailLabel.text?.characters.count > 3 {
-                self.emailLabel.textColor = UIColor.blueColor()
+                self.emailLabel.textColor = UIColor.whiteColor()
             } else {
                 self.emailLabel.textColor = UIColor.redColor()
             }
 
         } else {
             if self.password.text?.characters.count > 1 {
-                self.password.textColor = UIColor.blueColor()
+                self.password.textColor = UIColor.whiteColor()
             } else {
                 self.password.textColor = UIColor.redColor()
             }
