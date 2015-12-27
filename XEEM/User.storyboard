@@ -326,6 +326,7 @@
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20392156859999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="0bJ-Lf-Yvb" secondAttribute="trailing" constant="16" id="1dG-sO-3tZ"/>
                                     <constraint firstItem="Jw8-Xf-BUc" firstAttribute="leading" secondItem="efJ-e1-oCc" secondAttribute="leading" constant="16" id="5be-9V-10S"/>
@@ -337,6 +338,9 @@
                                     <constraint firstItem="5TH-rq-fm4" firstAttribute="top" secondItem="0bJ-Lf-Yvb" secondAttribute="bottom" constant="16" id="kbx-xB-mwc"/>
                                     <constraint firstItem="0bJ-Lf-Yvb" firstAttribute="leading" secondItem="Jw8-Xf-BUc" secondAttribute="trailing" constant="16" id="uaV-n8-na3"/>
                                 </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="mAt-Nc-VbS" appends="YES" id="XJl-NV-UBe"/>
+                                </connections>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="0.21176470588235294" green="0.21176470588235294" blue="0.21176470588235294" alpha="1" colorSpace="calibratedRGB"/>
@@ -357,6 +361,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tgt-xh-sc6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="mAt-Nc-VbS">
+                    <connections>
+                        <action selector="onTapUserProfile:" destination="Umv-Qz-tga" id="UnN-7P-8Os"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-435.73333333333335" y="-23.666666666666668"/>
         </scene>
