@@ -178,12 +178,14 @@ class XEEMViewController: UIViewController, UITextFieldDelegate, UIViewControlle
                             let rightViewController = storyboard.instantiateViewControllerWithIdentifier("RightViewController") as! RightViewController
                             
                             let slideMenuController = SlideMenuController(mainViewController: mainViewController, leftMenuViewController: leftViewController, rightMenuViewController: rightViewController)
-                            let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+                          //  let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
 
+                            self.view.window?.rootViewController = slideMenuController
+                           // appDelegate.window = UIWindow(frame: UIScreen.mainScreen().bounds)
+                           // appDelegate.window!.rootViewController = slideMenuController
+//                            appDelegate.window?.makeKeyAndVisible()
                             
-                            appDelegate.window = UIWindow(frame: UIScreen.mainScreen().bounds)
-                            appDelegate.window!.rootViewController = slideMenuController
-                            appDelegate.window?.makeKeyAndVisible()
+                            self.navigationController?.popToRootViewControllerAnimated(true)
 
                             
                         } else {

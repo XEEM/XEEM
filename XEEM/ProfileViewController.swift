@@ -157,15 +157,17 @@ extension ProfileViewController: UITableViewDataSource,UITableViewDelegate {
     }
     
     func logout(){
+        
         User.currentUser = nil
         let storyboard = UIStoryboard(name: "Login", bundle: nil)
         
         let vc = storyboard.instantiateViewControllerWithIdentifier("LoginNavigationController") as! UINavigationController
-        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        
-        appDelegate.window = UIWindow(frame: UIScreen.mainScreen().bounds)
-        appDelegate.window!.rootViewController = vc
-        appDelegate.window?.makeKeyAndVisible()
+      //  let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        self.view.window?.rootViewController = vc
+       // appDelegate.window = UIWindow(frame: UIScreen.mainScreen().bounds)
+//appDelegate.window!.rootViewController = vc
+        //appDelegate.window!.makeKeyAndVisible()
+        self.navigationController?.popToRootViewControllerAnimated(true)
         
     }
     
