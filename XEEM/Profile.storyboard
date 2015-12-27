@@ -581,7 +581,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="778" y="558"/>
+            <point key="canvasLocation" x="509" y="611"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ldr-M8-a2p">
