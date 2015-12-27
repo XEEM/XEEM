@@ -8,17 +8,24 @@
 
 import Foundation
 
+enum TransportationType: String  {
+    case Bike = "B"
+    case Car = "C"
+    case Scooter = "S"
+    case Motorbike = "M"
+}
+
 class Transportation: NSObject {
-    var type : String!
     var id : String!
     var name : String!
     var dictionary: NSDictionary
-    
+    var type: TransportationType!
+        
     init(dictionary : NSDictionary) {
         self.dictionary = dictionary
         id = dictionary["Id"] as? String
         name = dictionary["Name"] as? String
-        type = dictionary["Type"] as? String
+        type = TransportationType(rawValue: dictionary["Type"] as! String)
     }
     
     class func TransWithArray(array: [NSDictionary]) -> [Transportation] {
