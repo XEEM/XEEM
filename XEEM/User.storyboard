@@ -14,13 +14,13 @@
             <string>SanFranciscoDisplay-Bold</string>
             <string>SanFranciscoDisplay-Bold</string>
             <string>SanFranciscoDisplay-Bold</string>
-            <string>SanFranciscoDisplay-Bold</string>
         </mutableArray>
         <mutableArray key="SanFranciscoDisplay-Heavy.otf">
             <string>SanFranciscoDisplay-Heavy</string>
             <string>SanFranciscoDisplay-Heavy</string>
         </mutableArray>
         <mutableArray key="SanFranciscoDisplay-Medium.otf">
+            <string>SanFranciscoDisplay-Medium</string>
             <string>SanFranciscoDisplay-Medium</string>
             <string>SanFranciscoDisplay-Medium</string>
             <string>SanFranciscoDisplay-Medium</string>
@@ -691,14 +691,14 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vld-Uy-lrp">
-                                                    <rect key="frame" x="113" y="16" width="40" height="21"/>
-                                                    <fontDescription key="fontDescription" name="SanFranciscoDisplay-Regular" family="San Francisco Display" pointSize="17"/>
+                                                    <rect key="frame" x="105" y="20" width="30" height="16"/>
+                                                    <fontDescription key="fontDescription" name="SanFranciscoDisplay-Regular" family="San Francisco Display" pointSize="13"/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SNQ-Cd-Blh">
-                                                    <rect key="frame" x="364" y="16" width="42" height="21"/>
-                                                    <fontDescription key="fontDescription" name="SanFranciscoDisplay-Bold" family="San Francisco Display" pointSize="17"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SNQ-Cd-Blh">
+                                                    <rect key="frame" x="364" y="16" width="42" height="20"/>
+                                                    <fontDescription key="fontDescription" name="SanFranciscoDisplay-Medium" family="San Francisco Display" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -734,17 +734,17 @@
                                                 </textView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="SNQ-Cd-Blh" firstAttribute="top" secondItem="ohN-rp-WEn" secondAttribute="top" id="0T6-fC-Fdm"/>
                                                 <constraint firstItem="ohN-rp-WEn" firstAttribute="top" secondItem="g2c-5Y-XbD" secondAttribute="topMargin" constant="8" id="8nN-Gd-Qcr"/>
                                                 <constraint firstItem="w8y-D1-72D" firstAttribute="leading" secondItem="g2c-5Y-XbD" secondAttribute="leading" constant="16" id="IEm-1l-0nq"/>
                                                 <constraint firstItem="ohN-rp-WEn" firstAttribute="leading" secondItem="g2c-5Y-XbD" secondAttribute="leading" constant="17" id="KVG-MB-YhT"/>
                                                 <constraint firstAttribute="trailing" secondItem="SNQ-Cd-Blh" secondAttribute="trailing" constant="8" id="LGa-9n-b9h"/>
+                                                <constraint firstItem="vld-Uy-lrp" firstAttribute="bottom" secondItem="ohN-rp-WEn" secondAttribute="bottom" id="S4f-vm-NXs"/>
                                                 <constraint firstAttribute="trailing" secondItem="w8y-D1-72D" secondAttribute="trailing" constant="16" id="SAy-6O-7yA"/>
                                                 <constraint firstItem="w8y-D1-72D" firstAttribute="top" secondItem="SNQ-Cd-Blh" secondAttribute="bottom" constant="8" id="Wfx-S8-1ds"/>
                                                 <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="w8y-D1-72D" secondAttribute="bottom" constant="8" id="lxg-Xk-0Is"/>
-                                                <constraint firstItem="vld-Uy-lrp" firstAttribute="top" secondItem="ohN-rp-WEn" secondAttribute="top" id="n9X-nQ-M2N"/>
-                                                <constraint firstItem="vld-Uy-lrp" firstAttribute="leading" secondItem="ohN-rp-WEn" secondAttribute="trailing" constant="16" id="tWe-MJ-OZ9"/>
-                                                <constraint firstItem="SNQ-Cd-Blh" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="vld-Uy-lrp" secondAttribute="trailing" constant="32" id="yju-Qx-3fU"/>
+                                                <constraint firstItem="SNQ-Cd-Blh" firstAttribute="bottom" secondItem="ohN-rp-WEn" secondAttribute="bottom" id="pkw-Nl-yht"/>
+                                                <constraint firstItem="vld-Uy-lrp" firstAttribute="leading" secondItem="ohN-rp-WEn" secondAttribute="trailing" constant="8" id="tWe-MJ-OZ9"/>
+                                                <constraint firstItem="SNQ-Cd-Blh" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="vld-Uy-lrp" secondAttribute="trailing" constant="16" id="yju-Qx-3fU"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -811,7 +811,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5so-HC-yhC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1309" y="188"/>
+            <point key="canvasLocation" x="1841" y="188"/>
         </scene>
         <!--Repair Service View Controller-->
         <scene sceneID="OBQ-vY-PR6">
@@ -1322,6 +1322,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VQY-hi-yVr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2302" y="1624"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="tIu-Us-JM7">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="pv0-Dn-6XZ" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="gnJ-1E-TqR">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="f9d-Fb-TgN" kind="relationship" relationship="rootViewController" id="Gth-Fr-uyI"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Btv-W2-87S" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1309" y="188"/>
         </scene>
     </scenes>
     <resources>

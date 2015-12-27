@@ -29,13 +29,15 @@ class XEEMViewController: UIViewController, UITextFieldDelegate, UIViewControlle
     override func viewDidLoad() {
         self.view.layoutIfNeeded()
         super.viewDidLoad()
-        backgroundImageView.image = UIImage(named: "background.jpg")
-        // re-blur image view
+        
+        // init background and blur efect
+       backgroundImageView.image = UIImage(named: "background.jpg")
         let darkBlur = UIBlurEffect(style: UIBlurEffectStyle.Dark)
         let blurView = UIVisualEffectView(effect: darkBlur)
         blurView.alpha = 0.5
         blurView.frame = backgroundImageView.bounds
         backgroundImageView.addSubview(blurView)
+        view.sendSubviewToBack(backgroundImageView)
         setSignIn()     // set SignIn
     }
     
@@ -59,9 +61,9 @@ class XEEMViewController: UIViewController, UITextFieldDelegate, UIViewControlle
         self.view.backgroundColor = ColorUtils.UIColorFromRGB("0xF0F0F0 ")
         
         self.Xeem.textColor = ColorUtils.UIColorFromRGB("0xF44336");
-        self.forgotPassword.setTitleColor(UIColor.MKColor.Red, forState: .Normal)
-        self.emailLabel.backgroundColor = UIColor.whiteColor()
-        self.password.backgroundColor = UIColor.whiteColor()
+       // self.forgotPassword.setTitleColor(UIColor.MKColor.Red, forState: .Normal)
+       // self.emailLabel.backgroundColor = UIColor.whiteColor()
+       // self.password.backgroundColor = UIColor.whiteColor()
         
         self.signInBtn.enabled = false
         self.signInBtn.backgroundColor = UIColor.clearColor()
@@ -78,7 +80,7 @@ class XEEMViewController: UIViewController, UITextFieldDelegate, UIViewControlle
         self.emailLabel.delegate = self;
         self.password.delegate = self;
         self.password.secureTextEntry = true
-
+        
     }
     
     //Calls this function when the tap is recognized.
@@ -95,9 +97,11 @@ class XEEMViewController: UIViewController, UITextFieldDelegate, UIViewControlle
     
     func setSignIn() -> () {
         
-        UIUtils.setupMaterialTextField(emailLabel)
-        UIUtils.setupMaterialTextField(password)
-     
+       // UIUtils.setupMaterialTextField(emailLabel)
+        //UIUtils.setupMaterialTextField(password)
+        UIUtils.setupMaterialTextFieldLight(emailLabel)
+        UIUtils.setupMaterialTextFieldLight(password)
+
     }
 
 
@@ -124,7 +128,7 @@ class XEEMViewController: UIViewController, UITextFieldDelegate, UIViewControlle
         if sender == self.emailLabel {
             // validate email format
             if self.emailLabel.text?.characters.count > 3 {
-                self.emailLabel.textColor = UIColor.lightGrayColor()
+                self.emailLabel.textColor = UIColor.blueColor()
             } else {
                 self.emailLabel.textColor = UIColor.redColor()
             }

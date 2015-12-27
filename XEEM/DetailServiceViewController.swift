@@ -112,7 +112,7 @@ class DetailServiceViewController: UIViewController,ConfrimViewControllerDelegat
         dispatch_after(delayTime, dispatch_get_main_queue()) {
             let storyboard = UIStoryboard(name: "User", bundle: nil)
             let listReviewVC =  storyboard.instantiateViewControllerWithIdentifier("RequestLoadingViewController") as! RequestLoadingViewController
-            self.navigationController?.presentpopupViewController(listReviewVC, animationType: .RightLeft, completion: { () -> Void in })
+              self.navigationController?.pushViewController(listReviewVC, animated: true)
         }
     }
 
@@ -195,7 +195,7 @@ extension DetailServiceViewController: UITableViewDelegate,UITableViewDataSource
             ///cell.timeLabel.text = currentService.reviews![indexPath.row].dateCreated
             let timeAgoDate = currentService.reviews![indexPath.row].dateCreated as NSDate?
             if let timeAgoDate = timeAgoDate {
-                cell.timeLabel.text = timeAgoDate.shortTimeAgoSinceNow()
+                cell.timeLabel.text = timeAgoDate.timeAgoSinceNow()
             } else {
                 cell.timeLabel.text = "--"
             }
