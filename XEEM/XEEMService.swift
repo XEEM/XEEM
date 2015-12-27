@@ -35,7 +35,7 @@ class XEEMService {
                     completion(user: nil,error: error)
                 } else {
                     print(jsonData)
-                    let user = User(dictionary: jsonData as! NSDictionary)
+                    let user = User(dictionary: jsonData as? NSDictionary)
                     completion(user: user,error: nil)
                    
                 }
@@ -90,6 +90,12 @@ class XEEMService {
         self.callAPIWithURL(url, method: METHOD.GET, header: nil, params: nil, onCompletion: onCompletion)
     }
     
+    func registerUser(email: String?, phone: String?, password: String?, onCompletion: ServiceResponse) {
+        let url = "http://xeem.apphb.com/api/users?email=\(email!)&password=\(password!)&phone=\(phone!)&birthday=1987-01-25"
+        print(url)
+        self.callAPIWithURL(url, method: METHOD.PUT, header: nil, params: nil, onCompletion: onCompletion)
+    }
+    
     
     func callAPIWithURL(url: String, method:(METHOD), header:(NSDictionary?), params:(NSDictionary?), onCompletion:ServiceResponse) {
         self.internalCallApiWithURL(url, method: method, header: header, params: params, onCompletion: onCompletion)
@@ -125,6 +131,23 @@ class XEEMService {
                 
                 let dic = try! NSJSONSerialization.JSONObjectWithData(response.result.value!, options: .AllowFragments)
                // print(dic)
+                
+                let error = response.result.error
+                onCompletion(dic, error)
+                
+            })
+        } else if (method == METHOD.PUT) {
+            let headerAs = header as? [String:String]
+            let paramsAs = params as? [String: AnyObject]
+            Alamofire.request(.PUT, url, parameters: paramsAs, encoding: .JSON, headers: headerAs).responseData({ (response: Response<NSData, NSError>) -> Void in
+                
+                guard response.result.error == nil else {
+                    onCompletion(response.result.value!, response.result.error!)
+                    return
+                }
+                
+                let dic = try! NSJSONSerialization.JSONObjectWithData(response.result.value!, options: .AllowFragments)
+                // print(dic)
                 
                 let error = response.result.error
                 onCompletion(dic, error)

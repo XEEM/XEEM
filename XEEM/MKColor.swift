@@ -31,7 +31,7 @@ extension UIColor {
         public static let Lime = UIColor(hex: 0xCDDC39)
         public static let Yellow = UIColor(hex: 0xFFEB3B)
         public static let Amber = UIColor(hex: 0xFFC107)
-        public static let Orange = UIColor(hex: 0xFF9800)
+        public static let Orange = UIColor(hex: 0xE74C3B)
         public static let DeepOrange = UIColor(hex: 0xFF5722)
         public static let Brown = UIColor(hex: 0x795548)
         public static let Grey = UIColor(hex: 0x9E9E9E)

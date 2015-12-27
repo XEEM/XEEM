@@ -18,6 +18,8 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var backToLoginBtn: UIButton!
     @IBOutlet weak var XEEM: UILabel!
     
+    var loading = XHAmazingLoadingView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setRegister()   // register MaterialLabel Desgin
@@ -48,7 +50,7 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
         self.emailLabel.backgroundColor = UIColor.whiteColor()
         self.phoneNumberLabel.backgroundColor = UIColor.whiteColor()
         self.registerPasswordLabel.backgroundColor = UIColor.whiteColor()
-        self.registerBtn.enabled = false
+        self.registerBtn.enabled = true
         self.backToLoginBtn.enabled = true
         
         self.registerBtn.backgroundColor = UIColor.clearColor()
@@ -82,6 +84,39 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
     
     
     @IBAction func register(sender: AnyObject) {
+        XEEMService.sharedInstance.registerUser(self.emailLabel.text, phone: self.phoneNumberLabel.text, password: self.registerPasswordLabel.text) { (response: AnyObject?, error: NSError?) -> Void in
+            print(response)
+            let dic: Dictionary = response as! [String:AnyObject]
+            let username = dic["Email"] as? String
+            let password = dic["Password"] as? String
+            XEEMService.sharedInstance.login(username, passwd: password, completion: { (token, error) -> () in
+                self.loading.stopAnimating()
+                if let token = token {
+                    XEEMService.sharedInstance.getUserProfile(token) { (user, error) -> () in
+                        print(user)
+                        if let user = user {
+                            User.currentUser = user
+                            let storyboard = UIStoryboard(name: "Login", bundle: nil)
+                            let receivedService =  storyboard.instantiateViewControllerWithIdentifier("NewTransportationViewController") as! NewTransportationViewController
+                            self.navigationController?.pushViewController(receivedService, animated: true)
+                        } else {
+                            // Error from get user data
+                        }
+                    }
+                } else {
+                    // Error from login
+                }
+                
+            })
+        }
+    }
+    
+    func showLoading() {
+        loading = XHAmazingLoadingView(type: XHAmazingLoadingAnimationType.Skype)
+        loading.loadingTintColor = UIColor.MKColor.Orange
+        loading.frame = CGRectMake(0, self.view.bounds.size.width / 2, self.view.bounds.width, 200)
+        self.view.addSubview(loading)
+        loading.startAnimating()
         
     }
     

@@ -14,7 +14,7 @@ class RequestLoadingViewController: UIViewController {
         super.viewDidLoad()
         self.navigationController?.setNavigationBarHidden(true, animated: true)
         let loading: XHAmazingLoadingView = XHAmazingLoadingView(type: XHAmazingLoadingAnimationType.Skype)
-        loading.loadingTintColor = UIColor.MKColor.Red
+        loading.loadingTintColor = UIColor.MKColor.Orange
         loading.frame = CGRectMake(0, self.view.bounds.size.width / 2, self.view.bounds.width, 200)
         self.view.addSubview(loading)
         
@@ -26,8 +26,7 @@ class RequestLoadingViewController: UIViewController {
         label.textAlignment = NSTextAlignment.Center
         label.text = "Requesting help"
         label.font = UIFont.boldSystemFontOfSize(20)
-        
-        label.textColor = UIColor.MKColor.Red
+        label.textColor = UIColor.MKColor.Orange
         self.view.addSubview(label)
         loading.startAnimating()
 

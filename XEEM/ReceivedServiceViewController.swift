@@ -22,7 +22,7 @@ class ReceivedServiceViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.receivedServiceBtn.backgroundColor = UIColor.MKColor.Red
+        self.receivedServiceBtn.backgroundColor = UIColor.MKColor.Orange
         self.receivedServiceBtn.setTitleColor(UIColor.MKColor.WhiteColor, forState: UIControlState.Normal)
         self.ratingView.editable = false
         // Do any additional setup after loading the view.

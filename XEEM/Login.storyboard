@@ -403,7 +403,7 @@
         <!--New Transportation-->
         <scene sceneID="f1L-BQ-VoU">
             <objects>
-                <viewController id="Q2Z-j0-seO" customClass="NewTransportationViewController" customModule="XEEM" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NewTransportationViewController" id="Q2Z-j0-seO" customClass="NewTransportationViewController" customModule="XEEM" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="SbP-Su-JKw"/>
                         <viewControllerLayoutGuide type="bottom" id="SGY-S9-sd5"/>
@@ -580,7 +580,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2101" y="1295"/>
+            <point key="canvasLocation" x="2039" y="1255"/>
         </scene>
     </scenes>
     <resources>
