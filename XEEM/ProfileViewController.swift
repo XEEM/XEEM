@@ -71,12 +71,11 @@ class ProfileViewController: UIViewController {
                     [
                         "icon":UIImage.fontAwesomeIconWithName(FontAwesome.CreditCard, textColor: iconColor, size: iconSize),
                         "label": "Payment"
-                    ],
-                    [
-                        "icon": UIImage.fontAwesomeIconWithName(FontAwesome.Motorcycle, textColor: iconColor, size: iconSize),
-                        "label": "Transportations"
                     ]
                 ]
+        ],
+        ["header":"Transportations",
+            "data": []
         ],
         ["header":"",
         "data": [
@@ -91,19 +90,44 @@ class ProfileViewController: UIViewController {
 extension ProfileViewController: UITableViewDataSource,UITableViewDelegate {
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let cellData = sectionLabels[section]
-        let labels = cellData["data"]
-        return labels!.count
+        let sectionData = sectionLabels[section]
+        let header = sectionData["header"] as! String
+
+        if(header == "Transportations") {
+            
+            return transportationList.count
+        }
+        
+        return sectionData["data"]!.count
     }
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("basicCell") as UITableViewCell!
-        let cellData = sectionLabels[indexPath.section]
-        let labels = cellData["data"]
+        let sectionData = sectionLabels[indexPath.section]
+        let header = sectionData["header"] as! String
+        
+        if(header == "Transportations") {
+            let transCell = tableView.dequeueReusableCellWithIdentifier("transCell") as! TransportationTableViewCell
+            let model = transportationList[indexPath.row]
+            transCell.transportation = model
+            
+            return transCell
+        }
+        
+        var cell = tableView.dequeueReusableCellWithIdentifier("basicCell") as UITableViewCell!
+
+        let labels = sectionData["data"]
         let object = labels![indexPath.row] as! [String: AnyObject]
         cell!.imageView?.image = object["icon"] as? UIImage
         let label = object["label"] as? String
         cell!.textLabel?.text = label
+        
+        if label == "Payment" {
+            cell.accessoryType = .DisclosureIndicator
+        }
+        
+        if indexPath.section == 1 {
+            
+        }
         
         return cell!
     }
