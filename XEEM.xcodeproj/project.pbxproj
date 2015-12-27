@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		413478351C2E8244007BF192 /* FontAwesome.otf in Resources */ = {isa = PBXBuildFile; fileRef = 413478341C2E8244007BF192 /* FontAwesome.otf */; };
 		710262821C1D4B4C0009724D /* NewTransportationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 710262811C1D4B4C0009724D /* NewTransportationViewController.swift */; };
 		7107F5781C29F3B3002817D6 /* FloatRatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7107F5771C29F3B3002817D6 /* FloatRatingView.swift */; };
 		7111A51E1C1BC33600FA17A5 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7111A51D1C1BC33600FA17A5 /* Profile.storyboard */; };
@@ -101,7 +100,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		413478341C2E8244007BF192 /* FontAwesome.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = FontAwesome.otf; path = Fonts/FontAwesome.otf; sourceTree = "<group>"; };
 		710262811C1D4B4C0009724D /* NewTransportationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewTransportationViewController.swift; sourceTree = "<group>"; };
 		7107F5771C29F3B3002817D6 /* FloatRatingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FloatRatingView.swift; sourceTree = "<group>"; };
 		7111A51D1C1BC33600FA17A5 /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
@@ -220,14 +218,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		4134782F1C2E813E007BF192 /* FontAwesome */ = {
-			isa = PBXGroup;
-			children = (
-				413478341C2E8244007BF192 /* FontAwesome.otf */,
-			);
-			name = FontAwesome;
-			sourceTree = "<group>";
-		};
 		7107F5761C29F397002817D6 /* RatingView */ = {
 			isa = PBXGroup;
 			children = (
@@ -427,7 +417,6 @@
 		A69BDDC81C1816A6005CA6C6 /* Library */ = {
 			isa = PBXGroup;
 			children = (
-				4134782F1C2E813E007BF192 /* FontAwesome */,
 				71BA05031C2D54A500FAC038 /* CustomNV */,
 				7107F5761C29F397002817D6 /* RatingView */,
 				A6D2C5CA1C29A72500321254 /* XHAmazingLoading */,
@@ -691,7 +680,6 @@
 				718FAF8D1C2A810D00AB5C57 /* SanFranciscoDisplay-Heavy.otf in Resources */,
 				7111A51E1C1BC33600FA17A5 /* Profile.storyboard in Resources */,
 				A629C3EB1C16C47900D77F69 /* (null) in Resources */,
-				413478351C2E8244007BF192 /* FontAwesome.otf in Resources */,
 				718FAF8C1C2A810D00AB5C57 /* SanFranciscoDisplay-Bold.otf in Resources */,
 				A629C3EB1C16C47900D77F69 /* (null) in Resources */,
 				718FAF901C2A810D00AB5C57 /* SanFranciscoDisplay-Regular.otf in Resources */,
