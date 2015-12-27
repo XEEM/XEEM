@@ -262,7 +262,7 @@ class RepairServiceViewController: UIViewController, UITableViewDelegate, UITabl
         dispatch_after(delayTime, dispatch_get_main_queue()) {
             let storyboard = UIStoryboard(name: "User", bundle: nil)
             let listReviewVC =  storyboard.instantiateViewControllerWithIdentifier("RequestLoadingViewController") as! RequestLoadingViewController
-            self.navigationController?.presentpopupViewController(listReviewVC, animationType: .RightLeft, completion: { () -> Void in })
+            self.navigationController?.pushViewController(listReviewVC, animated: true)
         }
     }
     

@@ -12,6 +12,7 @@ class RequestLoadingViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
         let loading: XHAmazingLoadingView = XHAmazingLoadingView(type: XHAmazingLoadingAnimationType.Skype)
         loading.loadingTintColor = UIColor.MKColor.Red
         loading.frame = CGRectMake(0, self.view.bounds.size.width / 2, self.view.bounds.width, 200)
@@ -29,6 +30,16 @@ class RequestLoadingViewController: UIViewController {
         label.textColor = UIColor.MKColor.Red
         self.view.addSubview(label)
         loading.startAnimating()
+
+        let delayTime = dispatch_time(DISPATCH_TIME_NOW, Int64(5 * Double(NSEC_PER_SEC)))
+        dispatch_after(delayTime, dispatch_get_main_queue()) {
+            loading.stopAnimating()
+            let storyboard = UIStoryboard(name: "User", bundle: nil)
+            let receivedService =  storyboard.instantiateViewControllerWithIdentifier("ReceivedServiceViewController") as! ReceivedServiceViewController
+            self.navigationController?.pushViewController(receivedService, animated: true)
+        }
+
+        
     }
 
     override func didReceiveMemoryWarning() {

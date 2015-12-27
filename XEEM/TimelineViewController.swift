@@ -116,7 +116,6 @@ class TimelineViewController: UIViewController, MKMapViewDelegate, CLLocationMan
                 repairVC.currentService = self.selectedShopModel
                // repairVC.imageService = self.imageService
                 self.navigationController?.pushViewController(repairVC, animated: true)
-
     }
 
     
@@ -260,9 +259,9 @@ class TimelineViewController: UIViewController, MKMapViewDelegate, CLLocationMan
     
     @IBAction func onEmergencyTapped(sender: UIButton) {
         // TO-DO
-//        let myPopupViewController:EmergencyViewController = EmergencyViewController(nibName:"EmergencyView", bundle: nil)
-//        myPopupViewController.delegate = self
-//        self.presentpopupViewController(myPopupViewController, animationType: .Fade, completion: { () -> Void in })
+        let myPopupViewController:EmergencyViewController = EmergencyViewController(nibName:"EmergencyView", bundle: nil)
+        myPopupViewController.delegate = self
+        self.presentpopupViewController(myPopupViewController, animationType: .Fade, completion: { () -> Void in })
 
     }
     
@@ -319,9 +318,12 @@ extension TimelineViewController: RightViewControllerDelegate,EmergencyDelegate 
     }
     
     func emergency(emergencyView: EmergencyViewController, didHelpTap onHelp: UIButton, whichSelection selection: Int) {
-        let storyboard = UIStoryboard(name: "User", bundle: nil)
-        let listReviewVC =  storyboard.instantiateViewControllerWithIdentifier("RequestLoadingViewController") as! RequestLoadingViewController
-        self.navigationController?.presentpopupViewController(listReviewVC, animationType: .RightLeft, completion: { () -> Void in })
-
+        self.navigationController?.dismissPopupViewController(.Fade)
+        let delayTime = dispatch_time(DISPATCH_TIME_NOW, Int64(1 * Double(NSEC_PER_SEC)))
+        dispatch_after(delayTime, dispatch_get_main_queue()) {
+            let storyboard = UIStoryboard(name: "User", bundle: nil)
+            let listReviewVC =  storyboard.instantiateViewControllerWithIdentifier("RequestLoadingViewController") as! RequestLoadingViewController
+            self.navigationController?.pushViewController(listReviewVC, animated: true)
+        }
     }
 }

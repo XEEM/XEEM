@@ -14,7 +14,7 @@ import DateTools
 
 class DetailServiceViewController: UIViewController,ConfrimViewControllerDelegate {
 
-    @IBOutlet weak var bannerView: JBKenBurnsView!
+//    @IBOutlet weak var bannerView: JBKenBurnsView!
     @IBOutlet weak var tableView: UITableView!
     var currentService : ShopModel!
     var NAVBAR_CHANGE_POINT : Int!
@@ -23,6 +23,7 @@ class DetailServiceViewController: UIViewController,ConfrimViewControllerDelegat
     var quotationCount : Int!
     var reviewCount : Int!
 
+    @IBOutlet weak var bannerView: JBKenBurnsView!
     override func viewDidLoad() {
         super.viewDidLoad()
         quotationCount = (currentService.quotes?.count)!

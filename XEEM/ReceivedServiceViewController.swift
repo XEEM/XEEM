@@ -10,9 +10,21 @@ import UIKit
 
 class ReceivedServiceViewController: UIViewController {
 
+    @IBOutlet weak var requestAccepetedTitleLabel: UILabel!
+    
+    @IBOutlet weak var imageRepairService: UIImageView!
+    
+    @IBOutlet weak var repairServiceLabel: UILabel!
+    
+    @IBOutlet weak var ratingView: FloatRatingView!
+    
+    @IBOutlet weak var receivedServiceBtn: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.receivedServiceBtn.backgroundColor = UIColor.MKColor.Red
+        self.receivedServiceBtn.setTitleColor(UIColor.MKColor.WhiteColor, forState: UIControlState.Normal)
+        self.ratingView.editable = false
         // Do any additional setup after loading the view.
     }
 
@@ -21,6 +33,10 @@ class ReceivedServiceViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func onReceviedServiceTap(sender: UIButton) {
+
+    }
+
 
     /*
     // MARK: - Navigation

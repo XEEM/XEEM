@@ -48,6 +48,8 @@
 		71F4A3041C1C95BB008BF810 /* MKColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F4A3031C1C95BB008BF810 /* MKColor.swift */; };
 		71F4A3061C1C9B96008BF810 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F4A3051C1C9B96008BF810 /* EditProfileViewController.swift */; };
 		75E1F9AB0664F82DD907FF7D /* Pods_XEEM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F7B23F394701BFA5CF812E5 /* Pods_XEEM.framework */; };
+		A60EE73D1C2EFD2200306B2B /* EmergencyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A60EE73C1C2EFD2200306B2B /* EmergencyView.xib */; };
+		A60EE73F1C2F05D300306B2B /* ReceivedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A60EE73E1C2F05D300306B2B /* ReceivedViewController.swift */; };
 		A621F6021C28770E00D19952 /* ListReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A621F6011C28770E00D19952 /* ListReviewViewController.swift */; };
 		A62206141C269DFF00B7C864 /* SideMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62206131C269DFF00B7C864 /* SideMenuController.swift */; };
 		A62206161C26A66300B7C864 /* OptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62206151C26A66300B7C864 /* OptionsViewController.swift */; };
@@ -79,6 +81,7 @@
 		A6D2C5D41C29A78400321254 /* XHAmazingLoadingStarAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = A6D2C5D11C29A78400321254 /* XHAmazingLoadingStarAnimation.m */; };
 		A6D2C5D81C29A79800321254 /* XHLayerHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = A6D2C5D71C29A79800321254 /* XHLayerHelper.m */; };
 		A6D2C5DE1C29A7B800321254 /* XHAmazingLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = A6D2C5DD1C29A7B800321254 /* XHAmazingLoadingView.m */; };
+		A6D83C3A1C2F12330053DD64 /* FinishServiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D83C391C2F12330053DD64 /* FinishServiceViewController.swift */; };
 		A6DEFCB01C298B89000DBCB4 /* ConfrimPopUp.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6DEFCAF1C298B89000DBCB4 /* ConfrimPopUp.xib */; };
 		CE13954A1C1087D100A67657 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1395491C1087D100A67657 /* AppDelegate.swift */; };
 		CE13954F1C1087D100A67657 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE13954D1C1087D100A67657 /* Main.storyboard */; };
@@ -95,7 +98,6 @@
 		CECBE0341C23007B004F6C55 /* PaymentMethodTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECBE0331C23007B004F6C55 /* PaymentMethodTableViewCell.swift */; };
 		CEDB2EA01C27E013009730C9 /* RequestLoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDB2E9F1C27E013009730C9 /* RequestLoadingViewController.swift */; };
 		CEDB2EA21C27E036009730C9 /* ReceivedServiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDB2EA11C27E036009730C9 /* ReceivedServiceViewController.swift */; };
-		CEDB2EA41C27E049009730C9 /* FinishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDB2EA31C27E049009730C9 /* FinishViewController.swift */; };
 		CEDB2EA61C27E05C009730C9 /* ServiceSummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDB2EA51C27E05C009730C9 /* ServiceSummaryViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -143,6 +145,8 @@
 		71F4A3051C1C9B96008BF810 /* EditProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		7F7B23F394701BFA5CF812E5 /* Pods_XEEM.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_XEEM.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		999146997734BAF01AF7905C /* Pods-XEEM.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XEEM.release.xcconfig"; path = "Pods/Target Support Files/Pods-XEEM/Pods-XEEM.release.xcconfig"; sourceTree = "<group>"; };
+		A60EE73C1C2EFD2200306B2B /* EmergencyView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EmergencyView.xib; sourceTree = "<group>"; };
+		A60EE73E1C2F05D300306B2B /* ReceivedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReceivedViewController.swift; sourceTree = "<group>"; };
 		A621F6011C28770E00D19952 /* ListReviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListReviewViewController.swift; sourceTree = "<group>"; };
 		A62206131C269DFF00B7C864 /* SideMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuController.swift; sourceTree = "<group>"; };
 		A62206151C26A66300B7C864 /* OptionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionsViewController.swift; sourceTree = "<group>"; };
@@ -183,6 +187,7 @@
 		A6D2C5DA1C29A7A700321254 /* XHAmazingLoadingAnimationProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XHAmazingLoadingAnimationProtocol.h; sourceTree = "<group>"; };
 		A6D2C5DC1C29A7B800321254 /* XHAmazingLoadingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHAmazingLoadingView.h; sourceTree = "<group>"; };
 		A6D2C5DD1C29A7B800321254 /* XHAmazingLoadingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHAmazingLoadingView.m; sourceTree = "<group>"; };
+		A6D83C391C2F12330053DD64 /* FinishServiceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinishServiceViewController.swift; sourceTree = "<group>"; };
 		A6DEFCAF1C298B89000DBCB4 /* ConfrimPopUp.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ConfrimPopUp.xib; sourceTree = "<group>"; };
 		CE1395461C1087D100A67657 /* XEEM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XEEM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE1395491C1087D100A67657 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -201,7 +206,6 @@
 		CECBE0331C23007B004F6C55 /* PaymentMethodTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentMethodTableViewCell.swift; sourceTree = "<group>"; };
 		CEDB2E9F1C27E013009730C9 /* RequestLoadingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestLoadingViewController.swift; sourceTree = "<group>"; };
 		CEDB2EA11C27E036009730C9 /* ReceivedServiceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReceivedServiceViewController.swift; sourceTree = "<group>"; };
-		CEDB2EA31C27E049009730C9 /* FinishViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinishViewController.swift; sourceTree = "<group>"; };
 		CEDB2EA51C27E05C009730C9 /* ServiceSummaryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceSummaryViewController.swift; sourceTree = "<group>"; };
 		DF46DDB94906979469AB52C5 /* Pods-XEEM.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XEEM.debug.xcconfig"; path = "Pods/Target Support Files/Pods-XEEM/Pods-XEEM.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -287,6 +291,7 @@
 			isa = PBXGroup;
 			children = (
 				71F4A2F71C1C2E4F008BF810 /* HistoryDetailPopup.xib */,
+				A60EE73C1C2EFD2200306B2B /* EmergencyView.xib */,
 				A6DEFCAF1C298B89000DBCB4 /* ConfrimPopUp.xib */,
 			);
 			name = Xib;
@@ -328,10 +333,10 @@
 				CE5514AE1C2AEE90006DF3B5 /* EmergencyViewController.swift */,
 				CEDB2E9E1C27DFEC009730C9 /* Request */,
 				CE8C13381C1DC15500D1AA09 /* Login */,
-				A6D2C5C11C2997BF00321254 /* Custom */,
 				71F0A6A51C284FC400A1AAD3 /* Home */,
 				CECBE02C1C22EA0A004F6C55 /* Profile */,
 				A6C5DD9B1C1D420A00A7DB9D /* RepairServiceViewController.swift */,
+				A6D2C5C11C2997BF00321254 /* Custom */,
 				A6D2C5C61C29A2AC00321254 /* RequestLoadingViewController.swift */,
 				A621F6011C28770E00D19952 /* ListReviewViewController.swift */,
 				7111A51F1C1BC55100FA17A5 /* ProfileViewController.swift */,
@@ -339,6 +344,7 @@
 				71F4A2F91C1C3947008BF810 /* HistoryDetailControler.swift */,
 				71F4A3051C1C9B96008BF810 /* EditProfileViewController.swift */,
 				710262811C1D4B4C0009724D /* NewTransportationViewController.swift */,
+				A60EE73E1C2F05D300306B2B /* ReceivedViewController.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -594,7 +600,7 @@
 			children = (
 				CEDB2E9F1C27E013009730C9 /* RequestLoadingViewController.swift */,
 				CEDB2EA11C27E036009730C9 /* ReceivedServiceViewController.swift */,
-				CEDB2EA31C27E049009730C9 /* FinishViewController.swift */,
+				A6D83C391C2F12330053DD64 /* FinishServiceViewController.swift */,
 				CEDB2EA51C27E05C009730C9 /* ServiceSummaryViewController.swift */,
 			);
 			name = Request;
@@ -643,7 +649,7 @@
 				TargetAttributes = {
 					CE1395451C1087D100A67657 = {
 						CreatedOnToolsVersion = 7.1.1;
-						DevelopmentTeam = 9898326J2T;
+						DevelopmentTeam = W5KA45T8VV;
 					};
 				};
 			};
@@ -671,6 +677,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				711E1AB11C2E888A005D0C16 /* background.jpg in Resources */,
+				A60EE73D1C2EFD2200306B2B /* EmergencyView.xib in Resources */,
 				A6C5DDA81C1DAA0F00A7DB9D /* ShowmoreCell.xib in Resources */,
 				A629C3E71C16BF9D00D77F69 /* Service.storyboard in Resources */,
 				A629C3E01C169C9700D77F69 /* Login.storyboard in Resources */,
@@ -780,10 +787,10 @@
 				CE7762451C254D1E0074937F /* CurrencyTableViewCell.swift in Sources */,
 				71F4A2FA1C1C3947008BF810 /* HistoryDetailControler.swift in Sources */,
 				CE8C133E1C1DC15C00D1AA09 /* ForgotPasswordViewController.swift in Sources */,
-				CEDB2EA41C27E049009730C9 /* FinishViewController.swift in Sources */,
 				CE5514AF1C2AEE90006DF3B5 /* EmergencyViewController.swift in Sources */,
 				A6C5DDA31C1DA4DC00A7DB9D /* QuotesTableViewCell.swift in Sources */,
 				71721BB81C2CF5AB008E7E56 /* QuotationCell.swift in Sources */,
+				A60EE73F1C2F05D300306B2B /* ReceivedViewController.swift in Sources */,
 				A69B8EA11C29D55D005D8BD6 /* (null) in Sources */,
 				7111A5201C1BC55100FA17A5 /* ProfileViewController.swift in Sources */,
 				71BA05061C2D54B600FAC038 /* UINavigationBar+Awesome.m in Sources */,
@@ -799,6 +806,7 @@
 				71F4A3001C1C9552008BF810 /* MKTextField.swift in Sources */,
 				CE7762431C253D860074937F /* ChangePasswordViewController.swift in Sources */,
 				CECBE0301C22EA52004F6C55 /* SettingViewController.swift in Sources */,
+				A6D83C3A1C2F12330053DD64 /* FinishServiceViewController.swift in Sources */,
 				7173FB591C2180BC00C1DD3A /* UIUtils.swift in Sources */,
 				7179274F1C288DAC002C399F /* FilterServiceCell.swift in Sources */,
 				A62206141C269DFF00B7C864 /* SideMenuController.swift in Sources */,
@@ -935,7 +943,7 @@
 				INFOPLIST_FILE = XEEM/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.xeem;
+				PRODUCT_BUNDLE_IDENTIFIER = com.xeem.aa;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "XEEM/XEEM-Bridging-Header.h";
@@ -954,7 +962,7 @@
 				INFOPLIST_FILE = XEEM/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.xeem;
+				PRODUCT_BUNDLE_IDENTIFIER = com.xeem.aa;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "XEEM/XEEM-Bridging-Header.h";
