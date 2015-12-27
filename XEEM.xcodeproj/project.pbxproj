@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4144D91B1C2FAF7C00076FE5 /* TransportationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4144D91A1C2FAF7C00076FE5 /* TransportationTableViewCell.swift */; };
 		710262821C1D4B4C0009724D /* NewTransportationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 710262811C1D4B4C0009724D /* NewTransportationViewController.swift */; };
 		7107F5781C29F3B3002817D6 /* FloatRatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7107F5771C29F3B3002817D6 /* FloatRatingView.swift */; };
 		7111A51E1C1BC33600FA17A5 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7111A51D1C1BC33600FA17A5 /* Profile.storyboard */; };
@@ -102,6 +103,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4144D91A1C2FAF7C00076FE5 /* TransportationTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransportationTableViewCell.swift; sourceTree = "<group>"; };
 		710262811C1D4B4C0009724D /* NewTransportationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewTransportationViewController.swift; sourceTree = "<group>"; };
 		7107F5771C29F3B3002817D6 /* FloatRatingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FloatRatingView.swift; sourceTree = "<group>"; };
 		7111A51D1C1BC33600FA17A5 /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
@@ -591,6 +593,7 @@
 				CECBE02F1C22EA52004F6C55 /* SettingViewController.swift */,
 				CECBE02D1C22EA24004F6C55 /* PaymentMethodViewController.swift */,
 				CE7762421C253D860074937F /* ChangePasswordViewController.swift */,
+				4144D91A1C2FAF7C00076FE5 /* TransportationTableViewCell.swift */,
 			);
 			name = Profile;
 			sourceTree = "<group>";
@@ -816,6 +819,7 @@
 				71437D331C225BB1003B3AE1 /* XEEMService.swift in Sources */,
 				A6D2C5D31C29A78400321254 /* XHAmazingLoadingSkypeAnimation.m in Sources */,
 				A6C646AF1C254D9500B417C9 /* ShopModel.swift in Sources */,
+				4144D91B1C2FAF7C00076FE5 /* TransportationTableViewCell.swift in Sources */,
 				A6C5DDAB1C1DAE5200A7DB9D /* ReviewCell.swift in Sources */,
 				A6D2C5DE1C29A7B800321254 /* XHAmazingLoadingView.m in Sources */,
 				A6D2C5D41C29A78400321254 /* XHAmazingLoadingStarAnimation.m in Sources */,

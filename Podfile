@@ -11,6 +11,8 @@ target 'XEEM' do
   pod 'SlideMenuControllerSwift'
   pod 'JBKenBurnsView'
   pod 'DateTools'
+  pod 'FontAwesome.swift'
+
   use_frameworks!
 end
 
