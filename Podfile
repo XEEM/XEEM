@@ -10,6 +10,7 @@ target 'XEEM' do
   pod 'TKSubmitTransition'
   pod 'SlideMenuControllerSwift'
   pod 'JBKenBurnsView'
+  pod 'DateTools'
   use_frameworks!
 end
 

@@ -24,9 +24,18 @@ class XEEMViewController: UIViewController, UITextFieldDelegate, UIViewControlle
     
     @IBOutlet weak var Xeem: UILabel!
     
+    @IBOutlet weak var backgroundImageView: UIImageView!
     
     override func viewDidLoad() {
+        self.view.layoutIfNeeded()
         super.viewDidLoad()
+        backgroundImageView.image = UIImage(named: "background.jpg")
+        // re-blur image view
+        let darkBlur = UIBlurEffect(style: UIBlurEffectStyle.Dark)
+        let blurView = UIVisualEffectView(effect: darkBlur)
+        blurView.alpha = 0.5
+        blurView.frame = backgroundImageView.bounds
+        backgroundImageView.addSubview(blurView)
         setSignIn()     // set SignIn
     }
     

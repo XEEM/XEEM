@@ -24,6 +24,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HSs-3K-Gek">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eVv-D5-VFB" customClass="MKTextField" customModule="XEEM" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="268" width="600" height="50"/>
                                 <constraints>
@@ -94,15 +97,21 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="HSs-3K-Gek" firstAttribute="top" secondItem="9za-JY-lNo" secondAttribute="bottom" id="0jC-eZ-IJy"/>
+                            <constraint firstAttribute="bottom" secondItem="HSs-3K-Gek" secondAttribute="bottom" id="15y-GP-6LB"/>
                             <constraint firstItem="vtr-wN-sLE" firstAttribute="leading" secondItem="YNe-EO-uEK" secondAttribute="leading" constant="20" id="1DT-yg-dI7"/>
                             <constraint firstItem="CeL-Pz-VNw" firstAttribute="centerX" secondItem="YNe-EO-uEK" secondAttribute="centerX" id="2NX-kl-vUH"/>
+                            <constraint firstItem="8dj-6y-zyt" firstAttribute="top" secondItem="HSs-3K-Gek" secondAttribute="bottom" constant="-52" id="41t-GK-Jgg"/>
                             <constraint firstAttribute="trailing" secondItem="MsS-nl-b2V" secondAttribute="trailing" id="5he-cQ-War"/>
+                            <constraint firstItem="HSs-3K-Gek" firstAttribute="leading" secondItem="YNe-EO-uEK" secondAttribute="leading" id="9gI-ix-Lxw"/>
                             <constraint firstItem="DXB-Xr-bc5" firstAttribute="trailing" secondItem="rrW-5r-vAD" secondAttribute="trailing" constant="39" id="DOV-vc-M59"/>
                             <constraint firstAttribute="trailing" secondItem="eVv-D5-VFB" secondAttribute="trailing" id="Fbk-5S-Ny2"/>
                             <constraint firstAttribute="trailing" secondItem="CeL-Pz-VNw" secondAttribute="trailing" constant="20" id="FiP-ex-bOV"/>
                             <constraint firstItem="DXB-Xr-bc5" firstAttribute="top" secondItem="eVv-D5-VFB" secondAttribute="bottom" constant="16" id="Hjm-g4-Aw8"/>
                             <constraint firstItem="CeL-Pz-VNw" firstAttribute="leading" secondItem="YNe-EO-uEK" secondAttribute="leading" constant="20" id="K57-eE-U1T"/>
+                            <constraint firstItem="HSs-3K-Gek" firstAttribute="top" secondItem="YNe-EO-uEK" secondAttribute="top" id="LXX-U0-exl"/>
                             <constraint firstItem="eVv-D5-VFB" firstAttribute="top" secondItem="MsS-nl-b2V" secondAttribute="bottom" id="Q7s-iN-gcQ"/>
+                            <constraint firstItem="MsS-nl-b2V" firstAttribute="top" secondItem="HSs-3K-Gek" secondAttribute="bottom" id="XbL-Jt-KOH"/>
                             <constraint firstItem="rrW-5r-vAD" firstAttribute="leading" secondItem="YNe-EO-uEK" secondAttribute="leading" constant="5" id="YSq-d3-Fjm"/>
                             <constraint firstItem="vtr-wN-sLE" firstAttribute="top" secondItem="DXB-Xr-bc5" secondAttribute="bottom" constant="30" id="YXU-LN-pns"/>
                             <constraint firstItem="MsS-nl-b2V" firstAttribute="leading" secondItem="YNe-EO-uEK" secondAttribute="leading" id="Ye6-lp-9HS"/>
@@ -112,18 +121,26 @@
                             <constraint firstItem="DXB-Xr-bc5" firstAttribute="centerX" secondItem="YNe-EO-uEK" secondAttribute="centerX" id="dyn-gw-Xfm"/>
                             <constraint firstItem="CeL-Pz-VNw" firstAttribute="top" secondItem="vtr-wN-sLE" secondAttribute="bottom" constant="10" id="e8W-0A-eWs"/>
                             <constraint firstAttribute="trailing" secondItem="vtr-wN-sLE" secondAttribute="trailing" constant="20" id="fGA-rP-lOQ"/>
+                            <constraint firstItem="HSs-3K-Gek" firstAttribute="top" secondItem="YNe-EO-uEK" secondAttribute="top" id="oD7-jj-2Yz"/>
                             <constraint firstItem="eVv-D5-VFB" firstAttribute="centerX" secondItem="YNe-EO-uEK" secondAttribute="centerX" id="pc1-qg-ZPv"/>
                             <constraint firstItem="MsS-nl-b2V" firstAttribute="centerX" secondItem="YNe-EO-uEK" secondAttribute="centerX" id="rJY-9y-mZb"/>
                             <constraint firstItem="rrW-5r-vAD" firstAttribute="top" secondItem="YNe-EO-uEK" secondAttribute="topMargin" constant="98" id="sSg-80-65b"/>
                             <constraint firstItem="MsS-nl-b2V" firstAttribute="top" secondItem="rrW-5r-vAD" secondAttribute="bottom" constant="60" id="sZX-wP-j9j"/>
+                            <constraint firstAttribute="trailing" secondItem="HSs-3K-Gek" secondAttribute="trailing" id="spP-Cb-jkF"/>
                             <constraint firstItem="rrW-5r-vAD" firstAttribute="centerX" secondItem="YNe-EO-uEK" secondAttribute="centerX" id="wH3-e4-CdE"/>
                             <constraint firstItem="DXB-Xr-bc5" firstAttribute="leading" secondItem="YNe-EO-uEK" secondAttribute="leading" id="xb0-1n-3EW"/>
+                            <constraint firstItem="HSs-3K-Gek" firstAttribute="top" secondItem="9za-JY-lNo" secondAttribute="bottom" constant="-64" id="y4X-i3-mQs"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="0jC-eZ-IJy"/>
+                                <exclude reference="LXX-U0-exl"/>
+                                <exclude reference="y4X-i3-mQs"/>
+                                <exclude reference="XbL-Jt-KOH"/>
                                 <exclude reference="DOV-vc-M59"/>
                                 <exclude reference="bvN-3R-030"/>
                                 <exclude reference="xb0-1n-3EW"/>
+                                <exclude reference="41t-GK-Jgg"/>
                                 <exclude reference="dwG-on-FXF"/>
                             </mask>
                         </variation>
@@ -131,6 +148,7 @@
                     <navigationItem key="navigationItem" id="zi0-aX-W6H"/>
                     <connections>
                         <outlet property="Xeem" destination="rrW-5r-vAD" id="bLh-Ik-gKc"/>
+                        <outlet property="backgroundImageView" destination="HSs-3K-Gek" id="yGG-mL-Nt3"/>
                         <outlet property="emailLabel" destination="MsS-nl-b2V" id="djL-ha-HpW"/>
                         <outlet property="forgotPassword" destination="DXB-Xr-bc5" id="o0D-lU-86D"/>
                         <outlet property="password" destination="eVv-D5-VFB" id="KPj-NR-Cwr"/>
@@ -140,7 +158,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Iic-rU-74Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1102" y="472.5"/>
+            <point key="canvasLocation" x="1102" y="472"/>
         </scene>
         <!--Register-->
         <scene sceneID="Qln-NH-fZZ">

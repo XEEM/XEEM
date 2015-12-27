@@ -9,6 +9,7 @@
 import UIKit
 import JBKenBurnsView
 import Alamofire
+import DateTools
 
 
 class DetailServiceViewController: UIViewController,ConfrimViewControllerDelegate {
@@ -190,6 +191,14 @@ extension DetailServiceViewController: UITableViewDelegate,UITableViewDataSource
             cell.ratingView.rating = currentService.reviews![indexPath.row].rating!
             cell.reviewTextView.text = currentService.reviews![indexPath.row].descriptions
             cell.userLabel.text = currentService.reviews![indexPath.row].reviewer?.fullName
+            ///cell.timeLabel.text = currentService.reviews![indexPath.row].dateCreated
+            let timeAgoDate = currentService.reviews![indexPath.row].dateCreated as NSDate?
+            if let timeAgoDate = timeAgoDate {
+                cell.timeLabel.text = timeAgoDate.shortTimeAgoSinceNow()
+            } else {
+                cell.timeLabel.text = "--"
+            }
+
             if (indexPath.row == 1 && !isReviewExpanded) {
                 cell.separatorInset = UIEdgeInsetsMake(0, cell.bounds.size.width, 0, 0);
             }

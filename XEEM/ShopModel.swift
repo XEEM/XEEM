@@ -61,5 +61,6 @@ class ShopModel: NSObject {
         }
         return trans
     }
-
 }
+
+
