@@ -15,8 +15,8 @@
 		711717E31C2A841A006B5E58 /* SanFranciscoDisplay-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 711717E11C2A841A006B5E58 /* SanFranciscoDisplay-Semibold.otf */; };
 		711717E41C2A841A006B5E58 /* SanFranciscoDisplay-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 711717E21C2A841A006B5E58 /* SanFranciscoDisplay-Thin.otf */; };
 		711E1AAF1C2E313D005D0C16 /* default_banner.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 711E1AAE1C2E313D005D0C16 /* default_banner.jpg */; };
+		711E1AB11C2E888A005D0C16 /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 711E1AB01C2E888A005D0C16 /* background.jpg */; };
 		712E9F071C2BBC03006BE6CA /* DetailServiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712E9F061C2BBC03006BE6CA /* DetailServiceViewController.swift */; };
-		712E9F0A1C2BC5A5006BE6CA /* image1.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 712E9F091C2BC5A5006BE6CA /* image1.jpeg */; };
 		71437D311C225333003B3AE1 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71437D301C225333003B3AE1 /* User.swift */; };
 		71437D331C225BB1003B3AE1 /* XEEMService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71437D321C225BB1003B3AE1 /* XEEMService.swift */; };
 		71721BB41C2CDC62008E7E56 /* BannerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71721BB31C2CDC62008E7E56 /* BannerCell.swift */; };
@@ -110,8 +110,8 @@
 		711717E11C2A841A006B5E58 /* SanFranciscoDisplay-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SanFranciscoDisplay-Semibold.otf"; path = "Fonts/SanFranciscoDisplay-Semibold.otf"; sourceTree = "<group>"; };
 		711717E21C2A841A006B5E58 /* SanFranciscoDisplay-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SanFranciscoDisplay-Thin.otf"; path = "Fonts/SanFranciscoDisplay-Thin.otf"; sourceTree = "<group>"; };
 		711E1AAE1C2E313D005D0C16 /* default_banner.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = default_banner.jpg; sourceTree = "<group>"; };
+		711E1AB01C2E888A005D0C16 /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpg; sourceTree = "<group>"; };
 		712E9F061C2BBC03006BE6CA /* DetailServiceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailServiceViewController.swift; sourceTree = "<group>"; };
-		712E9F091C2BC5A5006BE6CA /* image1.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image1.jpeg; sourceTree = "<group>"; };
 		71437D301C225333003B3AE1 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		71437D321C225BB1003B3AE1 /* XEEMService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XEEMService.swift; sourceTree = "<group>"; };
 		71721BB31C2CDC62008E7E56 /* BannerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BannerCell.swift; sourceTree = "<group>"; };
@@ -233,8 +233,8 @@
 		712E9F081C2BC598006BE6CA /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				711E1AB01C2E888A005D0C16 /* background.jpg */,
 				711E1AAE1C2E313D005D0C16 /* default_banner.jpg */,
-				712E9F091C2BC5A5006BE6CA /* image1.jpeg */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -333,10 +333,10 @@
 				CE5514AE1C2AEE90006DF3B5 /* EmergencyViewController.swift */,
 				CEDB2E9E1C27DFEC009730C9 /* Request */,
 				CE8C13381C1DC15500D1AA09 /* Login */,
-				A6D2C5C11C2997BF00321254 /* Custom */,
 				71F0A6A51C284FC400A1AAD3 /* Home */,
 				CECBE02C1C22EA0A004F6C55 /* Profile */,
 				A6C5DD9B1C1D420A00A7DB9D /* RepairServiceViewController.swift */,
+				A6D2C5C11C2997BF00321254 /* Custom */,
 				A6D2C5C61C29A2AC00321254 /* RequestLoadingViewController.swift */,
 				A621F6011C28770E00D19952 /* ListReviewViewController.swift */,
 				7111A51F1C1BC55100FA17A5 /* ProfileViewController.swift */,
@@ -676,6 +676,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				711E1AB11C2E888A005D0C16 /* background.jpg in Resources */,
 				A60EE73D1C2EFD2200306B2B /* EmergencyView.xib in Resources */,
 				A6C5DDA81C1DAA0F00A7DB9D /* ShowmoreCell.xib in Resources */,
 				A629C3E71C16BF9D00D77F69 /* Service.storyboard in Resources */,
@@ -693,7 +694,6 @@
 				A69B8E9D1C29CD51005D8BD6 /* (null) in Resources */,
 				71F4A2F81C1C2E4F008BF810 /* HistoryDetailPopup.xib in Resources */,
 				A629C3E51C16BF9000D77F69 /* User.storyboard in Resources */,
-				712E9F0A1C2BC5A5006BE6CA /* image1.jpeg in Resources */,
 				718FAF8E1C2A810D00AB5C57 /* SanFranciscoDisplay-Light.otf in Resources */,
 				A6C5DDAC1C1DAE5200A7DB9D /* ReviewCell.xib in Resources */,
 				A6C5DDA01C1D44B400A7DB9D /* ServiceDetailNameCell.xib in Resources */,

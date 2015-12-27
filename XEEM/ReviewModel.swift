@@ -13,11 +13,17 @@ class ReviewModel: NSObject {
     var rating: Float?
     var descriptions: String?
     var reviewer: User?
+    var dateCreated : NSDate?
     
     init(dictionary: NSDictionary) {
         self.rating = dictionary.objectForKey("Rating") as? Float
         self.descriptions = dictionary.objectForKey("Description") as? String
-        self.reviewer = User.init(dictionary: dictionary.objectForKey("Reviewer") as! NSDictionary)
+        self.reviewer = User.init(dictionary: dictionary.objectForKey("Reviewer") as? NSDictionary)
+        let dateInString = dictionary.objectForKey("CreatedDate") as? String
+        if let dateInString = dateInString {
+            dateCreated = NSDate(dateString: dateInString)
+        } 
+        print(dateCreated)
     }
     
     class func initWithArray(array: [NSDictionary]) -> [ReviewModel] {
@@ -27,6 +33,15 @@ class ReviewModel: NSObject {
         }        
         return arrReviewModel
     }
-        
-
+}
+extension NSDate
+{
+    convenience
+    init(dateString:String) {
+        let dateStringFormatter = NSDateFormatter()
+        dateStringFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        dateStringFormatter.timeZone = NSTimeZone(name: "UTC")
+        let d = dateStringFormatter.dateFromString(dateString)!
+        self.init(timeInterval:0, sinceDate:d)
+    }
 }

@@ -23,7 +23,17 @@ public class UIUtils {
         textfield.rippleLocation = .Right
         textfield.cornerRadius = 0
         textfield.bottomBorderEnabled = true
-
+    }
+    
+    public static func setupMaterialTextFieldLight(textfield: MKTextField) -> () {
+        textfield.layer.borderColor = UIColor.clearColor().CGColor
+        textfield.floatingPlaceholderEnabled = true
+        textfield.tintColor = UIColor.whiteColor()
+        textfield.rippleLocation = .Right
+        textfield.cornerRadius = 1
+        textfield.textColor = UIColor.whiteColor()
+        textfield.bottomBorderEnabled = true
+        textfield.rippleLayerColor = UIColor.MKColor.LightGreen
     }
     
     public static func drawCircle(countLabel: UILabel, view : UIView) {

@@ -9,6 +9,7 @@
 import UIKit
 import JBKenBurnsView
 import Alamofire
+import DateTools
 
 
 class DetailServiceViewController: UIViewController,ConfrimViewControllerDelegate {
@@ -22,6 +23,7 @@ class DetailServiceViewController: UIViewController,ConfrimViewControllerDelegat
     var quotationCount : Int!
     var reviewCount : Int!
 
+    @IBOutlet weak var bannerView: JBKenBurnsView!
     override func viewDidLoad() {
         super.viewDidLoad()
         quotationCount = (currentService.quotes?.count)!
@@ -42,7 +44,7 @@ class DetailServiceViewController: UIViewController,ConfrimViewControllerDelegat
         let image = UIImage(named: "default_banner.jpg")
         var images = [UIImage]()
         images.append(image!)
-//        bannerView.animateWithImages(images, transitionDuration: 6 , initialDelay: 0, loop: true, isLandscape: true)
+        bannerView.animateWithImages(images, transitionDuration: 6 , initialDelay: 0, loop: true, isLandscape: true)
         
         Alamofire.request(.GET, currentService.avatarURL!).response { (request, response, data, error) in
             if let error = error {
@@ -51,7 +53,7 @@ class DetailServiceViewController: UIViewController,ConfrimViewControllerDelegat
                 let image = UIImage(data: data!, scale:1)
                 var images = [UIImage]()
                 images.append(image!)
-//                self.bannerView.animateWithImages(images, transitionDuration: 6 , initialDelay: 0, loop: true, isLandscape: true)
+                self.bannerView.animateWithImages(images, transitionDuration: 6 , initialDelay: 0, loop: true, isLandscape: true)
             }
         }
 
@@ -110,7 +112,7 @@ class DetailServiceViewController: UIViewController,ConfrimViewControllerDelegat
         dispatch_after(delayTime, dispatch_get_main_queue()) {
             let storyboard = UIStoryboard(name: "User", bundle: nil)
             let listReviewVC =  storyboard.instantiateViewControllerWithIdentifier("RequestLoadingViewController") as! RequestLoadingViewController
-            self.navigationController?.presentpopupViewController(listReviewVC, animationType: .RightLeft, completion: { () -> Void in })
+              self.navigationController?.pushViewController(listReviewVC, animated: true)
         }
     }
 
@@ -190,6 +192,14 @@ extension DetailServiceViewController: UITableViewDelegate,UITableViewDataSource
             cell.ratingView.rating = currentService.reviews![indexPath.row].rating!
             cell.reviewTextView.text = currentService.reviews![indexPath.row].descriptions
             cell.userLabel.text = currentService.reviews![indexPath.row].reviewer?.fullName
+            ///cell.timeLabel.text = currentService.reviews![indexPath.row].dateCreated
+            let timeAgoDate = currentService.reviews![indexPath.row].dateCreated as NSDate?
+            if let timeAgoDate = timeAgoDate {
+                cell.timeLabel.text = timeAgoDate.timeAgoSinceNow()
+            } else {
+                cell.timeLabel.text = "--"
+            }
+
             if (indexPath.row == 1 && !isReviewExpanded) {
                 cell.separatorInset = UIEdgeInsetsMake(0, cell.bounds.size.width, 0, 0);
             }
