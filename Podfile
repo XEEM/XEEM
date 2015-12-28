@@ -12,7 +12,7 @@ target 'XEEM' do
   pod 'JBKenBurnsView'
   pod 'DateTools'
   pod 'FontAwesome.swift'
-
+  pod 'SwiftDate', '~> 2.0'
   use_frameworks!
 end
 

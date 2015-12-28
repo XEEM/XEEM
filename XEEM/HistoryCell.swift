@@ -16,6 +16,7 @@ class HistoryCell: UITableViewCell {
     @IBOutlet weak var thumbnailImageView: UIImageView!
     var model: Transportation? {
         didSet {
+//            timeStampLabel.text = model.createdDate
             
         }
     }
