@@ -10,6 +10,9 @@ import UIKit
 
 class RequestLoadingViewController: UIViewController {
 
+    var selectedShop : ShopModel!
+    var quotationIndex : Int!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.setNavigationBarHidden(true, animated: true)

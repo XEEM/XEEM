@@ -23,7 +23,6 @@ class ReviewModel: NSObject {
         if let dateInString = dateInString {
             dateCreated = NSDate(dateString: dateInString)
         } 
-        print(dateCreated)
     }
     
     class func initWithArray(array: [NSDictionary]) -> [ReviewModel] {

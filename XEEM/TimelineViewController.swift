@@ -26,14 +26,17 @@ class TimelineViewController: UIViewController, MKMapViewDelegate, CLLocationMan
     var regionRadius : CLLocationDistance = 0.0;
     var location: CLLocation?
     var listModelShop: [ShopModel] = []
+    var listModelShopSortedByDistance: [ShopModel] = []
     var selectedShopModel: ShopModel?
     var filterList : [Int]!
+    var emergencyDialog = SCLAlertView()
     
     // contraint
     @IBOutlet weak var bottomViewRequestServiceConstraint: NSLayoutConstraint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        currentUser = User.currentUser
         //navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
         navigationController!.navigationBar.shadowImage = UIImage()
         navigationController!.navigationBar.barTintColor = UIColor.MKColor.AppMainColor
@@ -55,13 +58,71 @@ class TimelineViewController: UIViewController, MKMapViewDelegate, CLLocationMan
         
         // mapView
         self.loadMapView()
+        
+        //setup emergency dialog
+
+        emergencyDialog.addButton("Out of gas", target:self, selector:Selector("outOfGasButton"))
+        emergencyDialog.addButton("Flat tire", target:self, selector:Selector("flatTireButton"))
+        emergencyDialog.addButton("Other problem", target:self, selector:Selector("otherProblem"))
     }
     
+    func outOfGasButton() -> () {
+        for shopModel in listModelShopSortedByDistance {
+            if shopModel.type == "G" {
+                emergencyDialog.hideView()
+                let delayTime = dispatch_time(DISPATCH_TIME_NOW, Int64(1 * Double(NSEC_PER_SEC)))
+                dispatch_after(delayTime, dispatch_get_main_queue()) {
+                    let storyboard = UIStoryboard(name: "User", bundle: nil)
+                    let listReviewVC =  storyboard.instantiateViewControllerWithIdentifier("RequestLoadingViewController") as! RequestLoadingViewController
+                    listReviewVC.selectedShop = shopModel
+                    listReviewVC.quotationIndex = 0
+                    self.navigationController?.pushViewController(listReviewVC, animated: true)
+                }
+                break
+            }
+        }
+    }
+    func flatTireButton() -> () {
+        for shopModel in listModelShopSortedByDistance {
+            if shopModel.type == User.currentUser?.defaultVehicles?.type.rawValue {
+                emergencyDialog.hideView()
+                let delayTime = dispatch_time(DISPATCH_TIME_NOW, Int64(1 * Double(NSEC_PER_SEC)))
+                dispatch_after(delayTime, dispatch_get_main_queue()) {
+                    let storyboard = UIStoryboard(name: "User", bundle: nil)
+                    let listReviewVC =  storyboard.instantiateViewControllerWithIdentifier("RequestLoadingViewController") as! RequestLoadingViewController
+                    listReviewVC.selectedShop = shopModel
+                    listReviewVC.quotationIndex = 1
+                    self.navigationController?.pushViewController(listReviewVC, animated: true)
+                }
+                break
+            }
+        }
+    }
+    func otherProblem() -> () {
+        for shopModel in listModelShopSortedByDistance {
+            if shopModel.type == User.currentUser?.defaultVehicles?.type.rawValue {
+                emergencyDialog.hideView()
+                let delayTime = dispatch_time(DISPATCH_TIME_NOW, Int64(1 * Double(NSEC_PER_SEC)))
+                dispatch_after(delayTime, dispatch_get_main_queue()) {
+                    let storyboard = UIStoryboard(name: "User", bundle: nil)
+                    let listReviewVC =  storyboard.instantiateViewControllerWithIdentifier("RequestLoadingViewController") as! RequestLoadingViewController
+                    listReviewVC.selectedShop = shopModel
+                    listReviewVC.quotationIndex = 2
+                    self.navigationController?.pushViewController(listReviewVC, animated: true)
+                }
+                break
+            }
+        }
+    }
+
     // Request service shops with filter input
     func requestData(filter : [Int]!) -> () {
         XEEMService.sharedInstance.getServiceWithCurrentLocation(0, longitde: 0, filter: filter) { (dictionary: AnyObject?, error: NSError?) -> Void in
             let arrData = dictionary as! [NSDictionary]
             self.listModelShop = ShopModel.initShopModelWithArray(arrData,currentLocation: self.location)
+            self.listModelShopSortedByDistance = self.listModelShop.sort({ (p1: ShopModel, p2 : ShopModel) -> Bool in
+                return p1.distance < p2.distance
+            })
             self.mapView.removeAnnotations(self.mapView.annotations)
             // draw markers
             dispatch_async(dispatch_get_main_queue(), { () -> Void in
@@ -253,15 +314,19 @@ class TimelineViewController: UIViewController, MKMapViewDelegate, CLLocationMan
 
     }
     
-    // MARK: - Emergency
+    // MARK: -  gency
     
     @IBOutlet weak var btnEmergency: UIButton!
     
     @IBAction func onEmergencyTapped(sender: UIButton) {
         // TO-DO
-        let myPopupViewController:EmergencyViewController = EmergencyViewController(nibName:"EmergencyView", bundle: nil)
-        myPopupViewController.delegate = self
-        self.presentpopupViewController(myPopupViewController, animationType: .Fade, completion: { () -> Void in })
+//        let myPopupViewController:EmergencyViewController = EmergencyViewController(nibName:"EmergencyView", bundle: nil)
+//        myPopupViewController.delegate = self
+//        self.presentpopupViewController(myPopupViewController, animationType: .Fade, completion: { () -> Void in })
+       
+    
+        //let txt = alert.addTextField("Enter your name")
+         emergencyDialog.showInfoWithAppColor("Tell us your problem" , subTitle: "With " + currentUser.defaultVehicles!.name)
 
     }
     

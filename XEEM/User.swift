@@ -23,6 +23,7 @@ class User: NSObject {
     var transList: [Transportation]?
     var avatarURL: NSURL?
     var dictionary : NSDictionary?
+    var defaultVehicles : Transportation?
     
     init(dictionary : NSDictionary?) {
         if let dictionary = dictionary {
@@ -36,6 +37,7 @@ class User: NSObject {
             phone = dictionary["Phone"] as? String
             avatarURL = NSURL(string: (dictionary["AvatarUrl"] as? String ?? "")!)
             transList = Transportation.TransWithArray(dictionary["Transporations"] as! [NSDictionary])
+            defaultVehicles = transList![0] as Transportation?
         }
     }
     

@@ -22,7 +22,7 @@ class DetailServiceViewController: UIViewController,ConfrimViewControllerDelegat
     var isQuotationExpanded = false
     var quotationCount : Int!
     var reviewCount : Int!
-
+    var emergencyDialog = SCLAlertView()
     @IBOutlet weak var bannerView: JBKenBurnsView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,7 +64,49 @@ class DetailServiceViewController: UIViewController,ConfrimViewControllerDelegat
 //        self.navigationController!.view.backgroundColor = UIColor.clearColor()
         self.scrollViewDidScroll(self.tableView)
         
+        //setup emergency dialog
+        
+        emergencyDialog.addButton("Out of gas", target:self, selector:Selector("outOfGasButton"))
+        emergencyDialog.addButton("Flat tire", target:self, selector:Selector("flatTireButton"))
+        emergencyDialog.addButton("Other problem", target:self, selector:Selector("otherProblem"))
        
+    }
+    
+    func outOfGasButton() -> () {
+        emergencyDialog.hideView()
+        let delayTime = dispatch_time(DISPATCH_TIME_NOW, Int64(1 * Double(NSEC_PER_SEC)))
+        dispatch_after(delayTime, dispatch_get_main_queue()) {
+            let storyboard = UIStoryboard(name: "User", bundle: nil)
+            let listReviewVC =  storyboard.instantiateViewControllerWithIdentifier("RequestLoadingViewController") as! RequestLoadingViewController
+            listReviewVC.selectedShop = self.currentService
+            listReviewVC.quotationIndex = 0
+            self.navigationController?.pushViewController(listReviewVC, animated: true)
+        }
+        
+    }
+    func flatTireButton() -> () {
+        emergencyDialog.hideView()
+        let delayTime = dispatch_time(DISPATCH_TIME_NOW, Int64(1 * Double(NSEC_PER_SEC)))
+        dispatch_after(delayTime, dispatch_get_main_queue()) {
+            let storyboard = UIStoryboard(name: "User", bundle: nil)
+            let listReviewVC =  storyboard.instantiateViewControllerWithIdentifier("RequestLoadingViewController") as! RequestLoadingViewController
+            listReviewVC.selectedShop = self.currentService
+            listReviewVC.quotationIndex = 1
+            self.navigationController?.pushViewController(listReviewVC, animated: true)
+        }
+        
+    }
+    func otherProblem() -> () {
+        emergencyDialog.hideView()
+        let delayTime = dispatch_time(DISPATCH_TIME_NOW, Int64(1 * Double(NSEC_PER_SEC)))
+        dispatch_after(delayTime, dispatch_get_main_queue()) {
+            let storyboard = UIStoryboard(name: "User", bundle: nil)
+            let listReviewVC =  storyboard.instantiateViewControllerWithIdentifier("RequestLoadingViewController") as! RequestLoadingViewController
+            listReviewVC.selectedShop = self.currentService
+            listReviewVC.quotationIndex = 2
+            self.navigationController?.pushViewController(listReviewVC, animated: true)
+        }
+
     }
  
     override func viewWillDisappear(animated: Bool) {
@@ -93,7 +135,8 @@ class DetailServiceViewController: UIViewController,ConfrimViewControllerDelegat
     }
     
     @IBAction func onXeemClicked(sender: UIButton) {
-        self.displayViewController(.Fade)
+        //self.displayViewController(.Fade)
+        emergencyDialog.showInfoWithAppColor("Tell us your problem" , subTitle: "With " + User.currentUser!.defaultVehicles!.name)
     }
     
     func displayViewController(animationType: SLpopupViewAnimationType) {
