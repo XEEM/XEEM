@@ -12,6 +12,8 @@ class RequestLoadingViewController: UIViewController {
 
     var selectedShop : ShopModel!
     var quotationIndex : Int!
+    var fromEmergency: Bool?
+
     
     override func viewDidLoad() {
         super.viewDidLoad()

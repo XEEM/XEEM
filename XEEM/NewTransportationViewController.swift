@@ -90,6 +90,7 @@ class NewTransportationViewController: UIViewController,UIPickerViewDataSource,U
         // Call API add new transport 
         
         
+        // transist - do it after call api success
         let storyboard = UIStoryboard(name: "User", bundle: nil)
         
         let mainViewController = storyboard.instantiateViewControllerWithIdentifier("CenterUser") as! UINavigationController

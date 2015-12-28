@@ -41,22 +41,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             self.window?.makeKeyAndVisible()
 
         }
-//            let storyboard = UIStoryboard(name: "User", bundle: nil)
-//            SideMenuController.menuButtonImage = UIImage(named: "menuButton")
-//            SideMenuController.presentationStyle = .UnderCenterPanelLeft
-//            SideMenuController.animationStyle = .CircleMaskAnimation
-//            
-//            UINavigationBar.appearance().translucent = false
-//            UINavigationBar.appearance().barTintColor = UIColor(hue:0.56, saturation:0.88, brightness:0.95, alpha:1)
-//            
-//            let rootVC =  storyboard.instantiateViewControllerWithIdentifier("SideMenuController") as! SideMenuController
-//            self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
-//            self.window?.rootViewController = rootVC
-//            self.window?.makeKeyAndVisible()
-//        }
-        
-        
-        
         return true
     }
 
