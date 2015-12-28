@@ -13,15 +13,28 @@ class TransportationDetailControllerViewController: UIViewController, HistoryDet
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
 
+    var model: Transportation?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
-        bannerImageView.setImageWithURL(NSURL(string: "http://www.toyotahungvuongsg.com/uploads/8/9/2/4/8924026/6117979_orig.jpeg")!)
+        bannerImageView.setImageWithURL(NSURL(string: (model?.imageUrls[0])!)!)
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 50
 
         // Do any additional setup after loading the view.
+        title = model?.name
+        let attrs = [
+            NSForegroundColorAttributeName : UIColor.whiteColor(),
+            NSFontAttributeName : UIFont(name: "SanFranciscoDisplay-Medium", size: 18)!
+        ]
+        
+        //let img = UIImage()
+        //self.navigationController?.navigationBar.shadowImage = img
+        self.navigationController?.navigationBar.titleTextAttributes = attrs
+        self.navigationController?.navigationBar.barTintColor = UIColor.MKColor.AppPrimaryColor
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -32,6 +45,9 @@ class TransportationDetailControllerViewController: UIViewController, HistoryDet
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+    }
+    @IBAction func onClose(sender: AnyObject) {
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
 }
 extension TransportationDetailControllerViewController: UITableViewDataSource,UITableViewDelegate {

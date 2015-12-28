@@ -20,12 +20,14 @@ class Transportation: NSObject {
     var name : String!
     var dictionary: NSDictionary
     var type: TransportationType!
-        
+    var imageUrls: [String]!
+    
     init(dictionary : NSDictionary) {
         self.dictionary = dictionary
         id = dictionary["Id"] as? String
         name = dictionary["Name"] as? String
         type = TransportationType(rawValue: dictionary["Type"] as! String)
+        imageUrls = dictionary["ImageUrls"] as? [String]
     }
     
     class func TransWithArray(array: [NSDictionary]) -> [Transportation] {
