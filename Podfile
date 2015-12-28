@@ -12,7 +12,9 @@ target 'XEEM' do
   pod 'JBKenBurnsView'
   pod 'DateTools'
   pod 'FontAwesome.swift'
-
+  pod 'Starscream', '~> 1.0.0'
   use_frameworks!
+  
 end
+
 

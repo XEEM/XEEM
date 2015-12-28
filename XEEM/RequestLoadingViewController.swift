@@ -10,6 +10,8 @@ import UIKit
 
 class RequestLoadingViewController: UIViewController {
 
+    var fromEmergency: Bool?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.setNavigationBarHidden(true, animated: true)

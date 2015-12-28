@@ -34,7 +34,6 @@ class TimelineViewController: UIViewController, MKMapViewDelegate, CLLocationMan
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
         navigationController!.navigationBar.shadowImage = UIImage()
         navigationController!.navigationBar.barTintColor = UIColor.MKColor.AppMainColor
         navigationController!.navigationBar.tintColor = UIColor.MKColor.AppMainColor
@@ -323,6 +322,7 @@ extension TimelineViewController: RightViewControllerDelegate,EmergencyDelegate 
         dispatch_after(delayTime, dispatch_get_main_queue()) {
             let storyboard = UIStoryboard(name: "User", bundle: nil)
             let listReviewVC =  storyboard.instantiateViewControllerWithIdentifier("RequestLoadingViewController") as! RequestLoadingViewController
+            listReviewVC.fromEmergency = true
             self.navigationController?.pushViewController(listReviewVC, animated: true)
         }
     }

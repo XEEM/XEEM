@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -36,7 +36,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HSs-3K-Gek">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eVv-D5-VFB" customClass="MKTextField" customModule="XEEM" customModuleProvider="target">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eVv-D5-VFB" customClass="MKTextField" customModule="XEEM" customModuleProvider="target">
                                 <rect key="frame" x="44" y="276" width="540" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="P03-0D-14P"/>
@@ -61,7 +61,7 @@
                                     <action selector="onEditingChanged:" destination="McA-s4-OuM" eventType="editingChanged" id="rJo-uf-mnm"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MsS-nl-b2V" customClass="MKTextField" customModule="XEEM" customModuleProvider="target">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MsS-nl-b2V" customClass="MKTextField" customModule="XEEM" customModuleProvider="target">
                                 <rect key="frame" x="44" y="218" width="540" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="OnD-d6-sOh"/>
@@ -99,13 +99,13 @@
                                     <segue destination="qlQ-t7-2Op" kind="show" id="EVk-aw-EEy"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="XEEM" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rrW-5r-vAD">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="XEEM" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rrW-5r-vAD">
                                 <rect key="frame" x="5" y="98" width="590" height="60"/>
                                 <fontDescription key="fontDescription" name="SanFranciscoDisplay-Heavy" family="San Francisco Display" pointSize="50"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DXB-Xr-bc5">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DXB-Xr-bc5">
                                 <rect key="frame" x="243" y="342" width="114" height="30"/>
                                 <fontDescription key="fontDescription" name="SanFranciscoDisplay-Regular" family="San Francisco Display" pointSize="15"/>
                                 <state key="normal" title="Forgot Password?"/>
@@ -113,7 +113,7 @@
                                     <segue destination="e8Z-BR-puP" kind="push" id="9Ar-0z-Jaa"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vtr-wN-sLE" customClass="TKTransitionSubmitButton" customModule="TKSubmitTransition">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vtr-wN-sLE" customClass="TKTransitionSubmitButton" customModule="TKSubmitTransition">
                                 <rect key="frame" x="20" y="404" width="560" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="0gc-3D-my8"/>
@@ -134,14 +134,14 @@
                                     <action selector="signIn:" destination="McA-s4-OuM" eventType="touchUpInside" id="PgL-4U-Bsl"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_username" highlightedImage="ic_username" translatesAutoresizingMaskIntoConstraints="NO" id="is2-2W-99P">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="ic_username" highlightedImage="ic_username" translatesAutoresizingMaskIntoConstraints="NO" id="is2-2W-99P">
                                 <rect key="frame" x="16" y="238" width="20" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="DAI-4S-WmR"/>
                                     <constraint firstAttribute="width" constant="20" id="fWV-mg-Ifn"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_password" translatesAutoresizingMaskIntoConstraints="NO" id="40K-eK-Tiy">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="ic_password" translatesAutoresizingMaskIntoConstraints="NO" id="40K-eK-Tiy">
                                 <rect key="frame" x="16" y="296" width="20" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="20" id="6cZ-Rz-5e5"/>
@@ -264,13 +264,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="XEEM" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="to8-Zq-zee">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="XEEM" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="to8-Zq-zee">
                                 <rect key="frame" x="5" y="154" width="590" height="60"/>
                                 <fontDescription key="fontDescription" name="SanFranciscoDisplay-Ultralight" family="San Francisco Display" pointSize="50"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="57i-En-yZe" customClass="MKTextField" customModule="XEEM" customModuleProvider="target">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="57i-En-yZe" customClass="MKTextField" customModule="XEEM" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="256" width="600" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="4sb-2f-kqU"/>
@@ -287,7 +287,7 @@
                                     <action selector="onEditingChanged:" destination="McA-s4-OuM" eventType="editingChanged" id="WnC-fQ-J3N"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Phone number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Coz-6G-PFG" customClass="MKTextField" customModule="XEEM" customModuleProvider="target">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Phone number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Coz-6G-PFG" customClass="MKTextField" customModule="XEEM" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="306" width="600" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="GO8-1q-bBo"/>
@@ -304,7 +304,7 @@
                                     <action selector="onEditingChanged:" destination="McA-s4-OuM" eventType="editingChanged" id="9V8-dV-dzq"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tbF-I2-c6e" customClass="MKTextField" customModule="XEEM" customModuleProvider="target">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tbF-I2-c6e" customClass="MKTextField" customModule="XEEM" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="356" width="600" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="ZKl-jM-TTC"/>
@@ -321,7 +321,7 @@
                                     <action selector="onEditingChanged:" destination="McA-s4-OuM" eventType="editingChanged" id="7nW-sw-fMA"/>
                                 </connections>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yNR-C4-yUt" userLabel="BackToLogin">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yNR-C4-yUt" userLabel="BackToLogin">
                                 <rect key="frame" x="20" y="496" width="560" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="3zH-kA-Lj7"/>
@@ -334,7 +334,7 @@
                                     <action selector="onBackToLoginTap:" destination="qlQ-t7-2Op" eventType="touchUpInside" id="CC5-Mr-b1J"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fYM-p0-utC">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fYM-p0-utC">
                                 <rect key="frame" x="20" y="436" width="560" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="Efm-1L-hPV"/>
@@ -402,19 +402,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="XEEM" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ppa-ze-gxM">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="XEEM" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ppa-ze-gxM">
                                 <rect key="frame" x="5" y="124" width="590" height="60"/>
                                 <fontDescription key="fontDescription" name="SanFranciscoDisplay-Ultralight" family="San Francisco Display" pointSize="50"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter you email address and we'll send you a link to reset your password" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WLm-jT-bS5">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Enter you email address and we'll send you a link to reset your password" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WLm-jT-bS5">
                                 <rect key="frame" x="20" y="290" width="560" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dli-60-ZPz">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dli-60-ZPz">
                                 <rect key="frame" x="20" y="348" width="560" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="4Ma-fl-g7w"/>
@@ -428,7 +428,7 @@
                                     <action selector="reset:" destination="e8Z-BR-puP" eventType="touchUpInside" id="Tf5-fL-z9D"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4SO-TX-Zvd" userLabel="BackToLogin">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4SO-TX-Zvd" userLabel="BackToLogin">
                                 <rect key="frame" x="20" y="408" width="560" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="rjh-Tw-5bg"/>
@@ -442,7 +442,7 @@
                                     <action selector="onBackToLoginTap:" destination="qlQ-t7-2Op" eventType="touchUpInside" id="idA-j4-sSR"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TkA-wD-2Eq" customClass="MKTextField" customModule="XEEM" customModuleProvider="target">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TkA-wD-2Eq" customClass="MKTextField" customModule="XEEM" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="224" width="600" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="DUZ-GA-BNX"/>

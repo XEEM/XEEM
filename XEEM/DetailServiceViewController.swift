@@ -265,6 +265,7 @@ extension DetailServiceViewController: UITableViewDelegate,UITableViewDataSource
             self.isQuotationExpanded = true
             quotationCount = (currentService.quotes?.count)!
             tableView.reloadData()
+
             break;
         case 4:
             self.isReviewExpanded = true
