@@ -14,6 +14,12 @@ class HistoryCell: UITableViewCell {
     @IBOutlet weak var timeStampLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var thumbnailImageView: UIImageView!
+    var model: Transportation? {
+        didSet {
+//            timeStampLabel.text = model.createdDate
+            
+        }
+    }
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

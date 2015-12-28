@@ -27,7 +27,7 @@ class XEEMService {
     }
     
     func getUserProfile(token: String!, completion: (user: User?, error: NSError?) -> ()) {
-        Alamofire.request(.GET,"http://www.xeem.somee.com/api/user/", parameters: ["api_token": token]).responseJSON { (response) -> Void in
+        Alamofire.request(.GET,"http://xeem.apphb.com/api/user/", parameters: ["api_token": token]).responseJSON { (response) -> Void in
                 let jsonData = response.result.value
                 let error = response.result.error
                 if let error = error {

@@ -15,14 +15,6 @@ class TransportationTableViewCell: UITableViewCell {
     var transportation: Transportation? {
         didSet {
             name.text = transportation?.name
-            
-            if transportation!.type == nil {
-                return
-            }
-            
-            if transportation!.type == "Motorbike" {
-                self.imageView?.image = UIImage.fontAwesomeIconWithName(FontAwesome.Motorcycle, textColor: ProfileViewController.iconColor, size: ProfileViewController.iconSize)
-            }
         }
     }
     override func awakeFromNib() {

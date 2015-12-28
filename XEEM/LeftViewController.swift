@@ -92,6 +92,8 @@ extension LeftViewController: UITableViewDataSource, UITableViewDelegate {
            // Go to history of a transportation
             let storyboard = UIStoryboard(name: "Profile", bundle: nil)
             let rootVC = storyboard.instantiateViewControllerWithIdentifier("TransportationDetailNavigationController") as! UINavigationController
+            let vc = rootVC.topViewController as! TransportationDetailControllerViewController
+            vc.model = listVehicles[indexPath.row]
             self.presentViewController(rootVC, animated: true , completion: nil)
         }
 

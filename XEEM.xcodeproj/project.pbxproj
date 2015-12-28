@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4144D91B1C2FAF7C00076FE5 /* TransportationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4144D91A1C2FAF7C00076FE5 /* TransportationTableViewCell.swift */; };
+		415CDE3D1C30FF7800402186 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415CDE3C1C30FF7700402186 /* Request.swift */; };
 		710262821C1D4B4C0009724D /* NewTransportationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 710262811C1D4B4C0009724D /* NewTransportationViewController.swift */; };
 		7107F5781C29F3B3002817D6 /* FloatRatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7107F5771C29F3B3002817D6 /* FloatRatingView.swift */; };
 		7111A51E1C1BC33600FA17A5 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7111A51D1C1BC33600FA17A5 /* Profile.storyboard */; };
@@ -104,6 +105,7 @@
 
 /* Begin PBXFileReference section */
 		4144D91A1C2FAF7C00076FE5 /* TransportationTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransportationTableViewCell.swift; sourceTree = "<group>"; };
+		415CDE3C1C30FF7700402186 /* Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		710262811C1D4B4C0009724D /* NewTransportationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewTransportationViewController.swift; sourceTree = "<group>"; };
 		7107F5771C29F3B3002817D6 /* FloatRatingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FloatRatingView.swift; sourceTree = "<group>"; };
 		7111A51D1C1BC33600FA17A5 /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
@@ -341,10 +343,7 @@
 				A6D2C5C11C2997BF00321254 /* Custom */,
 				A6D2C5C61C29A2AC00321254 /* RequestLoadingViewController.swift */,
 				A621F6011C28770E00D19952 /* ListReviewViewController.swift */,
-				7111A51F1C1BC55100FA17A5 /* ProfileViewController.swift */,
-				71F4A2F21C1C18B8008BF810 /* TransportationDetailControllerViewController.swift */,
 				71F4A2F91C1C3947008BF810 /* HistoryDetailControler.swift */,
-				71F4A3051C1C9B96008BF810 /* EditProfileViewController.swift */,
 				710262811C1D4B4C0009724D /* NewTransportationViewController.swift */,
 				A60EE73E1C2F05D300306B2B /* ReceivedViewController.swift */,
 			);
@@ -372,6 +371,7 @@
 				A6C646AE1C254D9500B417C9 /* ShopModel.swift */,
 				A6C646B01C254F6D00B417C9 /* ReviewModel.swift */,
 				A6C646B21C25503500B417C9 /* Quotes.swift */,
+				415CDE3C1C30FF7700402186 /* Request.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -594,6 +594,9 @@
 				CECBE02D1C22EA24004F6C55 /* PaymentMethodViewController.swift */,
 				CE7762421C253D860074937F /* ChangePasswordViewController.swift */,
 				4144D91A1C2FAF7C00076FE5 /* TransportationTableViewCell.swift */,
+				71F4A2F21C1C18B8008BF810 /* TransportationDetailControllerViewController.swift */,
+				7111A51F1C1BC55100FA17A5 /* ProfileViewController.swift */,
+				71F4A3051C1C9B96008BF810 /* EditProfileViewController.swift */,
 			);
 			name = Profile;
 			sourceTree = "<group>";
@@ -802,6 +805,7 @@
 				A621F6021C28770E00D19952 /* ListReviewViewController.swift in Sources */,
 				CE8C133D1C1DC15C00D1AA09 /* RegisterViewController.swift in Sources */,
 				CE13954A1C1087D100A67657 /* AppDelegate.swift in Sources */,
+				415CDE3D1C30FF7800402186 /* Request.swift in Sources */,
 				A6D2C5D21C29A78400321254 /* XHAmazingLoadingMusicsAnimation.m in Sources */,
 				7173FB571C215CE700C1DD3A /* ColorUtils.swift in Sources */,
 				71F4A3061C1C9B96008BF810 /* EditProfileViewController.swift in Sources */,
