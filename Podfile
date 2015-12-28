@@ -13,6 +13,7 @@ target 'XEEM' do
   pod 'DateTools'
   pod 'FontAwesome.swift'
   pod 'Starscream', '~> 1.0.0'
+  pod 'SwiftDate', '~> 2.0'
   use_frameworks!
   
 end
