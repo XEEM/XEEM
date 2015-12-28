@@ -9,6 +9,7 @@
 import UIKit
 import TKSubmitTransition
 import SlideMenuControllerSwift
+import JBKenBurnsView
 
 class XEEMViewController: UIViewController, UITextFieldDelegate, UIViewControllerTransitioningDelegate {
     
@@ -16,40 +17,47 @@ class XEEMViewController: UIViewController, UITextFieldDelegate, UIViewControlle
     
     @IBOutlet weak var password: MKTextField!
     
-    @IBOutlet weak var signInBtn: TKTransitionSubmitButton!
-    
-    @IBOutlet weak var registerBtn: UIButton!
+    @IBOutlet weak var signInBtn: TKTransitionSubmitButton!    
     
     @IBOutlet weak var forgotPassword: UIButton!
+
+    @IBOutlet weak var btnFacebook: UIButton!
     
-    @IBOutlet weak var Xeem: UILabel!
+    @IBOutlet weak var btnGoogle: UIButton!
     
-    @IBOutlet weak var backgroundImageView: UIImageView!
+    @IBOutlet weak var backgroundView: JBKenBurnsView!
+    
     
     override func viewDidLoad() {
         self.view.layoutIfNeeded()
         super.viewDidLoad()
+        self.btnFacebook.setTitleColor(UIColor.MKColor.WhiteColor, forState: UIControlState.Normal)
+        self.btnFacebook.backgroundColor = UIColor.MKColor.Blue
+        
+        self.btnGoogle.setTitleColor(UIColor.MKColor.WhiteColor, forState: UIControlState.Normal)
+        self.btnGoogle.backgroundColor = UIColor.MKColor.Orange
+        
+        self.forgotPassword.setTitleColor(UIColor.MKColor.WhiteColor, forState: UIControlState.Normal)
         
         // init background and blur efect
-       backgroundImageView.image = UIImage(named: "background.jpg")
-        let darkBlur = UIBlurEffect(style: UIBlurEffectStyle.Light)
-        let blurView = UIVisualEffectView(effect: darkBlur)
-        blurView.alpha = 0.5
-        blurView.frame = backgroundImageView.bounds
-        backgroundImageView.addSubview(blurView)
-        view.sendSubviewToBack(backgroundImageView)
-//        let horizontalMotionEffect = UIInterpolatingMotionEffect(keyPath: "center.x", type: .TiltAlongHorizontalAxis)
-//        horizontalMotionEffect.minimumRelativeValue = -50
-//        horizontalMotionEffect.maximumRelativeValue = 50
-//        
-//        let verticalMotionEffect = UIInterpolatingMotionEffect(keyPath: "center.y", type: .TiltAlongVerticalAxis)
-//        verticalMotionEffect.minimumRelativeValue = -50
-//        verticalMotionEffect.maximumRelativeValue = 50
-//        
-//        let motionEffectGroup = UIMotionEffectGroup()
-//        motionEffectGroup.motionEffects = [horizontalMotionEffect, verticalMotionEffect]
-//        
-//        backgroundImageView.addMotionEffect(motionEffectGroup)
+        // set background
+        
+        autoreleasepool { () -> () in
+            // set background
+            var images = [UIImage]()
+            images.append(UIImage(named: "xeem1")!)
+            images.append(UIImage(named: "xeem2")!)
+            images.append(UIImage(named: "xeem3")!)
+            backgroundView.animateWithImages(images, transitionDuration: 10 , initialDelay: 0.1, loop: true, isLandscape: true)
+            let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.Dark)
+            let blurEffectView = UIVisualEffectView(effect: blurEffect)
+            blurEffectView.frame = view.bounds
+            blurEffectView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight] // for supporting device rotation
+            view.insertSubview(blurEffectView, atIndex: 1)
+        }
+
+        
+        
         setSignIn()     // set SignIn
     }
     
@@ -65,27 +73,23 @@ class XEEMViewController: UIViewController, UITextFieldDelegate, UIViewControlle
     override func viewWillDisappear(animated: Bool)
     {
         super.viewWillDisappear(animated)
-        self.navigationController?.navigationBarHidden = false
+        self.navigationController?.navigationBarHidden = true
     }
     
     // MARK: - PrivateMethod
     private func  initView() {
         self.view.backgroundColor = ColorUtils.UIColorFromRGB("0xF0F0F0 ")
         
-        self.Xeem.textColor = ColorUtils.UIColorFromRGB("0xF44336");
+
        // self.forgotPassword.setTitleColor(UIColor.MKColor.Red, forState: .Normal)
        // self.emailLabel.backgroundColor = UIColor.whiteColor()
        // self.password.backgroundColor = UIColor.whiteColor()
         
         self.signInBtn.enabled = false
-        self.registerBtn.backgroundColor = UIColor.clearColor()
-        self.registerBtn.layer.borderWidth = CGFloat(Float(1.0))
-        self.registerBtn.layer.borderColor = ColorUtils.UIColorFromRGB("0xF44336").CGColor;
-        self.registerBtn.layer.cornerRadius = CGFloat(Float(5.0))
         
         self.signInBtn.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
         self.signInBtn.layer.cornerRadius = CGFloat(Float(5.0))
-        self.signInBtn.backgroundColor = ColorUtils.UIColorFromRGB("0xF44336");
+        self.signInBtn.backgroundColor = UIColor.MKColor.Orange
         self.signInBtn.layer.borderWidth = CGFloat(Float(1.0))
         self.signInBtn.layer.borderColor = UIColor.clearColor().CGColor
         
@@ -99,6 +103,10 @@ class XEEMViewController: UIViewController, UITextFieldDelegate, UIViewControlle
     func dismissKeyboard(){
         //Causes the view (or one of its embedded text fields) to resign the first responder status.
         view.endEditing(true)
+    }
+    
+    @IBAction func onBackTap(sender: UIButton) {
+        self.navigationController?.popViewControllerAnimated(true)
     }
     
     

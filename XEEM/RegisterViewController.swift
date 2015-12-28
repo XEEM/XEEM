@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import JBKenBurnsView
 
 class RegisterViewController: UIViewController, UITextFieldDelegate {
     
@@ -15,8 +16,8 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var phoneNumberLabel: MKTextField!
     @IBOutlet weak var registerPasswordLabel: MKTextField!
     @IBOutlet weak var registerBtn: UIButton!
-    @IBOutlet weak var backToLoginBtn: UIButton!
-    @IBOutlet weak var XEEM: UILabel!
+    
+    @IBOutlet weak var backgroundView: JBKenBurnsView!
     
     var loading = XHAmazingLoadingView()
     
@@ -24,7 +25,21 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         setRegister()   // register MaterialLabel Desgin
         
-        // Do any additional setup after loading the view.
+        // set background
+        autoreleasepool { () -> () in
+            // set background
+            var images = [UIImage]()
+            images.append(UIImage(named: "xeem1")!)
+            images.append(UIImage(named: "xeem2")!)
+            images.append(UIImage(named: "xeem3")!)
+            backgroundView.animateWithImages(images, transitionDuration: 10 , initialDelay: 0.1, loop: true, isLandscape: true)
+            let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.Dark)
+            let blurEffectView = UIVisualEffectView(effect: blurEffect)
+            blurEffectView.frame = view.bounds
+            blurEffectView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight] // for supporting device rotation
+            view.insertSubview(blurEffectView, atIndex: 1)
+        }
+        
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -45,24 +60,16 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
     }
     
     func initView() {
-        self.XEEM.textColor = ColorUtils.UIColorFromRGB("0xF44336");
         self.view.backgroundColor = ColorUtils.UIColorFromRGB("0xF0F0F0 ")
         self.emailLabel.backgroundColor = UIColor.whiteColor()
         self.phoneNumberLabel.backgroundColor = UIColor.whiteColor()
         self.registerPasswordLabel.backgroundColor = UIColor.whiteColor()
         self.registerBtn.enabled = true
-        self.backToLoginBtn.enabled = true
         
         self.registerBtn.backgroundColor = UIColor.clearColor()
         self.registerBtn.layer.borderWidth = CGFloat(Float(1.0))
         self.registerBtn.layer.borderColor = ColorUtils.UIColorFromRGB("0xF44336").CGColor;
         self.registerBtn.layer.cornerRadius = CGFloat(Float(5.0))
-        
-        self.backToLoginBtn.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
-        self.backToLoginBtn.layer.cornerRadius = CGFloat(Float(5.0))
-        self.backToLoginBtn.backgroundColor = ColorUtils.UIColorFromRGB("0xF44336");
-        self.backToLoginBtn.layer.borderWidth = CGFloat(Float(1.0))
-        self.backToLoginBtn.layer.borderColor = ColorUtils.UIColorFromRGB("0xF44336").CGColor;
      
         // delegate
         self.emailLabel.delegate = self;
