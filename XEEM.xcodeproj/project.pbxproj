@@ -18,6 +18,7 @@
 		711717E41C2A841A006B5E58 /* SanFranciscoDisplay-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 711717E21C2A841A006B5E58 /* SanFranciscoDisplay-Thin.otf */; };
 		711E1AAF1C2E313D005D0C16 /* default_banner.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 711E1AAE1C2E313D005D0C16 /* default_banner.jpg */; };
 		711E1AB11C2E888A005D0C16 /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 711E1AB01C2E888A005D0C16 /* background.jpg */; };
+		712171D51C311A7D00D9B397 /* SCLAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712171D41C311A7D00D9B397 /* SCLAlertView.swift */; };
 		712E9F071C2BBC03006BE6CA /* DetailServiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712E9F061C2BBC03006BE6CA /* DetailServiceViewController.swift */; };
 		71437D311C225333003B3AE1 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71437D301C225333003B3AE1 /* User.swift */; };
 		71437D331C225BB1003B3AE1 /* XEEMService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71437D321C225BB1003B3AE1 /* XEEMService.swift */; };
@@ -156,6 +157,7 @@
 		711717E21C2A841A006B5E58 /* SanFranciscoDisplay-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SanFranciscoDisplay-Thin.otf"; path = "Fonts/SanFranciscoDisplay-Thin.otf"; sourceTree = "<group>"; };
 		711E1AAE1C2E313D005D0C16 /* default_banner.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = default_banner.jpg; sourceTree = "<group>"; };
 		711E1AB01C2E888A005D0C16 /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpg; sourceTree = "<group>"; };
+		712171D41C311A7D00D9B397 /* SCLAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SCLAlertView.swift; sourceTree = "<group>"; };
 		712E9F061C2BBC03006BE6CA /* DetailServiceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailServiceViewController.swift; sourceTree = "<group>"; };
 		71437D301C225333003B3AE1 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		71437D321C225BB1003B3AE1 /* XEEMService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XEEMService.swift; sourceTree = "<group>"; };
@@ -329,6 +331,14 @@
 				7107F5771C29F3B3002817D6 /* FloatRatingView.swift */,
 			);
 			name = RatingView;
+			sourceTree = "<group>";
+		};
+		712171D31C311A6300D9B397 /* CustomAlertDialog */ = {
+			isa = PBXGroup;
+			children = (
+				712171D41C311A7D00D9B397 /* SCLAlertView.swift */,
+			);
+			name = CustomAlertDialog;
 			sourceTree = "<group>";
 		};
 		712E9F081C2BC598006BE6CA /* Images */ = {
@@ -639,6 +649,7 @@
 		A69BDDC81C1816A6005CA6C6 /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				712171D31C311A6300D9B397 /* CustomAlertDialog */,
 				71BA05031C2D54A500FAC038 /* CustomNV */,
 				7107F5761C29F397002817D6 /* RatingView */,
 				A6D2C5CA1C29A72500321254 /* XHAmazingLoading */,
@@ -940,7 +951,7 @@
 					};
 					CE1395451C1087D100A67657 = {
 						CreatedOnToolsVersion = 7.1.1;
-						DevelopmentTeam = W5KA45T8VV;
+						DevelopmentTeam = 9898326J2T;
 					};
 				};
 			};
@@ -1159,6 +1170,7 @@
 				CE8C133D1C1DC15C00D1AA09 /* RegisterViewController.swift in Sources */,
 				CE13954A1C1087D100A67657 /* AppDelegate.swift in Sources */,
 				415CDE3D1C30FF7800402186 /* Request.swift in Sources */,
+				712171D51C311A7D00D9B397 /* SCLAlertView.swift in Sources */,
 				A6D2C5D21C29A78400321254 /* XHAmazingLoadingMusicsAnimation.m in Sources */,
 				7173FB571C215CE700C1DD3A /* ColorUtils.swift in Sources */,
 				71F4A3061C1C9B96008BF810 /* EditProfileViewController.swift in Sources */,
@@ -1420,7 +1432,7 @@
 				INFOPLIST_FILE = XEEM/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.xeem.aa;
+				PRODUCT_BUNDLE_IDENTIFIER = com.xeem;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "XEEM/XEEM-Bridging-Header.h";
@@ -1439,7 +1451,7 @@
 				INFOPLIST_FILE = XEEM/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.xeem.aa;
+				PRODUCT_BUNDLE_IDENTIFIER = com.xeem;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "XEEM/XEEM-Bridging-Header.h";
