@@ -108,6 +108,7 @@
 		A6D2C5DE1C29A7B800321254 /* XHAmazingLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = A6D2C5DD1C29A7B800321254 /* XHAmazingLoadingView.m */; };
 		A6D83C3A1C2F12330053DD64 /* FinishServiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D83C391C2F12330053DD64 /* FinishServiceViewController.swift */; };
 		A6DEFCB01C298B89000DBCB4 /* ConfrimPopUp.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6DEFCAF1C298B89000DBCB4 /* ConfrimPopUp.xib */; };
+		A6E6B9951C31D4F500ECD58C /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6E6B9941C31D4F500ECD58C /* Login.storyboard */; };
 		CE13954A1C1087D100A67657 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1395491C1087D100A67657 /* AppDelegate.swift */; };
 		CE13954F1C1087D100A67657 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE13954D1C1087D100A67657 /* Main.storyboard */; };
 		CE1395511C1087D100A67657 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE1395501C1087D100A67657 /* Assets.xcassets */; };
@@ -194,7 +195,6 @@
 		A621F6011C28770E00D19952 /* ListReviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListReviewViewController.swift; sourceTree = "<group>"; };
 		A62206131C269DFF00B7C864 /* SideMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuController.swift; sourceTree = "<group>"; };
 		A62206151C26A66300B7C864 /* OptionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionsViewController.swift; sourceTree = "<group>"; };
-		A629C3DF1C169C9700D77F69 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		A629C3E41C16BF9000D77F69 /* User.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = User.storyboard; sourceTree = "<group>"; };
 		A629C3E61C16BF9D00D77F69 /* Service.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Service.storyboard; sourceTree = "<group>"; };
 		A699AE791C311599006445B1 /* XEEM_CUSTOMER.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XEEM_CUSTOMER.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -268,6 +268,7 @@
 		A6D2C5DD1C29A7B800321254 /* XHAmazingLoadingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHAmazingLoadingView.m; sourceTree = "<group>"; };
 		A6D83C391C2F12330053DD64 /* FinishServiceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinishServiceViewController.swift; sourceTree = "<group>"; };
 		A6DEFCAF1C298B89000DBCB4 /* ConfrimPopUp.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ConfrimPopUp.xib; sourceTree = "<group>"; };
+		A6E6B9941C31D4F500ECD58C /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		CE1395461C1087D100A67657 /* XEEM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XEEM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE1395491C1087D100A67657 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE13954E1C1087D100A67657 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -510,8 +511,8 @@
 			isa = PBXGroup;
 			children = (
 				CE13954D1C1087D100A67657 /* Main.storyboard */,
-				A629C3DF1C169C9700D77F69 /* Login.storyboard */,
 				A629C3E41C16BF9000D77F69 /* User.storyboard */,
+				A6E6B9941C31D4F500ECD58C /* Login.storyboard */,
 				A629C3E61C16BF9D00D77F69 /* Service.storyboard */,
 				7111A51D1C1BC33600FA17A5 /* Profile.storyboard */,
 			);
@@ -1010,6 +1011,7 @@
 				718FAF901C2A810D00AB5C57 /* SanFranciscoDisplay-Regular.otf in Resources */,
 				A69B8E9D1C29CD51005D8BD6 /* (null) in Resources */,
 				71F4A2F81C1C2E4F008BF810 /* HistoryDetailPopup.xib in Resources */,
+				A6E6B9951C31D4F500ECD58C /* Login.storyboard in Resources */,
 				A629C3E51C16BF9000D77F69 /* User.storyboard in Resources */,
 				718FAF8E1C2A810D00AB5C57 /* SanFranciscoDisplay-Light.otf in Resources */,
 				A6C5DDAC1C1DAE5200A7DB9D /* ReviewCell.xib in Resources */,

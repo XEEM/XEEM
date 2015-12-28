@@ -48,7 +48,7 @@ class XEEMViewController: UIViewController, UITextFieldDelegate, UIViewControlle
             images.append(UIImage(named: "xeem1")!)
             images.append(UIImage(named: "xeem2")!)
             images.append(UIImage(named: "xeem3")!)
-            backgroundView.animateWithImages(images, transitionDuration: 10 , initialDelay: 0.1, loop: true, isLandscape: true)
+            backgroundView.animateWithImages(images, transitionDuration: 3 , initialDelay: 0.1, loop: true, isLandscape: true)
             let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.Dark)
             let blurEffectView = UIVisualEffectView(effect: blurEffect)
             blurEffectView.frame = view.bounds

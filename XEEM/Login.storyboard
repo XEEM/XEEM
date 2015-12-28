@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -25,7 +24,7 @@
         <!--XEEM-->
         <scene sceneID="cPO-ry-eRF">
             <objects>
-                <viewController restorationIdentifier="XEEMViewController" storyboardIdentifier="XEEMViewController" title="XEEM" id="McA-s4-OuM" customClass="XEEMViewController" customModule="XEEM_CUSTOMER" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="XEEMViewController" storyboardIdentifier="XEEMViewController" title="XEEM" id="McA-s4-OuM" customClass="XEEMViewController" customModule="XEEM" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="9za-JY-lNo"/>
                         <viewControllerLayoutGuide type="bottom" id="8dj-6y-zyt"/>
@@ -38,7 +37,7 @@
                                 <rect key="frame" x="0.0" y="44" width="600" height="556"/>
                                 <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eVv-D5-VFB" customClass="MKTextField" customModule="XEEM_CUSTOMER" customModuleProvider="target">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eVv-D5-VFB" customClass="MKTextField" customModule="XEEM" customModuleProvider="target">
                                 <rect key="frame" x="44" y="162" width="540" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="P03-0D-14P"/>
@@ -63,7 +62,7 @@
                                     <action selector="onEditingChanged:" destination="McA-s4-OuM" eventType="editingChanged" id="rJo-uf-mnm"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MsS-nl-b2V" customClass="MKTextField" customModule="XEEM_CUSTOMER" customModuleProvider="target">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MsS-nl-b2V" customClass="MKTextField" customModule="XEEM" customModuleProvider="target">
                                 <rect key="frame" x="44" y="104" width="540" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="OnD-d6-sOh"/>
@@ -251,7 +250,7 @@
         <!--Register-->
         <scene sceneID="Qln-NH-fZZ">
             <objects>
-                <viewController title="Register" id="qlQ-t7-2Op" customClass="RegisterViewController" customModule="XEEM_CUSTOMER" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Register" id="qlQ-t7-2Op" customClass="RegisterViewController" customModule="XEEM" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="cCW-xB-AIB"/>
                         <viewControllerLayoutGuide type="bottom" id="c1e-Z8-Bmv"/>
@@ -265,7 +264,7 @@
                                 <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fYM-p0-utC">
-                                <rect key="frame" x="20" y="300" width="560" height="50"/>
+                                <rect key="frame" x="20" y="360" width="560" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="Efm-1L-hPV"/>
                                 </constraints>
@@ -277,8 +276,8 @@
                                     <action selector="register:" destination="qlQ-t7-2Op" eventType="touchUpInside" id="lTu-Ex-BBW"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4RL-qa-wES" customClass="MKTextField" customModule="XEEM_CUSTOMER" customModuleProvider="target">
-                                <rect key="frame" x="40" y="104" width="540" height="50"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4RL-qa-wES" customClass="MKTextField" customModule="XEEM" customModuleProvider="target">
+                                <rect key="frame" x="40" y="164" width="540" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="c7w-Dz-ScJ"/>
                                     <constraint firstAttribute="height" constant="50" id="hVN-Oj-z9f"/>
@@ -302,8 +301,8 @@
                                     <action selector="onEditingChanged:" destination="McA-s4-OuM" eventType="editingChanged" id="GiC-ER-YnQ"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xFz-dS-nIK" customClass="MKTextField" customModule="XEEM_CUSTOMER" customModuleProvider="target">
-                                <rect key="frame" x="40" y="162" width="540" height="50"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xFz-dS-nIK" customClass="MKTextField" customModule="XEEM" customModuleProvider="target">
+                                <rect key="frame" x="40" y="222" width="540" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="H9o-m4-R4s"/>
                                     <constraint firstAttribute="height" constant="50" id="cVg-6B-RhO"/>
@@ -327,8 +326,8 @@
                                     <action selector="onEditingChanged:" destination="McA-s4-OuM" eventType="editingChanged" id="Ytw-Ot-35U"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Phone number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Coz-6G-PFG" customClass="MKTextField" customModule="XEEM_CUSTOMER" customModuleProvider="target">
-                                <rect key="frame" x="40" y="220" width="540" height="50"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Phone number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Coz-6G-PFG" customClass="MKTextField" customModule="XEEM" customModuleProvider="target">
+                                <rect key="frame" x="40" y="280" width="540" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="GO8-1q-bBo"/>
                                     <constraint firstAttribute="height" constant="30" id="wA8-Fy-pW3"/>
@@ -345,14 +344,14 @@
                                 </connections>
                             </textField>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_username" highlightedImage="ic_username" translatesAutoresizingMaskIntoConstraints="NO" id="df4-7X-6Lr">
-                                <rect key="frame" x="12" y="117" width="20" height="20"/>
+                                <rect key="frame" x="12" y="179" width="20" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="koK-t5-zbO"/>
                                     <constraint firstAttribute="width" constant="20" id="vW0-ph-v0S"/>
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_password" translatesAutoresizingMaskIntoConstraints="NO" id="iTD-qe-qqz">
-                                <rect key="frame" x="12" y="175" width="20" height="20"/>
+                                <rect key="frame" x="12" y="237" width="20" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="3aW-kY-3iO"/>
                                     <constraint firstAttribute="height" constant="40" id="Bha-1g-yDD"/>
@@ -367,7 +366,7 @@
                                 </variation>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_phone1" translatesAutoresizingMaskIntoConstraints="NO" id="9A3-SO-lJM">
-                                <rect key="frame" x="12" y="238" width="20" height="20"/>
+                                <rect key="frame" x="12" y="300" width="20" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="0fg-Tw-u87"/>
                                     <constraint firstAttribute="height" constant="40" id="1oa-ix-rKM"/>
@@ -381,14 +380,14 @@
                                     </mask>
                                 </variation>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P1r-uB-oVj">
-                                <rect key="frame" x="12" y="72" width="22" height="22"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P1r-uB-oVj">
+                                <rect key="frame" x="16" y="74" width="22" height="22"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" image="ic_back">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="onBackTap:" destination="McA-s4-OuM" eventType="touchUpInside" id="KZ7-Uj-rgS"/>
+                                    <action selector="onBackTap:" destination="qlQ-t7-2Op" eventType="touchUpInside" id="B3H-eI-PFJ"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -396,7 +395,6 @@
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="fYM-p0-utC" secondAttribute="trailing" constant="20" id="0JH-Av-p43"/>
                             <constraint firstAttribute="trailing" secondItem="4RL-qa-wES" secondAttribute="trailing" constant="20" id="3Vh-TA-LRP"/>
-                            <constraint firstItem="df4-7X-6Lr" firstAttribute="top" secondItem="cCW-xB-AIB" secondAttribute="bottom" constant="53" id="4dg-2O-hsT"/>
                             <constraint firstItem="Coz-6G-PFG" firstAttribute="leading" secondItem="9A3-SO-lJM" secondAttribute="trailing" constant="8" id="53p-sd-Rh6"/>
                             <constraint firstItem="df4-7X-6Lr" firstAttribute="leading" secondItem="KKC-45-2ih" secondAttribute="leading" constant="12" id="5Tf-7Q-rny"/>
                             <constraint firstItem="fYM-p0-utC" firstAttribute="leading" secondItem="KKC-45-2ih" secondAttribute="leading" constant="20" id="7D8-Hp-mO2"/>
@@ -404,23 +402,28 @@
                             <constraint firstItem="fYM-p0-utC" firstAttribute="top" secondItem="Coz-6G-PFG" secondAttribute="bottom" constant="30" id="A5F-qb-mTn"/>
                             <constraint firstItem="Coz-6G-PFG" firstAttribute="leading" secondItem="KKC-45-2ih" secondAttribute="leading" id="C6m-vO-l9C"/>
                             <constraint firstItem="c1e-Z8-Bmv" firstAttribute="top" secondItem="64P-Qy-Qa9" secondAttribute="bottom" id="EuA-T0-FoN"/>
+                            <constraint firstItem="df4-7X-6Lr" firstAttribute="centerY" secondItem="4RL-qa-wES" secondAttribute="centerY" id="G6q-dp-taW"/>
                             <constraint firstItem="iTD-qe-qqz" firstAttribute="leading" secondItem="df4-7X-6Lr" secondAttribute="leading" id="Hla-iv-uHW"/>
                             <constraint firstItem="iTD-qe-qqz" firstAttribute="top" secondItem="df4-7X-6Lr" secondAttribute="bottom" constant="38" id="LN8-mj-s0J"/>
                             <constraint firstItem="4RL-qa-wES" firstAttribute="leading" secondItem="df4-7X-6Lr" secondAttribute="trailing" constant="8" id="LNg-qG-TpL"/>
+                            <constraint firstItem="P1r-uB-oVj" firstAttribute="leading" secondItem="KKC-45-2ih" secondAttribute="leading" constant="16" id="Px6-KH-4LT"/>
                             <constraint firstItem="xFz-dS-nIK" firstAttribute="leading" secondItem="iTD-qe-qqz" secondAttribute="trailing" constant="8" id="Swp-V6-t7F"/>
                             <constraint firstAttribute="trailing" secondItem="64P-Qy-Qa9" secondAttribute="trailing" id="Syj-7Y-K3i"/>
                             <constraint firstItem="9A3-SO-lJM" firstAttribute="top" secondItem="iTD-qe-qqz" secondAttribute="bottom" constant="43" id="U0f-H9-sfi"/>
+                            <constraint firstItem="P1r-uB-oVj" firstAttribute="top" secondItem="cCW-xB-AIB" secondAttribute="bottom" constant="10" id="UL1-0Q-1DM"/>
                             <constraint firstItem="xFz-dS-nIK" firstAttribute="trailing" secondItem="4RL-qa-wES" secondAttribute="trailing" id="Vd3-t5-aI8"/>
                             <constraint firstItem="xFz-dS-nIK" firstAttribute="top" secondItem="4RL-qa-wES" secondAttribute="bottom" constant="8" id="bLX-qk-WGB"/>
                             <constraint firstItem="Coz-6G-PFG" firstAttribute="trailing" secondItem="4RL-qa-wES" secondAttribute="trailing" id="bQP-RT-sCG"/>
                             <constraint firstItem="9A3-SO-lJM" firstAttribute="leading" secondItem="iTD-qe-qqz" secondAttribute="leading" id="bbD-oM-tOp"/>
                             <constraint firstItem="64P-Qy-Qa9" firstAttribute="top" secondItem="cCW-xB-AIB" secondAttribute="bottom" constant="-20" id="doI-KC-We5"/>
-                            <constraint firstItem="4RL-qa-wES" firstAttribute="top" secondItem="cCW-xB-AIB" secondAttribute="bottom" constant="40" id="fWf-a3-JB8"/>
+                            <constraint firstItem="4RL-qa-wES" firstAttribute="top" secondItem="cCW-xB-AIB" secondAttribute="bottom" constant="100" id="fWf-a3-JB8"/>
+                            <constraint firstItem="df4-7X-6Lr" firstAttribute="centerX" secondItem="4RL-qa-wES" secondAttribute="centerX" id="mKT-GY-vOq"/>
                             <constraint firstAttribute="trailing" secondItem="Coz-6G-PFG" secondAttribute="trailing" id="nNu-kl-fiC"/>
                             <constraint firstItem="64P-Qy-Qa9" firstAttribute="leading" secondItem="KKC-45-2ih" secondAttribute="leading" id="w0j-z9-rUv"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="mKT-GY-vOq"/>
                                 <exclude reference="C6m-vO-l9C"/>
                                 <exclude reference="nNu-kl-fiC"/>
                             </mask>
@@ -444,7 +447,7 @@
         <!--Forgot Password-->
         <scene sceneID="ta4-7c-15W">
             <objects>
-                <viewController title="Forgot Password" id="e8Z-BR-puP" customClass="ForgotPasswordViewController" customModule="XEEM_CUSTOMER" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Forgot Password" id="e8Z-BR-puP" customClass="ForgotPasswordViewController" customModule="XEEM" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="h4a-U0-58w"/>
                         <viewControllerLayoutGuide type="bottom" id="HI1-4t-a29"/>
@@ -493,7 +496,7 @@
                                     <action selector="onBackToLoginTap:" destination="qlQ-t7-2Op" eventType="touchUpInside" id="idA-j4-sSR"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TkA-wD-2Eq" customClass="MKTextField" customModule="XEEM_CUSTOMER" customModuleProvider="target">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TkA-wD-2Eq" customClass="MKTextField" customModule="XEEM" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="224" width="600" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="DUZ-GA-BNX"/>
@@ -552,7 +555,7 @@
         <!--Frist View Controller-->
         <scene sceneID="ieb-c4-tEk">
             <objects>
-                <viewController id="Err-oV-w7x" customClass="FristViewController" customModule="XEEM_CUSTOMER" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Err-oV-w7x" customClass="FristViewController" customModule="XEEM" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="lgS-Nb-iqD"/>
                         <viewControllerLayoutGuide type="bottom" id="EhH-Oi-LCf"/>
@@ -624,7 +627,7 @@
         <!--New Transportation-->
         <scene sceneID="f1L-BQ-VoU">
             <objects>
-                <viewController storyboardIdentifier="NewTransportationViewController" id="Q2Z-j0-seO" customClass="NewTransportationViewController" customModule="XEEM_CUSTOMER" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NewTransportationViewController" id="Q2Z-j0-seO" customClass="NewTransportationViewController" customModule="XEEM" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="SbP-Su-JKw"/>
                         <viewControllerLayoutGuide type="bottom" id="SGY-S9-sd5"/>
