@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import RealmSwift
 
 enum TransportationType: String  {
     case Bike = "B"
@@ -15,26 +16,27 @@ enum TransportationType: String  {
     case Motorbike = "M"
 }
 
-class Transportation: NSObject {
-    var id : String!
-    var name : String!
-    var dictionary: NSDictionary
-    var type: TransportationType!
-    var imageUrls: [String]!
-    var requests: [Request]!
+class Transportation : Object {
+    dynamic var id : String!
+    dynamic var name : String!
+    dynamic var type: String!
+    dynamic var imageUrls: String!
+    //var requests: [Request]!
+    dynamic var isDefault = false
     
-    init(dictionary : NSDictionary) {
-        self.dictionary = dictionary
+    convenience required init(dictionary : NSDictionary) {
+        self.init()
         id = dictionary["Id"] as? String
         name = dictionary["Name"] as? String
-        type = TransportationType(rawValue: dictionary["Type"] as! String)
-        imageUrls = dictionary["ImageUrls"] as? [String]
+        type = dictionary["Type"] as! String
+        isDefault = false
+        imageUrls = (dictionary["ImageUrls"] as? [String])![0]
         
-        requests = Request.InitWithArray(dictionary["Requests"] as! [NSDictionary])
+        //requests = Request.InitWithArray(dictionary["Requests"] as! [NSDictionary])
     }
-    
-    class func TransWithArray(array: [NSDictionary]) -> [Transportation] {
-        var trans = [Transportation]()
+
+    class func TransWithArray(array: [NSDictionary]) -> List<Transportation> {
+        let trans = List<Transportation>()
         for dict in array {
             trans.append(Transportation(dictionary: dict))
         }

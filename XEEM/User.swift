@@ -7,27 +7,30 @@
 //
 
 import Foundation
+import RealmSwift
+import Realm
 
 var _currentUser: User?
 let USER_KEY = "CURRENT_USER"
 
-class User: NSObject {
-    var id: String?
-    var fullName: String?
-    var username: String?
-    var password: String?
-    var token: String?
-    var email: String?
-    var address: String?
-    var phone: String?
-    var transList: [Transportation]?
-    var avatarURL: NSURL?
-    var dictionary : NSDictionary?
-    var defaultVehicles : Transportation?
-    
-    init(dictionary : NSDictionary?) {
+
+class User: Object {
+    dynamic var id: String?
+    dynamic var fullName: String?
+    dynamic var username: String?
+    dynamic var password: String?
+    dynamic var token: String?
+    dynamic var email: String?
+    dynamic var address: String?
+    dynamic var phone: String?
+    var transList = List<Transportation>()
+    dynamic var avatarURL: String?
+    dynamic var defaultVehicles : Transportation?
+   
+
+    required convenience init(dictionary : NSDictionary?) {
+        self.init()
         if let dictionary = dictionary {
-            self.dictionary = dictionary
             fullName = dictionary["name"] as? String
             id = dictionary["Id"] as? String
             fullName = dictionary["Name"] as? String
@@ -35,44 +38,58 @@ class User: NSObject {
             password = dictionary["Password"] as? String
             address = dictionary["Address"] as? String
             phone = dictionary["Phone"] as? String
-            avatarURL = NSURL(string: (dictionary["AvatarUrl"] as? String ?? "")!)
+            avatarURL = dictionary["AvatarUrl"] as? String ?? ""
             transList = Transportation.TransWithArray(dictionary["Transporations"] as! [NSDictionary])
-            defaultVehicles = transList![0] as Transportation?
+            defaultVehicles = transList[0] as Transportation?
+            transList[0].isDefault = true
         }
     }
+
     
     // Save curent user
     class var currentUser: User? {
         get {
         if _currentUser == nil {
-                let data = NSUserDefaults.standardUserDefaults().objectForKey(USER_KEY)
-                if data != nil {
-                    do {
-                        let dict = try NSJSONSerialization.JSONObjectWithData(data! as! NSData, options: [])
-                        _currentUser = User(dictionary: dict as! NSDictionary)
-                    } catch {
-                        print(error)
-                        return _currentUser
-                }
-            }
+//                let data = NSUserDefaults.standardUserDefaults().objectForKey(USER_KEY)
+//                if data != nil {
+//                    do {
+//                        let dict = try NSJSONSerialization.JSONObjectWithData(data! as! NSData, options: [])
+//                        _currentUser = User(dictionary: dict as! NSDictionary)
+//                    } catch {
+//                        print(error)
+//                        return _currentUser
+//                }
+//            }
+        let realm = try! Realm()
+        _currentUser = realm.objects(User).first as User!
+        
         }
         return _currentUser
         }
         
         set (user) {
             _currentUser = user
-            
             if _currentUser != nil {
-                // save to NSDefault
-                do {
-                    let data = try NSJSONSerialization.dataWithJSONObject(user!.dictionary!, options: [])
-                    NSUserDefaults.standardUserDefaults().setObject(data, forKey: USER_KEY)
-                } catch let error as NSError {
-                    print(error)
-                    NSUserDefaults.standardUserDefaults().setObject(nil, forKey: USER_KEY)
+                // save to realm
+                let realm = try! Realm()
+                 try! realm.write {
+                     realm.deleteAll()
+                    realm.add(_currentUser!)
+                    print("Save success")
                 }
+//                // save to NSDefault
+//                do {
+//                    let data = try NSJSONSerialization.dataWithJSONObject(nil, options: [])
+//                    NSUserDefaults.standardUserDefaults().setObject(data, forKey: USER_KEY)
+//                } catch let error as NSError {
+//                    print(error)
+//                    NSUserDefaults.standardUserDefaults().setObject(nil, forKey: USER_KEY)
+//                }
             } else {
-                NSUserDefaults.standardUserDefaults().setObject(nil, forKey: USER_KEY)
+                let realm = try! Realm()
+                try! realm.write {
+                    realm.deleteAll()
+                }
             }
             NSUserDefaults.standardUserDefaults().synchronize()
         }

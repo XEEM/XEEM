@@ -7,19 +7,54 @@
 //
 
 import UIKit
-
+import RealmSwift
+protocol TransportationDetailViewControllerDelegate {
+    func transportationDetailControllerViewController(transportationDetailControllerViewController : TransportationDetailControllerViewController)
+}
 class TransportationDetailControllerViewController: UIViewController, HistoryDetailControlerDelegate {
     @IBOutlet weak var bannerImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
+    var user = User.currentUser!
+    var delegate : TransportationDetailViewControllerDelegate?
 
+    @IBAction func onMakeDefaultTapped(sender: UIButton) {
+        let refreshAlert = UIAlertController(title: "Info", message: "Do you want to make this vehicle to default", preferredStyle: UIAlertControllerStyle.Alert)
+        
+        refreshAlert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: { (action: UIAlertAction!) in
+            let index = self.user.transList.indexOf(self.model!)
+            let realm = try! Realm()
+            try! realm.write {
+                self.user.transList[index!].isDefault = true
+                self.user.defaultVehicles = self.model
+                self.delegate?.transportationDetailControllerViewController(self)
+                //realm.add(self.user, update: true)
+               // User.currentUser = self.user
+            }
+            
+            let alert = UIAlertController(title: "Congrats", message: "Changed successfull", preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+            self.presentViewController(alert, animated: true, completion: nil)
+
+        }))
+        
+        refreshAlert.addAction(UIAlertAction(title: "Cancel", style: .Default, handler: { (action: UIAlertAction!) in
+            refreshAlert .dismissViewControllerAnimated(true, completion: nil)
+        }))
+        
+        presentViewController(refreshAlert, animated: true, completion: nil)
+        
+        
+        
+       
+    }
     var model: Transportation?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
-        bannerImageView.setImageWithURL(NSURL(string: (model?.imageUrls[0])!)!)
+        bannerImageView.setImageWithURL(NSURL(string: (model?.imageUrls)!)!)
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 50
 

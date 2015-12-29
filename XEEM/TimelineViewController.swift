@@ -100,7 +100,7 @@ class TimelineViewController: UIViewController, MKMapViewDelegate, CLLocationMan
     }
     func flatTireButton() -> () {
         for shopModel in listModelShopSortedByDistance {
-            if shopModel.type == User.currentUser?.defaultVehicles?.type.rawValue {
+            if shopModel.type == User.currentUser?.defaultVehicles?.type {
                 emergencyDialog.hideView()
                 let delayTime = dispatch_time(DISPATCH_TIME_NOW, Int64(1 * Double(NSEC_PER_SEC)))
                 dispatch_after(delayTime, dispatch_get_main_queue()) {
@@ -116,7 +116,7 @@ class TimelineViewController: UIViewController, MKMapViewDelegate, CLLocationMan
     }
     func otherProblem() -> () {
         for shopModel in listModelShopSortedByDistance {
-            if shopModel.type == User.currentUser?.defaultVehicles?.type.rawValue {
+            if shopModel.type == User.currentUser?.defaultVehicles?.type{
                 emergencyDialog.hideView()
                 let delayTime = dispatch_time(DISPATCH_TIME_NOW, Int64(1 * Double(NSEC_PER_SEC)))
                 dispatch_after(delayTime, dispatch_get_main_queue()) {

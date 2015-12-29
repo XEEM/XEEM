@@ -949,7 +949,7 @@
 					};
 					CE1395451C1087D100A67657 = {
 						CreatedOnToolsVersion = 7.1.1;
-						DevelopmentTeam = W5KA45T8VV;
+						DevelopmentTeam = 9898326J2T;
 					};
 				};
 			};
@@ -1430,7 +1430,7 @@
 				INFOPLIST_FILE = XEEM/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.xeem.aa;
+				PRODUCT_BUNDLE_IDENTIFIER = com.xeem;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "XEEM/XEEM-Bridging-Header.h";
@@ -1449,7 +1449,7 @@
 				INFOPLIST_FILE = XEEM/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.xeem.aa;
+				PRODUCT_BUNDLE_IDENTIFIER = com.xeem;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "XEEM/XEEM-Bridging-Header.h";

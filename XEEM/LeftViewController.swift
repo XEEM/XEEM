@@ -7,20 +7,21 @@
 //
 
 import UIKit
+import RealmSwift
 
-class LeftViewController: UIViewController {
+class LeftViewController: UIViewController, TransportationDetailViewControllerDelegate{
     @IBOutlet weak var avatarImageView: UIImageView!
     @IBOutlet weak var nameLable: UILabel!
     @IBOutlet weak var tableView: UITableView!
     var currentUser: User!
-    var listVehicles = [Transportation]()
+    var listVehicles = List<Transportation>()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         currentUser = User.currentUser
-        listVehicles = currentUser.transList!
+        listVehicles = currentUser.transList
         print(currentUser.avatarURL)
-        avatarImageView.setImageWithURL(currentUser.avatarURL!);
+        avatarImageView.setImageWithURL(NSURL(string: currentUser.avatarURL!)!)
         UIUtils.setRoundImageView(avatarImageView)
         nameLable.text = currentUser.fullName
         // Do any additional setup after loading the view.
@@ -30,6 +31,11 @@ class LeftViewController: UIViewController {
         tableView.backgroundView = nil;
         self.tableView.tableFooterView = UIView()
         self.tableView.bounces = false
+        
+    }
+    
+    func transportationDetailControllerViewController(transportationDetailControllerViewController : TransportationDetailControllerViewController) {
+        self.tableView.reloadData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -48,6 +54,7 @@ class LeftViewController: UIViewController {
     }
     */
     @IBAction func onTapUserProfile(sender: UITapGestureRecognizer) {
+         self.slideMenuController()?.toggleLeft()
         let storyboard = UIStoryboard(name: "Profile", bundle: nil)
         
         let vc = storyboard.instantiateViewControllerWithIdentifier("ProfileNavigationViewController") as! UINavigationController
@@ -71,6 +78,12 @@ extension LeftViewController: UITableViewDataSource, UITableViewDelegate {
         } else {
             let cell = self.tableView.dequeueReusableCellWithIdentifier("TransportationCell") as UITableViewCell?
             cell?.textLabel?.text = listVehicles[indexPath.row].name
+            if listVehicles[indexPath.row] == currentUser.defaultVehicles {
+                 cell?.detailTextLabel?.hidden = false
+            } else {
+                 cell?.detailTextLabel?.hidden = true
+            }
+           
             return cell!
         }
     }
@@ -93,6 +106,7 @@ extension LeftViewController: UITableViewDataSource, UITableViewDelegate {
             let storyboard = UIStoryboard(name: "Profile", bundle: nil)
             let rootVC = storyboard.instantiateViewControllerWithIdentifier("TransportationDetailNavigationController") as! UINavigationController
             let vc = rootVC.topViewController as! TransportationDetailControllerViewController
+            vc.delegate = self
             vc.model = listVehicles[indexPath.row]
             self.presentViewController(rootVC, animated: true , completion: nil)
         }

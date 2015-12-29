@@ -15,6 +15,7 @@ target 'XEEM' do
   pod 'Starscream', '~> 1.0.0'
   pod 'SwiftDate', '~> 2.0'
   pod 'NVActivityIndicatorView'
+  pod 'RealmSwift'
   use_frameworks!
   
 end

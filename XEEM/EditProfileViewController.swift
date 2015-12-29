@@ -30,7 +30,7 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
         addressTextField.text = currentUser.address
         nameTextField.text = currentUser.fullName
         phoneTextField.text = currentUser.phone
-        avatarImageView.setImageWithURL(currentUser.avatarURL!)
+       avatarImageView.setImageWithURL(NSURL(string: currentUser.avatarURL!)!)
         UIUtils.setRoundImageView(avatarImageView)
         UIUtils.setupMaterialTextField(nameTextField)
         UIUtils.setupMaterialTextField(phoneTextField)

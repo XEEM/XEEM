@@ -9,10 +9,11 @@
 import UIKit
 import AFNetworking
 import FontAwesome_swift
+import RealmSwift
 
 class ProfileViewController: UIViewController {
-    var transportationList = [Transportation]()
     
+    var transportationList = List<Transportation>()
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var addressLabel: UILabel!
@@ -45,10 +46,10 @@ class ProfileViewController: UIViewController {
         nameLabel.text = currentUser.fullName
         addressLabel.text = currentUser.email
 
-        avatarImage.setImageWithURL(currentUser.avatarURL!);
+        avatarImage.setImageWithURL(NSURL(string: currentUser.avatarURL!)!)
         self.avatarImage.layer.cornerRadius = self.avatarImage.frame.size.width / 2;
         self.avatarImage.clipsToBounds = true;
-        transportationList = currentUser.transList ?? [Transportation]()
+        transportationList = currentUser.transList ?? List<Transportation>()
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
