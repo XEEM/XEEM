@@ -10,6 +10,8 @@ import UIKit
 import MapKit
 import CoreLocation
 import SlideMenuControllerSwift
+import NVActivityIndicatorView
+
 
 class TimelineViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     
@@ -30,6 +32,7 @@ class TimelineViewController: UIViewController, MKMapViewDelegate, CLLocationMan
     var selectedShopModel: ShopModel?
     var filterList : [Int]!
     var emergencyDialog = SCLAlertView()
+    var indicator : NVActivityIndicatorView?
     
     // contraint
     @IBOutlet weak var bottomViewRequestServiceConstraint: NSLayoutConstraint!
@@ -60,10 +63,23 @@ class TimelineViewController: UIViewController, MKMapViewDelegate, CLLocationMan
         self.loadMapView()
         
         //setup emergency dialog
-
         emergencyDialog.addButton("Out of gas", target:self, selector:Selector("outOfGasButton"))
         emergencyDialog.addButton("Flat tire", target:self, selector:Selector("flatTireButton"))
         emergencyDialog.addButton("Other problem", target:self, selector:Selector("otherProblem"))
+        
+        //setup indicator
+
+      let frame = CGRectMake((self.navigationController?.navigationBar.frame.width)!/2,0, 50, 50)
+
+        indicator = NVActivityIndicatorView(frame: frame,
+            type: .BallRotate, color: UIColor.MKColor.WhiteColor)
+        self.navigationController?.navigationBar.addSubview(indicator!)
+        indicator?.center = CGPointMake( (self.navigationController?.navigationBar.frame.size.width)!  / 2,
+             (self.navigationController?.navigationBar.frame.size.height)! / 2);
+        //view.bringSubviewToFront(indicator!)
+       indicator?.hidesWhenStopped = true
+        indicator?.hidden = true
+      
     }
     
     func outOfGasButton() -> () {
@@ -117,7 +133,10 @@ class TimelineViewController: UIViewController, MKMapViewDelegate, CLLocationMan
 
     // Request service shops with filter input
     func requestData(filter : [Int]!) -> () {
+        indicator?.hidden = false
+        self.indicator!.startAnimation()
         XEEMService.sharedInstance.getServiceWithCurrentLocation(0, longitde: 0, filter: filter) { (dictionary: AnyObject?, error: NSError?) -> Void in
+            self.indicator!.stopAnimation()
             let arrData = dictionary as! [NSDictionary]
             self.listModelShop = ShopModel.initShopModelWithArray(arrData,currentLocation: self.location)
             self.listModelShopSortedByDistance = self.listModelShop.sort({ (p1: ShopModel, p2 : ShopModel) -> Bool in

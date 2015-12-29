@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
@@ -118,10 +118,16 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Profile" id="tos-lh-jFO">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="8UR-x4-5KJ">
+                        <barButtonItem key="leftBarButtonItem" title="Close" id="8UR-x4-5KJ">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             <connections>
                                 <action selector="onCloseClicked:" destination="nwp-vA-kc4" id="bDT-1g-PQT"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Edit" id="nFu-LI-IDP">
+                            <color key="tintColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <segue destination="tUa-UL-NHC" kind="push" id="Eip-os-Nxz"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -137,7 +143,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S7F-jF-rtS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="558" y="-223"/>
+            <point key="canvasLocation" x="500" y="-251"/>
         </scene>
         <!--Transportation Detail Controller View Controller-->
         <scene sceneID="LCM-ho-8kU">
@@ -244,7 +250,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hNM-br-s8E" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="838" y="432"/>
+            <point key="canvasLocation" x="874" y="597"/>
         </scene>
         <!--Edit History-->
         <scene sceneID="1by-ji-7HB">
@@ -412,13 +418,13 @@
                     <navigationItem key="navigationItem" title="New Transportation" id="emC-vm-oMz">
                         <barButtonItem key="backBarButtonItem" title="Cancel" id="WIQ-Ad-nXv"/>
                         <barButtonItem key="leftBarButtonItem" image="ic_back" id="21L-OA-TcM">
-                            <color key="tintColor" red="0.54901960780000003" green="0.0" blue="0.1019607843" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="onCancelClicked:" destination="6dK-fL-bcu" id="kLW-lc-e5a"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Save" id="gNd-Mw-2mf">
-                            <color key="tintColor" red="0.54901960780000003" green="0.0" blue="0.1019607843" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="onSaveClicked:" destination="6dK-fL-bcu" id="zyy-FX-axw"/>
                             </connections>
@@ -445,7 +451,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1568" y="632"/>
+            <point key="canvasLocation" x="1736" y="756"/>
         </scene>
         <!--Edit Profile-->
         <scene sceneID="d44-4V-Vbe">
@@ -537,13 +543,13 @@
                     </view>
                     <navigationItem key="navigationItem" title="Edit Profile" id="37u-mg-71L">
                         <barButtonItem key="leftBarButtonItem" image="ic_back" style="plain" id="ze7-pV-2xh">
-                            <color key="tintColor" red="0.5490196078431373" green="0.0" blue="0.10196078431372549" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="onCancelClick:" destination="tUa-UL-NHC" id="rC2-R7-JPk"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Item" style="plain" systemItem="save" id="HzR-gU-wf9">
-                            <color key="tintColor" red="0.54901960780000003" green="0.0" blue="0.1019607843" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="onSaveClicked:" destination="tUa-UL-NHC" id="l8d-kh-mxP"/>
                             </connections>
@@ -563,7 +569,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="500" y="954"/>
+            <point key="canvasLocation" x="902" y="-603"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ldr-M8-a2p">
@@ -747,7 +753,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4lX-eh-6Vl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1252" y="-223"/>
+            <point key="canvasLocation" x="1457" y="-264"/>
         </scene>
         <!--Change Password-->
         <scene sceneID="DoK-KJ-iZd">
@@ -848,7 +854,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3gl-bX-HMS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="916" y="-233"/>
+            <point key="canvasLocation" x="1064" y="93"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="cMe-hr-GfV">
@@ -866,7 +872,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lyG-gD-abr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="365" y="432"/>
+            <point key="canvasLocation" x="485" y="546"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="USE-4J-lBb">

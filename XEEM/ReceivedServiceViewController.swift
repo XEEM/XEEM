@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import FontAwesome_swift
+import MapKit
 
 class ReceivedServiceViewController: UIViewController {
 
@@ -20,11 +22,50 @@ class ReceivedServiceViewController: UIViewController {
     
     @IBOutlet weak var receivedServiceBtn: UIButton!
     
+    @IBOutlet weak var etaLabel: UILabel!
+    @IBOutlet weak var distanceLabel: UILabel!
+    @IBOutlet weak var priceLabel: UILabel!
+    var selectedShop : ShopModel!
+    var quotationIndex : Int!
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.receivedServiceBtn.backgroundColor = UIColor.MKColor.Orange
-        self.receivedServiceBtn.setTitleColor(UIColor.MKColor.WhiteColor, forState: UIControlState.Normal)
-        self.ratingView.editable = false
+        receivedServiceBtn.backgroundColor = UIColor.MKColor.Orange
+        receivedServiceBtn.setTitleColor(UIColor.MKColor.WhiteColor, forState: UIControlState.Normal)
+        ratingView.editable = false
+        ratingView.rating = selectedShop.rating!
+        repairServiceLabel.text = selectedShop.name
+        distanceLabel.text = UIUtils.convertDistance(selectedShop.distance!)
+        
+        let request: MKDirectionsRequest = MKDirectionsRequest()
+        request.source = MKMapItem.mapItemForCurrentLocation()
+        //let placemarkSrc = MKPlacemark(coordinate: currentLocation!.coordinate, addressDictionary: nil)
+        let placemarkDes = MKPlacemark(coordinate: (selectedShop.location!.coordinate), addressDictionary: nil)
+        request.destination = MKMapItem(placemark: placemarkDes)
+        request.transportType = .Automobile
+        request.requestsAlternateRoutes = false
+        let directions: MKDirections = MKDirections(request: request)
+        var eta = "--:--:--"
+        directions.calculateETAWithCompletionHandler { (response : MKETAResponse?, error : NSError?) -> Void in
+            if let response = response {
+                print(response.expectedTravelTime)
+                eta = UIUtils.stringFromTimeInterval(response.expectedTravelTime)
+                self.etaLabel.text = eta
+                //self.eta = UIUtils.stringFromTimeInterval(response.expectedTravelTime)
+                //  print(response.expectedTravelTime)
+                // print(self.eta)
+                //route.distance  = The distance
+                //route.expectedTravelTime = The ETA
+            } else {
+                
+            }
+        }
+
+        
+        etaLabel.text = selectedShop.eta
+
+//        priceLabel.text = "About $\(selectedShop.quotes![quotationIndex].price as! Int) with your problem"
         // Do any additional setup after loading the view.
     }
 
@@ -49,3 +90,4 @@ class ReceivedServiceViewController: UIViewController {
     */
 
 }
+

@@ -24,9 +24,16 @@ class NewTransportationViewController: UIViewController,UIPickerViewDataSource,U
     override func viewDidLoad() {
         super.viewDidLoad()
         self.automaticallyAdjustsScrollViewInsets = false
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
-        self.navigationController?.navigationBar.shadowImage = UIImage()
-        navigationController?.navigationBar.barTintColor = ColorUtils.UIColorFromRGB("ffffff");
+        title = "New Transportation"
+        let attrs = [
+            NSForegroundColorAttributeName : UIColor.whiteColor(),
+            NSFontAttributeName : UIFont(name: "SanFranciscoDisplay-Medium", size: 18)!
+        ]
+        
+        //let img = UIImage()
+        //self.navigationController?.navigationBar.shadowImage = img
+        self.navigationController?.navigationBar.titleTextAttributes = attrs
+        self.navigationController?.navigationBar.barTintColor = UIColor.MKColor.AppPrimaryColor
         typePicker.delegate = self
         typePicker.dataSource = self
         typeLabel.delegate = self

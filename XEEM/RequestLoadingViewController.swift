@@ -41,6 +41,8 @@ class RequestLoadingViewController: UIViewController {
             loading.stopAnimating()
             let storyboard = UIStoryboard(name: "User", bundle: nil)
             let receivedService =  storyboard.instantiateViewControllerWithIdentifier("ReceivedServiceViewController") as! ReceivedServiceViewController
+            receivedService.selectedShop = self.selectedShop
+            receivedService.quotationIndex = self.quotationIndex
             self.navigationController?.pushViewController(receivedService, animated: true)
         }
 
