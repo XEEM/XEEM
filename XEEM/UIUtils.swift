@@ -64,10 +64,10 @@ public class UIUtils {
         let seconds = interval % 60
         let minutes = (interval / 60) % 60
         let hours = (interval / 3600)
-        return String(format: "%02d:%02d:%02d", hours, minutes, seconds)
+        return String(format: "About %02d Minutes", minutes)
     }
     
-    public static func getETA(desLocation : CLLocation) -> String {
+    public static func getETA(desLocation : CLLocation, label : UILabel) -> () {
         let request: MKDirectionsRequest = MKDirectionsRequest()
         request.source = MKMapItem.mapItemForCurrentLocation()
         //let placemarkSrc = MKPlacemark(coordinate: currentLocation!.coordinate, addressDictionary: nil)
@@ -79,16 +79,13 @@ public class UIUtils {
         var eta = "--:--:--"
         directions.calculateETAWithCompletionHandler { (response : MKETAResponse?, error : NSError?) -> Void in
             if let response = response {
+                print(response.expectedTravelTime)
                 eta = UIUtils.stringFromTimeInterval(response.expectedTravelTime)
-                //self.eta = UIUtils.stringFromTimeInterval(response.expectedTravelTime)
-                //  print(response.expectedTravelTime)
-                // print(self.eta)
-                //route.distance  = The distance
-                //route.expectedTravelTime = The ETA
+                label.text = eta
             } else {
-                
+                 label.text = eta
             }
         }
-        return eta
+    
     }
 }

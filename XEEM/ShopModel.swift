@@ -55,7 +55,29 @@ class ShopModel: NSObject {
         self.quotes = Quotes.initWithArray(dictionary.objectForKey("Quotes") as! [NSDictionary])
         self.rating = dictionary.objectForKey("Rating") as? Float
      
-              
+        let request: MKDirectionsRequest = MKDirectionsRequest()
+        request.source = MKMapItem.mapItemForCurrentLocation()
+        //let placemarkSrc = MKPlacemark(coordinate: currentLocation!.coordinate, addressDictionary: nil)
+        let placemarkDes = MKPlacemark(coordinate: (location?.coordinate)!, addressDictionary: nil)
+        request.destination = MKMapItem(placemark: placemarkDes)
+        request.transportType = .Automobile
+        request.requestsAlternateRoutes = false
+        let directions: MKDirections = MKDirections(request: request)
+        var eta = "--:--:--"
+        directions.calculateETAWithCompletionHandler { (response : MKETAResponse?, error : NSError?) -> Void in
+            if let response = response {
+                print(response.expectedTravelTime)
+                eta = UIUtils.stringFromTimeInterval(response.expectedTravelTime)
+                //self.eta = UIUtils.stringFromTimeInterval(response.expectedTravelTime)
+                //  print(response.expectedTravelTime)
+                // print(self.eta)
+                //route.distance  = The distance
+                //route.expectedTravelTime = The ETA
+            } else {
+                
+            }
+        }
+        self.eta = eta
 
     }
     
