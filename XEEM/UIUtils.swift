@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import MapKit
+import CoreLocation
 
 public class UIUtils {
     
@@ -57,4 +59,36 @@ public class UIUtils {
         return "\(String(distance)) KM"
     }
     
+    public static func stringFromTimeInterval(interval: NSTimeInterval) -> String {
+        let interval = Int(interval)
+        let seconds = interval % 60
+        let minutes = (interval / 60) % 60
+        let hours = (interval / 3600)
+        return String(format: "%02d:%02d:%02d", hours, minutes, seconds)
+    }
+    
+    public static func getETA(desLocation : CLLocation) -> String {
+        let request: MKDirectionsRequest = MKDirectionsRequest()
+        request.source = MKMapItem.mapItemForCurrentLocation()
+        //let placemarkSrc = MKPlacemark(coordinate: currentLocation!.coordinate, addressDictionary: nil)
+        let placemarkDes = MKPlacemark(coordinate: desLocation.coordinate, addressDictionary: nil)
+        request.destination = MKMapItem(placemark: placemarkDes)
+        request.transportType = .Automobile
+        request.requestsAlternateRoutes = false
+        let directions: MKDirections = MKDirections(request: request)
+        var eta = "--:--:--"
+        directions.calculateETAWithCompletionHandler { (response : MKETAResponse?, error : NSError?) -> Void in
+            if let response = response {
+                eta = UIUtils.stringFromTimeInterval(response.expectedTravelTime)
+                //self.eta = UIUtils.stringFromTimeInterval(response.expectedTravelTime)
+                //  print(response.expectedTravelTime)
+                // print(self.eta)
+                //route.distance  = The distance
+                //route.expectedTravelTime = The ETA
+            } else {
+                
+            }
+        }
+        return eta
+    }
 }

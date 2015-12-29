@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FontAwesome_swift
 
 class ReceivedServiceViewController: UIViewController {
 
@@ -20,11 +21,23 @@ class ReceivedServiceViewController: UIViewController {
     
     @IBOutlet weak var receivedServiceBtn: UIButton!
     
+    @IBOutlet weak var priceLabel: UILabel!
+    var selectedShop : ShopModel!
+    var quotationIndex : Int!
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.receivedServiceBtn.backgroundColor = UIColor.MKColor.Orange
-        self.receivedServiceBtn.setTitleColor(UIColor.MKColor.WhiteColor, forState: UIControlState.Normal)
-        self.ratingView.editable = false
+        receivedServiceBtn.backgroundColor = UIColor.MKColor.Orange
+        receivedServiceBtn.setTitleColor(UIColor.MKColor.WhiteColor, forState: UIControlState.Normal)
+        ratingView.editable = false
+        ratingView.rating = selectedShop.rating!
+        repairServiceLabel.text = selectedShop.name
+        FontAwesome.Money
+//        let unicodeIcon = Character(UnicodeScalar(0xf0d6))
+        let unicodeIcon = Character(UnicodeScalar(UInt32(hexString: "f0d6")!))
+        priceLabel.text = "\(unicodeIcon) \("ABC")"
+//        priceLabel.text = "About $\(selectedShop.quotes![quotationIndex].price as! Int) with your problem"
         // Do any additional setup after loading the view.
     }
 
@@ -48,4 +61,17 @@ class ReceivedServiceViewController: UIViewController {
     }
     */
 
+}
+
+extension UInt32 {
+    init?(hexString: String) {
+        let scanner = NSScanner(string: hexString)
+        var hexInt = UInt32.min
+        let success = scanner.scanHexInt(&hexInt)
+        if success {
+            self = hexInt
+        } else {
+            return nil
+        }
+    }
 }

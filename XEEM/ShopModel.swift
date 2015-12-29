@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreLocation
+import MapKit
 
 class ShopModel: NSObject {
     
@@ -27,7 +28,7 @@ class ShopModel: NSObject {
     var rating: Float?
     var location : CLLocation?
     var distance : CLLocationDistance?
-    
+    var eta : String?
     
     override init() {
         self.isAvailable = true
@@ -45,6 +46,7 @@ class ShopModel: NSObject {
         self.longitde = Double((dictionary.objectForKey("Longitude") as? String)!)
         self.location = CLLocation(latitude: self.latitude!, longitude: self.longitde!)
         self.distance = currentLocation?.distanceFromLocation(self.location!)
+        
         self.avatarURL = dictionary.objectForKey("AvatarUrl") as? String ?? ""
         self.createdDate = dictionary.objectForKey("CreatedDate") as? String
         self.type = dictionary.objectForKey("Type") as? String
@@ -52,6 +54,9 @@ class ShopModel: NSObject {
         self.reviews = ReviewModel.initWithArray(dictionary.objectForKey("Reviews") as! [NSDictionary])
         self.quotes = Quotes.initWithArray(dictionary.objectForKey("Quotes") as! [NSDictionary])
         self.rating = dictionary.objectForKey("Rating") as? Float
+     
+              
+
     }
     
     class func initShopModelWithArray(array: [NSDictionary], currentLocation: CLLocation?) -> [ShopModel] {
@@ -61,6 +66,8 @@ class ShopModel: NSObject {
         }
         return trans
     }
+    
+    
 }
 
 
