@@ -678,17 +678,6 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_add_image" translatesAutoresizingMaskIntoConstraints="NO" id="oIS-KT-vk1">
-                                                <rect key="frame" x="250" y="16" width="100" height="100"/>
-                                                <gestureRecognizers/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="100" id="0z9-cU-Tqa"/>
-                                                    <constraint firstAttribute="width" constant="100" id="hAE-6c-bK9"/>
-                                                </constraints>
-                                                <connections>
-                                                    <outletCollection property="gestureRecognizers" destination="hra-fS-8hg" appends="YES" id="DIq-cF-jsN"/>
-                                                </connections>
-                                            </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ges-xW-h1k">
                                                 <rect key="frame" x="271" y="260" width="58" height="50"/>
                                                 <constraints>
@@ -703,6 +692,17 @@
                                                     <action selector="register:" destination="qlQ-t7-2Op" eventType="touchUpInside" id="qSZ-Zg-6th"/>
                                                 </connections>
                                             </button>
+                                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_add_image" translatesAutoresizingMaskIntoConstraints="NO" id="oIS-KT-vk1">
+                                                <rect key="frame" x="250" y="16" width="100" height="100"/>
+                                                <gestureRecognizers/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="100" id="0z9-cU-Tqa"/>
+                                                    <constraint firstAttribute="width" constant="100" id="hAE-6c-bK9"/>
+                                                </constraints>
+                                                <connections>
+                                                    <outletCollection property="gestureRecognizers" destination="hra-fS-8hg" appends="YES" id="DIq-cF-jsN"/>
+                                                </connections>
+                                            </imageView>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
