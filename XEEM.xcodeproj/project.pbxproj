@@ -56,7 +56,6 @@
 		A621F6021C28770E00D19952 /* ListReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A621F6011C28770E00D19952 /* ListReviewViewController.swift */; };
 		A62206141C269DFF00B7C864 /* SideMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62206131C269DFF00B7C864 /* SideMenuController.swift */; };
 		A62206161C26A66300B7C864 /* OptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62206151C26A66300B7C864 /* OptionsViewController.swift */; };
-		A629C3E01C169C9700D77F69 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A629C3DF1C169C9700D77F69 /* Login.storyboard */; };
 		A629C3E51C16BF9000D77F69 /* User.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A629C3E41C16BF9000D77F69 /* User.storyboard */; };
 		A629C3E71C16BF9D00D77F69 /* Service.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A629C3E61C16BF9D00D77F69 /* Service.storyboard */; };
 		A629C3EB1C16C47900D77F69 /* (null) in Resources */ = {isa = PBXBuildFile; };
@@ -76,7 +75,6 @@
 		A699AEC31C311EEF006445B1 /* MKTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A699AEC01C311EEF006445B1 /* MKTextField.swift */; };
 		A699AEC51C312124006445B1 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A699AEC41C312124006445B1 /* Login.storyboard */; };
 		A699AEC81C312160006445B1 /* XEEMViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A699AEC71C312160006445B1 /* XEEMViewController.swift */; };
-		A699AECA1C31216E006445B1 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A699AEC91C31216E006445B1 /* RegisterViewController.swift */; };
 		A699AECC1C312178006445B1 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A699AECB1C312178006445B1 /* ForgotPasswordViewController.swift */; };
 		A699AECF1C3121EF006445B1 /* XEEMService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A699AECE1C3121EF006445B1 /* XEEMService.swift */; };
 		A699AEDD1C312243006445B1 /* XHAmazingLoadingMusicsAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = A699AED41C312243006445B1 /* XHAmazingLoadingMusicsAnimation.m */; };
@@ -84,6 +82,7 @@
 		A699AEDF1C312243006445B1 /* XHAmazingLoadingStarAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = A699AED81C312243006445B1 /* XHAmazingLoadingStarAnimation.m */; };
 		A699AEE01C312243006445B1 /* XHAmazingLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = A699AEDA1C312243006445B1 /* XHAmazingLoadingView.m */; };
 		A699AEE11C312243006445B1 /* XHLayerHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = A699AEDC1C312243006445B1 /* XHLayerHelper.m */; };
+		A699AEE31C319935006445B1 /* FristViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A699AEE21C319935006445B1 /* FristViewController.swift */; };
 		A69B8E9D1C29CD51005D8BD6 /* (null) in Resources */ = {isa = PBXBuildFile; };
 		A69B8EA11C29D55D005D8BD6 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		A69BDDDB1C181714005CA6C6 /* SwiftySideMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A69BDDD81C181714005CA6C6 /* SwiftySideMenuViewController.m */; };
@@ -110,6 +109,7 @@
 		A6D2C5DE1C29A7B800321254 /* XHAmazingLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = A6D2C5DD1C29A7B800321254 /* XHAmazingLoadingView.m */; };
 		A6D83C3A1C2F12330053DD64 /* FinishServiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D83C391C2F12330053DD64 /* FinishServiceViewController.swift */; };
 		A6DEFCB01C298B89000DBCB4 /* ConfrimPopUp.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6DEFCAF1C298B89000DBCB4 /* ConfrimPopUp.xib */; };
+		A6E6B9951C31D4F500ECD58C /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6E6B9941C31D4F500ECD58C /* Login.storyboard */; };
 		CE13954A1C1087D100A67657 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1395491C1087D100A67657 /* AppDelegate.swift */; };
 		CE13954F1C1087D100A67657 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE13954D1C1087D100A67657 /* Main.storyboard */; };
 		CE1395511C1087D100A67657 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE1395501C1087D100A67657 /* Assets.xcassets */; };
@@ -197,7 +197,6 @@
 		A621F6011C28770E00D19952 /* ListReviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListReviewViewController.swift; sourceTree = "<group>"; };
 		A62206131C269DFF00B7C864 /* SideMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuController.swift; sourceTree = "<group>"; };
 		A62206151C26A66300B7C864 /* OptionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionsViewController.swift; sourceTree = "<group>"; };
-		A629C3DF1C169C9700D77F69 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		A629C3E41C16BF9000D77F69 /* User.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = User.storyboard; sourceTree = "<group>"; };
 		A629C3E61C16BF9D00D77F69 /* Service.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Service.storyboard; sourceTree = "<group>"; };
 		A699AE791C311599006445B1 /* XEEM_CUSTOMER.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XEEM_CUSTOMER.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -220,7 +219,6 @@
 		A699AEC01C311EEF006445B1 /* MKTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKTextField.swift; sourceTree = "<group>"; };
 		A699AEC41C312124006445B1 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		A699AEC71C312160006445B1 /* XEEMViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XEEMViewController.swift; sourceTree = "<group>"; };
-		A699AEC91C31216E006445B1 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		A699AECB1C312178006445B1 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		A699AECE1C3121EF006445B1 /* XEEMService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XEEMService.swift; sourceTree = "<group>"; };
 		A699AED11C312243006445B1 /* XEEM_CUSTOMER-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "XEEM_CUSTOMER-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -235,6 +233,7 @@
 		A699AEDA1C312243006445B1 /* XHAmazingLoadingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHAmazingLoadingView.m; sourceTree = "<group>"; };
 		A699AEDB1C312243006445B1 /* XHLayerHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHLayerHelper.h; sourceTree = "<group>"; };
 		A699AEDC1C312243006445B1 /* XHLayerHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHLayerHelper.m; sourceTree = "<group>"; };
+		A699AEE21C319935006445B1 /* FristViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FristViewController.swift; sourceTree = "<group>"; };
 		A69BDDD71C181714005CA6C6 /* SwiftySideMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwiftySideMenuViewController.h; sourceTree = "<group>"; };
 		A69BDDD81C181714005CA6C6 /* SwiftySideMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwiftySideMenuViewController.m; sourceTree = "<group>"; };
 		A69BDDD91C181714005CA6C6 /* UIViewController+SwiftySideMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+SwiftySideMenu.h"; sourceTree = "<group>"; };
@@ -270,6 +269,7 @@
 		A6D2C5DD1C29A7B800321254 /* XHAmazingLoadingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHAmazingLoadingView.m; sourceTree = "<group>"; };
 		A6D83C391C2F12330053DD64 /* FinishServiceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinishServiceViewController.swift; sourceTree = "<group>"; };
 		A6DEFCAF1C298B89000DBCB4 /* ConfrimPopUp.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ConfrimPopUp.xib; sourceTree = "<group>"; };
+		A6E6B9941C31D4F500ECD58C /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		CE1395461C1087D100A67657 /* XEEM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XEEM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE1395491C1087D100A67657 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE13954E1C1087D100A67657 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -519,8 +519,8 @@
 			isa = PBXGroup;
 			children = (
 				CE13954D1C1087D100A67657 /* Main.storyboard */,
-				A629C3DF1C169C9700D77F69 /* Login.storyboard */,
 				A629C3E41C16BF9000D77F69 /* User.storyboard */,
+				A6E6B9941C31D4F500ECD58C /* Login.storyboard */,
 				A629C3E61C16BF9D00D77F69 /* Service.storyboard */,
 				7111A51D1C1BC33600FA17A5 /* Profile.storyboard */,
 			);
@@ -614,7 +614,6 @@
 			children = (
 				A699AEC71C312160006445B1 /* XEEMViewController.swift */,
 				A699AECB1C312178006445B1 /* ForgotPasswordViewController.swift */,
-				A699AEC91C31216E006445B1 /* RegisterViewController.swift */,
 			);
 			name = Login;
 			sourceTree = "<group>";
@@ -812,6 +811,7 @@
 				CE8C13391C1DC15C00D1AA09 /* XEEMViewController.swift */,
 				CE8C133A1C1DC15C00D1AA09 /* RegisterViewController.swift */,
 				CE8C133B1C1DC15C00D1AA09 /* ForgotPasswordViewController.swift */,
+				A699AEE21C319935006445B1 /* FristViewController.swift */,
 			);
 			name = Login;
 			sourceTree = "<group>";
@@ -1008,7 +1008,6 @@
 				A60EE73D1C2EFD2200306B2B /* EmergencyView.xib in Resources */,
 				A6C5DDA81C1DAA0F00A7DB9D /* ShowmoreCell.xib in Resources */,
 				A629C3E71C16BF9D00D77F69 /* Service.storyboard in Resources */,
-				A629C3E01C169C9700D77F69 /* Login.storyboard in Resources */,
 				711717E41C2A841A006B5E58 /* SanFranciscoDisplay-Thin.otf in Resources */,
 				718FAF8F1C2A810D00AB5C57 /* SanFranciscoDisplay-Medium.otf in Resources */,
 				A6DEFCB01C298B89000DBCB4 /* ConfrimPopUp.xib in Resources */,
@@ -1021,6 +1020,7 @@
 				718FAF901C2A810D00AB5C57 /* SanFranciscoDisplay-Regular.otf in Resources */,
 				A69B8E9D1C29CD51005D8BD6 /* (null) in Resources */,
 				71F4A2F81C1C2E4F008BF810 /* HistoryDetailPopup.xib in Resources */,
+				A6E6B9951C31D4F500ECD58C /* Login.storyboard in Resources */,
 				A629C3E51C16BF9000D77F69 /* User.storyboard in Resources */,
 				718FAF8E1C2A810D00AB5C57 /* SanFranciscoDisplay-Light.otf in Resources */,
 				A6C5DDAC1C1DAE5200A7DB9D /* ReviewCell.xib in Resources */,
@@ -1104,7 +1104,6 @@
 				A699AECC1C312178006445B1 /* ForgotPasswordViewController.swift in Sources */,
 				A699AEB81C311EB1006445B1 /* UIUtils.swift in Sources */,
 				A699AEBC1C311EC3006445B1 /* UIVViewController-SLPopup.swift in Sources */,
-				A699AECA1C31216E006445B1 /* RegisterViewController.swift in Sources */,
 				A699AEB01C311AAE006445B1 /* LeftCustomerViewController.swift in Sources */,
 				A699AEAC1C3119FE006445B1 /* HomeViewController.swift in Sources */,
 				A699AEDD1C312243006445B1 /* XHAmazingLoadingMusicsAnimation.m in Sources */,
@@ -1195,6 +1194,7 @@
 				71CD91E71C292BA800DDE36C /* ApplyFilterCell.swift in Sources */,
 				71F4A2EF1C1BF8F0008BF810 /* Transportation.swift in Sources */,
 				71F4A2F51C1C197F008BF810 /* HistoryCell.swift in Sources */,
+				A699AEE31C319935006445B1 /* FristViewController.swift in Sources */,
 				71721BB41C2CDC62008E7E56 /* BannerCell.swift in Sources */,
 				7107F5781C29F3B3002817D6 /* FloatRatingView.swift in Sources */,
 				71F4A3041C1C95BB008BF810 /* MKColor.swift in Sources */,
@@ -1414,6 +1414,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -1452,6 +1453,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "XEEM/XEEM-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 			};
 			name = Release;
 		};
