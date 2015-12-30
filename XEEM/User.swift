@@ -32,7 +32,8 @@ class User: Object {
         self.init()
         if let dictionary = dictionary {
             fullName = dictionary["name"] as? String
-            id = dictionary["Id"] as? String
+            let temp = dictionary["Id"] as! Int
+            id = String(temp)
             fullName = dictionary["Name"] as? String
             email = dictionary["Email"] as? String
             password = dictionary["Password"] as? String

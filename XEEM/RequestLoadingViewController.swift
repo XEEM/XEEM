@@ -13,7 +13,28 @@ class RequestLoadingViewController: UIViewController {
     var selectedShop : ShopModel!
     var quotationIndex : Int!
     var fromEmergency: Bool?
-
+    var transportation: Transportation!
+    var token: String!
+    var latitude: Double!
+    var longitude: Double!
+    var text: String!
+    
+    func sendRequest(){
+        transportation = User.currentUser?.defaultVehicles
+        let temp = 0
+        let trans_id = String(temp)
+        let latitude = ""
+        let longitude = ""
+        XEEMService.sharedInstance.sendRequest("0", shopId: selectedShop.id, transportationId: trans_id, latitude: 10.7500, longitude: 106.6667, description: text, completion: { (token, error) -> () in
+            if error == nil {
+                print("\(error)")
+                
+                return
+            }
+            
+            print("send request successfully. token: \(token)")
+        })
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,7 +67,7 @@ class RequestLoadingViewController: UIViewController {
             self.navigationController?.pushViewController(receivedService, animated: true)
         }
 
-        
+        sendRequest()
     }
 
     override func didReceiveMemoryWarning() {

@@ -93,11 +93,11 @@ class XEEMService {
             let error = response.result.error
             if let error = error {
                 print("Get Shop error",error)
-                ///completion(request: nil, error: error)
+                completion(token: nil, error: error)
             } else {
                 print(jsonData)
                 let request = Request(dictionary: jsonData as! NSDictionary)
-                //completion(request: request, error: nil)
+                completion(token: jsonData, error: nil)
                 
             }
         }

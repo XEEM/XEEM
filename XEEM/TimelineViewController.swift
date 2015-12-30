@@ -108,17 +108,10 @@ class TimelineViewController: UIViewController, MKMapViewDelegate, CLLocationMan
                     let listReviewVC =  storyboard.instantiateViewControllerWithIdentifier("RequestLoadingViewController") as! RequestLoadingViewController
                     listReviewVC.selectedShop = shopModel
                     listReviewVC.quotationIndex = 1
+                    listReviewVC.text = "flat tire"
                     self.navigationController?.pushViewController(listReviewVC, animated: true)
                     
-                    XEEMService.sharedInstance.sendRequest("0", shopId: shopModel.id, transportationId: User.currentUser?.defaultVehicles?.id, latitude: 10.7500, longitude: 106.6667, description: "flat Tire", completion: { (token, error) -> () in
-                        if error == nil {
-                            print("\(error)")
-                            
-                            return
-                        }
-                        
-                        print("send request successfully. token: \(token)")
-                    })
+                    
                 }
                 break
             }
