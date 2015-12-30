@@ -25,7 +25,6 @@ class User: Object {
     var transList = List<Transportation>()
     dynamic var avatarURL: String?
     dynamic var defaultVehicles : Transportation?
-    dynamic var location: CLLocation?
    
 
     required convenience init(dictionary : NSDictionary?) {
@@ -40,9 +39,14 @@ class User: Object {
             address = dictionary["Address"] as? String
             phone = dictionary["Phone"] as? String
             avatarURL = dictionary["AvatarUrl"] as? String ?? ""
-            transList = Transportation.TransWithArray(dictionary["Transporations"] as! [NSDictionary])
-            defaultVehicles = transList[0] as Transportation?
-            transList[0].isDefault = true
+            
+            if dictionary["Transporations"]  != nil {
+                transList = Transportation.TransWithArray(dictionary["Transporations"] as! [NSDictionary])
+                defaultVehicles = transList[0] as Transportation?
+                transList[0].isDefault = true
+            }
+
+
         }
     }
 

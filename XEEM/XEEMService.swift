@@ -85,7 +85,7 @@ class XEEMService {
             "transportation_id": transportationId,
             "latitude": latitude,
             "longitude": longitude,
-            "description": description
+            "description": "flat tire"
         ]
         
         Alamofire.request(.PUT, url, parameters: params as! [String : AnyObject]).responseJSON { (response) -> Void in
@@ -96,8 +96,9 @@ class XEEMService {
                 completion(token: nil, error: error)
             } else {
                 print(jsonData)
-                let request = Request(dictionary: jsonData as! NSDictionary)
-                completion(token: jsonData, error: nil)
+                let token = jsonData as! String
+                //let request = Request(dictionary: jsonData as! NSDictionary)
+                completion(token: token, error: nil)
                 
             }
         }
