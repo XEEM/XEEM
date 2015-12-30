@@ -56,6 +56,52 @@ class XEEMService {
         }
     }
     
+    func getRequest(apiToken: String!, requestToken: String!, completion: (request: Request?, error: NSError?) -> ()) {
+        let url = "http://xeem.apphb.com/api/requests/\(requestToken)"
+        let params = [
+            "api_token": apiToken
+        ]
+        
+        Alamofire.request(.GET, url, parameters: params).responseJSON { (response) -> Void in
+            let jsonData = response.result.value
+            let error = response.result.error
+            if let error = error {
+                print("Get Shop error",error)
+                completion(request: nil, error: error)
+            } else {
+                print(jsonData)
+                let request = Request(dictionary: jsonData as! NSDictionary)
+                completion(request: request, error: nil)
+                
+            }
+        }
+    }
+
+    func sendRequest(apiToken: String!, shopId: String!, transportationId: String!, latitude: Double!, longitude: Double!, description: String!, completion: (token: String?, error: NSError?) -> ()) {
+        let url = "http://xeem.apphb.com/api/requests"
+        let params = [
+            "api_token": apiToken,
+            "shop_id": shopId,
+            "transportation_id": transportationId,
+            "latitude": latitude,
+            "longitude": longitude,
+            "description": description
+        ]
+        
+        Alamofire.request(.PUT, url, parameters: params as! [String : AnyObject]).responseJSON { (response) -> Void in
+            let jsonData = response.result.value
+            let error = response.result.error
+            if let error = error {
+                print("Get Shop error",error)
+                ///completion(request: nil, error: error)
+            } else {
+                print(jsonData)
+                let request = Request(dictionary: jsonData as! NSDictionary)
+                //completion(request: request, error: nil)
+                
+            }
+        }
+    }
     
     func getServiceWithCurrentLocation (latitude: Double!, longitde: Double!, filter : [Int]!, onCompletion: ServiceResponse) {
         var filterString = ""
