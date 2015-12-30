@@ -13,7 +13,6 @@ import Realm
 var _currentUser: User?
 let USER_KEY = "CURRENT_USER"
 
-
 class User: Object {
     dynamic var id: String?
     dynamic var fullName: String?
@@ -26,6 +25,7 @@ class User: Object {
     var transList = List<Transportation>()
     dynamic var avatarURL: String?
     dynamic var defaultVehicles : Transportation?
+    dynamic var location: CLLocation?
    
 
     required convenience init(dictionary : NSDictionary?) {

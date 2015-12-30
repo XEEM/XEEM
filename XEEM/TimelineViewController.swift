@@ -187,18 +187,11 @@ class TimelineViewController: UIViewController, MKMapViewDelegate, CLLocationMan
     }
     
     func onServiceTapView(sender:UITapGestureRecognizer){
-        // do other task
-//        let storyboard = UIStoryboard(name: "User", bundle: nil)
-//        let repairVC =  storyboard.instantiateViewControllerWithIdentifier("RepairServiceViewController") as! RepairServiceViewController
-//        repairVC.shopModel = self.selectedShopModel
-//        repairVC.imageService = self.imageService
-//        self.navigationController?.pushViewController(repairVC, animated: true)
-        
-                let storyboard = UIStoryboard(name: "User", bundle: nil)
-                let repairVC =  storyboard.instantiateViewControllerWithIdentifier("DetailServiceViewController") as! DetailServiceViewController
-                repairVC.currentService = self.selectedShopModel
-               // repairVC.imageService = self.imageService
-                self.navigationController?.pushViewController(repairVC, animated: true)
+        let storyboard = UIStoryboard(name: "User", bundle: nil)
+        let repairVC =  storyboard.instantiateViewControllerWithIdentifier("DetailServiceViewController") as! DetailServiceViewController
+        repairVC.currentService = self.selectedShopModel
+       // repairVC.imageService = self.imageService
+        self.navigationController?.pushViewController(repairVC, animated: true)
     }
 
     
@@ -292,6 +285,13 @@ class TimelineViewController: UIViewController, MKMapViewDelegate, CLLocationMan
         self.locationManager.stopUpdatingLocation()
         
         requestData(filterList)
+        
+        // save current location
+        NSUserDefaults.standardUserDefaults().setObject(Double((self.location?.coordinate.longitude)!), forKey: "longitude")
+        NSUserDefaults.standardUserDefaults().setObject(Double((self.location?.coordinate.latitude)!), forKey: "latitude")
+        
+        print(NSUserDefaults.standardUserDefaults().objectForKey("longitude"))
+        print(NSUserDefaults.standardUserDefaults().objectForKey("latitude"))
     }
     
     func locationManager(manager: CLLocationManager, didFailWithError error: NSError)
@@ -355,6 +355,7 @@ class TimelineViewController: UIViewController, MKMapViewDelegate, CLLocationMan
     // MARK: - MyLocation
     @IBAction func onMyLocationUpdate(sender: UIButton) {
         self.locationManager.startUpdatingLocation()
+        
     }
     
     
