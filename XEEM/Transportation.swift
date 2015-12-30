@@ -26,7 +26,7 @@ class Transportation : Object {
     
     convenience required init(dictionary : NSDictionary) {
         self.init()
-        id = dictionary["Id"] as? String
+        id = String(dictionary["Id"])
         name = dictionary["Name"] as? String
         type = dictionary["Type"] as! String
         isDefault = false

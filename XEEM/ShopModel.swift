@@ -37,7 +37,7 @@ class ShopModel: NSObject {
     }
     
     init(dictionary: NSDictionary,currentLocation: CLLocation?) {
-        self.id = dictionary.objectForKey("Id") as? String
+        self.id = String(dictionary.objectForKey("Id"))
         self.name = dictionary.objectForKey("Name") as? String
         self.address = dictionary.objectForKey("Address") as? String
         self.phone = dictionary.objectForKey("Phone") as? String
