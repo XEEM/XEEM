@@ -345,7 +345,8 @@ class TimelineViewController: UIViewController, MKMapViewDelegate, CLLocationMan
        
     
         //let txt = alert.addTextField("Enter your name")
-         emergencyDialog.showInfoWithAppColor("Tell us your problem" , subTitle: "With " + currentUser.defaultVehicles!.name)
+        print(currentUser.defaultVehicles!.id)
+         emergencyDialog.showInfoWithAppColor("Tell us your problem" , subTitle: "With " + String(currentUser.defaultVehicles!.id))
 
     }
     
@@ -387,7 +388,7 @@ class TimelineViewController: UIViewController, MKMapViewDelegate, CLLocationMan
     }
 }
 
-extension TimelineViewController: RightViewControllerDelegate,EmergencyDelegate {
+extension TimelineViewController: RightViewControllerDelegate {
     func rightViewController(rightViewController : RightViewController, filterChange listFilter: [Int]!) {
         print("FILTER DELEGATE on home")
         requestData(listFilter)
@@ -396,19 +397,5 @@ extension TimelineViewController: RightViewControllerDelegate,EmergencyDelegate 
             self.bottomViewRequestServiceConstraint.constant = -100
             self.viewRequestService.layoutIfNeeded()
             }, completion: nil)
-    }
-    func emergency(emergencyView: EmergencyViewController, didCancelTap onCancelTap: UIButton) {
-        self.navigationController?.dismissPopupViewController(.Fade)
-    }
-    
-    func emergency(emergencyView: EmergencyViewController, didHelpTap onHelp: UIButton, whichSelection selection: Int) {
-        self.navigationController?.dismissPopupViewController(.Fade)
-        let delayTime = dispatch_time(DISPATCH_TIME_NOW, Int64(1 * Double(NSEC_PER_SEC)))
-        dispatch_after(delayTime, dispatch_get_main_queue()) {
-            let storyboard = UIStoryboard(name: "User", bundle: nil)
-            let listReviewVC =  storyboard.instantiateViewControllerWithIdentifier("RequestLoadingViewController") as! RequestLoadingViewController
-            listReviewVC.fromEmergency = true
-            self.navigationController?.pushViewController(listReviewVC, animated: true)
-        }
     }
 }

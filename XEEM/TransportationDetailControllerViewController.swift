@@ -32,7 +32,7 @@ class TransportationDetailControllerViewController: UIViewController, HistoryDet
                // User.currentUser = self.user
             }
             
-            let alert = UIAlertController(title: "Congrats", message: "Changed successfull", preferredStyle: UIAlertControllerStyle.Alert)
+            let alert = UIAlertController(title: "Congrats", message: "Change default vehicle successfull", preferredStyle: UIAlertControllerStyle.Alert)
             alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
             self.presentViewController(alert, animated: true, completion: nil)
 
@@ -57,6 +57,8 @@ class TransportationDetailControllerViewController: UIViewController, HistoryDet
         bannerImageView.setImageWithURL(NSURL(string: (model?.imageUrls)!)!)
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 50
+        self.tableView.tableFooterView = UIView()
+        self.tableView.bounces = false
 
         // Do any additional setup after loading the view.
         title = model?.name
@@ -68,7 +70,7 @@ class TransportationDetailControllerViewController: UIViewController, HistoryDet
         //let img = UIImage()
         //self.navigationController?.navigationBar.shadowImage = img
         self.navigationController?.navigationBar.titleTextAttributes = attrs
-        self.navigationController?.navigationBar.barTintColor = UIColor.MKColor.AppPrimaryColor
+        self.navigationController?.navigationBar.barTintColor = UIColor.MKColor.AppMainColor
         
     }
 
@@ -93,6 +95,7 @@ extension TransportationDetailControllerViewController: UITableViewDataSource,UI
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = self.tableView.dequeueReusableCellWithIdentifier("HistoryCell") as! HistoryCell
         cell.thumbnailImageView.setImageWithURL(NSURL(string: "http://4.bp.blogspot.com/-6AN1Wg3Nq3Q/Vcm_YvQGQjI/AAAAAAAACfA/F6HIMGYF_Ag/s1600/showroom.jpg")!)
+        UIUtils.setRoundImageView(cell.thumbnailImageView)
         return cell
     }
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
