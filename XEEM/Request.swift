@@ -21,6 +21,7 @@ class Request: NSObject {
     var dictionary: NSDictionary
     var status: RequestStatus!
     var shopId: String!
+    var shop: ShopModel!
     
     init(dictionary : NSDictionary) {
         self.dictionary = dictionary
@@ -29,6 +30,8 @@ class Request: NSObject {
 
         createdDate = (dictionary["CreatedDate"] as! String).toDate(DateFormat.Custom("yyyy-MM-dd'T'hh:mm:ss"))
         status = RequestStatus(rawValue: dictionary["Status"] as! String)
+        
+        shop = ShopModel(dictionary: dictionary["RepairShop"] as! NSDictionary)
     }
     
     class func InitWithArray(array: [NSDictionary]) -> [Request] {

@@ -13,7 +13,6 @@ import Realm
 var _currentUser: User?
 let USER_KEY = "CURRENT_USER"
 
-
 class User: Object {
     dynamic var id: String?
     dynamic var fullName: String?
@@ -32,16 +31,22 @@ class User: Object {
         self.init()
         if let dictionary = dictionary {
             fullName = dictionary["name"] as? String
-            id = dictionary["Id"] as? String
+            let temp = dictionary["Id"] as! Int
+            id = String(temp)
             fullName = dictionary["Name"] as? String
             email = dictionary["Email"] as? String
             password = dictionary["Password"] as? String
             address = dictionary["Address"] as? String
             phone = dictionary["Phone"] as? String
             avatarURL = dictionary["AvatarUrl"] as? String ?? ""
-            transList = Transportation.TransWithArray(dictionary["Transporations"] as! [NSDictionary])
-            defaultVehicles = transList[0] as Transportation?
-            transList[0].isDefault = true
+            
+            if dictionary["Transporations"]  != nil {
+                transList = Transportation.TransWithArray(dictionary["Transporations"] as! [NSDictionary])
+                defaultVehicles = transList[0] as Transportation?
+                transList[0].isDefault = true
+            }
+
+
         }
     }
 

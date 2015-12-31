@@ -36,8 +36,32 @@ class ShopModel: NSObject {
 
     }
     
+    init(dictionary: NSDictionary) {
+        let temp = dictionary["Id"] as! Int
+        self.id = String(temp)
+        //        self.id = String(dictionary.objectForKey("Id"))
+        self.name = dictionary.objectForKey("Name") as? String
+        self.address = dictionary.objectForKey("Address") as? String
+        self.phone = dictionary.objectForKey("Phone") as? String
+        self.isAvailable = (dictionary.objectForKey("IsAvailable") as? Bool)!
+        self.latitude = Double((dictionary.objectForKey("Latitude") as? String)!)
+        self.longitde = Double((dictionary.objectForKey("Longitude") as? String)!)
+        self.location = CLLocation(latitude: self.latitude!, longitude: self.longitde!)
+        
+        self.avatarURL = dictionary.objectForKey("AvatarUrl") as? String ?? ""
+        self.createdDate = dictionary.objectForKey("CreatedDate") as? String
+        self.type = dictionary.objectForKey("Type") as? String
+        self.owner = User.init(dictionary: dictionary.objectForKey("Owner") as? NSDictionary)
+        self.reviews = ReviewModel.initWithArray(dictionary.objectForKey("Reviews") as! [NSDictionary])
+        self.quotes = Quotes.initWithArray(dictionary.objectForKey("Quotes") as! [NSDictionary])
+        self.rating = dictionary.objectForKey("Rating") as? Float
+        
+    }
+    
     init(dictionary: NSDictionary,currentLocation: CLLocation?) {
-        self.id = dictionary.objectForKey("Id") as? String
+        let temp = dictionary["Id"] as! Int
+        self.id = String(temp)
+//        self.id = String(dictionary.objectForKey("Id"))
         self.name = dictionary.objectForKey("Name") as? String
         self.address = dictionary.objectForKey("Address") as? String
         self.phone = dictionary.objectForKey("Phone") as? String

@@ -80,6 +80,7 @@ class DetailServiceViewController: UIViewController,ConfrimViewControllerDelegat
             let listReviewVC =  storyboard.instantiateViewControllerWithIdentifier("RequestLoadingViewController") as! RequestLoadingViewController
             listReviewVC.selectedShop = self.currentService
             listReviewVC.quotationIndex = 0
+            listReviewVC.text = "Out of gas"
             self.navigationController?.pushViewController(listReviewVC, animated: true)
         }
         
@@ -92,6 +93,7 @@ class DetailServiceViewController: UIViewController,ConfrimViewControllerDelegat
             let listReviewVC =  storyboard.instantiateViewControllerWithIdentifier("RequestLoadingViewController") as! RequestLoadingViewController
             listReviewVC.selectedShop = self.currentService
             listReviewVC.quotationIndex = 1
+            listReviewVC.text = "Flat tire"
             self.navigationController?.pushViewController(listReviewVC, animated: true)
         }
         
@@ -155,6 +157,7 @@ class DetailServiceViewController: UIViewController,ConfrimViewControllerDelegat
         dispatch_after(delayTime, dispatch_get_main_queue()) {
             let storyboard = UIStoryboard(name: "User", bundle: nil)
             let listReviewVC =  storyboard.instantiateViewControllerWithIdentifier("RequestLoadingViewController") as! RequestLoadingViewController
+            listReviewVC.text = "flat tire"
               self.navigationController?.pushViewController(listReviewVC, animated: true)
         }
     }
@@ -220,7 +223,14 @@ extension DetailServiceViewController: UITableViewDelegate,UITableViewDataSource
             cell.selectionStyle = UITableViewCellSelectionStyle.None
             cell.selectionStyle = UITableViewCellSelectionStyle.None
             cell.quotationLabel.text = currentService.quotes![indexPath.row].name
-            cell.priceLabel.text = String(currentService.quotes![indexPath.row].price)
+           // cell.priceLabel.text = String(currentService.quotes![indexPath.row].price)
+            if (indexPath.row == 0) {
+                cell.priceLabel.text = "$5"
+
+            } else {
+                cell.priceLabel.text = "$5-$10"
+
+            }
             if (indexPath.row == 1 && !isQuotationExpanded) {
                 cell.separatorInset = UIEdgeInsetsMake(0, cell.bounds.size.width, 0, 0);
             }
