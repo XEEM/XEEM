@@ -24,9 +24,20 @@ class HistoryDetailControler: UIViewController {
         super.viewDidLoad()
         self.view.layer.cornerRadius = 22
         self.view.layer.masksToBounds = true
+        
+        
         // Do any additional setup after loading the view.
     }
-
+    
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    func textViewShouldReturn(textView: UITextView!) -> Bool {
+        textView.resignFirstResponder()
+        return true
+    }
+    
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
