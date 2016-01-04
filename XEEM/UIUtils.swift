@@ -9,6 +9,7 @@
 import UIKit
 import MapKit
 import CoreLocation
+import SlideMenuControllerSwift
 
 public class UIUtils {
     
@@ -87,5 +88,22 @@ public class UIUtils {
             }
         }
     
+    }
+    
+    public static func goToMainPage(){
+    let storyboard = UIStoryboard(name: "User", bundle: nil)
+    
+    let mainViewController = storyboard.instantiateViewControllerWithIdentifier("CenterUser") as! UINavigationController
+    let leftViewController = storyboard.instantiateViewControllerWithIdentifier("LeftViewController") as! LeftViewController
+    let rightViewController = storyboard.instantiateViewControllerWithIdentifier("RightViewController") as! RightViewController
+    //let nvc: UINavigationController = UINavigationController(rootViewController: mainViewController)
+    
+    let slideMenuController = SlideMenuController(mainViewController: mainViewController, leftMenuViewController: leftViewController, rightMenuViewController: rightViewController)
+    
+    let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        
+    appDelegate.window = UIWindow(frame: UIScreen.mainScreen().bounds)
+    appDelegate.window!.rootViewController = slideMenuController
+    appDelegate.window?.makeKeyAndVisible()
     }
 }

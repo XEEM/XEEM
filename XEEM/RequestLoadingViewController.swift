@@ -67,6 +67,10 @@ class RequestLoadingViewController: UIViewController {
                 self.goToReceivedPage(request)
                 self.timer.invalidate()
                 return
+            } else if request?.status == RequestStatus.Canceled {
+                self.stopTimer()
+//                self.dismissViewControllerAnimated(true, completion: nil)
+                self.goBackToMainPage()
             }
         }
     }
@@ -76,6 +80,10 @@ class RequestLoadingViewController: UIViewController {
     var progressView: CircleProgressView!
     var progressTimer: NSTimer!
     
+    func stopTimer(){
+        self.progressTimer.invalidate()
+        self.timer.invalidate()
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.setNavigationBarHidden(true, animated: true)
@@ -85,7 +93,7 @@ class RequestLoadingViewController: UIViewController {
 //        self.view.addSubview(loading)
         
         progressView = CircleProgressView(frame: CGRectMake(0, 0, 200, 200))
-        progressView.timeLimit = 10
+        progressView.timeLimit = 2 * 60
         progressView.status = "Requesting"
         progressView.tintColor = UIColor.MKColor.Orange
         progressView.frame =  CGRectMake(0, self.view.bounds.size.width / 2, self.view.bounds.width, 200)
@@ -108,6 +116,16 @@ class RequestLoadingViewController: UIViewController {
         sendRequest()
     }
 
+    func goBackToMainPage(){
+
+//        let storyboard = UIStoryboard(name: "User", bundle: nil)
+//        let receivedService =  storyboard.instantiateViewControllerWithIdentifier("CenterUser")
+//
+//        self.navigationController?.popToViewController(receivedService, animated: true)
+        
+        UIUtils.goToMainPage()
+    }
+    
     func goToReceivedPage(request: Request!){
         //
         let storyboard = UIStoryboard(name: "User", bundle: nil)
