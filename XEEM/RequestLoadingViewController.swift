@@ -23,13 +23,29 @@ class RequestLoadingViewController: UIViewController {
     @IBOutlet weak var shopDetailView: CompactShopDetailForRequestView!
     @IBOutlet weak var cancelButton: UIButton!
     @IBAction func onClickCancel(sender: UIButton) {
-        stopTimer()
-        goBackToMainPage()
+//        stopTimer()
+//        goBackToMainPage()
+        cancelRequest()
     }
     
     func showShopInfo(){
         
     }
+    
+    func cancelRequest() {
+        XEEMService.sharedInstance.cancelRequest("0", requestToken: requestToken!) { (request, error) -> Void in
+            if error != nil {
+                print("\(error)")
+                
+                return
+            }
+            
+            print("can request successfully. token: \(self.requestToken)")
+            self.goBackToMainPage()
+        }
+
+    }
+    
     func sendRequest(){
         transportation = User.currentUser?.defaultVehicles
         let temp = 0
@@ -45,7 +61,7 @@ class RequestLoadingViewController: UIViewController {
             }
             
             self.requestToken = token
-//            self.label.text = "Waiting for shop"
+            self.progressView.status = "Waiting"
             print("send request successfully. token: \(token)")
             self.startProgressTimer()
             self.refreshRequest()
@@ -73,22 +89,18 @@ class RequestLoadingViewController: UIViewController {
     func getRequest(){
         XEEMService.sharedInstance.getRequest("0", requestToken: requestToken) { (request, error) -> () in
             if request?.status == RequestStatus.Accepted {
-//                self.loading.stopAnimating()
                 self.goToReceivedPage(request)
                 self.timer.invalidate()
                 return
             } else if request?.status == RequestStatus.Canceled {
-                self.stopTimer()
-//                self.dismissViewControllerAnimated(true, completion: nil)
-                self.goBackToMainPage()
+//                self.stopTimer()
+                self.cancelRequest()
             }
         }
     }
     
     @IBOutlet weak var progressView: CircleProgressView!
-//    var label: UILabel!
-//    var loading: XHAmazingLoadingView!
-//    var progressView: CircleProgressView!
+
     var progressTimer: NSTimer!
     
     func stopTimer(){
@@ -100,13 +112,6 @@ class RequestLoadingViewController: UIViewController {
         self.navigationController?.setNavigationBarHidden(true, animated: true)
         
         shopDetailView.model = self.selectedShop
-        
-//        loading = XHAmazingLoadingView(type: XHAmazingLoadingAnimationType.Skype)
-//        loading.loadingTintColor = UIColor.MKColor.Orange
-//        loading.frame = CGRectMake(0, self.view.bounds.size.width / 2, self.view.bounds.width, 200)
-//        self.view.addSubview(loading)
-        
-//        progressView = CircleProgressView(frame: CGRectMake(0, 0, 200, 200))
         progressView.timeLimit = 2 * 60
         progressView.status = "Requesting"
         progressView.tintColor = UIColor.MKColor.Orange
@@ -114,30 +119,12 @@ class RequestLoadingViewController: UIViewController {
         progressView.elapsedTime = 0
         
         self.view.addSubview(progressView)
-
-        // create label
-//        cancelButton.backgroundColor = UIColor.MKColor.Blue
-//        label = UILabel(frame: CGRectMake(0,
-//                                                        self.view.bounds.size.width / 2 + 200,
-//                                                        self.view.bounds.width,
-//                                                        100))
-//        label.textAlignment = NSTextAlignment.Center
-//        label.text = "Requesting help"
-//        label.font = UIFont (name: "SanFranciscoDisplay-Bold", size: 20)
-//        label.textColor = UIColor.MKColor.Orange
-//        self.view.addSubview(label)
-//        loading.startAnimating()
         
         sendRequest()
     }
 
     func goBackToMainPage(){
-
-//        let storyboard = UIStoryboard(name: "User", bundle: nil)
-//        let receivedService =  storyboard.instantiateViewControllerWithIdentifier("CenterUser")
-//
-//        self.navigationController?.popToViewController(receivedService, animated: true)
-        
+        self.stopTimer()
         UIUtils.goToMainPage()
     }
     

@@ -23,9 +23,28 @@ import UIKit
  
             titleLabel.text = model.name
             distanceLabel.text = "\(String(UIUtils.convertDistance(model?.distance)))"
-
             ratingView.rating = model.rating!
             
+            switch model.type! {
+            case "B":
+                imageView.image = UIImage(named: "ic_bike")
+                break
+            case "C":
+                imageView.image = UIImage(named: "ic_car")
+                break
+            case "S":
+                imageView.image = UIImage(named: "ic_vespa")
+                break
+            case "G":
+                imageView.image = UIImage(named: "ic_oil")
+                break
+            case "M":
+                imageView.image = UIImage(named: "ic_motorbike")
+                break
+            default:
+                imageView.image = UIImage(named: "ic_bike")
+                break
+            }
         }
     }
     
