@@ -20,5 +20,5 @@
 #import "XHLayerHelper.h"
 
 #import "UINavigationBar+Awesome.h"
-
+#import "CircleProgressView.h"
 #endif /* XEEM_Bridging_Header_h */

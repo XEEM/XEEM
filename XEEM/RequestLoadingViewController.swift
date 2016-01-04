@@ -37,12 +37,24 @@ class RequestLoadingViewController: UIViewController {
             self.requestToken = token
             self.label.text = "Waiting for shop"
             print("send request successfully. token: \(token)")
-            
+            self.startProgressTimer()
             self.refreshRequest()
 
         })
     }
     
+    func startProgressTimer(){
+        self.startTime = NSDate()
+        progressTimer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: "updateProgress", userInfo: nil, repeats: true)
+    }
+    
+    
+    func updateProgress(){
+        let now = NSDate()
+        progressView.elapsedTime = now.timeIntervalSinceDate(startTime)
+    }
+    
+    var startTime: NSDate!
     var timer: NSTimer!
     func refreshRequest(){
         timer = NSTimer.scheduledTimerWithTimeInterval(5.0, target: self, selector: "getRequest", userInfo: nil, repeats: true)
@@ -51,7 +63,7 @@ class RequestLoadingViewController: UIViewController {
     func getRequest(){
         XEEMService.sharedInstance.getRequest("0", requestToken: requestToken) { (request, error) -> () in
             if request?.status == RequestStatus.Accepted {
-                self.loading.stopAnimating()
+//                self.loading.stopAnimating()
                 self.goToReceivedPage(request)
                 self.timer.invalidate()
                 return
@@ -60,19 +72,30 @@ class RequestLoadingViewController: UIViewController {
     }
     
     var label: UILabel!
-    var loading: XHAmazingLoadingView!
+//    var loading: XHAmazingLoadingView!
+    var progressView: CircleProgressView!
+    var progressTimer: NSTimer!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.setNavigationBarHidden(true, animated: true)
-        loading = XHAmazingLoadingView(type: XHAmazingLoadingAnimationType.Skype)
-        loading.loadingTintColor = UIColor.MKColor.Orange
-        loading.frame = CGRectMake(0, self.view.bounds.size.width / 2, self.view.bounds.width, 200)
-        self.view.addSubview(loading)
+//        loading = XHAmazingLoadingView(type: XHAmazingLoadingAnimationType.Skype)
+//        loading.loadingTintColor = UIColor.MKColor.Orange
+//        loading.frame = CGRectMake(0, self.view.bounds.size.width / 2, self.view.bounds.width, 200)
+//        self.view.addSubview(loading)
         
+        progressView = CircleProgressView(frame: CGRectMake(0, 0, 200, 200))
+        progressView.timeLimit = 10
+        progressView.status = "Requesting"
+        progressView.tintColor = UIColor.MKColor.Orange
+        progressView.frame =  CGRectMake(0, self.view.bounds.size.width / 2, self.view.bounds.width, 200)
+        progressView.elapsedTime = 0
+        
+        self.view.addSubview(progressView)
+
         // create label
         label = UILabel(frame: CGRectMake(0,
-                                                        self.view.bounds.size.width / 2 + loading.frame.size.height,
+                                                        self.view.bounds.size.width / 2 + 200,
                                                         self.view.bounds.width,
                                                         100))
         label.textAlignment = NSTextAlignment.Center
@@ -80,7 +103,7 @@ class RequestLoadingViewController: UIViewController {
         label.font = UIFont (name: "SanFranciscoDisplay-Bold", size: 20)
         label.textColor = UIColor.MKColor.Orange
         self.view.addSubview(label)
-        loading.startAnimating()
+//        loading.startAnimating()
         
         sendRequest()
     }
