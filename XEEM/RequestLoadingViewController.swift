@@ -20,6 +20,16 @@ class RequestLoadingViewController: UIViewController {
     var text: String!
     var requestToken:String?
     
+    @IBOutlet weak var shopDetailView: CompactShopDetailForRequestView!
+    @IBOutlet weak var cancelButton: UIButton!
+    @IBAction func onClickCancel(sender: UIButton) {
+        stopTimer()
+        goBackToMainPage()
+    }
+    
+    func showShopInfo(){
+        
+    }
     func sendRequest(){
         transportation = User.currentUser?.defaultVehicles
         let temp = 0
@@ -35,7 +45,7 @@ class RequestLoadingViewController: UIViewController {
             }
             
             self.requestToken = token
-            self.label.text = "Waiting for shop"
+//            self.label.text = "Waiting for shop"
             print("send request successfully. token: \(token)")
             self.startProgressTimer()
             self.refreshRequest()
@@ -75,9 +85,10 @@ class RequestLoadingViewController: UIViewController {
         }
     }
     
-    var label: UILabel!
+    @IBOutlet weak var progressView: CircleProgressView!
+//    var label: UILabel!
 //    var loading: XHAmazingLoadingView!
-    var progressView: CircleProgressView!
+//    var progressView: CircleProgressView!
     var progressTimer: NSTimer!
     
     func stopTimer(){
@@ -87,12 +98,15 @@ class RequestLoadingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.setNavigationBarHidden(true, animated: true)
+        
+        shopDetailView.model = self.selectedShop
+        
 //        loading = XHAmazingLoadingView(type: XHAmazingLoadingAnimationType.Skype)
 //        loading.loadingTintColor = UIColor.MKColor.Orange
 //        loading.frame = CGRectMake(0, self.view.bounds.size.width / 2, self.view.bounds.width, 200)
 //        self.view.addSubview(loading)
         
-        progressView = CircleProgressView(frame: CGRectMake(0, 0, 200, 200))
+//        progressView = CircleProgressView(frame: CGRectMake(0, 0, 200, 200))
         progressView.timeLimit = 2 * 60
         progressView.status = "Requesting"
         progressView.tintColor = UIColor.MKColor.Orange
@@ -102,15 +116,16 @@ class RequestLoadingViewController: UIViewController {
         self.view.addSubview(progressView)
 
         // create label
-        label = UILabel(frame: CGRectMake(0,
-                                                        self.view.bounds.size.width / 2 + 200,
-                                                        self.view.bounds.width,
-                                                        100))
-        label.textAlignment = NSTextAlignment.Center
-        label.text = "Requesting help"
-        label.font = UIFont (name: "SanFranciscoDisplay-Bold", size: 20)
-        label.textColor = UIColor.MKColor.Orange
-        self.view.addSubview(label)
+//        cancelButton.backgroundColor = UIColor.MKColor.Blue
+//        label = UILabel(frame: CGRectMake(0,
+//                                                        self.view.bounds.size.width / 2 + 200,
+//                                                        self.view.bounds.width,
+//                                                        100))
+//        label.textAlignment = NSTextAlignment.Center
+//        label.text = "Requesting help"
+//        label.font = UIFont (name: "SanFranciscoDisplay-Bold", size: 20)
+//        label.textColor = UIColor.MKColor.Orange
+//        self.view.addSubview(label)
 //        loading.startAnimating()
         
         sendRequest()
