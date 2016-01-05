@@ -28,7 +28,7 @@ class HistoryDetailControler: UIViewController {
         super.viewDidLoad()
         self.view.layer.cornerRadius = 22
         self.view.layer.masksToBounds = true
-        self.view.layer.borderColor = UIColor.MKColor.Orange.CGColor
+       // self.view.layer.borderColor = UIColor.MKColor.Orange.CGColor
         self.view.layer.borderWidth = 2.0
         
         self.okBtn.layer.cornerRadius = 22

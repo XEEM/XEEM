@@ -349,7 +349,7 @@ class TimelineViewController: UIViewController, MKMapViewDelegate, CLLocationMan
     
         //let txt = alert.addTextField("Enter your name")
         print(currentUser.defaultVehicles!.id)
-         emergencyDialog.showInfoWithAppColor("Tell us your problem" , subTitle: "With " + String(currentUser.defaultVehicles!.id))
+         emergencyDialog.showInfoWithAppColor("Tell us your problem" , subTitle: "With " + String(currentUser.defaultVehicles!.name))
 
     }
     

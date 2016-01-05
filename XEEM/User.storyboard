@@ -20,6 +20,7 @@
             <string>SanFranciscoDisplay-Heavy</string>
             <string>SanFranciscoDisplay-Heavy</string>
             <string>SanFranciscoDisplay-Heavy</string>
+            <string>SanFranciscoDisplay-Heavy</string>
         </mutableArray>
         <mutableArray key="SanFranciscoDisplay-Medium.otf">
             <string>SanFranciscoDisplay-Medium</string>
@@ -76,7 +77,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="h8D-Bn-ntn"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                <fontDescription key="fontDescription" name="SanFranciscoDisplay-Heavy" family="San Francisco Display" pointSize="17"/>
                                 <state key="normal" title="EMERGENCY CALL">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -137,16 +138,15 @@
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="FROM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EeU-8I-ZVH">
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="FROM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EeU-8I-ZVH">
                                         <rect key="frame" x="267" y="69" width="45" height="21"/>
                                         <fontDescription key="fontDescription" name="SanFranciscoDisplay-Bold" family="San Francisco Display" pointSize="17"/>
                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="$15" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LsP-ve-jPd">
-                                        <rect key="frame" x="274" y="39" width="31" height="22"/>
-                                        <color key="backgroundColor" red="0.21176470589999999" green="0.21176470589999999" blue="0.21176470589999999" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" name="SanFranciscoDisplay-Black" family="San Francisco Display" pointSize="18"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$15" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LsP-ve-jPd">
+                                        <rect key="frame" x="265" y="36" width="39" height="28"/>
+                                        <fontDescription key="fontDescription" name="SanFranciscoDisplay-Black" family="San Francisco Display" pointSize="23"/>
                                         <color key="textColor" red="0.90588235289999997" green="0.29803921570000003" blue="0.23137254900000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -343,8 +343,8 @@
                                             <constraint firstAttribute="height" constant="100" id="fMX-d8-SHL"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0bJ-Lf-Yvb">
-                                        <rect key="frame" x="132" y="34" width="172" height="25"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0bJ-Lf-Yvb">
+                                        <rect key="frame" x="132" y="63" width="172" height="24"/>
                                         <fontDescription key="fontDescription" name="SanFranciscoDisplay-Heavy" family="San Francisco Display" pointSize="20"/>
                                         <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -357,10 +357,10 @@
                                     <constraint firstItem="Jw8-Xf-BUc" firstAttribute="leading" secondItem="efJ-e1-oCc" secondAttribute="leading" constant="16" id="5be-9V-10S"/>
                                     <constraint firstAttribute="height" constant="150" id="Afc-KN-epu"/>
                                     <constraint firstItem="5TH-rq-fm4" firstAttribute="leading" secondItem="efJ-e1-oCc" secondAttribute="leading" id="HAu-aI-Xi2"/>
+                                    <constraint firstItem="0bJ-Lf-Yvb" firstAttribute="centerY" secondItem="efJ-e1-oCc" secondAttribute="centerY" id="MLW-cn-3RF"/>
                                     <constraint firstAttribute="trailing" secondItem="5TH-rq-fm4" secondAttribute="trailing" id="Pym-1H-Fck"/>
                                     <constraint firstItem="5TH-rq-fm4" firstAttribute="centerY" secondItem="efJ-e1-oCc" secondAttribute="centerY" id="WZ6-Fg-k4P"/>
                                     <constraint firstItem="Jw8-Xf-BUc" firstAttribute="centerY" secondItem="efJ-e1-oCc" secondAttribute="centerY" id="alo-Mf-r5O"/>
-                                    <constraint firstItem="5TH-rq-fm4" firstAttribute="top" secondItem="0bJ-Lf-Yvb" secondAttribute="bottom" constant="16" id="kbx-xB-mwc"/>
                                     <constraint firstItem="0bJ-Lf-Yvb" firstAttribute="leading" secondItem="Jw8-Xf-BUc" secondAttribute="trailing" constant="16" id="uaV-n8-na3"/>
                                 </constraints>
                                 <connections>
