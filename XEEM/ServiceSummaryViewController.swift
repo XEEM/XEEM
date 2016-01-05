@@ -19,15 +19,39 @@ class ServiceSummaryViewController: UIViewController {
     
     @IBOutlet weak var commentTextView: UITextView!
     @IBOutlet weak var ratingView: FloatRatingView!
+    @IBOutlet weak var reviewTextField: MKTextField!
     
+    @IBOutlet weak var priceTextField: MKTextField!
     @IBOutlet weak var submitBtn: UIButton!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
         view.addGestureRecognizer(tap)
-
+        reviewTextField.layer.borderColor = UIColor.clearColor().CGColor
+        reviewTextField.floatingPlaceholderEnabled = true
+        reviewTextField.tintColor = UIColor.MKColor.AppPrimaryColor
+        reviewTextField.rippleLocation = .Right
+        reviewTextField.cornerRadius = 0
+        reviewTextField.bottomBorderEnabled = true
+        reviewTextField.textColor =  UIColor.MKColor.WhiteColor
     
+        
+        priceTextField.layer.borderColor = UIColor.clearColor().CGColor
+        priceTextField.floatingPlaceholderEnabled = true
+        priceTextField.tintColor = UIColor.MKColor.AppPrimaryColor
+        priceTextField.rippleLocation = .Right
+        priceTextField.cornerRadius = 0
+        priceTextField.bottomBorderEnabled = true
+        priceTextField.textColor =  UIColor.MKColor.WhiteColor
+        
+//        UIUtils.setupMaterialTextField(self.reviewTextField)
+        //UIUtils.setupMaterialTextFieldLight(self.priceTextField)
+        commentView.layer.shadowOffset = CGSize(width: 3, height: 3)
+        commentView.layer.shadowOpacity = 0.7
+        commentView.layer.shadowRadius = 2
+        commentView.layer.cornerRadius = 10
         self.submitBtn.backgroundColor = UIColor.MKColor.Blue
         self.submitBtn.setTitleColor(UIColor.MKColor.WhiteColor, forState: UIControlState.Normal)
 

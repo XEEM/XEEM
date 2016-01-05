@@ -120,7 +120,15 @@ class RequestLoadingViewController: UIViewController {
         
         self.view.addSubview(progressView)
         
-        sendRequest()
+       // sendRequest()
+        
+        let storyboard = UIStoryboard(name: "User", bundle: nil)
+        let receivedService =  storyboard.instantiateViewControllerWithIdentifier("ReceivedServiceViewController") as! ReceivedServiceViewController
+        receivedService.selectedShop = self.selectedShop
+        receivedService.quotationIndex = self.quotationIndex
+        
+        self.navigationController?.pushViewController(receivedService, animated: true)
+
     }
 
     func goBackToMainPage(){
