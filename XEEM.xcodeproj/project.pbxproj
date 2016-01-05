@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		4144D91B1C2FAF7C00076FE5 /* TransportationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4144D91A1C2FAF7C00076FE5 /* TransportationTableViewCell.swift */; };
 		415CDE3D1C30FF7800402186 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415CDE3C1C30FF7700402186 /* Request.swift */; };
+		41A6AD061C3AA2270085BDC4 /* CircleShapeLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 41A6AD031C3AA2270085BDC4 /* CircleShapeLayer.m */; };
+		41A6AD071C3AA2270085BDC4 /* CircleProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 41A6AD051C3AA2270085BDC4 /* CircleProgressView.m */; };
+		41A6AD091C3B08CE0085BDC4 /* CompactShopForRequestView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41A6AD081C3B08CE0085BDC4 /* CompactShopForRequestView.xib */; };
+		41A6AD0B1C3B0B780085BDC4 /* CompactShopForRequestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A6AD0A1C3B0B780085BDC4 /* CompactShopForRequestView.swift */; };
 		710262821C1D4B4C0009724D /* NewTransportationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 710262811C1D4B4C0009724D /* NewTransportationViewController.swift */; };
 		7107F5781C29F3B3002817D6 /* FloatRatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7107F5771C29F3B3002817D6 /* FloatRatingView.swift */; };
 		7111A51E1C1BC33600FA17A5 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7111A51D1C1BC33600FA17A5 /* Profile.storyboard */; };
@@ -126,6 +130,12 @@
 /* Begin PBXFileReference section */
 		4144D91A1C2FAF7C00076FE5 /* TransportationTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransportationTableViewCell.swift; sourceTree = "<group>"; };
 		415CDE3C1C30FF7700402186 /* Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+		41A6AD021C3AA2270085BDC4 /* CircleShapeLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CircleShapeLayer.h; sourceTree = "<group>"; };
+		41A6AD031C3AA2270085BDC4 /* CircleShapeLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CircleShapeLayer.m; sourceTree = "<group>"; };
+		41A6AD041C3AA2270085BDC4 /* CircleProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CircleProgressView.h; sourceTree = "<group>"; };
+		41A6AD051C3AA2270085BDC4 /* CircleProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CircleProgressView.m; sourceTree = "<group>"; };
+		41A6AD081C3B08CE0085BDC4 /* CompactShopForRequestView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CompactShopForRequestView.xib; sourceTree = "<group>"; };
+		41A6AD0A1C3B0B780085BDC4 /* CompactShopForRequestView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompactShopForRequestView.swift; sourceTree = "<group>"; };
 		710262811C1D4B4C0009724D /* NewTransportationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewTransportationViewController.swift; sourceTree = "<group>"; };
 		7107F5771C29F3B3002817D6 /* FloatRatingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FloatRatingView.swift; sourceTree = "<group>"; };
 		7111A51D1C1BC33600FA17A5 /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
@@ -272,6 +282,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		41A6AD011C3AA2130085BDC4 /* CircularProgressControl */ = {
+			isa = PBXGroup;
+			children = (
+				41A6AD021C3AA2270085BDC4 /* CircleShapeLayer.h */,
+				41A6AD031C3AA2270085BDC4 /* CircleShapeLayer.m */,
+				41A6AD041C3AA2270085BDC4 /* CircleProgressView.h */,
+				41A6AD051C3AA2270085BDC4 /* CircleProgressView.m */,
+			);
+			name = CircularProgressControl;
+			sourceTree = "<group>";
+		};
 		7107F5761C29F397002817D6 /* RatingView */ = {
 			isa = PBXGroup;
 			children = (
@@ -478,6 +499,7 @@
 		A69BDDC81C1816A6005CA6C6 /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				41A6AD011C3AA2130085BDC4 /* CircularProgressControl */,
 				712171D31C311A6300D9B397 /* CustomAlertDialog */,
 				71BA05031C2D54A500FAC038 /* CustomNV */,
 				7107F5761C29F397002817D6 /* RatingView */,
@@ -667,6 +689,8 @@
 				CEDB2EA11C27E036009730C9 /* ReceivedServiceViewController.swift */,
 				A6D83C391C2F12330053DD64 /* FinishServiceViewController.swift */,
 				CEDB2EA51C27E05C009730C9 /* ServiceSummaryViewController.swift */,
+				41A6AD081C3B08CE0085BDC4 /* CompactShopForRequestView.xib */,
+				41A6AD0A1C3B0B780085BDC4 /* CompactShopForRequestView.swift */,
 			);
 			name = Request;
 			sourceTree = "<group>";
@@ -851,6 +875,7 @@
 				A629C3E51C16BF9000D77F69 /* User.storyboard in Resources */,
 				718FAF8E1C2A810D00AB5C57 /* SanFranciscoDisplay-Light.otf in Resources */,
 				A6C5DDAC1C1DAE5200A7DB9D /* ReviewCell.xib in Resources */,
+				41A6AD091C3B08CE0085BDC4 /* CompactShopForRequestView.xib in Resources */,
 				A6C5DDA01C1D44B400A7DB9D /* ServiceDetailNameCell.xib in Resources */,
 				CE1395541C1087D100A67657 /* LaunchScreen.storyboard in Resources */,
 				CE1395511C1087D100A67657 /* Assets.xcassets in Resources */,
@@ -943,6 +968,7 @@
 				CE8C133C1C1DC15C00D1AA09 /* XEEMViewController.swift in Sources */,
 				71F0A6A91C284FE900A1AAD3 /* LeftViewController.swift in Sources */,
 				71437D311C225333003B3AE1 /* User.swift in Sources */,
+				41A6AD071C3AA2270085BDC4 /* CircleProgressView.m in Sources */,
 				A69BDDDC1C181714005CA6C6 /* UIViewController+SwiftySideMenu.m in Sources */,
 				A6C5DD9A1C1D378200A7DB9D /* RateView.m in Sources */,
 				CEDB2EA01C27E013009730C9 /* RequestLoadingViewController.swift in Sources */,
@@ -981,6 +1007,7 @@
 				7173FB571C215CE700C1DD3A /* ColorUtils.swift in Sources */,
 				71F4A3061C1C9B96008BF810 /* EditProfileViewController.swift in Sources */,
 				CECBE0341C23007B004F6C55 /* PaymentMethodTableViewCell.swift in Sources */,
+				41A6AD0B1C3B0B780085BDC4 /* CompactShopForRequestView.swift in Sources */,
 				71F4A3001C1C9552008BF810 /* MKTextField.swift in Sources */,
 				CE7762431C253D860074937F /* ChangePasswordViewController.swift in Sources */,
 				CECBE0301C22EA52004F6C55 /* SettingViewController.swift in Sources */,
@@ -997,6 +1024,7 @@
 				4144D91B1C2FAF7C00076FE5 /* TransportationTableViewCell.swift in Sources */,
 				A6C5DDAB1C1DAE5200A7DB9D /* ReviewCell.swift in Sources */,
 				A6D2C5DE1C29A7B800321254 /* XHAmazingLoadingView.m in Sources */,
+				41A6AD061C3AA2270085BDC4 /* CircleShapeLayer.m in Sources */,
 				A6D2C5D41C29A78400321254 /* XHAmazingLoadingStarAnimation.m in Sources */,
 				A62206161C26A66300B7C864 /* OptionsViewController.swift in Sources */,
 				71CD91E71C292BA800DDE36C /* ApplyFilterCell.swift in Sources */,
