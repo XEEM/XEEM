@@ -12,6 +12,10 @@ protocol HistoryDetailControlerDelegate {
     func editClicked(sender: HistoryDetailControler)
 }
 class HistoryDetailControler: UIViewController {
+    @IBOutlet weak var okBtn: UIButton!
+    
+    @IBOutlet weak var editBtn: UIButton!
+    
     var delegate: HistoryDetailControlerDelegate?
     @IBAction func OKClicked(sender: UIButton) {
         delegate!.okClicked(self)
@@ -24,6 +28,13 @@ class HistoryDetailControler: UIViewController {
         super.viewDidLoad()
         self.view.layer.cornerRadius = 22
         self.view.layer.masksToBounds = true
+        self.view.layer.borderColor = UIColor.MKColor.Orange.CGColor
+        self.view.layer.borderWidth = 2.0
+        
+        self.okBtn.layer.cornerRadius = 22
+        self.editBtn.layer.cornerRadius = 22
+        
+
         
         
         // Do any additional setup after loading the view.
