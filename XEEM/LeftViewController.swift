@@ -78,6 +78,7 @@ extension LeftViewController: UITableViewDataSource, UITableViewDelegate {
         } else {
             let cell = self.tableView.dequeueReusableCellWithIdentifier("TransportationCell") as UITableViewCell?
             cell?.textLabel?.text = listVehicles[indexPath.row].name
+            cell?.textLabel?.textColor = UIColor.MKColor.WhiteColor
             if listVehicles[indexPath.row] == currentUser.defaultVehicles {
                  cell?.detailTextLabel?.hidden = false
             } else {

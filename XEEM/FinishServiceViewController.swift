@@ -20,6 +20,7 @@ class FinishServiceViewController: UIViewController {
     
     @IBOutlet weak var finishServiceBtn: UIButton!
     
+    var selectedShop : ShopModel!
     
     
     override func viewDidLoad() {
@@ -27,7 +28,8 @@ class FinishServiceViewController: UIViewController {
         self.finishServiceBtn.backgroundColor = UIColor.MKColor.Blue
         self.finishServiceBtn.setTitleColor(UIColor.MKColor.WhiteColor, forState: UIControlState.Normal)
         self.ratingView.editable = false
-
+        serviceNameLabel.text = selectedShop.name
+        ratingView.rating = selectedShop.rating!
         // Do any additional setup after loading the view.
     }
 

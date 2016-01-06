@@ -21,6 +21,10 @@
             <string>SanFranciscoDisplay-Heavy</string>
             <string>SanFranciscoDisplay-Heavy</string>
             <string>SanFranciscoDisplay-Heavy</string>
+            <string>SanFranciscoDisplay-Heavy</string>
+            <string>SanFranciscoDisplay-Heavy</string>
+            <string>SanFranciscoDisplay-Heavy</string>
+            <string>SanFranciscoDisplay-Heavy</string>
         </mutableArray>
         <mutableArray key="SanFranciscoDisplay-Medium.otf">
             <string>SanFranciscoDisplay-Medium</string>
@@ -923,7 +927,8 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="EFz-6K-vjp"/>
                                 </constraints>
-                                <state key="normal" title="Cancel">
+                                <fontDescription key="fontDescription" name="SanFranciscoDisplay-Heavy" family="San Francisco Display" pointSize="15"/>
+                                <state key="normal" title="CANCEL">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -1022,7 +1027,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="pL8-OL-aHE"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <fontDescription key="fontDescription" name="SanFranciscoDisplay-Heavy" family="San Francisco Display" pointSize="20"/>
                                 <state key="normal" title="RECEIVED SERVICE">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -1276,7 +1281,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="apy-fi-N5Y"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <fontDescription key="fontDescription" name="SanFranciscoDisplay-Heavy" family="San Francisco Display" pointSize="20"/>
                                 <state key="normal" title="FINISH SERVICE">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -1365,8 +1370,8 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="D2y-vE-czk"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="SUBMMIT">
+                                <fontDescription key="fontDescription" name="SanFranciscoDisplay-Heavy" family="San Francisco Display" pointSize="20"/>
+                                <state key="normal" title="SUBMIT">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -1374,10 +1379,10 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rzm-km-URu" userLabel="ContentView">
-                                <rect key="frame" x="8" y="96" width="304" height="370"/>
+                                <rect key="frame" x="32" y="96" width="256" height="370"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_default_avatar" translatesAutoresizingMaskIntoConstraints="NO" id="wus-31-vdT">
-                                        <rect key="frame" x="122" y="8" width="60" height="60"/>
+                                        <rect key="frame" x="98" y="8" width="60" height="60"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="heX-Vs-yxF"/>
                                             <constraint firstAttribute="width" constant="60" id="yk8-td-4ey"/>
@@ -1396,7 +1401,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Em-5i-mu7" customClass="FloatRatingView" customModule="XEEM" customModuleProvider="target">
-                                        <rect key="frame" x="8" y="163" width="288" height="50"/>
+                                        <rect key="frame" x="8" y="163" width="240" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="9xR-eb-V81"/>
                                             <constraint firstAttribute="height" constant="50" id="Omc-zv-bJb"/>
@@ -1421,7 +1426,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Write your review here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Zsg-Bu-tp4" customClass="MKTextField" customModule="XEEM" customModuleProvider="target">
-                                        <rect key="frame" x="8" y="76" width="288" height="50"/>
+                                        <rect key="frame" x="8" y="76" width="240" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="Cch-eX-Q5N"/>
                                         </constraints>
@@ -1434,7 +1439,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Write the price you payed for service" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gk4-9v-47m" customClass="MKTextField" customModule="XEEM" customModuleProvider="target">
-                                        <rect key="frame" x="8" y="250" width="288" height="50"/>
+                                        <rect key="frame" x="8" y="250" width="240" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="vbi-Ht-5nA"/>
                                         </constraints>
@@ -1472,11 +1477,11 @@
                         <constraints>
                             <constraint firstItem="rzm-km-URu" firstAttribute="top" secondItem="AIn-12-8hA" secondAttribute="bottom" constant="35" id="LcX-qh-ZoZ"/>
                             <constraint firstItem="AIn-12-8hA" firstAttribute="top" secondItem="4Z0-xu-uzD" secondAttribute="bottom" constant="20" id="Sho-cE-sv7"/>
-                            <constraint firstAttribute="trailing" secondItem="rzm-km-URu" secondAttribute="trailing" constant="8" id="UGx-kU-zeT"/>
+                            <constraint firstAttribute="trailing" secondItem="rzm-km-URu" secondAttribute="trailing" constant="32" id="UGx-kU-zeT"/>
                             <constraint firstItem="RGb-1l-wUi" firstAttribute="leading" secondItem="P2B-dR-tek" secondAttribute="leading" id="b9W-wc-CSI"/>
                             <constraint firstItem="hx3-32-irW" firstAttribute="top" secondItem="RGb-1l-wUi" secondAttribute="bottom" id="bbu-pD-Kag"/>
                             <constraint firstItem="RGb-1l-wUi" firstAttribute="top" secondItem="rzm-km-URu" secondAttribute="bottom" constant="42" id="eAx-dZ-pdn"/>
-                            <constraint firstItem="rzm-km-URu" firstAttribute="leading" secondItem="P2B-dR-tek" secondAttribute="leading" constant="8" id="gwY-LP-E1t"/>
+                            <constraint firstItem="rzm-km-URu" firstAttribute="leading" secondItem="P2B-dR-tek" secondAttribute="leading" constant="32" id="gwY-LP-E1t"/>
                             <constraint firstAttribute="trailing" secondItem="RGb-1l-wUi" secondAttribute="trailing" id="kF4-YY-bhH"/>
                             <constraint firstItem="AIn-12-8hA" firstAttribute="centerX" secondItem="P2B-dR-tek" secondAttribute="centerX" id="oYg-xQ-j4m"/>
                         </constraints>
