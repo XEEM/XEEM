@@ -23,8 +23,8 @@ class RequestLoadingViewController: UIViewController {
     @IBOutlet weak var shopDetailView: CompactShopDetailForRequestView!
     @IBOutlet weak var cancelButton: UIButton!
     @IBAction func onClickCancel(sender: UIButton) {
-//        stopTimer()
-//        goBackToMainPage()
+        stopTimer()
+        goBackToMainPage()
         cancelRequest()
     }
     
@@ -90,10 +90,10 @@ class RequestLoadingViewController: UIViewController {
         XEEMService.sharedInstance.getRequest("0", requestToken: requestToken) { (request, error) -> () in
             if request?.status == RequestStatus.Accepted {
                 self.goToReceivedPage(request)
-                self.timer.invalidate()
+                self.stopTimer()
                 return
             } else if request?.status == RequestStatus.Canceled {
-//                self.stopTimer()
+                self.stopTimer()
                 self.cancelRequest()
             }
         }
@@ -104,8 +104,11 @@ class RequestLoadingViewController: UIViewController {
     var progressTimer: NSTimer!
     
     func stopTimer(){
-        self.progressTimer.invalidate()
-        self.timer.invalidate()
+        autoreleasepool { () -> () in
+            self.progressTimer.invalidate()
+            self.timer.invalidate()
+        }
+
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -120,19 +123,12 @@ class RequestLoadingViewController: UIViewController {
         
         self.view.addSubview(progressView)
         
-       // sendRequest()
-        
-        let storyboard = UIStoryboard(name: "User", bundle: nil)
-        let receivedService =  storyboard.instantiateViewControllerWithIdentifier("ReceivedServiceViewController") as! ReceivedServiceViewController
-        receivedService.selectedShop = self.selectedShop
-        receivedService.quotationIndex = self.quotationIndex
-        
-        self.navigationController?.pushViewController(receivedService, animated: true)
-
+        sendRequest()
     }
 
     func goBackToMainPage(){
         self.stopTimer()
+
         UIUtils.goToMainPage()
     }
     
