@@ -82,6 +82,7 @@ class TransportationDetailControllerViewController: UIViewController, HistoryDet
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+    
     }
     @IBAction func onClose(sender: AnyObject) {
         self.dismissViewControllerAnimated(true, completion: nil)
@@ -94,12 +95,27 @@ extension TransportationDetailControllerViewController: UITableViewDataSource,UI
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = self.tableView.dequeueReusableCellWithIdentifier("HistoryCell") as! HistoryCell
-        cell.thumbnailImageView.setImageWithURL(NSURL(string: "http://4.bp.blogspot.com/-6AN1Wg3Nq3Q/Vcm_YvQGQjI/AAAAAAAACfA/F6HIMGYF_Ag/s1600/showroom.jpg")!)
+        
         UIUtils.setRoundImageView(cell.thumbnailImageView)
+        
+        if indexPath.row == 0 {
+            cell.nameLabel.text = "Thien Tan Repair Shop"
+            cell.timeStampLabel.text = "Dec 15, 2015"
+            cell.costLabel.text = "20$"
+            cell.thumbnailImageView.setImageWithURL(NSURL(string: "http://4.bp.blogspot.com/-6AN1Wg3Nq3Q/Vcm_YvQGQjI/AAAAAAAACfA/F6HIMGYF_Ag/s1600/showroom.jpg")!)
+        }
+        if indexPath.row == 1 {
+            cell.nameLabel.text = "Moc Hoa Repair Shop"
+            cell.timeStampLabel.text = "Jan 1, 2016"
+            cell.costLabel.text = "180$"
+            cell.thumbnailImageView.setImageWithURL(NSURL(string: "http://s1.storage.2banh.vn/image/2013/09/20130906_93bfd4426aa876dcf8b9908391ee54cf_1378448593.png")!)
+        }
         return cell
     }
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         self.displayViewController(.LeftRight)
+        
+
     }
     
     func displayViewController(animationType: SLpopupViewAnimationType) {

@@ -16,6 +16,9 @@ class HistoryDetailControler: UIViewController {
     
     @IBOutlet weak var editBtn: UIButton!
     
+    @IBOutlet weak var shopInfoView: UIView!
+    
+    @IBOutlet weak var descriptionTextView: UITextView!
     var delegate: HistoryDetailControlerDelegate?
     @IBAction func OKClicked(sender: UIButton) {
         delegate!.okClicked(self)
@@ -30,6 +33,14 @@ class HistoryDetailControler: UIViewController {
         self.view.layer.masksToBounds = true
        // self.view.layer.borderColor = UIColor.MKColor.Orange.CGColor
         self.view.layer.borderWidth = 2.0
+        
+        self.shopInfoView.layer.borderColor = UIColor.MKColor.Orange.CGColor
+        self.shopInfoView.layer.cornerRadius = 22
+
+        
+        self.descriptionTextView.layer.borderColor = UIColor.MKColor.Orange.CGColor
+        self.descriptionTextView.layer.cornerRadius = 22
+
         
         self.okBtn.layer.cornerRadius = 22
         self.editBtn.layer.cornerRadius = 22
