@@ -53,7 +53,7 @@ class RequestLoadingViewController: UIViewController {
         let latitude = NSUserDefaults.standardUserDefaults().objectForKey("latitude") as! Double
         let longitude = NSUserDefaults.standardUserDefaults().objectForKey("longitude") as! Double
         
-        XEEMService.sharedInstance.sendRequest("0", shopId: "0", transportationId: trans_id, latitude: latitude, longitude: longitude, description: text, completion: { (token, error) -> () in
+        XEEMService.sharedInstance.sendRequest("0", shopId: selectedShop.id, transportationId: trans_id, latitude: latitude, longitude: longitude, description: text, completion: { (token, error) -> () in
             if error != nil {
                 print("\(error)")
                 
@@ -136,7 +136,7 @@ class RequestLoadingViewController: UIViewController {
         //
         let storyboard = UIStoryboard(name: "User", bundle: nil)
         let receivedService =  storyboard.instantiateViewControllerWithIdentifier("ReceivedServiceViewController") as! ReceivedServiceViewController
-        receivedService.selectedShop = request.shop
+        receivedService.selectedShop = self.selectedShop
         receivedService.quotationIndex = self.quotationIndex
         
         self.navigationController?.pushViewController(receivedService, animated: true)

@@ -36,7 +36,7 @@ class ReceivedServiceViewController: UIViewController {
         ratingView.editable = false
         ratingView.rating = selectedShop.rating!
         repairServiceLabel.text = selectedShop.name
-        //distanceLabel.text = UIUtils.convertDistance(selectedShop.distance!)
+        distanceLabel.text = "About \(String(UIUtils.convertDistance(selectedShop?.distance)))"
         
         let request: MKDirectionsRequest = MKDirectionsRequest()
         request.source = MKMapItem.mapItemForCurrentLocation()
