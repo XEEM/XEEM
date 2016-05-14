@@ -7,7 +7,7 @@ Users will use XEEM to book bike/car repair service when their bike/car were bro
 
 [ x ] Users can log in and see their current location
 
-[X] Users can see bike/car repair service shown in a map
+[ x ] Users can see bike/car repair service shown in a map
 
 [X] Users can tap on the service to check service quotes and book that service.
 
