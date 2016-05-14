@@ -8,17 +8,14 @@
 
 import UIKit
 
+
 class ServiceDetailNameCell: UITableViewCell {
 
     @IBOutlet weak var serviceNameImage: UIImageView!
-    
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var distanceLabel: UILabel!
-    
-    @IBOutlet weak var serviceTypeLabel: UILabel!
-    
-    @IBOutlet weak var totalReview: UILabel!
     @IBOutlet weak var rateView: RateView!
+    @IBOutlet weak var currencyLabel: UILabel!
     
     
     override func awakeFromNib() {
@@ -28,6 +25,7 @@ class ServiceDetailNameCell: UITableViewCell {
         self.rateView.fullSelectedImage = UIImage(named: "ic_star")
         self.rateView.maxRating = 5;
         self.rateView.editable = false;
+        self.currencyLabel.textColor = UIColor.MKColor.Red
         
     }
 
@@ -37,14 +35,17 @@ class ServiceDetailNameCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func configCell(data: NSDictionary) {
-        self.serviceNameImage.image = UIImage(named: "avatar")
-        self.nameLabel.text = "Service Name"
-        self.serviceTypeLabel.text = "Service Type"
-        self.rateView.rating = 4
+    func configCell(data: ShopModel, serviceImage imageViews: UIImageView!) {
+//        if let dataURL = data.avatarURL {
+//            self.serviceNameImage.setImageWithURLRequest(NSURLRequest(URL: NSURL(string: dataURL)!), placeholderImage: UIImage(named: "avatar"), success: nil, failure: nil)
+//        } else {
+//            self.serviceNameImage.image = UIImage(named: "avatar")
+//        }
+        self.serviceNameImage.image = imageViews.image
+        self.nameLabel.text = data.name
+        self.rateView.rating = round(Float(data.rating!))
         self.distanceLabel.text = "5km"
-        self.totalReview.text = "1047 Reviews"
-        
+        self.currencyLabel.text = "FROM $5"
     }
     
 }

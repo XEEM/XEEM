@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SlideMenuControllerSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -24,25 +25,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             self.window!.rootViewController = rootVC
             self.window?.makeKeyAndVisible()
         } else {
+            // create viewController code...
             let storyboard = UIStoryboard(name: "User", bundle: nil)
-            let rootVC =  storyboard.instantiateViewControllerWithIdentifier("SwiftySideMenuViewController") as! SwiftySideMenuViewController
             
-            let centerVC = storyboard.instantiateViewControllerWithIdentifier("CenterUser");
+            let mainViewController = storyboard.instantiateViewControllerWithIdentifier("CenterUser") as! UINavigationController
+            let leftViewController = storyboard.instantiateViewControllerWithIdentifier("LeftViewController") as! LeftViewController
+            let rightViewController = storyboard.instantiateViewControllerWithIdentifier("RightViewController") as! RightViewController
+            //let nvc: UINavigationController = UINavigationController(rootViewController: mainViewController)
             
-            let leftVC = storyboard.instantiateViewControllerWithIdentifier("LeftUser");
-            rootVC.enableLeftSwipeGesture = false
-            rootVC.enableRightSwipeGesture = false
+            let slideMenuController = SlideMenuController(mainViewController: mainViewController, leftMenuViewController: leftViewController, rightMenuViewController: rightViewController)
             
-            rootVC.centerViewController = centerVC
-            rootVC.leftViewController = leftVC
-            rootVC.centerEndScale = 0.8
-            rootVC.leftSpringAnimationSpeed = 20
             
             self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
-            self.window?.rootViewController = rootVC
+            self.window!.rootViewController = slideMenuController
             self.window?.makeKeyAndVisible()
+
         }
-    
         return true
     }
 

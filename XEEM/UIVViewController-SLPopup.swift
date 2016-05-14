@@ -10,6 +10,7 @@ import UIKit
 import QuartzCore
 import ObjectiveC
 
+
 enum SLpopupViewAnimationType: Int {
     case BottomTop
     case TopBottom
@@ -188,6 +189,8 @@ extension UIViewController {
         }
         
     }
+    
+    
     
     func fadeViewOut(popupView: UIView, sourceView:UIView, overlayView:UIView) {
         UIView.animateWithDuration(kpopupAnimationDuration, animations: { () -> Void in

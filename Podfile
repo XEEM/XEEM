@@ -4,9 +4,20 @@
 
 
 target 'XEEM' do
-	pod 'Alamofire', '~> 3.1'
-    pod 'pop', '~> 1.0'
-    pod 'AFNetworking'
-use_frameworks!
+  pod 'Alamofire', '~> 3.1'
+  pod 'pop', '~> 1.0'
+  pod 'AFNetworking'
+  pod 'TKSubmitTransition'
+  pod 'SlideMenuControllerSwift'
+  pod 'JBKenBurnsView'
+  pod 'DateTools'
+  pod 'FontAwesome.swift'
+  pod 'Starscream', '~> 1.0.0'
+  pod 'SwiftDate', '~> 2.0'
+  pod 'NVActivityIndicatorView'
+  pod 'RealmSwift'
+  use_frameworks!
+  
 end
+
 

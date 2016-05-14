@@ -17,12 +17,12 @@ extension UIColor {
     }
     
     public struct MKColor {
-        public static let Red = UIColor(hex: 0xF44336)
+        public static let Red = UIColor(hex: 0xe9232d)
         public static let Pink = UIColor(hex: 0xE91E63)
         public static let Purple = UIColor(hex: 0x9C27B0)
         public static let DeepPurple = UIColor(hex: 0x673AB7)
         public static let Indigo = UIColor(hex: 0x3F51B5)
-        public static let Blue = UIColor(hex: 0x2196F3)
+        public static let Blue = UIColor(hex: 0x105492)
         public static let LightBlue = UIColor(hex: 0x03A9F4)
         public static let Cyan = UIColor(hex: 0x00BCD4)
         public static let Teal = UIColor(hex: 0x009688)
@@ -31,11 +31,18 @@ extension UIColor {
         public static let Lime = UIColor(hex: 0xCDDC39)
         public static let Yellow = UIColor(hex: 0xFFEB3B)
         public static let Amber = UIColor(hex: 0xFFC107)
-        public static let Orange = UIColor(hex: 0xFF9800)
+        public static let Orange = UIColor(hex: 0xE74C3B)
         public static let DeepOrange = UIColor(hex: 0xFF5722)
         public static let Brown = UIColor(hex: 0x795548)
         public static let Grey = UIColor(hex: 0x9E9E9E)
         public static let BlueGrey = UIColor(hex: 0x607D8B)
-        public static let AppMainColor = UIColor(hex: 0x8C001A)
+        public static let AppMainColor = UIColor(hex: 0x333334)
+        public static let AppPrimaryColor = UIColor(hex: 0xDF352E)
+        public static let AppMainDarkerColor = UIColor(hex: 0x36362D)
+        public static let DarkGrayColor = UIColor(hex: 0x424243)
+        public static let GrayColor = UIColor(hex: 0xa0a09f)
+        public static let LightGrayColor = UIColor(hex: 0xefefef)
+        public static let WhiteColor = UIColor(hex: 0xFFFFFF)
+
     }
 }

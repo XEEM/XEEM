@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SlideMenuControllerSwift
 
 class NewTransportationViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDelegate, UITextFieldDelegate , UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     @IBOutlet weak var thumbnailImage: UIImageView!
@@ -23,9 +24,16 @@ class NewTransportationViewController: UIViewController,UIPickerViewDataSource,U
     override func viewDidLoad() {
         super.viewDidLoad()
         self.automaticallyAdjustsScrollViewInsets = false
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
-        self.navigationController?.navigationBar.shadowImage = UIImage()
-        navigationController?.navigationBar.barTintColor = ColorUtils.UIColorFromRGB("ffffff");
+        title = "New Transportation"
+        let attrs = [
+            NSForegroundColorAttributeName : UIColor.whiteColor(),
+            NSFontAttributeName : UIFont(name: "SanFranciscoDisplay-Medium", size: 18)!
+        ]
+        
+        //let img = UIImage()
+        //self.navigationController?.navigationBar.shadowImage = img
+        self.navigationController?.navigationBar.titleTextAttributes = attrs
+        self.navigationController?.navigationBar.barTintColor = UIColor.MKColor.AppPrimaryColor
         typePicker.delegate = self
         typePicker.dataSource = self
         typeLabel.delegate = self
@@ -78,11 +86,34 @@ class NewTransportationViewController: UIViewController,UIPickerViewDataSource,U
         self.view.endEditing(true)
     }
     @IBAction func onCancelClicked(sender: UIBarButtonItem) {
-        navigationController?.popViewControllerAnimated(true)
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
     @IBAction func onSaveClicked(sender: UIBarButtonItem) {
-        navigationController?.popViewControllerAnimated(true)
+       self.dismissViewControllerAnimated(true, completion: nil)
     }
+    
+    @IBAction func onFinishTap(sender: UIButton) {
+        // TO-DO 
+        // Call API add new transport 
+        
+        
+        // transist - do it after call api success
+        let storyboard = UIStoryboard(name: "User", bundle: nil)
+        
+        let mainViewController = storyboard.instantiateViewControllerWithIdentifier("CenterUser") as! UINavigationController
+        let leftViewController = storyboard.instantiateViewControllerWithIdentifier("LeftViewController") as! LeftViewController
+        let rightViewController = storyboard.instantiateViewControllerWithIdentifier("RightViewController") as! RightViewController
+        
+        let slideMenuController = SlideMenuController(mainViewController: mainViewController, leftMenuViewController: leftViewController, rightMenuViewController: rightViewController)
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        
+        
+        appDelegate.window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        appDelegate.window!.rootViewController = slideMenuController
+        appDelegate.window?.makeKeyAndVisible()
+
+    }
+    
     /*
     // MARK: - Navigation
 

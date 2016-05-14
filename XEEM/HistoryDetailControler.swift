@@ -12,6 +12,13 @@ protocol HistoryDetailControlerDelegate {
     func editClicked(sender: HistoryDetailControler)
 }
 class HistoryDetailControler: UIViewController {
+    @IBOutlet weak var okBtn: UIButton!
+    
+    @IBOutlet weak var editBtn: UIButton!
+    
+    @IBOutlet weak var shopInfoView: UIView!
+    
+    @IBOutlet weak var descriptionTextView: UITextView!
     var delegate: HistoryDetailControlerDelegate?
     @IBAction func OKClicked(sender: UIButton) {
         delegate!.okClicked(self)
@@ -24,9 +31,35 @@ class HistoryDetailControler: UIViewController {
         super.viewDidLoad()
         self.view.layer.cornerRadius = 22
         self.view.layer.masksToBounds = true
+       // self.view.layer.borderColor = UIColor.MKColor.Orange.CGColor
+        self.view.layer.borderWidth = 2.0
+        
+        self.shopInfoView.layer.borderColor = UIColor.MKColor.Orange.CGColor
+        self.shopInfoView.layer.cornerRadius = 22
+
+        
+        self.descriptionTextView.layer.borderColor = UIColor.MKColor.Orange.CGColor
+        self.descriptionTextView.layer.cornerRadius = 22
+
+        
+        self.okBtn.layer.cornerRadius = 22
+        self.editBtn.layer.cornerRadius = 22
+        
+
+        
+        
         // Do any additional setup after loading the view.
     }
-
+    
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    func textViewShouldReturn(textView: UITextView!) -> Bool {
+        textView.resignFirstResponder()
+        return true
+    }
+    
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.

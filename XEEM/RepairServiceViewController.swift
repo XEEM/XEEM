@@ -7,31 +7,89 @@
 //
 
 import UIKit
+import SlideMenuControllerSwift
+let serviceDetailCell = "serviceDetailNameCell"
+let quotesCell = "quotesCell"
+let showmoreCell = "showmoreCell"
+let reviewCell = "reviewCell"
 
-class RepairServiceViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    let serviceDetailCell = "serviceDetailNameCell"
-    let quotesCell = "quotesCell"
-    let showmoreCell = "showmoreCell"
-    let reviewCell = "reviewCell"
-    
+class RepairServiceViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, ShowmoreCellDelegate, ConfrimViewControllerDelegate {
+
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var btnXeemMe: UIButton!
+    
+    var shopModel: ShopModel?
+    var quotesShopSome: [Quotes] = []
+    var quotesShopAll: [Quotes] = []
+    var reviewerAll: [ReviewModel] = []
+    var reviewerSome: [ReviewModel] = []
+    var imageService: UIImageView?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        self.slideMenuController()?.disablesAutomaticKeyboardDismissal()        
+        self.initView()             // init View
+        self.initData()             // init Data
+        self.initTableView()        // init tableView
+    }
+
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(true)
+        self.navigationController?.navigationBar.barStyle = .Black
+        self.navigationController?.navigationBar.backgroundColor = UIColor.blackColor()
+
+    }
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+    
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return .LightContent
+    }
+    
+    // MARK: - PrivateMethod
+    private func initTableView() {
         self.title = "Repair Service"
         self.tableView.delegate = self
         self.tableView.dataSource = self
+        self.tableView.allowsMultipleSelection = false
+        self.tableView.allowsSelection = false
+        
         self.tableView.registerNib(UINib(nibName: "ServiceDetailNameCell", bundle: nil), forCellReuseIdentifier: serviceDetailCell)
         self.tableView.registerNib(UINib(nibName: "QuotesTableViewCell", bundle: nil), forCellReuseIdentifier: quotesCell)
         self.tableView.registerNib(UINib(nibName: "ShowmoreCell", bundle: nil), forCellReuseIdentifier: showmoreCell)
         self.tableView.registerNib(UINib(nibName: "ReviewCell", bundle: nil), forCellReuseIdentifier: reviewCell)
     }
+    
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    private func initData() {
+        if let quotesList = self.shopModel?.quotes {
+            quotesShopAll = quotesList
+            if quotesShopAll.count > 2 {
+                quotesShopSome.append(quotesShopAll[0])
+                quotesShopSome.append(quotesShopAll[1])
+            }
+        }
+        
+        if let reviewList = self.shopModel?.reviews {
+            reviewerAll = reviewList
+            if reviewerAll.count > 1 {
+                reviewerSome.append(reviewerAll[0])
+            }
+        }
+        
     }
     
+    private func initView() {
+        SlideMenuOptions.panFromBezel = false
+        self.btnXeemMe.backgroundColor = UIColor.MKColor.Red
+        self.btnXeemMe.setTitleColor(UIColor.MKColor.WhiteColor, forState: UIControlState.Normal)
+    }
+    
+    
+    
+    // MARK: - UITableViewDelegate
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 3
     }
@@ -40,34 +98,39 @@ class RepairServiceViewController: UIViewController, UITableViewDelegate, UITabl
         if indexPath.section == 0 {
             // service Name
             let cell : ServiceDetailNameCell = tableView.dequeueReusableCellWithIdentifier(serviceDetailCell, forIndexPath: indexPath) as! ServiceDetailNameCell
-            let data = NSDictionary()
-            cell.configCell(data)
+            if let shopModel = shopModel {
+                cell.configCell(shopModel, serviceImage: self.imageService)
+            }
             return cell
             
         } else if indexPath.section == 1 {
             // Quotes
-            if indexPath.row <= 3 {
-                // service Name
-                let cell : QuotesTableViewCell = tableView.dequeueReusableCellWithIdentifier(quotesCell, forIndexPath: indexPath) as! QuotesTableViewCell
-                let data = NSDictionary()
-                cell.configCell(data)
-                return cell
-            } else {
-                // show more 
+            if (quotesShopSome.count != quotesShopAll.count && quotesShopSome.count == indexPath.row) {
+                // load more cell
                 let cell : ShowmoreCell = tableView.dequeueReusableCellWithIdentifier(showmoreCell, forIndexPath: indexPath) as! ShowmoreCell
+                cell.btnShowMore.setTitle("View More Services", forState: .Normal)
+                cell.delegate = self
+                cell.tag = 1
                 return cell
             }
+            // service Name
+            let cell : QuotesTableViewCell = tableView.dequeueReusableCellWithIdentifier(quotesCell, forIndexPath: indexPath) as! QuotesTableViewCell
+            cell.configCell(self.quotesShopSome[indexPath.row])
+            return cell
         } else if indexPath.section == 2 {
             // Reviews
-            if indexPath.row == 0 {
-                // service Name
-                let cell : ReviewCell = tableView.dequeueReusableCellWithIdentifier(reviewCell, forIndexPath: indexPath) as! ReviewCell
-                let data = NSDictionary()
-                cell.configCell(data)
-                return cell
-                
+            if (reviewerSome.count != reviewerAll.count && reviewerSome.count == indexPath.row) {
+                let cell : ShowmoreCell = tableView.dequeueReusableCellWithIdentifier(showmoreCell, forIndexPath: indexPath) as! ShowmoreCell
+                cell.btnShowMore.setTitle("View More Reviews", forState: .Normal)
+                cell.delegate = self
+                cell.tag = 2
+                return cell                
             }
-            
+                        
+            // service Name
+            let cell : ReviewCell = tableView.dequeueReusableCellWithIdentifier(reviewCell, forIndexPath: indexPath) as! ReviewCell
+            cell.configCell(reviewerSome[indexPath.row])
+            return cell
         }
         
         let cellNil = UITableViewCell()
@@ -76,33 +139,134 @@ class RepairServiceViewController: UIViewController, UITableViewDelegate, UITabl
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 1 {
-            return 5
+            if (quotesShopSome.count == 0) {
+                return 0
+            } else if (quotesShopSome.count == quotesShopAll.count && quotesShopSome.count != 0) {
+                return self.quotesShopSome.count
+            }
+            return (self.quotesShopSome.count + 1)
         } else if section == 2 {
-            return 1
+            if (reviewerSome.count == 0) {
+                return 0
+            } else if (reviewerSome.count == reviewerAll.count && reviewerSome.count != 0) {
+                return self.reviewerSome.count
+            }
+            return (self.reviewerSome.count + 1)
         }
         
         return 1
     }
     
-    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        if section == 1 {
-            return "Quotes"
-        } else if section == 2 {
-            return "Review"
+    
+    func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        if section != 0 {
+            let tempView = UIView.init(frame: CGRectMake(0, 200, 300, 244))
+            tempView.backgroundColor = UIColor.clearColor()
+            
+            let tempLabel = UILabel.init(frame: CGRectMake(15, 0, 300, 20))
+            tempLabel.backgroundColor = UIColor.clearColor()
+            tempLabel.textColor = UIColor.MKColor.Red
+            tempLabel.font = UIFont.boldSystemFontOfSize(18)
+            
+            // set title
+            if section == 1 {
+                tempLabel.text = "Services"
+            } else if section == 2 {
+                tempLabel.text = "Reviews (\(reviewerAll.count))"
+            } else {
+                tempLabel.text = ""
+            }
+            
+            tempView.addSubview(tempLabel)
+            return tempView
         }
-        
-        return ""
+        let tempView = UIView.init(frame: CGRectMake(0, 0, 0, 0))
+        tempView.backgroundColor = UIColor.clearColor()
+        return tempView
+    
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         if indexPath.section == 0 {
-            return 70
+            return 60 
         } else if indexPath.section == 1 {
-            return 50
+            // view more
+            // view detail
+            return 45
+        } else if indexPath.section == 2 {
+            if (reviewerSome.count != reviewerAll.count && reviewerSome.count == indexPath.row) {
+                // view more
+                return 45
+            }
+            return 90
         }
-        return 90
+        return 0.1
     }
 
+    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        if section == 0 {
+            return 0.1
+        }
+        
+        return 20
+    }
+    
+    // MARK: - ShowMoreDelegate
+    func onTapShowmoreBtn(showmoreCell: ShowmoreCell) {
+        if showmoreCell.tag == 1 {
+            // load more quotes
+            if (self.quotesShopSome.count != self.quotesShopAll.count) && self.quotesShopSome.count > 1 {
+                // append more data
+                for index in 2...self.quotesShopAll.count-1 {
+                    self.quotesShopSome.append(self.quotesShopAll[index])
+                }
+            } 
+            self.tableView.reloadSections(NSIndexSet(index: 1), withRowAnimation: UITableViewRowAnimation.Bottom)
+            
+        } else if showmoreCell.tag == 2 {
+            // load more reviewer
+            let storyboard = UIStoryboard(name: "User", bundle: nil)
+            let listReviewVC =  storyboard.instantiateViewControllerWithIdentifier("ListReviewViewController") as! ListReviewViewController
+            listReviewVC.listReview = self.reviewerAll
+            self.navigationController?.pushViewController(listReviewVC, animated: true)
+        }
+    }
+    
+    // MARK: - BackButton
+    
+    @IBAction func onBackButtonTapped(sender: UIBarButtonItem) {
+        self.navigationController?.popViewControllerAnimated(true)
+    }
+    
+    
+    // MARK: - XEEM ME BUTTON
+    
+    @IBAction func onXEEMtapped(sender: UIButton) {
+        self.displayViewController(.Fade)
+    }
+    
+    func displayViewController(animationType: SLpopupViewAnimationType) {
+        let myPopupViewController:ConfrimViewController = ConfrimViewController(nibName:"ConfrimPopUp", bundle: nil)
+        myPopupViewController.delegate = self
+        self.presentpopupViewController(myPopupViewController, animationType: animationType, completion: { () -> Void in })
+    }
+
+    func onCancelTapped(confirmViewController: ConfrimViewController) {
+        self.navigationController?.dismissPopupViewController(.Fade)
+    }
+    
+    func onConfrimTapped(confirmViewController: ConfrimViewController) {
+        confirmViewController.titleLabel.resignFirstResponder()
+        self.navigationController?.dismissPopupViewController(.Fade)
+        let delayTime = dispatch_time(DISPATCH_TIME_NOW, Int64(0.5 * Double(NSEC_PER_SEC)))
+        dispatch_after(delayTime, dispatch_get_main_queue()) {
+            let storyboard = UIStoryboard(name: "User", bundle: nil)
+            let listReviewVC =  storyboard.instantiateViewControllerWithIdentifier("RequestLoadingViewController") as! RequestLoadingViewController
+            self.navigationController?.pushViewController(listReviewVC, animated: true)
+        }
+    }
+    
+    
     /*
     // MARK: - Navigation
 

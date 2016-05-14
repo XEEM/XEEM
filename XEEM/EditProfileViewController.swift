@@ -19,9 +19,9 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
     override func viewDidLoad() {
         super.viewDidLoad()
         self.automaticallyAdjustsScrollViewInsets = false
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
-        self.navigationController?.navigationBar.shadowImage = UIImage()
-        navigationController?.navigationBar.barTintColor = ColorUtils.UIColorFromRGB("ffffff");
+//        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
+//        self.navigationController?.navigationBar.shadowImage = UIImage()
+//        navigationController?.navigationBar.barTintColor = UIColor.darkGrayColor();
         currentUser = User.currentUser
         setInfo()
     }
@@ -30,7 +30,7 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
         addressTextField.text = currentUser.address
         nameTextField.text = currentUser.fullName
         phoneTextField.text = currentUser.phone
-        avatarImageView.setImageWithURL(currentUser.avatarURL!)
+       avatarImageView.setImageWithURL(NSURL(string: currentUser.avatarURL!)!)
         UIUtils.setRoundImageView(avatarImageView)
         UIUtils.setupMaterialTextField(nameTextField)
         UIUtils.setupMaterialTextField(phoneTextField)
@@ -40,13 +40,18 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
     @IBAction func onAvatarTapped(sender: UITapGestureRecognizer) {
         let photoPicker = UIImagePickerController()
         photoPicker.delegate = self
-        photoPicker.sourceType = .PhotoLibrary
+        photoPicker.allowsEditing = true
+        if (UIImagePickerController.isSourceTypeAvailable(.Camera)) {
+            photoPicker.sourceType = .Camera
+        } else {
+             photoPicker.sourceType = .PhotoLibrary
+        }
         self.presentViewController(photoPicker, animated: true, completion: nil)
     }
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
-        avatarImageView.image = info[UIImagePickerControllerOriginalImage] as? UIImage
-        UIUtils.setRoundImageView(avatarImageView)
+        avatarImageView.image = info[UIImagePickerControllerEditedImage] as? UIImage
+                UIUtils.setRoundImageView(avatarImageView)
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     
