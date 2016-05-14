@@ -25,6 +25,6 @@ Schema link: https://www.dropbox.com/s/e4mm9nimlv7y42d/XEEM-schema-1.1.jpg?dl=0
 
 Walkthrough as follow:
 
-[![xeem1](https://www.dropbox.com/s/34sgpj8mmzns9b7/XEEM.gif?dl=0)]
+https://www.dropbox.com/s/34sgpj8mmzns9b7/XEEM.gif?dl=0
 
 
