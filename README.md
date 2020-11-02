@@ -20,4 +20,6 @@ Users will use XEEM to book bike/car repair service when their bikes/cars are br
 
 - [x] Users can see a map of repair service shop, gas stations and spare parts shops.
 
+## MOCKUP
+
 ![MOCKUP](/XEEM.gif)
